@@ -165,12 +165,24 @@ function pickVictim(pool: Unit[]): Unit {
   return victim;
 }
 
+/** Whether a side's units may use Sustain Damage right now (blocked by the Mentak flagship). */
+const canSustainAgainst = (opponent: Side) => !hasSpecial(opponent, 'mentakFlagship');
+
 /**
  * The owner assigns hits to minimise losses: absorb with Sustain Damage first,
  * then lose the cheapest units.
+ *
+ * Pass `canSustain` when both sides assign hits at the same time, so that it reflects the
+ * units present when the hits were rolled, not losses already applied to the other side.
  */
-function assignHits(side: Side, opponent: Side, targets: Unit[], hits: number, restriction?: Restriction): void {
-  const canSustain = !hasSpecial(opponent, 'mentakFlagship');
+function assignHits(
+  side: Side,
+  opponent: Side,
+  targets: Unit[],
+  hits: number,
+  restriction?: Restriction,
+  canSustain = canSustainAgainst(opponent),
+): void {
   const cancelPerSustain = side.techs.has('nonEuclideanShielding') ? 2 : 1;
   let remaining = hits;
   while (remaining > 0) {
@@ -195,9 +207,9 @@ function assignHits(side: Side, opponent: Side, targets: Unit[], hits: number, r
   }
 }
 
-function applyHits(side: Side, opponent: Side, targets: Unit[], hits: Hits): void {
-  assignHits(side, opponent, targets, hits.nonFighter, 'nonFighter');
-  assignHits(side, opponent, targets, hits.normal);
+function applyHits(side: Side, opponent: Side, targets: Unit[], hits: Hits, canSustain: boolean): void {
+  assignHits(side, opponent, targets, hits.nonFighter, 'nonFighter', canSustain);
+  assignHits(side, opponent, targets, hits.normal, undefined, canSustain);
 }
 
 /** Yin flagship: when destroyed, destroy all ships in the system. */
@@ -323,8 +335,11 @@ function resolveSpaceCombat(rng: Rng, att: Side, def: Side, wormhole: boolean): 
     const defUnits = combatants(def);
     const attHits = combatHits(rng, att, attUnits, def, true);
     const defHits = combatHits(rng, def, defUnits, att, true);
-    applyHits(def, att, defUnits, attHits);
-    applyHits(att, def, attUnits, defHits);
+    // Hits are assigned simultaneously: decide Sustain Damage eligibility before either side loses units.
+    const defCanSustain = canSustainAgainst(att);
+    const attCanSustain = canSustainAgainst(def);
+    applyHits(def, att, defUnits, attHits, defCanSustain);
+    applyHits(att, def, attUnits, defHits, attCanSustain);
     checkYinFlagship(att, def);
 
     duraniumRepair(att);

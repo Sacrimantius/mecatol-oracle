@@ -95,6 +95,16 @@ describe('simulateOnce with fixed dice', () => {
     expect(withMentak.survivors.defender.dreadnought).toBeUndefined();
   });
 
+  it('blocks Sustain Damage in the round the Mentak flagship is destroyed', () => {
+    // Letnev attacks and destroys the defending Fourth Moon, whose 2 simultaneous hits must still
+    // land without Sustain Damage, so both dreadnoughts die.
+    const letnev = side('letnev', { dreadnought: 2 });
+    const mentak = side('mentak', { flagship: 1 });
+    const result = simulateOnce(input(letnev, mentak), alwaysTen);
+    expect(result.survivors.attacker).toEqual({});
+    expect(result.survivors.defender).toEqual({});
+  });
+
   it("fires the attacker's PDS during Space Cannon Offense", () => {
     // The PDS kills the lone defending fighter before space combat starts.
     const a = side('arborec', { cruiser: 1, pds: 1 });
