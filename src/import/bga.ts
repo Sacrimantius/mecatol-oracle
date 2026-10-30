@@ -48,6 +48,8 @@ export interface ImportedCombat {
   flags: Record<Role, SideFlags>;
   /** Things about the whole combat: third parties, action cards, ignored planets. */
   notes: ImportFlag[];
+  /** Where this combat's lines are in the pasted text, as character offsets (end exclusive). */
+  source: { start: number; end: number };
 }
 
 export interface BgaImport {
@@ -1105,11 +1107,34 @@ function dedupe(flags: ImportFlag[]): ImportFlag[] {
 
 /** Reads pasted BGA log text (newest line first, or oldest first) and returns every combat in it. */
 export function parseBgaLog(text: string): BgaImport {
-  let lines = text
-    .split(/\r?\n/)
-    .map(cleanLine)
-    .filter((l) => l && !l.startsWith('==='));
-  if (isNewestFirst(lines)) lines = lines.reverse();
+  // Keep each line's character range in the pasted text, so a combat can be found in it again.
+  const raw: { line: string; start: number; end: number }[] = [];
+  let offset = 0;
+  for (const piece of text.split(/(?<=\n)/)) {
+    raw.push({ line: cleanLine(piece), start: offset, end: offset + piece.replace(/\r?\n$/, '').length });
+    offset += piece.length;
+  }
+  let kept = raw.filter((r) => r.line && !r.line.startsWith('==='));
+  let lines = kept.map((r) => r.line);
+  if (isNewestFirst(lines)) {
+    kept = kept.reverse();
+    lines = lines.reverse();
+  }
+  // Text around the log (a note, a heading) isn't part of any combat; trim it from the selection.
+  const players = new Set(
+    lines.flatMap((l) => {
+      const m = l.match(RE.activate) ?? l.match(RE.roll) ?? l.match(RE.started);
+      return m ? [m[1]] : [];
+    }),
+  );
+  const isLogLine = (l: string) => [...players].some((p) => l.startsWith(`${p} `) || l.startsWith(`${p}'s `)) || / between /.test(l);
+  const sourceOf = (seg: Segment) => {
+    let { start, end } = seg;
+    while (start < end - 1 && !isLogLine(lines[start])) start++;
+    while (end > start + 1 && !isLogLine(lines[end - 1])) end--;
+    const spans = kept.slice(start, end);
+    return { start: Math.min(...spans.map((s) => s.start)), end: Math.max(...spans.map((s) => s.end)) };
+  };
   const rolls = lines.map((l) => {
     const m = l.match(RE.roll);
     return m ? parseRoll(m) : null;
@@ -1123,8 +1148,10 @@ export function parseBgaLog(text: string): BgaImport {
   let start = 0;
   lines.forEach((line, i) => {
     if (RE.activate.test(line) && i > start) {
-      segments.push({ start, end: i });
-      start = i;
+      // A strategy card like Warfare activates the system on the line just before.
+      const by = i - 1 >= start && /and activate a system\.$/.test(lines[i - 1]) ? i - 1 : i;
+      if (by > start) segments.push({ start, end: by });
+      start = by;
     } else if (RE.finish.test(line)) {
       segments.push({ start, end: i + 1 });
       start = i + 1;
@@ -1272,6 +1299,7 @@ export function parseBgaLog(text: string): BgaImport {
       : `${a.players.attacker} at ( ${a.system} )`;
     return {
       title,
+      source: sourceOf(a.segment),
       summary: a.summary,
       system: a.system,
       planet: a.planet,

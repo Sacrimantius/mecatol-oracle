@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { getFaction } from '../engine/data/factions';
 import { ALL_UNIT_TYPES, type SideInput } from '../engine/types';
 import { parseBgaLog, type ImportedCombat } from '../import/bga';
@@ -30,7 +30,36 @@ function describeSide(player: string, side: SideInput) {
   return `${player || 'Nobody'} (${faction}): ${units || 'no units seen'}`;
 }
 
+/** Scrolls a textarea so the line holding character `offset` sits near the top, allowing for wrapped lines. */
+function scrollToOffset(textarea: HTMLTextAreaElement, offset: number) {
+  const style = getComputedStyle(textarea);
+  const mirror = document.createElement('div');
+  for (const prop of ['fontFamily', 'fontSize', 'fontWeight', 'lineHeight', 'letterSpacing', 'tabSize'] as const) {
+    mirror.style[prop] = style[prop];
+  }
+  Object.assign(mirror.style, {
+    position: 'absolute',
+    visibility: 'hidden',
+    top: '0',
+    left: '-9999px',
+    boxSizing: 'border-box',
+    width: `${textarea.clientWidth}px`,
+    padding: style.padding,
+    whiteSpace: 'pre-wrap',
+    overflowWrap: 'break-word',
+  });
+  mirror.textContent = textarea.value.slice(0, offset);
+  const marker = document.createElement('span');
+  marker.textContent = '​';
+  mirror.appendChild(marker);
+  document.body.appendChild(mirror);
+  const lineHeight = parseFloat(style.lineHeight) || 16;
+  textarea.scrollTop = Math.max(0, marker.offsetTop - parseFloat(style.paddingTop) - lineHeight);
+  mirror.remove();
+}
+
 export function ImportDialog({ onLoad, onClose }: Props) {
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [text, setText] = useState('');
   const [selected, setSelected] = useState(0);
   const result = useMemo(() => (text.trim() ? parseBgaLog(text) : null), [text]);
@@ -44,6 +73,16 @@ export function ImportDialog({ onLoad, onClose }: Props) {
   }, [onClose]);
 
   const chosen = combats[selected];
+
+  /** Shows a combat's lines in the pasted log: scrolled into view and selected. */
+  const reveal = (combat: ImportedCombat) => {
+    const textarea = textareaRef.current;
+    if (!textarea) return;
+    textarea.focus({ preventScroll: true });
+    // "backward" keeps the caret at the first line, so the browser doesn't scroll to the last.
+    textarea.setSelectionRange(combat.source.start, combat.source.end, 'backward');
+    scrollToOffset(textarea, combat.source.start);
+  };
 
   return (
     <div className="modal-backdrop" onMouseDown={(e) => e.target === e.currentTarget && onClose()}>
@@ -60,6 +99,7 @@ export function ImportDialog({ onLoad, onClose }: Props) {
           <span className="inline-badge warn">!</span> for you to check.
         </p>
         <textarea
+          ref={textareaRef}
           className="log-input"
           value={text}
           onChange={(e) => setText(e.target.value)}
@@ -82,7 +122,14 @@ export function ImportDialog({ onLoad, onClose }: Props) {
                 c.notes.filter((n) => n.level === 'warn').length;
               return (
                 <label key={i} className={`combat-option${i === selected ? ' on' : ''}`}>
-                  <input type="radio" name="combat" checked={i === selected} onChange={() => setSelected(i)} />
+                  <input
+                    type="radio"
+                    name="combat"
+                    checked={i === selected}
+                    onChange={() => setSelected(i)}
+                    // Also fires for arrow keys, and for clicking the combat that is already picked.
+                    onClick={() => reveal(c)}
+                  />
                   <span className="combat-title">{c.title}</span>
                   <span className="combat-steps">{c.summary || 'No combat steps recognised'}</span>
                   <span className="combat-side attacker">{describeSide(c.players.attacker, c.attacker)}</span>
