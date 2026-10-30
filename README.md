@@ -61,10 +61,31 @@ These **faction effects** are modelled:
 
 The Nekro Virus can select any faction tech, standing in for Valefar Assimilator.
 
+### Action cards
+
+Each side can hold any of the base-game combat action cards, listed under its technologies. The simulator plays each card at most once, at a fixed moment:
+
+| Card | Played |
+|---|---|
+| Morale Boost | First combat round the side fights (space, or ground if there's no space combat) |
+| Fighter Prototype | First space combat round, if the side has fighters |
+| Shields Holding | First space combat round dealing the side 2+ hits, or a hit it can't sustain |
+| Direct Hit | On the first enemy ship that uses Sustain Damage |
+| Courageous to the End | After the side's first non-fighter ship is destroyed in a space combat round |
+| Emergency Repairs | End of the first space round leaving 2+ damaged units, or 1 with nothing else able to sustain |
+| Maneuvering Jets | First time Space Cannon hits the side |
+| Scramble Frequency | First enemy Bombardment, Space Cannon or Anti-Fighter Barrage roll that beats the average |
+| Experimental Battlestation (defender) | Adds Space Cannon 5 ×3 to Space Cannon Offense |
+| Disable (attacker) | The defender's PDS don't fire or shield |
+| Bunker (defender) | −4 to the attacker's Bombardment |
+| Fire Team | Rerolls every miss in the first ground combat round |
+
+Sabotage, retreats, Parley and other cards that don't change the dice aren't simulated.
+
 ### Simplifications
 
 * **Hit assignment** follows a fixed "minimise losses" policy: absorb hits with Sustain Damage first (dreadnoughts, then carriers, War Suns, flagship), then lose units cheapest-first (fighters, infantry, destroyers, cruisers, carriers, dreadnoughts, War Suns, flagship).
-* **Not modelled yet:** retreats, action cards, promissory notes, agents and other leaders, capacity limits, the Hacan flagship's trade-good bonus, the Exotrireme II self-destruct, Yin Devotion and Impulse Core, and X-89 Bacterial Weapon.
+* **Not modelled yet:** retreats, non-combat action cards and Sabotage, promissory notes, agents and other leaders, capacity limits, the Hacan flagship's trade-good bonus, the Exotrireme II self-destruct, Yin Devotion and Impulse Core, and X-89 Bacterial Weapon.
 * **Optional abilities** are always used when they help: Assault Cannon, Ambush, Plasma Scoring and Graviton.
 
 ## Importing a combat from Board Game Arena
@@ -75,6 +96,7 @@ The Nekro Virus can select any faction tech, standing in for Valefar Assimilator
 * **Units:** the fleet moved in, plus the dice and losses in the log. Ships and ground forces that rolled are complete counts; everything else is "at least", and damaged ships that started the combat damaged are included.
 * **Faction:** worked out from faction abilities, techs and flagship dice anywhere in the paste.
 * **Upgrades:** the combinations of base and upgraded units that explain every roll's hit count, Anti-Fighter Barrage dice and Ambush to-hit values. Upgrades and techs seen in earlier combats in the same paste carry forward.
+* **Action cards:** the simulated cards each player played, unless Sabotage cancelled them.
 * **Technologies:** shown in the log ("used DURANIUM ARMOR", "Effects: PLASMA SCORING"), or ruled out when they would have shown.
 
 Each imported value carries a mark: **i** explains where it came from, and an amber **!** means the log doesn't prove it. Changing a value by hand clears its mark. Third players' Space Cannon, action cards and other planets are listed in the banner but aren't simulated.

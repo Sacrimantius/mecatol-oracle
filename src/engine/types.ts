@@ -84,6 +84,31 @@ export interface Tech {
   text: string;
 }
 
+export type ActionCardId =
+  | 'moraleBoost'
+  | 'fighterPrototype'
+  | 'shieldsHolding'
+  | 'directHit'
+  | 'courageousToTheEnd'
+  | 'emergencyRepairs'
+  | 'maneuveringJets'
+  | 'scrambleFrequency'
+  | 'experimentalBattlestation'
+  | 'disable'
+  | 'bunker'
+  | 'fireTeam';
+
+export interface ActionCard {
+  id: ActionCardId;
+  name: string;
+  /** The card's effect, paraphrased. */
+  text: string;
+  /** When the simulator plays it: each card is played at most once per battle. */
+  usage: string;
+  /** Only this side can use it (Bunker defends, Disable attacks). */
+  role?: Role;
+}
+
 export interface Faction {
   id: string;
   name: string;
@@ -106,6 +131,8 @@ export interface SideInput {
   damaged?: UnitCounts;
   upgrades: Partial<Record<UnitType, boolean>>;
   techs: TechId[];
+  /** Combat action cards in hand, each played at most once. */
+  actionCards?: ActionCardId[];
 }
 
 export interface ScenarioOptions {

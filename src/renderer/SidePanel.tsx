@@ -1,6 +1,7 @@
 import { FACTIONS, getFaction, getUnitDefinition } from '../engine/data/factions';
+import { actionCardsFor } from '../engine/data/actionCards';
 import { techsForFaction } from '../engine/data/techs';
-import type { Faction, Role, SideInput, TechId, UnitType } from '../engine/types';
+import type { ActionCardId, Faction, Role, SideInput, TechId, UnitType } from '../engine/types';
 import type { SideFlags } from '../import/bga';
 import { describeStats } from './format';
 import { FlagTip, type FlagKey } from './importFlags';
@@ -98,6 +99,9 @@ function FactionUnits({ role, faction, value, flags, onDismissFlag, onChange }: 
     onChange({ ...value, damaged: { ...value.damaged, [type]: Math.min(value.counts[type] ?? 0, Math.max(0, n)) } });
   const toggleUpgrade = (type: UnitType) =>
     onChange({ ...value, upgrades: { ...value.upgrades, [type]: !value.upgrades[type] } });
+  const held = value.actionCards ?? [];
+  const toggleCard = (id: ActionCardId) =>
+    onChange({ ...value, actionCards: held.includes(id) ? held.filter((c) => c !== id) : [...held, id] });
   const toggleTech = (id: TechId) =>
     onChange({
       ...value,
@@ -207,6 +211,32 @@ function FactionUnits({ role, faction, value, flags, onDismissFlag, onChange }: 
             {tech.name}
             {tech.faction && <span className="faction-tag">faction</span>}
             <FlagTip flags={flags.techs[tech.id]} onDismiss={() => onDismissFlag({ kind: 'techs', tech: tech.id })} />
+          </label>
+        ))}
+      </div>
+
+      <h3>
+        Action cards
+        <InfoTip>
+          Cards this side holds for the combat. Each is played at most once, at the moment described on the card.
+        </InfoTip>
+      </h3>
+      <div className="tech-list">
+        {actionCardsFor(role).map((card) => (
+          <label key={card.id} className={`tech${held.includes(card.id) ? ' on' : ''}`}>
+            <input type="checkbox" checked={held.includes(card.id)} onChange={() => toggleCard(card.id)} />
+            {card.name}
+            <InfoTip>
+              <strong>{card.name}</strong>
+              <p>{card.text}</p>
+              <p>
+                <b>Simulated:</b> {card.usage}
+              </p>
+            </InfoTip>
+            <FlagTip
+              flags={flags.actionCards[card.id]}
+              onDismiss={() => onDismissFlag({ kind: 'actionCards', card: card.id })}
+            />
           </label>
         ))}
       </div>

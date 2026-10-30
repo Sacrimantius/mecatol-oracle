@@ -139,11 +139,118 @@ describe('simulateOnce with fixed dice', () => {
     expect(simulateOnce(input(a, d), alwaysTen).winner).toBe('draw');
   });
 
+  it('ignores action cards meant for the other side', () => {
+    // Bunker only protects the defender's planets.
+    const a = side('letnev', { warsun: 1, infantry: 1 }, { actionCards: ['bunker'] });
+    const d = side('arborec', { infantry: 1 });
+    expect(simulateOnce(input(a, d, { invade: true }), alwaysTen).invasion).toBe('captured');
+  });
+
   it('destroys all ships when the Yin flagship dies', () => {
     const a = side('yin', { flagship: 1 }, { counts: { flagship: 1, carrier: 2 } });
     const d = side('hacan', { dreadnought: 4 });
     const result = simulateOnce(input(a, d), alwaysTen);
     expect(result.survivors.attacker).toEqual({});
     expect(result.survivors.defender).toEqual({});
+  });
+});
+
+/** Every die rolls this natural value. */
+const always = (n: number) => () => (n - 1) / 10 + 0.05;
+/** Dice in this order, then 1s. */
+const sequence = (...dice: number[]) => {
+  let i = 0;
+  return () => ((dice[i++] ?? 1) - 1) / 10 + 0.05;
+};
+const cards = (actionCards: SideInput['actionCards']) => ({ actionCards });
+
+describe('action cards', () => {
+  it('Bunker: -4 to Bombardment against the defender', () => {
+    // War sun bombardment hits on 3, so a 6 hits, but not with -4.
+    const a = side('letnev', { warsun: 1, infantry: 1 });
+    const plain = side('arborec', { infantry: 1 });
+    const bunker = side('arborec', { infantry: 1 }, cards(['bunker']));
+    expect(simulateOnce(input(a, plain, { invade: true }), always(6)).invasion).toBe('captured');
+    // The bombardment misses, and infantry rolling 6s never hit each other.
+    expect(simulateOnce(input(a, bunker, { invade: true }), always(6)).invasion).toBe('repelled');
+  });
+
+  it('Morale Boost: +1 to combat rolls in the first round', () => {
+    const cruiser = side('hacan', { cruiser: 1 });
+    const boosted = side('arborec', { cruiser: 1 }, cards(['moraleBoost']));
+    expect(simulateOnce(input(side('arborec', { cruiser: 1 }), cruiser), always(6)).winner).toBe('draw');
+    expect(simulateOnce(input(boosted, cruiser), always(6)).winner).toBe('attacker');
+  });
+
+  it('Fighter Prototype: +2 to fighters in the first round', () => {
+    const cruiser = side('hacan', { cruiser: 1 });
+    expect(simulateOnce(input(side('arborec', { fighter: 1 }), cruiser), always(7)).winner).toBe('defender');
+    const prototype = side('arborec', { fighter: 1 }, cards(['fighterPrototype']));
+    expect(simulateOnce(input(prototype, cruiser), always(7)).winner).toBe('draw');
+  });
+
+  it('Shields Holding: cancels 2 hits in a space combat round', () => {
+    const cruisers = side('hacan', { cruiser: 2 });
+    expect(simulateOnce(input(side('arborec', { dreadnought: 1 }), cruisers), alwaysTen).winner).toBe('defender');
+    const shielded = side('arborec', { dreadnought: 1 }, cards(['shieldsHolding']));
+    expect(simulateOnce(input(shielded, cruisers), alwaysTen).survivors.attacker).toEqual({ dreadnought: 1 });
+  });
+
+  it('Direct Hit: destroys a ship that sustains damage', () => {
+    const dread = side('hacan', { dreadnought: 1 });
+    expect(simulateOnce(input(side('arborec', { cruiser: 1 }), dread), alwaysTen).winner).toBe('defender');
+    const direct = side('arborec', { cruiser: 1 }, cards(['directHit']));
+    expect(simulateOnce(input(direct, dread), alwaysTen).survivors.defender).toEqual({});
+  });
+
+  it('Courageous to the End: a lost ship takes enemy ships with it', () => {
+    const destroyers = side('hacan', { destroyer: 2 });
+    expect(simulateOnce(input(side('arborec', { cruiser: 1 }), destroyers), alwaysTen).winner).toBe('defender');
+    const brave = side('arborec', { cruiser: 1 }, cards(['courageousToTheEnd']));
+    expect(simulateOnce(input(brave, destroyers), alwaysTen).survivors.defender).toEqual({});
+  });
+
+  it('Emergency Repairs: repairs damaged ships between rounds', () => {
+    // Round 1: 2 cruisers die; 3 hits leave one damaged dreadnought. Repaired, it survives round 2.
+    const cruisers = side('hacan', { cruiser: 3 });
+    expect(simulateOnce(input(side('arborec', { dreadnought: 2 }), cruisers), alwaysTen).winner).toBe('draw');
+    const repairs = side('arborec', { dreadnought: 2 }, cards(['emergencyRepairs']));
+    expect(simulateOnce(input(repairs, cruisers), alwaysTen).survivors.attacker).toEqual({ dreadnought: 1 });
+  });
+
+  it('Maneuvering Jets: cancels a Space Cannon hit', () => {
+    const pds = side('hacan', { pds: 1 });
+    expect(simulateOnce(input(side('arborec', { cruiser: 1 }), pds), alwaysTen).survivors.attacker).toEqual({});
+    const jets = side('arborec', { cruiser: 1 }, cards(['maneuveringJets']));
+    expect(simulateOnce(input(jets, pds), alwaysTen).winner).toBe('attacker');
+  });
+
+  it("Disable: the defender's PDS can't fire", () => {
+    const disable = side('arborec', { cruiser: 1 }, cards(['disable']));
+    expect(simulateOnce(input(disable, side('hacan', { pds: 1 })), alwaysTen).winner).toBe('attacker');
+  });
+
+  it('Experimental Battlestation: adds Space Cannon 5 x3 for the defender', () => {
+    const a = side('arborec', { cruiser: 1 });
+    expect(simulateOnce(input(a, side('hacan', { infantry: 1 }), { invade: true }), alwaysTen).winner).toBe('attacker');
+    const station = side('hacan', { infantry: 1 }, cards(['experimentalBattlestation']));
+    expect(simulateOnce(input(a, station, { invade: true }), alwaysTen).winner).toBe('defender');
+  });
+
+  it('Scramble Frequency: rerolls an above-average Space Cannon roll', () => {
+    // The PDS rolls a 10, the reroll a 1.
+    const pds = side('hacan', { pds: 1 });
+    expect(simulateOnce(input(side('arborec', { cruiser: 1 }), pds), sequence(10, 1)).survivors.attacker).toEqual({});
+    const scramble = side('arborec', { cruiser: 1 }, cards(['scrambleFrequency']));
+    expect(simulateOnce(input(scramble, pds), sequence(10, 1)).winner).toBe('attacker');
+  });
+
+  it('Fire Team: rerolls misses in the first ground combat round', () => {
+    // Attacker misses (1), rerolls a 10; the defender's die is the 1 after it.
+    const d = side('hacan', { infantry: 1 });
+    const a = side('arborec', { carrier: 1, infantry: 1 });
+    expect(simulateOnce(input(a, d, { invade: true }), sequence(1, 10, 1)).invasion).toBe('repelled');
+    const team = side('arborec', { carrier: 1, infantry: 1 }, cards(['fireTeam']));
+    expect(simulateOnce(input(team, d, { invade: true }), sequence(1, 10, 1)).invasion).toBe('captured');
   });
 });

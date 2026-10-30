@@ -1,14 +1,15 @@
 import type { ImportFlag, SideFlags } from '../import/bga';
-import type { SideInput, TechId, UnitType } from '../engine/types';
+import type { ActionCardId, SideInput, TechId, UnitType } from '../engine/types';
 import { InfoTip } from './InfoTip';
 
-export const emptyFlags = (): SideFlags => ({ faction: [], units: {}, upgrades: {}, techs: {} });
+export const emptyFlags = (): SideFlags => ({ faction: [], units: {}, upgrades: {}, techs: {}, actionCards: {} });
 
 /** Which imported value a set of flags belongs to. */
 export type FlagKey =
   | { kind: 'faction' }
   | { kind: 'units' | 'upgrades'; type: UnitType }
-  | { kind: 'techs'; tech: TechId };
+  | { kind: 'techs'; tech: TechId }
+  | { kind: 'actionCards'; card: ActionCardId };
 
 /** Removes one value's flags, once the user has checked it. */
 export function dismissFlag(flags: SideFlags, key: FlagKey): SideFlags {
@@ -17,6 +18,11 @@ export function dismissFlag(flags: SideFlags, key: FlagKey): SideFlags {
     const techs = { ...flags.techs };
     delete techs[key.tech];
     return { ...flags, techs };
+  }
+  if (key.kind === 'actionCards') {
+    const actionCards = { ...flags.actionCards };
+    delete actionCards[key.card];
+    return { ...flags, actionCards };
   }
   const list = { ...flags[key.kind] };
   delete list[key.type];
@@ -50,7 +56,13 @@ export function FlagTip({ flags, onDismiss }: { flags?: ImportFlag[]; onDismiss:
 }
 
 export const countWarnings = (flags: SideFlags) =>
-  [flags.faction, ...Object.values(flags.units), ...Object.values(flags.upgrades), ...Object.values(flags.techs)].filter(
+  [
+    flags.faction,
+    ...Object.values(flags.units),
+    ...Object.values(flags.upgrades),
+    ...Object.values(flags.techs),
+    ...Object.values(flags.actionCards),
+  ].filter(
     (list) => list?.some((f) => f.level === 'warn'),
   ).length;
 
@@ -61,6 +73,7 @@ export function clearEdited(flags: SideFlags, prev: SideInput, next: SideInput):
     units: { ...flags.units },
     upgrades: { ...flags.upgrades },
     techs: { ...flags.techs },
+    actionCards: { ...flags.actionCards },
   };
   for (const type of Object.keys(out.units) as UnitType[]) {
     if (prev.counts[type] !== next.counts[type] || prev.damaged?.[type] !== next.damaged?.[type]) delete out.units[type];
@@ -70,6 +83,10 @@ export function clearEdited(flags: SideFlags, prev: SideInput, next: SideInput):
   }
   for (const tech of Object.keys(out.techs) as TechId[]) {
     if (prev.techs.includes(tech) !== next.techs.includes(tech)) delete out.techs[tech];
+  }
+  const holds = (side: SideInput, card: ActionCardId) => !!side.actionCards?.includes(card);
+  for (const card of Object.keys(out.actionCards) as ActionCardId[]) {
+    if (holds(prev, card) !== holds(next, card)) delete out.actionCards[card];
   }
   return out;
 }
