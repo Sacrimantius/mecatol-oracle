@@ -52,7 +52,7 @@ export interface BattleOutcome {
 }
 
 /** Lower values are destroyed first when assigning hits. */
-const DESTROY_ORDER: Record<UnitType, number> = {
+export const DESTROY_ORDER: Record<UnitType, number> = {
   fighter: 1,
   infantry: 2,
   destroyer: 3,
@@ -66,7 +66,7 @@ const DESTROY_ORDER: Record<UnitType, number> = {
 };
 
 /** Lower values absorb hits with Sustain Damage first. */
-const SUSTAIN_ORDER: Partial<Record<UnitType, number>> = {
+export const SUSTAIN_ORDER: Partial<Record<UnitType, number>> = {
   dreadnought: 1,
   carrier: 2,
   warsun: 3,
@@ -450,9 +450,9 @@ function fight(rng: Rng, att: Side, def: Side, invade: boolean, wormhole: boolea
 
   const space = resolveSpaceCombat(rng, att, def, wormhole);
 
-  // Ground forces carried by a fleet that no longer exists are lost.
+  // Ground forces carried by a fleet that no longer exists are lost. Supporting PDS are elsewhere and survive.
   if (shipsInSpace(att).length === 0) {
-    for (const u of alive(att)) if (!u.onPlanet) u.dead = true;
+    for (const u of alive(att)) if (!u.onPlanet && u.stats.type === 'infantry') u.dead = true;
   }
 
   let invasion: { outcome: InvasionOutcome; rounds: number } = { outcome: 'notAttempted', rounds: 0 };

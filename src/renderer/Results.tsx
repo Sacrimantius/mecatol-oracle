@@ -1,6 +1,8 @@
 import { getFaction, getUnitStats } from '../engine/data/factions';
-import { ALL_UNIT_TYPES, type Role, type SimulationInput, type SimulationResult } from '../engine/types';
+import { DESTROY_ORDER, SUSTAIN_ORDER } from '../engine/simulate';
+import { ALL_UNIT_TYPES, type Role, type SimulationInput, type SimulationResult, type UnitType } from '../engine/types';
 import { percent } from './format';
+import { InfoTip } from './InfoTip';
 
 interface Props {
   result: SimulationResult;
@@ -18,12 +20,65 @@ function Bar({ attacker, draw, defender }: { attacker: number; draw: number; def
   );
 }
 
-function Stat({ label, value, tone }: { label: string; value: number; tone?: Role | 'draw' }) {
+interface StatProps {
+  label: string;
+  value: number;
+  tone?: Role | 'draw';
+  info?: string;
+}
+
+function Stat({ label, value, tone, info }: StatProps) {
   return (
     <div className={`stat ${tone ?? ''}`}>
       <span className="stat-value">{percent(value)}</span>
-      <span className="stat-label">{label}</span>
+      <span className="stat-label">
+        {label}
+        {info && <InfoTip align="right">{info}</InfoTip>}
+      </span>
     </div>
+  );
+}
+
+const UNIT_LABELS: Record<UnitType, string> = {
+  flagship: 'Flagship',
+  warsun: 'War Sun',
+  dreadnought: 'Dreadnought',
+  carrier: 'Carrier',
+  cruiser: 'Cruiser',
+  destroyer: 'Destroyer',
+  fighter: 'Fighter',
+  infantry: 'Infantry',
+  pds: 'PDS',
+  spacedock: 'Space Dock',
+};
+
+const byOrder = (order: Partial<Record<UnitType, number>>, exclude: UnitType[] = []) =>
+  (Object.keys(order) as UnitType[])
+    .filter((t) => !exclude.includes(t))
+    .sort((a, b) => order[a]! - order[b]!)
+    .map((t) => UNIT_LABELS[t])
+    .join(' → ');
+
+function HitOrderInfo() {
+  return (
+    <>
+      <strong>How each side assigns hits</strong>
+      <p>Every battle uses the same fixed policy: keep as much of the fleet as possible.</p>
+      <ol>
+        <li>
+          <b>Sustain Damage first</b>, on undamaged units in this order: {byOrder(SUSTAIN_ORDER)}. Not available
+          against the Mentak flagship.
+        </li>
+        <li>
+          <b>Then lose the cheapest units</b>: {byOrder(DESTROY_ORDER, ['pds', 'spacedock'])}. Damaged units go
+          before undamaged ones of the same type.
+        </li>
+      </ol>
+      <p>
+        Hits that must target non-fighters (Graviton Laser System, the L1Z1X flagship and its dreadnoughts) skip
+        fighters. Anti-Fighter Barrage hits only fighters. Assault Cannon destroys the cheapest non-fighter ship.
+      </p>
+    </>
   );
 }
 
@@ -61,7 +116,11 @@ export function Results({ result, input }: Props) {
             <Stat label="Attacker wins" value={space.attacker} tone="attacker" />
             <Stat label="Defender wins" value={space.defender} tone="defender" />
             <Stat label="Mutual destruction" value={space.draw} tone="draw" />
-            <Stat label="No combat" value={space.noCombat} />
+            <Stat
+              label="No space combat"
+              value={space.noCombat}
+              info="One side had no ships when space combat would start, so none was fought. This happens when the defender has only planet units, or when Space Cannon Offense destroys every ship on one side first."
+            />
           </div>
           <p className="caption">Average {result.averageSpaceRounds.toFixed(2)} rounds</p>
         </div>
@@ -72,7 +131,11 @@ export function Results({ result, input }: Props) {
               <Stat label="Planet captured" value={invasion.captured} tone="attacker" />
               <Stat label="Invasion repelled" value={invasion.repelled} tone="defender" />
               <Stat label="All ground forces lost" value={invasion.draw} tone="draw" />
-              <Stat label="No landing" value={invasion.notAttempted} />
+              <Stat
+                label="No landing"
+                value={invasion.notAttempted}
+                info="The attacker couldn't land: it lost or tied the space combat, or had no ground forces left to commit."
+              />
             </div>
             <p className="caption">Average {result.averageGroundRounds.toFixed(2)} ground rounds</p>
           </div>
@@ -86,7 +149,12 @@ export function Results({ result, input }: Props) {
           const rows = ALL_UNIT_TYPES.filter((t) => (sideInput.counts[t] ?? 0) > 0);
           return (
             <div className={`survivor-table ${role}`} key={role}>
-              <h3>{role === 'attacker' ? 'Attacker' : 'Defender'} average survivors</h3>
+              <h3>
+                {role === 'attacker' ? 'Attacker' : 'Defender'} average survivors
+                <InfoTip align={role === 'attacker' ? 'left' : 'right'}>
+                  <HitOrderInfo />
+                </InfoTip>
+              </h3>
               {rows.length === 0 && <p className="caption">No units</p>}
               {rows.map((type) => {
                 const start = sideInput.counts[type] ?? 0;

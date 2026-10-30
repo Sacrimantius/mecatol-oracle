@@ -1,28 +1,34 @@
 import { useEffect, useRef, useState } from 'react';
-import type { SideInput, SimulationInput, SimulationResult } from '../engine/types';
+import {
+  ALL_UNIT_TYPES,
+  SHIP_TYPES,
+  type SideInput,
+  type SimulationInput,
+  type SimulationResult,
+  type UnitType,
+} from '../engine/types';
 import { Results } from './Results';
 import { SidePanel } from './SidePanel';
 import SimWorker from './sim.worker?worker&inline';
 
 const ITERATION_OPTIONS = [1000, 5000, 10000, 25000, 50000];
 
-const initialAttacker: SideInput = {
-  factionId: 'sardakk',
-  counts: { dreadnought: 2, carrier: 2, fighter: 4, infantry: 4 },
-  upgrades: {},
-  techs: [],
-};
+const emptySide: SideInput = { factionId: '', counts: {}, upgrades: {}, techs: [] };
 
-const initialDefender: SideInput = {
-  factionId: 'jolnar',
-  counts: { flagship: 1, cruiser: 2, destroyer: 1, infantry: 3, pds: 1 },
-  upgrades: {},
-  techs: [],
-};
+const total = (side: SideInput, types: readonly UnitType[]) =>
+  types.reduce((sum, t) => sum + (side.counts[t] ?? 0), 0);
+
+/** Why the simulation can't run yet, or null when it can. */
+function blockedReason(attacker: SideInput, defender: SideInput): string | null {
+  if (!attacker.factionId || !defender.factionId) return 'Choose a faction for both sides.';
+  if (total(attacker, SHIP_TYPES) === 0) return 'Add at least one ship to the attacker.';
+  if (total(defender, ALL_UNIT_TYPES) === 0) return 'Add at least one unit to the defender.';
+  return null;
+}
 
 export function App() {
-  const [attacker, setAttacker] = useState(initialAttacker);
-  const [defender, setDefender] = useState(initialDefender);
+  const [attacker, setAttacker] = useState(emptySide);
+  const [defender, setDefender] = useState(emptySide);
   const [iterations, setIterations] = useState(10000);
   const [invade, setInvade] = useState(true);
   const [wormhole, setWormhole] = useState(false);
@@ -33,7 +39,10 @@ export function App() {
 
   useEffect(() => () => workerRef.current?.terminate(), []);
 
+  const blocked = blockedReason(attacker, defender);
+
   const run = () => {
+    if (blocked) return;
     workerRef.current?.terminate();
     const input: SimulationInput = { attacker, defender, options: { iterations, invade, wormhole } };
     const worker = new SimWorker();
@@ -54,8 +63,8 @@ export function App() {
   };
 
   const swap = () => {
-    // Only space units carry over cleanly; planet units stay with the defender role.
-    setAttacker({ ...defender, counts: { ...defender.counts, pds: 0, spacedock: 0 } });
+    // The attacker has no planet in the system, so a space dock can't come with it.
+    setAttacker({ ...defender, counts: { ...defender.counts, spacedock: 0 } });
     setDefender(attacker);
   };
 
@@ -91,25 +100,25 @@ export function App() {
           <button className="secondary" onClick={swap}>
             ⇄ Swap
           </button>
-          <button className="primary" onClick={run} disabled={running}>
+          <button className="primary" onClick={run} disabled={running || !!blocked} title={blocked ?? undefined}>
             {running ? 'Simulating…' : 'Run simulation'}
           </button>
         </div>
       </header>
 
       <main className="layout">
-        <SidePanel role="attacker" value={attacker} onChange={setAttacker} />
+        <SidePanel role="attacker" value={attacker} otherFactionId={defender.factionId} onChange={setAttacker} />
         <div className="center">
           {error && <div className="error">{error}</div>}
           {last ? (
             <Results result={last.result} input={last.input} />
           ) : (
             <div className="empty">
-              <p>Set up both fleets, then run the simulation to see each side's odds.</p>
+              <p>{blocked ?? 'Ready. Run the simulation to see each side’s odds.'}</p>
             </div>
           )}
         </div>
-        <SidePanel role="defender" value={defender} onChange={setDefender} />
+        <SidePanel role="defender" value={defender} otherFactionId={attacker.factionId} onChange={setDefender} />
       </main>
     </div>
   );

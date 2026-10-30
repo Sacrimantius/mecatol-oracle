@@ -221,19 +221,86 @@ button:not(:disabled):hover {
   color: var(--muted);
 }
 
-.info-dot {
+.panel-hint {
+  margin: 24px 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.info-tip {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
   margin-left: 6px;
   border-radius: 50%;
+  font-family: Georgia, serif;
   font-size: 10px;
   font-style: italic;
+  font-weight: 700;
+  text-transform: none;
+  letter-spacing: 0;
   background: var(--border);
-  color: var(--muted);
+  color: var(--text);
   vertical-align: 1px;
+  cursor: help;
+}
+
+.info-tip:hover,
+.info-tip:focus-visible {
+  background: var(--gold);
+  color: #1a1305;
+  outline: none;
+}
+
+.info-pop {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  z-index: 10;
+  width: 320px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #0f1626;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--text);
+  text-align: left;
+  cursor: default;
+}
+
+.info-pop.left {
+  left: -8px;
+}
+
+.info-pop.right {
+  right: -8px;
+}
+
+.info-tip:hover .info-pop,
+.info-tip:focus-visible .info-pop {
+  display: block;
+}
+
+.info-pop p,
+.info-pop ol {
+  margin: 6px 0 0;
+}
+
+.info-pop ol {
+  padding-left: 18px;
+}
+
+.info-pop li + li {
+  margin-top: 4px;
 }
 
 button.upgrade {

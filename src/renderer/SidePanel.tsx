@@ -1,7 +1,8 @@
 import { FACTIONS, getFaction, getUnitDefinition } from '../engine/data/factions';
 import { techsForFaction } from '../engine/data/techs';
-import type { Role, SideInput, TechId, UnitType } from '../engine/types';
+import type { Faction, Role, SideInput, TechId, UnitType } from '../engine/types';
 import { describeStats } from './format';
+import { InfoTip } from './InfoTip';
 
 const SPACE_UNITS: UnitType[] = ['flagship', 'warsun', 'dreadnought', 'carrier', 'cruiser', 'destroyer', 'fighter'];
 
@@ -21,19 +22,56 @@ const MAX_COUNT: Record<UnitType, number> = {
 interface Props {
   role: Role;
   value: SideInput;
+  /** The other side's faction, which can't be picked here (no mirror matches). */
+  otherFactionId: string;
   onChange: (value: SideInput) => void;
 }
 
-export function SidePanel({ role, value, onChange }: Props) {
-  const faction = getFaction(value.factionId);
-  const groundUnits: UnitType[] = role === 'defender' ? ['infantry', 'pds', 'spacedock'] : ['infantry'];
-  const techs = techsForFaction(value.factionId);
+export function SidePanel({ role, value, otherFactionId, onChange }: Props) {
+  const faction = value.factionId ? getFaction(value.factionId) : null;
 
   const setFaction = (factionId: string) => {
     // Drop faction techs the new faction cannot use.
     const allowed = new Set(techsForFaction(factionId).map((t) => t.id));
     onChange({ ...value, factionId, techs: value.techs.filter((t) => allowed.has(t)) });
   };
+
+  return (
+    <section className={`side-panel ${role}`}>
+      <header>
+        <h2>{role === 'attacker' ? 'Attacker' : 'Defender'}</h2>
+        <select value={value.factionId} onChange={(e) => setFaction(e.target.value)}>
+          <option value="" disabled>
+            Choose a faction…
+          </option>
+          {FACTIONS.map((f) => (
+            <option key={f.id} value={f.id} disabled={f.id === otherFactionId}>
+              {f.name}
+              {f.id === otherFactionId ? ` (${role === 'attacker' ? 'defender' : 'attacker'})` : ''}
+            </option>
+          ))}
+        </select>
+      </header>
+
+      {faction ? (
+        <FactionUnits role={role} faction={faction} value={value} onChange={onChange} />
+      ) : (
+        <p className="panel-hint">Choose a faction to add units and technologies.</p>
+      )}
+    </section>
+  );
+}
+
+interface FactionUnitsProps {
+  role: Role;
+  faction: Faction;
+  value: SideInput;
+  onChange: (value: SideInput) => void;
+}
+
+function FactionUnits({ role, faction, value, onChange }: FactionUnitsProps) {
+  const techs = techsForFaction(faction.id);
+
   const setCount = (type: UnitType, count: number) =>
     onChange({ ...value, counts: { ...value.counts, [type]: Math.min(MAX_COUNT[type], Math.max(0, count)) } });
   const toggleUpgrade = (type: UnitType) =>
@@ -51,10 +89,10 @@ export function SidePanel({ role, value, onChange }: Props) {
     const count = value.counts[type] ?? 0;
     return (
       <div className={`unit-row${count > 0 ? ' active' : ''}`} key={type}>
-        <div className="unit-info" title={stats.text}>
+        <div className="unit-info">
           <div className="unit-name">
             {stats.name}
-            {stats.text && <span className="info-dot">i</span>}
+            {stats.text && <InfoTip>{stats.text}</InfoTip>}
           </div>
           <div className="unit-stats">{describeStats(stats)}</div>
         </div>
@@ -89,18 +127,7 @@ export function SidePanel({ role, value, onChange }: Props) {
   };
 
   return (
-    <section className={`side-panel ${role}`}>
-      <header>
-        <h2>{role === 'attacker' ? 'Attacker' : 'Defender'}</h2>
-        <select value={value.factionId} onChange={(e) => setFaction(e.target.value)}>
-          {FACTIONS.map((f) => (
-            <option key={f.id} value={f.id}>
-              {f.name}
-            </option>
-          ))}
-        </select>
-      </header>
-
+    <>
       {faction.abilityText.length > 0 && (
         <ul className="ability-notes">
           {faction.abilityText.map((t) => (
@@ -112,8 +139,25 @@ export function SidePanel({ role, value, onChange }: Props) {
       <h3>Ships in system</h3>
       {SPACE_UNITS.map(renderRow)}
 
-      <h3>{role === 'defender' ? 'On the planet' : 'Ground forces carried'}</h3>
-      {groundUnits.map(renderRow)}
+      {role === 'defender' ? (
+        <>
+          <h3>On the planet</h3>
+          {(['infantry', 'pds', 'spacedock'] as const).map(renderRow)}
+        </>
+      ) : (
+        <>
+          <h3>Ground forces carried</h3>
+          {renderRow('infantry')}
+          <h3>
+            Space cannon support
+            <InfoTip>
+              Your PDS on other planets in this system, or in adjacent systems with PDS II. They fire during
+              Space Cannon Offense only.
+            </InfoTip>
+          </h3>
+          {renderRow('pds')}
+        </>
+      )}
 
       <h3>Combat technologies</h3>
       <div className="tech-list">
@@ -125,6 +169,6 @@ export function SidePanel({ role, value, onChange }: Props) {
           </label>
         ))}
       </div>
-    </section>
+    </>
   );
 }

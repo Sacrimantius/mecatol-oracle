@@ -95,6 +95,24 @@ describe('simulateOnce with fixed dice', () => {
     expect(withMentak.survivors.defender.dreadnought).toBeUndefined();
   });
 
+  it("fires the attacker's PDS during Space Cannon Offense", () => {
+    // The PDS kills the lone defending fighter before space combat starts.
+    const a = side('arborec', { cruiser: 1, pds: 1 });
+    const d = side('hacan', { fighter: 1 });
+    const result = simulateOnce(input(a, d), alwaysTen);
+    expect(result.space).toBe('noCombat');
+    expect(result.winner).toBe('attacker');
+    expect(result.survivors.attacker).toEqual({ cruiser: 1, pds: 1 });
+  });
+
+  it("keeps the attacker's supporting PDS when its fleet is destroyed", () => {
+    const a = side('arborec', { fighter: 1, infantry: 2, pds: 1 });
+    const d = side('hacan', { dreadnought: 2 });
+    const result = simulateOnce(input(a, d, { invade: true }), alwaysTen);
+    expect(result.winner).toBe('defender');
+    expect(result.survivors.attacker).toEqual({ pds: 1 });
+  });
+
   it('only lets Anti-Fighter Barrage hit fighters', () => {
     const a = side('arborec', { destroyer: 1 });
     const d = side('hacan', { cruiser: 1 });

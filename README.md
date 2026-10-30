@@ -32,7 +32,7 @@ Content covers the **17 base-game factions**, every generic unit and its upgrade
 
 Each battle runs these steps in order:
 
-1. **Space Cannon Offense.** Both sides fire; the attacker fires first.
+1. **Space Cannon Offense.** Both sides fire; the attacker fires first. The attacker's PDS are "space cannon support": PDS on other planets in the system, or in adjacent systems with PDS II. They fire only in this step.
 2. **Space combat.** Start-of-combat effects come first, then Anti-Fighter Barrage in round 1, then combat rounds until one or both sides have no ships left.
 3. **Invasion**, if enabled and the attacker controls space:
    1. Bombardment (blocked by Planetary Shield unless a War Sun or the Letnev flagship is present)
