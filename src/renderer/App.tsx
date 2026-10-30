@@ -30,7 +30,7 @@ export function App() {
   const [attacker, setAttacker] = useState(emptySide);
   const [defender, setDefender] = useState(emptySide);
   const [iterations, setIterations] = useState(10000);
-  const [invade, setInvade] = useState(true);
+  const [invade, setInvade] = useState(false);
   const [wormhole, setWormhole] = useState(false);
   const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);

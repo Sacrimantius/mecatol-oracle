@@ -257,11 +257,9 @@ button:not(:disabled):hover {
 }
 
 .info-pop {
-  display: none;
-  position: absolute;
-  top: calc(100% + 6px);
+  position: fixed;
   z-index: 10;
-  width: 320px;
+  width: min(320px, calc(100vw - 16px));
   padding: 12px 14px;
   border: 1px solid var(--border);
   border-radius: 8px;
@@ -275,19 +273,6 @@ button:not(:disabled):hover {
   color: var(--text);
   text-align: left;
   cursor: default;
-}
-
-.info-pop.left {
-  left: -8px;
-}
-
-.info-pop.right {
-  right: -8px;
-}
-
-.info-tip:hover .info-pop,
-.info-tip:focus-visible .info-pop {
-  display: block;
 }
 
 .info-pop p,

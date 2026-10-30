@@ -33,7 +33,7 @@ function Stat({ label, value, tone, info }: StatProps) {
       <span className="stat-value">{percent(value)}</span>
       <span className="stat-label">
         {label}
-        {info && <InfoTip align="right">{info}</InfoTip>}
+        {info && <InfoTip>{info}</InfoTip>}
       </span>
     </div>
   );
@@ -151,7 +151,7 @@ export function Results({ result, input }: Props) {
             <div className={`survivor-table ${role}`} key={role}>
               <h3>
                 {role === 'attacker' ? 'Attacker' : 'Defender'} average survivors
-                <InfoTip align={role === 'attacker' ? 'left' : 'right'}>
+                <InfoTip>
                   <HitOrderInfo />
                 </InfoTip>
               </h3>
