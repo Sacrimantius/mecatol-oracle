@@ -35,6 +35,13 @@ describe('parseBgaLog on the whole game log', () => {
     expect(all.combats[28].title).toBe('Player 3 invades Player 4 at ( ARINAM / MEER )');
   });
 
+  it("points at each combat's lines in the pasted text", () => {
+    all.combats.forEach((c, i) => {
+      // The selection is exactly the block under its hand-written header.
+      expect(logs.slice(c.source.start, c.source.end).trim()).toBe(blocks[i].text.trim());
+    });
+  });
+
   it("works out every player's faction", () => {
     expect(all.factions).toEqual(FACTIONS);
   });
