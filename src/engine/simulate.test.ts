@@ -105,6 +105,15 @@ describe('simulateOnce with fixed dice', () => {
     expect(result.survivors.defender).toEqual({});
   });
 
+  it('starts damaged units without Sustain Damage', () => {
+    // An undamaged dreadnought absorbs the cruiser's hit and wins; a damaged one dies with it.
+    const cruiser = side('hacan', { cruiser: 1 });
+    const fresh = side('arborec', { dreadnought: 1 });
+    const damaged = side('arborec', { dreadnought: 1 }, { damaged: { dreadnought: 1 } });
+    expect(simulateOnce(input(fresh, cruiser), alwaysTen).winner).toBe('attacker');
+    expect(simulateOnce(input(damaged, cruiser), alwaysTen).winner).toBe('draw');
+  });
+
   it("fires the attacker's PDS during Space Cannon Offense", () => {
     // The PDS kills the lone defending fighter before space combat starts.
     const a = side('arborec', { cruiser: 1, pds: 1 });

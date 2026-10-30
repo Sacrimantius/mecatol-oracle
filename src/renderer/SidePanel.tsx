@@ -1,7 +1,9 @@
 import { FACTIONS, getFaction, getUnitDefinition } from '../engine/data/factions';
 import { techsForFaction } from '../engine/data/techs';
 import type { Faction, Role, SideInput, TechId, UnitType } from '../engine/types';
+import type { SideFlags } from '../import/bga';
 import { describeStats } from './format';
+import { FlagTip, type FlagKey } from './importFlags';
 import { InfoTip } from './InfoTip';
 
 const SPACE_UNITS: UnitType[] = ['flagship', 'warsun', 'dreadnought', 'carrier', 'cruiser', 'destroyer', 'fighter'];
@@ -24,10 +26,13 @@ interface Props {
   value: SideInput;
   /** The other side's faction, which can't be picked here (no mirror matches). */
   otherFactionId: string;
+  /** Notes from a BGA log import on how each value was worked out. */
+  flags: SideFlags;
+  onDismissFlag: (key: FlagKey) => void;
   onChange: (value: SideInput) => void;
 }
 
-export function SidePanel({ role, value, otherFactionId, onChange }: Props) {
+export function SidePanel({ role, value, otherFactionId, flags, onDismissFlag, onChange }: Props) {
   const faction = value.factionId ? getFaction(value.factionId) : null;
 
   const setFaction = (factionId: string) => {
@@ -39,7 +44,10 @@ export function SidePanel({ role, value, otherFactionId, onChange }: Props) {
   return (
     <section className={`side-panel ${role}`}>
       <header>
-        <h2>{role === 'attacker' ? 'Attacker' : 'Defender'}</h2>
+        <h2>
+          {role === 'attacker' ? 'Attacker' : 'Defender'}
+          <FlagTip flags={flags.faction} onDismiss={() => onDismissFlag({ kind: 'faction' })} />
+        </h2>
         <select value={value.factionId} onChange={(e) => setFaction(e.target.value)}>
           <option value="" disabled>
             Choose a faction…
@@ -54,7 +62,14 @@ export function SidePanel({ role, value, otherFactionId, onChange }: Props) {
       </header>
 
       {faction ? (
-        <FactionUnits role={role} faction={faction} value={value} onChange={onChange} />
+        <FactionUnits
+          role={role}
+          faction={faction}
+          value={value}
+          flags={flags}
+          onDismissFlag={onDismissFlag}
+          onChange={onChange}
+        />
       ) : (
         <p className="panel-hint">Choose a faction to add units and technologies.</p>
       )}
@@ -66,14 +81,21 @@ interface FactionUnitsProps {
   role: Role;
   faction: Faction;
   value: SideInput;
+  flags: SideFlags;
+  onDismissFlag: (key: FlagKey) => void;
   onChange: (value: SideInput) => void;
 }
 
-function FactionUnits({ role, faction, value, onChange }: FactionUnitsProps) {
+function FactionUnits({ role, faction, value, flags, onDismissFlag, onChange }: FactionUnitsProps) {
   const techs = techsForFaction(faction.id);
 
-  const setCount = (type: UnitType, count: number) =>
-    onChange({ ...value, counts: { ...value.counts, [type]: Math.min(MAX_COUNT[type], Math.max(0, count)) } });
+  const setCount = (type: UnitType, count: number) => {
+    const next = Math.min(MAX_COUNT[type], Math.max(0, count));
+    const damaged = Math.min(value.damaged?.[type] ?? 0, next);
+    onChange({ ...value, counts: { ...value.counts, [type]: next }, damaged: { ...value.damaged, [type]: damaged } });
+  };
+  const setDamaged = (type: UnitType, n: number) =>
+    onChange({ ...value, damaged: { ...value.damaged, [type]: Math.min(value.counts[type] ?? 0, Math.max(0, n)) } });
   const toggleUpgrade = (type: UnitType) =>
     onChange({ ...value, upgrades: { ...value.upgrades, [type]: !value.upgrades[type] } });
   const toggleTech = (id: TechId) =>
@@ -87,23 +109,41 @@ function FactionUnits({ role, faction, value, onChange }: FactionUnitsProps) {
     const upgraded = !!value.upgrades[type] && !!def.upgraded;
     const stats = upgraded ? def.upgraded! : def.base;
     const count = value.counts[type] ?? 0;
+    const damaged = value.damaged?.[type] ?? 0;
     return (
       <div className={`unit-row${count > 0 ? ' active' : ''}`} key={type}>
         <div className="unit-info">
           <div className="unit-name">
             {stats.name}
             {stats.text && <InfoTip>{stats.text}</InfoTip>}
+            <FlagTip flags={flags.units[type]} onDismiss={() => onDismissFlag({ kind: 'units', type })} />
           </div>
-          <div className="unit-stats">{describeStats(stats)}</div>
+          <div className="unit-stats">
+            {describeStats(stats)}
+            {stats.sustainDamage && count > 0 && (
+              <span className={`damaged-control${damaged ? ' on' : ''}`}>
+                <button onClick={() => setDamaged(type, damaged - 1)} disabled={damaged === 0} aria-label="One fewer damaged">
+                  −
+                </button>
+                {damaged} damaged
+                <button onClick={() => setDamaged(type, damaged + 1)} disabled={damaged >= count} aria-label="One more damaged">
+                  +
+                </button>
+              </span>
+            )}
+          </div>
         </div>
         {def.upgraded ? (
-          <button
-            className={`upgrade${upgraded ? ' on' : ''}`}
-            onClick={() => toggleUpgrade(type)}
-            title={upgraded ? `Using ${def.upgraded.name}` : `Upgrade to ${def.upgraded.name}`}
-          >
-            II
-          </button>
+          <span className="upgrade-cell">
+            <FlagTip flags={flags.upgrades[type]} onDismiss={() => onDismissFlag({ kind: 'upgrades', type })} />
+            <button
+              className={`upgrade${upgraded ? ' on' : ''}`}
+              onClick={() => toggleUpgrade(type)}
+              title={upgraded ? `Using ${def.upgraded.name}` : `Upgrade to ${def.upgraded.name}`}
+            >
+              II
+            </button>
+          </span>
         ) : (
           <span className="upgrade-placeholder" />
         )}
@@ -166,6 +206,7 @@ function FactionUnits({ role, faction, value, onChange }: FactionUnitsProps) {
             <input type="checkbox" checked={value.techs.includes(tech.id)} onChange={() => toggleTech(tech.id)} />
             {tech.name}
             {tech.faction && <span className="faction-tag">faction</span>}
+            <FlagTip flags={flags.techs[tech.id]} onDismiss={() => onDismissFlag({ kind: 'techs', tech: tech.id })} />
           </label>
         ))}
       </div>

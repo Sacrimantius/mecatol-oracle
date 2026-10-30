@@ -1,0 +1,1603 @@
+BGA Twilight Imperium - combat logs extracted from one full game log
+Players: Thamsi, Webbly, Amynta, Sacrimantius
+Format: raw BGA log text, NEWEST LINE FIRST (BGA's native order). Each block runs from the
+end of a tactical action (top) back to its activation (bottom), so it includes the fleet movement
+that set up the combat. The "=== ... ===" header lines were added by hand and are NOT part of the
+BGA output. Blocks are in the same order as in the log (newest combat first).
+
+=== Combat 1 | Round 9 | Webbly attacks Thamsi at ( NAR / JOL ) | space cannon offense + 3 space combat rounds (game-ending) ===
+Thamsi won space combat against Webbly.
+Thamsi repaired 1 dreadnought(s) in ( NAR / JOL ).
+Thamsi used DURANIUM ARMOR to repair 1 dreadnought.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( NAR / JOL ).
+Thamsi assigned 1 hit from Webbly in ( NAR / JOL ).
+Thamsi destroyed 1 of Webbly's damaged dreadnought(s) in ( NAR / JOL ).
+Webbly assigned 2 hits from Thamsi in ( NAR / JOL ).
+Thamsi rolled 9 dice for 2 hits: Destroyer [ 5 ] [ 0 ] [ 1 ] [ 8 ] , Dreadnought [ 8 ] , Fighter [ 2 ] [ 1 ] [ 6 ] [ 4 ] DetailsEffects:FRAGILE
+Webbly rolled 1 die for 1 hit: Dreadnought [ 9 ] Details
+Webbly and Thamsi started space combat round 3.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( NAR / JOL ).
+Thamsi assigned 1 hit from Webbly in ( NAR / JOL ).
+Thamsi damaged 1 dreadnought(s) in ( NAR / JOL ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Thamsi destroyed 2 of Webbly's cruiser(s) in ( NAR / JOL ).
+Webbly assigned 2 hits from Thamsi in ( NAR / JOL ).
+Thamsi rolled 10 dice for 2 hits: Destroyer [ 8 ] [ 0 ] [ 7 ] [ 9 ] , Dreadnought [ 2 ] , Fighter [ 1 ] [ 6 ] [ 3 ] [ 5 ] [ 4 ] DetailsEffects:FRAGILE
+Webbly rolled 3 dice for 2 hits: Cruiser [ 1 ] [ 9 ] , Dreadnought [ 9 ] Details
+Webbly and Thamsi started space combat round 2.
+Thamsi repaired 1 dreadnought(s) in ( NAR / JOL ).
+Thamsi used DURANIUM ARMOR to repair 1 dreadnought.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( NAR / JOL ).
+Thamsi assigned 1 hit from Webbly in ( NAR / JOL ).
+Thamsi played SHIELDS HOLDING to cancel 2 hits.
+Thamsi woke up ( before hits are assigned ).
+Thamsi destroyed 3 of Webbly's cruiser(s) in ( NAR / JOL ).
+Thamsi destroyed 1 of Webbly's carrier(s) in ( NAR / JOL ).
+Webbly assigned 4 hits from Thamsi in ( NAR / JOL ).
+Webbly's SHIELDS HOLDING action card was canceled.
+Thamsi played SABOTAGE.
+Thamsi woke up ( action card played ).
+Webbly played SHIELDS HOLDING to cancel 2 hits.
+Thamsi rolled 11 dice for 4 hits: Destroyer [ 6 ] [ 3 ] [ 9 ] [ 8 ] , Dreadnought [ 1 ] , Fighter [ 8 ] [ 7 ] [ 9 ] [ 5 ] [ 5 ] [ 7 ] DetailsEffects:FRAGILE
+Webbly rolled 7 dice for 3 hits: Cruiser [ 6 ] [ 6 ] [ 5 ] [ 10 ] [ 7 ] , Dreadnought [ 7 ] , Carrier [ 7 ] Details
+Thamsi destroyed 2 of Webbly's fighter(s) in ( NAR / JOL ).
+Webbly passed ( before hits are assigned ).
+Webbly woke up ( before hits are assigned ).
+Thamsi rolled 12 dice for 9 hits against Webbly in ANTI-FIGHTER BARRAGE: Destroyer [ 6, 8, 10 ] [ 5, 3, 7 ] [ 3, 6, 10 ] [ 7, 10, 10 ]
+Thamsi destroyed 1 of Webbly's cruiser(s) in ( NAR / JOL ).
+Webbly chose 1 cruiser to be destroyed by ASSAULT CANNON at ( NAR / JOL ).
+Webbly woke up.
+Thamsi used ASSAULT CANNON.
+Thamsi woke up ( when a combat round starts or ends ).
+Webbly and Thamsi started space combat round 1 on ( NAR / JOL ).
+Webbly damaged 1 dreadnought(s) in ( NAR / JOL ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Thamsi rolled 2 dice for 1 hit against Webbly in Space Cannon Offense: PDS [ 4, 6 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly destroyed 1 of Thamsi's carrier(s) in ( NAR / JOL ).
+Thamsi assigned 1 hit from Webbly in ( NAR / JOL ).
+Thamsi damaged 1 dreadnought(s) in ( NAR / JOL ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 2 dice for 2 hits against Thamsi in Space Cannon Offense: PDS [ 6 ] [ 8 ] DetailsEffects:ANTIMASS DEFLECTORS
+Webbly removed 3 fighter(s) from ( ABYZ / FRIA ).
+Webbly must remove unit(s) due to exceeding transport capacity.
+Webbly added 2 fighter(s) to ( NAR / JOL ).
+Webbly added 3 infantry to ( NAR / JOL ).
+Webbly added 6 cruiser(s) to ( NAR / JOL ).
+Webbly added 1 dreadnought(s) to ( NAR / JOL ).
+Webbly added 1 carrier(s) to ( NAR / JOL ).
+Webbly removed 3 infantry from ABYZ.
+Webbly removed 2 fighter(s) from ( ABYZ / FRIA ).
+Webbly removed 6 cruiser(s) from ( ABYZ / FRIA ).
+Webbly removed 1 dreadnought(s) from ( ABYZ / FRIA ).
+Webbly removed 1 carrier(s) from ( ABYZ / FRIA ).
+Webbly used a tactical movement to move 13 unit(s) to ( NAR / JOL ).
+Sacrimantius gained 1 trade good(s).
+Thamsi lost 1 trade good(s).
+Sacrimantius used PILLAGE on Thamsi to take 1 trade good.
+Sacrimantius woke up ( PILLAGE ).
+Thamsi gained 4 trade good(s).
+Thamsi used E-RES SIPHONS.
+Thamsi added 1 infantry to JOL.
+Thamsi added 1 infantry to NAR.
+Thamsi used MAGEN DEFENSE GRID to place 2 infantry.
+Webbly placed a tactic command token in ( NAR / JOL ).
+Webbly activated ( NAR / JOL ) to start a tactical action.
+
+=== Combat 2 | Round 9 | Amynta attacks Thamsi at ( LISIS II / RAGH ) | 1 space combat round ===
+Amynta finished a tactical action in ( LISIS II / RAGH ).
+Amynta gained control of RAGH.
+Thamsi lost control of RAGH.
+Amynta gained control of LISIS II.
+Thamsi lost control of LISIS II.
+Amynta added 1 infantry to RAGH.
+Amynta removed 1 infantry from ( LISIS II / RAGH ).
+Amynta added 1 infantry to LISIS II.
+Amynta removed 1 infantry from ( LISIS II / RAGH ).
+Amynta committed ground force(s): 1 infantry to LISIS II (Thamsi) ,1 infantry to RAGH (Thamsi)
+Amynta is the only faction in the ( LISIS II / RAGH ) space area.
+Amynta won space combat against Thamsi.
+Amynta destroyed 1 of Thamsi's destroyer(s) in ( LISIS II / RAGH ).
+Thamsi assigned 4 hits from Amynta in ( LISIS II / RAGH ).
+Thamsi passed ( before hits are assigned ).
+Thamsi woke up ( before hits are assigned ).
+Thamsi rolled 1 die for 0 hits: Destroyer [ 4 ] DetailsEffects:FRAGILE
+Amynta rolled 4 dice for 4 hits: War Sun [ 4, 5, 3 ] , Destroyer [ 9 ] Details
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Amynta and Thamsi started space combat round 1 on ( LISIS II / RAGH ).
+Amynta added 2 infantry to ( LISIS II / RAGH ).
+Amynta added 1 war sun(s) to ( LISIS II / RAGH ).
+Amynta added 1 destroyer(s) to ( LISIS II / RAGH ).
+Amynta removed 1 infantry from SAKULAG.
+Amynta removed 1 infantry from LAZAR.
+Amynta removed 1 war sun(s) from ( LAZAR / SAKULAG ).
+Amynta removed 1 destroyer(s) from ( LAZAR / SAKULAG ).
+Amynta used a tactical movement to move 4 unit(s) to ( LISIS II / RAGH ).
+Sacrimantius gained 1 trade good(s).
+Thamsi lost 1 trade good(s).
+Sacrimantius used PILLAGE on Thamsi to take 1 trade good.
+Sacrimantius woke up ( PILLAGE ).
+Thamsi gained 4 trade good(s).
+Thamsi used E-RES SIPHONS.
+Amynta placed a tactic command token in ( LISIS II / RAGH ).
+Amynta activated ( LISIS II / RAGH ) to start a tactical action.
+
+=== Combat 3 | Round 9 | Thamsi attacks Webbly at ( MECATOL REX ) | space cannon offense (Amynta) + 3 space combat rounds ===
+Thamsi finished a tactical action in ( MECATOL REX ).
+Thamsi removed 2 infantry from ( MECATOL REX ).
+Thamsi must remove unit(s) due to exceeding transport capacity.
+Webbly won space combat against Thamsi.
+Thamsi destroyed 1 of Webbly's cruiser(s) in ( MECATOL REX ).
+Webbly assigned 1 hit from Thamsi in ( MECATOL REX ).
+Webbly destroyed 1 of Thamsi's damaged dreadnought(s) in ( MECATOL REX ).
+Thamsi assigned 3 hits from Webbly in ( MECATOL REX ).
+Webbly rolled 7 dice for 3 hits: Flagship [ 1, 2 ] , Cruiser [ 7 ] , Dreadnought [ 2 ] [ 7 ] [ 1 ] [ 10 ] Details
+Thamsi rolled 1 die for 1 hit: Dreadnought [ 7 ] DetailsEffects:FRAGILE
+Thamsi and Webbly started space combat round 3.
+Thamsi destroyed 1 of Webbly's fighter(s) in ( MECATOL REX ).
+Webbly assigned 1 hit from Thamsi in ( MECATOL REX ).
+Webbly destroyed 2 of Thamsi's destroyer(s) in ( MECATOL REX ).
+Webbly destroyed 1 of Thamsi's fighter(s) in ( MECATOL REX ).
+Thamsi assigned 3 hits from Webbly in ( MECATOL REX ).
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 8 dice for 4 hits: Flagship [ 7, 4 ] , Cruiser [ 4 ] , Dreadnought [ 7 ] [ 3 ] [ 9 ] [ 2 ] , Fighter [ 9 ] Details
+Thamsi rolled 4 dice for 1 hit: Destroyer [ 1 ] [ 4 ] , Fighter [ 3 ] , Dreadnought [ 9 ] DetailsEffects:FRAGILE
+Thamsi and Webbly started space combat round 2.
+Webbly damaged 1 flagship in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Thamsi repaired 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used DURANIUM ARMOR to repair 1 dreadnought.
+Webbly destroyed 1 of Thamsi's carrier(s) in ( MECATOL REX ).
+Webbly destroyed 3 of Thamsi's fighter(s) in ( MECATOL REX ).
+Thamsi assigned 4 hits from Webbly in ( MECATOL REX ).
+Webbly rolled 8 dice for 4 hits: Flagship [ 7, 3 ] , Cruiser [ 9 ] , Dreadnought [ 3 ] [ 10 ] [ 2 ] [ 10 ] , Fighter [ 5 ] Details
+Thamsi rolled 8 dice for 5 hits: Destroyer [ 7 ] [ 8 ] , Fighter [ 9 ] [ 10 ] [ 7 ] [ 1 ] , Dreadnought [ 10 ] , Carrier [ 9 ] DetailsEffects:FRAGILE, MORALE BOOST
+Webbly destroyed 2 of Thamsi's fighter(s) in ( MECATOL REX ).
+Webbly rolled 4 dice for 2 hits against Thamsi in ANTI-FIGHTER BARRAGE: Flagship [ 9, 6, 3, 4 ]
+Thamsi destroyed 3 of Webbly's fighter(s) in ( MECATOL REX ).
+Thamsi rolled 6 dice for 3 hits against Webbly in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 7, 5 ] [ 1, 10, 7 ]
+Thamsi destroyed 1 of Webbly's destroyer(s) in ( MECATOL REX ).
+Webbly chose 1 destroyer to be destroyed by ASSAULT CANNON at ( MECATOL REX ).
+Webbly woke up.
+Thamsi used ASSAULT CANNON.
+Thamsi played MORALE BOOST.
+Thamsi and Webbly started space combat round 1 on ( MECATOL REX ).
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Amynta rolled 3 dice for 1 hit against Thamsi in Space Cannon Offense: PDS [ 1, 4 ] [ 7 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Thamsi added 4 fighter(s) to ( MECATOL REX ).
+Thamsi added 2 infantry to ( MECATOL REX ).
+Thamsi added 1 carrier(s) to ( MECATOL REX ).
+Thamsi removed 1 infantry from RAGH.
+Thamsi removed 1 infantry from LISIS II.
+Thamsi removed 4 fighter(s) from ( LISIS II / RAGH ).
+Thamsi removed 1 carrier(s) from ( LISIS II / RAGH ).
+Thamsi added 1 dreadnought(s) to ( MECATOL REX ).
+Thamsi removed 1 dreadnought(s) from ( QUCEN'N / RARRON ).
+Thamsi added 2 destroyer(s) to ( MECATOL REX ).
+Thamsi added 2 fighter(s) to ( MECATOL REX ).
+Thamsi removed 2 destroyer(s) from ( MELLON / ZOHBAT ).
+Thamsi removed 2 fighter(s) from ( MELLON / ZOHBAT ).
+Thamsi used a tactical movement to move 12 unit(s) to ( MECATOL REX ).
+Thamsi placed a tactic command token in ( MECATOL REX ).
+Thamsi activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 4 | Round 9 | Webbly moves into ( MECATOL REX ) held by Thamsi | space cannon offense only (Amynta, 0 hits), no space combat ===
+Webbly finished a tactical action in ( MECATOL REX ).
+Webbly added 2 infantry to MECATOL REX.
+Webbly spent 0 resource(s) to produce: 2 infantry
+Webbly gained 1 trade good(s).
+Webbly used SCAVENGE on MECATOL REX for 1 trade good.
+Webbly gained control of MECATOL REX.
+Thamsi lost control of MECATOL REX.
+Thamsi removed 1 space dock(s) from MECATOL REX.Unit(s) were destroyed due to loss of planet control.
+Webbly added 2 infantry to MECATOL REX.
+Webbly removed 2 infantry from ( MECATOL REX ).
+Webbly committed ground force(s): 2 infantry to MECATOL REX (Thamsi)
+Amynta rolled 3 dice for 0 hits against Webbly in Space Cannon Offense: PDS [ 2, 4 ] [ 0 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly added 4 fighter(s) to ( MECATOL REX ).
+Webbly added 2 infantry to ( MECATOL REX ).
+Webbly added 1 flagship to ( MECATOL REX ).
+Webbly added 1 cruiser(s) to ( MECATOL REX ).
+Webbly added 4 dreadnought(s) to ( MECATOL REX ).
+Webbly added 1 destroyer(s) to ( MECATOL REX ).
+Webbly added 1 space dock(s) to ( MECATOL REX ).
+Webbly removed 2 infantry from SAUDOR.
+Webbly removed 4 fighter(s) from ( SAUDOR ).
+Webbly removed 1 flagship from ( SAUDOR ).
+Webbly removed 1 cruiser(s) from ( SAUDOR ).
+Webbly removed 4 dreadnought(s) from ( SAUDOR ).
+Webbly removed 1 destroyer(s) from ( SAUDOR ).
+Webbly removed 1 space dock(s) from ( SAUDOR ).
+Webbly used a tactical movement to move 14 unit(s) to ( MECATOL REX ).
+Webbly placed a tactic command token in ( MECATOL REX ).
+Webbly activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 5 | Round 8 | Thamsi invades Sacrimantius at ( QUCEN'N / RARRON ) | bombardment only ===
+Thamsi finished a tactical action in ( QUCEN'N / RARRON ).
+Thamsi gained control of RARRON.
+Sacrimantius lost control of RARRON.
+Thamsi added 1 infantry to RARRON.
+Thamsi removed 1 infantry from ( QUCEN'N / RARRON ).
+Thamsi committed ground force(s): 1 infantry to RARRON (Sacrimantius)
+Thamsi destroyed 1 of Sacrimantius's infantry on QUCEN'N.
+Thamsi rolled 2 dice for 4 hits on QUCEN'N (Sacrimantius) using BOMBARDMENT: Dreadnought [ 6, 9 ] DetailsEffects:PLASMA SCORING, X-89 BACTERIAL WEAPON
+Thamsi added 1 infantry to ( QUCEN'N / RARRON ).
+Thamsi added 1 dreadnought(s) to ( QUCEN'N / RARRON ).
+Thamsi removed 1 infantry from MECATOL REX.
+Thamsi removed 1 dreadnought(s) from ( MECATOL REX ).
+Thamsi used a tactical movement to move 2 unit(s) to ( QUCEN'N / RARRON ).
+Thamsi placed a tactic command token in ( QUCEN'N / RARRON ).
+Thamsi activated ( QUCEN'N / RARRON ) to start a tactical action.
+
+=== Combat 6 | Round 8 | Amynta invades Webbly at ( WELLON ) | space cannon offense (Thamsi) only ===
+Amynta finished a tactical action in ( WELLON ).
+Amynta gained control of WELLON.
+Webbly lost control of WELLON.
+Amynta added 1 infantry to WELLON.
+Amynta removed 1 infantry from ( WELLON ).
+Amynta committed ground force(s): 1 infantry to WELLON (Webbly)
+Amynta damaged 1 dreadnought(s) in ( WELLON ).
+Amynta used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Thamsi rolled 2 dice for 1 hit against Amynta in Space Cannon Offense: PDS [ 5, 2 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Amynta added 1 infantry to ( WELLON ).
+Amynta added 1 dreadnought(s) to ( WELLON ).
+Amynta removed 1 infantry from STARPOINT.
+Amynta removed 1 dreadnought(s) from ( NEW ALBION / STARPOINT ).
+Amynta used a tactical movement to move 2 unit(s) to ( WELLON ).
+Amynta placed a tactic command token in ( WELLON ).
+Amynta activated ( WELLON ) to start a tactical action.
+
+=== Combat 7 | Round 8 | Amynta invades Sacrimantius at ( TEQU'RAN / TORKAN ) | bombardment only (0 hits) ===
+Amynta finished a tactical action in ( TEQU'RAN / TORKAN ).
+Amynta gained control of TORKAN.
+Sacrimantius lost control of TORKAN.
+Amynta added 1 infantry to TORKAN.
+Amynta removed 1 infantry from ( TEQU'RAN / TORKAN ).
+Amynta committed ground force(s): 1 infantry to TORKAN (Sacrimantius)
+Amynta rolled 2 dice for 0 hits on TEQU'RAN (Sacrimantius) using BOMBARDMENT: Dreadnought [ 1, 4 ] DetailsEffects:PLASMA SCORING
+Amynta added 1 infantry to ( TEQU'RAN / TORKAN ).
+Amynta added 1 dreadnought(s) to ( TEQU'RAN / TORKAN ).
+Amynta removed 1 infantry from ARC PRIME.
+Amynta removed 1 dreadnought(s) from ( ARC PRIME / WREN TERRA ).
+Amynta used a tactical movement to move 2 unit(s) to ( TEQU'RAN / TORKAN ).
+Sacrimantius added 1 infantry to TEQU'RAN.
+Sacrimantius used MAGEN DEFENSE GRID to place 1 infantry.
+Amynta placed a tactic command token in ( TEQU'RAN / TORKAN ).
+Amynta activated ( TEQU'RAN / TORKAN ) to start a tactical action.
+
+=== Combat 8 | Round 8 | Webbly attacks Sacrimantius at ( SAUDOR ) | ambush, AFB, 2 space combat rounds, retreat, bombardment ===
+Webbly finished a tactical action in ( SAUDOR ).
+Webbly added 4 fighter(s) to ( SAUDOR ).
+Webbly spent 1 resource(s) ( 1 trade good ) to produce: 4 fighter
+Webbly gained 1 trade good(s).
+Webbly used SCAVENGE on SAUDOR for 1 trade good.
+Webbly gained control of SAUDOR.
+Sacrimantius lost control of SAUDOR.
+Sacrimantius removed 1 space dock(s) from SAUDOR.Unit(s) were destroyed due to loss of planet control.
+Webbly added 2 infantry to SAUDOR.
+Webbly removed 2 infantry from ( SAUDOR ).
+Webbly committed ground force(s): 2 infantry to SAUDOR (Sacrimantius)
+Webbly destroyed 4 of Sacrimantius's infantry on SAUDOR.
+Webbly rolled 4 dice for 4 hits on SAUDOR (Sacrimantius) using BOMBARDMENT: Dreadnought [ 7 ] [ 10 ] [ 5 ] [ 9 ] Details
+Sacrimantius gained 1 trade good(s).
+Sacrimantius used SALVAGE OPERATIONS for 1 trade good.
+Sacrimantius lost 1 victory point due to SHARD OF THE THRONE.
+Webbly gained 1 victory point due to SHARD OF THE THRONE.
+Private: Sacrimantius gave agenda(s) to Webbly: SHARD OF THE THRONE
+Webbly used SHARD OF THE THRONE.
+Webbly woke up ( when combat ends ).
+Webbly is the only faction in the ( SAUDOR ) space area.
+Webbly won space combat against Sacrimantius.
+Sacrimantius placed a reinforcements command token in ( CORNEEQ / RESCULON ).
+Sacrimantius added 1 flagship to ( CORNEEQ / RESCULON ).
+Sacrimantius added 1 damaged dreadnought(s) to ( CORNEEQ / RESCULON ).
+Sacrimantius added 1 carrier(s) to ( CORNEEQ / RESCULON ).
+Sacrimantius removed 1 flagship from ( SAUDOR ).
+Sacrimantius removed 1 damaged dreadnought(s) from ( SAUDOR ).
+Sacrimantius removed 1 carrier(s) from ( SAUDOR ).
+Sacrimantius retreated from space combat with Webbly, moving 3 unit(s) to ( CORNEEQ / RESCULON ).
+Webbly destroyed 1 of Sacrimantius's damaged dreadnought(s) in ( SAUDOR ).
+Webbly destroyed 2 of Sacrimantius's destroyer(s) in ( SAUDOR ).
+Webbly destroyed 3 of Sacrimantius's fighter(s) in ( SAUDOR ).
+Sacrimantius assigned 6 hits from Webbly in ( SAUDOR ).
+Sacrimantius skipped using SUSTAIN DAMAGE.
+Sacrimantius destroyed 3 of Webbly's fighter(s) in ( SAUDOR ).
+Webbly assigned 3 hits from Sacrimantius in ( SAUDOR ).
+Sacrimantius rolled 10 dice for 3 hits: Fighter [ 10 ] [ 4 ] [ 8 ] , Dreadnought [ 8 ] [ 1 ] , Carrier [ 8 ] , Destroyer [ 8 ] [ 5 ] , Flagship [ 5, 7 ] Details
+Webbly rolled 11 dice for 6 hits: Flagship [ 2, 1 ] , Cruiser [ 3 ] , Dreadnought [ 10 ] [ 9 ] [ 7 ] [ 9 ] , Destroyer [ 2 ] , Fighter [ 9 ] [ 10 ] [ 1 ] Details
+Sacrimantius announced a retreat from space combat with Webbly.
+Webbly and Sacrimantius started space combat round 2.
+Sacrimantius could not retreat from space combat.
+Webbly destroyed 2 of Sacrimantius's fighter(s) in ( SAUDOR ).
+Sacrimantius assigned 2 hits from Webbly in ( SAUDOR ).
+Sacrimantius skipped using SUSTAIN DAMAGE.
+Sacrimantius damaged 1 dreadnought(s) in ( SAUDOR ).
+Sacrimantius used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Sacrimantius damaged 1 dreadnought(s) in ( SAUDOR ).
+Sacrimantius used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Sacrimantius destroyed 3 of Webbly's fighter(s) in ( SAUDOR ).
+Webbly assigned 3 hits from Sacrimantius in ( SAUDOR ).
+Sacrimantius rolled 12 dice for 3 hits: Fighter [ 9 ] [ 4 ] [ 8 ] [ 4 ] [ 2 ] , Dreadnought [ 2 ] [ 6 ] , Carrier [ 1 ] , Destroyer [ 3 ] [ 3 ] , Flagship [ 5, 7 ] Details
+Webbly rolled 14 dice for 4 hits: Flagship [ 1, 5 ] , Cruiser [ 4 ] , Dreadnought [ 8 ] [ 10 ] [ 2 ] [ 1 ] , Destroyer [ 1 ] , Fighter [ 7 ] [ 4 ] [ 6 ] [ 9 ] [ 6 ] [ 7 ] Details
+Thamsi passed ( action card played ).
+Thamsi woke up ( action card played ).
+Webbly played INTERCEPT on ( SAUDOR ).
+Webbly woke up ( after a player announced a retreat ).
+Sacrimantius announced a retreat from space combat with Webbly.
+Sacrimantius destroyed 1 of Webbly's fighter(s) in ( SAUDOR ).
+Sacrimantius rolled 4 dice for 1 hit against Webbly in ANTI-FIGHTER BARRAGE: Destroyer [ 8, 10 ] [ 5, 6 ]
+Webbly destroyed 2 of Sacrimantius's fighter(s) in ( SAUDOR ).
+Webbly rolled 6 dice for 2 hits against Sacrimantius in ANTI-FIGHTER BARRAGE: Flagship [ 9, 3, 8, 3 ] , Destroyer [ 5, 3 ]
+Sacrimantius's SKILLED RETREAT action card was canceled.
+Webbly played SABOTAGE.
+Webbly woke up ( action card played ).
+Sacrimantius played SKILLED RETREAT.
+Sacrimantius woke up ( when a combat round starts or ends ).
+Sacrimantius destroyed 1 of Webbly's fighter(s) in ( SAUDOR ).
+Webbly assigned 1 hit from Sacrimantius in ( SAUDOR ).
+Webbly woke up.
+Sacrimantius rolled 2 dice to hit on 9-10: [ 9 , 1 ] Hits: 1
+Sacrimantius used AMBUSH on Webbly with 2 destroyer dice.
+Sacrimantius woke up ( when a combat round starts or ends ).
+Webbly and Sacrimantius started space combat round 1 on ( SAUDOR ).
+Webbly added 8 fighter(s) to ( SAUDOR ).
+Webbly added 2 infantry to ( SAUDOR ).
+Webbly added 1 flagship to ( SAUDOR ).
+Webbly added 1 cruiser(s) to ( SAUDOR ).
+Webbly added 4 dreadnought(s) to ( SAUDOR ).
+Webbly added 1 destroyer(s) to ( SAUDOR ).
+Webbly added 1 space dock(s) to ( SAUDOR ).
+Webbly removed 1 infantry from SAKULAG.
+Webbly removed 1 infantry from LAZAR.
+Webbly removed 8 fighter(s) from ( LAZAR / SAKULAG ).
+Webbly removed 1 flagship from ( LAZAR / SAKULAG ).
+Webbly removed 1 cruiser(s) from ( LAZAR / SAKULAG ).
+Webbly removed 4 dreadnought(s) from ( LAZAR / SAKULAG ).
+Webbly removed 1 destroyer(s) from ( LAZAR / SAKULAG ).
+Webbly removed 1 space dock(s) from ( LAZAR / SAKULAG ).
+Webbly used a tactical movement to move 18 unit(s) to ( SAUDOR ).
+Sacrimantius added 1 infantry to SAUDOR.
+Sacrimantius used MAGEN DEFENSE GRID to place 1 infantry.
+Webbly returned promissory note(s) to Sacrimantius: PROMISE OF PROTECTION
+Webbly placed a tactic command token in ( SAUDOR ).
+Webbly activated ( SAUDOR ) to start a tactical action.
+
+=== Combat 9 | Round 8 | Amynta attacks Sacrimantius at ( MOLL PRIMUS ) | SCO, assault cannon, ambush, AFB, space combat, bombardment, space cannon defense, ground combat ===
+Amynta finished a tactical action in ( MOLL PRIMUS ).
+Amynta lost 1 victory point due to SHARD OF THE THRONE.
+Sacrimantius gained 1 victory point due to SHARD OF THE THRONE.
+Private: Amynta gave agenda(s) to Sacrimantius: SHARD OF THE THRONE
+Sacrimantius used SHARD OF THE THRONE.
+Sacrimantius woke up ( when combat ends ).
+Sacrimantius won ground combat against Amynta.
+Amynta destroyed 1 of Sacrimantius's infantry on MOLL PRIMUS.
+Sacrimantius destroyed 1 of Amynta's infantry on MOLL PRIMUS.
+Sacrimantius rolled 3 dice for 1 hit: Infantry [ 1 ] [ 10 ] [ 4 ] Details
+Amynta passed ( after a combat roll ).
+Amynta woke up ( after a combat roll ).
+Amynta rolled 1 die for 1 hit: Infantry [ 9 ] Details
+Sacrimantius destroyed 1 of Amynta's infantry on MOLL PRIMUS.
+Sacrimantius used MAGEN DEFENSE GRID to produce 1 hit against 1 infantry on MOLL PRIMUS.
+Amynta and Sacrimantius started ground combat round 1 on MOLL PRIMUS.
+Sacrimantius rolled 2 dice for 0 hits on MOLL PRIMUS (Amynta) in Space Cannon Defense: PDS [ 1, 0 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Amynta added 2 infantry to MOLL PRIMUS.
+Amynta removed 2 infantry from ( MOLL PRIMUS ).
+Amynta committed ground force(s): 2 infantry to MOLL PRIMUS (Sacrimantius)
+Amynta destroyed 4 of Sacrimantius's infantry on MOLL PRIMUS.
+Amynta rolled 8 dice for 4 hits on MOLL PRIMUS (Sacrimantius) using BOMBARDMENT: War Sun [ 5, 5, 1, -2 ] [ 0, 4, 6 ] , Dreadnought [ 1 ] DetailsEffects:PLASMA SCORING , BUNKER
+Thamsi passed ( action card played ).
+Thamsi woke up ( action card played ).
+Webbly passed ( action card played ).
+Webbly woke up ( action card played ).
+Sacrimantius played BUNKER on ( MOLL PRIMUS ).
+Sacrimantius woke up ( when invasion step starts ).
+Sacrimantius gained 1 trade good(s).
+Sacrimantius used SALVAGE OPERATIONS for 1 trade good.
+Sacrimantius lost 1 victory point due to SHARD OF THE THRONE.
+Amynta gained 1 victory point due to SHARD OF THE THRONE.
+Private: Sacrimantius gave agenda(s) to Amynta: SHARD OF THE THRONE
+Amynta used SHARD OF THE THRONE.
+Amynta woke up ( when combat ends ).
+Amynta is the only faction in the ( MOLL PRIMUS ) space area.
+Amynta won space combat against Sacrimantius.
+Amynta destroyed 1 of Sacrimantius's cruiser(s) in ( MOLL PRIMUS ).
+Amynta destroyed 1 of Sacrimantius's fighter(s) in ( MOLL PRIMUS ).
+Sacrimantius assigned 5 hits from Amynta in ( MOLL PRIMUS ).
+Sacrimantius destroyed 1 of Amynta's fighter(s) in ( MOLL PRIMUS ).
+Amynta assigned 1 hit from Sacrimantius in ( MOLL PRIMUS ).
+Amynta skipped using SUSTAIN DAMAGE.
+Sacrimantius rolled 2 dice for 1 hit: Fighter [ 1 ] , Cruiser [ 7 ] Details
+Amynta rolled 12 dice for 5 hits: War Sun [ 3, 6, 10 ] [ 8, 2, 6 ] , Dreadnought [ 2 ] , Destroyer [ 5 ] [ 7 ] , Fighter [ 7 ] [ 5 ] [ 4 ] Details
+Amynta destroyed 5 of Sacrimantius's fighter(s) in ( MOLL PRIMUS ).
+Amynta rolled 6 dice for 5 hits against Sacrimantius in ANTI-FIGHTER BARRAGE: Destroyer [ 8, 8, 6 ] [ 4, 8, 10 ]
+Sacrimantius passed ( when a combat round starts or ends ).
+Sacrimantius woke up ( when a combat round starts or ends ).
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Sacrimantius rolled 1 die to hit on 6-10: [ 4 ] Hits: 0
+Sacrimantius used AMBUSH on Amynta with 1 cruiser die.
+Amynta destroyed 1 of Sacrimantius's carrier(s) in ( MOLL PRIMUS ).
+Sacrimantius chose 1 carrier to be destroyed by ASSAULT CANNON at ( MOLL PRIMUS ).
+Sacrimantius woke up.
+Amynta used ASSAULT CANNON.
+Amynta and Sacrimantius started space combat round 1 on ( MOLL PRIMUS ).
+Sacrimantius destroyed 1 of Amynta's fighter(s) in ( MOLL PRIMUS ).
+Amynta assigned 1 hit from Sacrimantius in ( MOLL PRIMUS ).
+Amynta skipped using SUSTAIN DAMAGE.
+Sacrimantius rolled 2 dice for 1 hit against Amynta in Space Cannon Offense: PDS [ 5, 6 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Amynta added 4 fighter(s) to ( MOLL PRIMUS ).
+Amynta added 2 infantry to ( MOLL PRIMUS ).
+Amynta added 2 war sun(s) to ( MOLL PRIMUS ).
+Amynta added 1 dreadnought(s) to ( MOLL PRIMUS ).
+Amynta added 2 destroyer(s) to ( MOLL PRIMUS ).
+Amynta removed 1 infantry from MEER.
+Amynta removed 1 infantry from ARINAM.
+Amynta removed 4 fighter(s) from ( ARINAM / MEER ).
+Amynta removed 2 war sun(s) from ( ARINAM / MEER ).
+Amynta removed 1 dreadnought(s) from ( ARINAM / MEER ).
+Amynta removed 2 destroyer(s) from ( ARINAM / MEER ).
+Amynta used a tactical movement to move 11 unit(s) to ( MOLL PRIMUS ).
+Sacrimantius added 2 infantry to MOLL PRIMUS.
+Sacrimantius used MAGEN DEFENSE GRID to place 2 infantry.
+Amynta placed a tactic command token in ( MOLL PRIMUS ).
+Amynta activated ( MOLL PRIMUS ) to start a tactical action.
+
+=== Combat 10 | Round 8 | Sacrimantius attacks Amynta at ( ARNOR / LOR ) | SCO (Graviton), Direct Hit, ambush, 2 space combat rounds, bombardment, 2 ground combat rounds ===
+Sacrimantius finished a tactical action in ( ARNOR / LOR ).
+Ground combat ended in a draw between Sacrimantius and Amynta.
+Sacrimantius destroyed 1 of Amynta's infantry on ARNOR.
+Amynta destroyed 1 of Sacrimantius's infantry on ARNOR.
+Amynta passed ( after a combat roll ).
+Amynta rolled 1 die for 1 hit: Infantry [ 10 ] Details
+Sacrimantius rolled 1 die for 1 hit: Infantry [ 9 ] Details
+Sacrimantius and Amynta started ground combat round 2.
+Amynta destroyed 1 of Sacrimantius's infantry on ARNOR.
+Amynta passed ( after a combat roll ).
+Amynta woke up ( after a combat roll ).
+Amynta rolled 1 die for 1 hit: Infantry [ 8 ] Details
+Sacrimantius rolled 2 dice for 0 hits: Infantry [ 5 ] [ 4 ] Details
+Sacrimantius and Amynta started ground combat round 1 on ARNOR.
+Sacrimantius added 2 infantry to ARNOR.
+Sacrimantius removed 2 infantry from ( ARNOR / LOR ).
+Sacrimantius committed ground force(s): 2 infantry to ARNOR (Amynta)
+Sacrimantius rolled 2 dice for 0 hits on ARNOR (Amynta) using BOMBARDMENT: Dreadnought [ 2, 2 ] DetailsEffects:PLASMA SCORING
+Sacrimantius added 1 dreadnought(s) to ( ARNOR / LOR ).
+Sacrimantius used SALVAGE OPERATIONS to spend 4 resource(s) in ( ARNOR / LOR ) and produce: 1 dreadnought. Spent: MOLL PRIMUS .
+Sacrimantius gained 1 trade good(s).
+Sacrimantius used SALVAGE OPERATIONS for 1 trade good.
+Amynta lost 1 victory point due to SHARD OF THE THRONE.
+Sacrimantius gained 1 victory point due to SHARD OF THE THRONE.
+Private: Amynta gave agenda(s) to Sacrimantius: SHARD OF THE THRONE
+Sacrimantius used SHARD OF THE THRONE.
+Sacrimantius woke up ( when combat ends ).
+Sacrimantius is the only faction in the ( ARNOR / LOR ) space area.
+Sacrimantius won space combat against Amynta.
+Amynta could not retreat from space combat.
+Sacrimantius destroyed 1 of Amynta's damaged dreadnought(s) in ( ARNOR / LOR ).
+Amynta assigned 2 hits from Sacrimantius in ( ARNOR / LOR ).
+Amynta destroyed 1 of Sacrimantius's destroyer(s) in ( ARNOR / LOR ).
+Sacrimantius assigned 1 hit from Amynta in ( ARNOR / LOR ).
+Amynta rolled 1 die for 1 hit: Dreadnought [ 8 ] Details
+Sacrimantius rolled 5 dice for 2 hits: Destroyer [ 8 ] [ 10 ] , Cruiser [ 7 ] [ 2 ] , Carrier [ 2 ] Details
+Amynta announced a retreat from space combat with Sacrimantius.
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Sacrimantius passed ( when a combat round starts or ends ).
+Sacrimantius woke up ( when a combat round starts or ends ).
+Sacrimantius and Amynta started space combat round 2.
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Sacrimantius destroyed Amynta's flagship in ( ARNOR / LOR ).
+Thamsi passed ( action card played ).
+Thamsi woke up ( action card played ).
+Webbly passed ( action card played ).
+Webbly woke up ( action card played ).
+Sacrimantius played DIRECT HIT.
+Sacrimantius woke up ( after SUSTAIN DAMAGE was used ).
+Amynta damaged 1 flagship in ( ARNOR / LOR ).
+Amynta used NON-EUCLIDEAN SHIELDING and SUSTAIN DAMAGE to cancel 2 hits from Sacrimantius.
+Amynta damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Amynta used NON-EUCLIDEAN SHIELDING and SUSTAIN DAMAGE to cancel 2 hits from Sacrimantius.
+Amynta destroyed 2 of Sacrimantius's fighter(s) in ( ARNOR / LOR ).
+Sacrimantius assigned 2 hits from Amynta in ( ARNOR / LOR ).
+Amynta rolled 3 dice for 2 hits: Flagship [ 9, 1 ] , Dreadnought [ 7 ] Details
+Sacrimantius rolled 7 dice for 4 hits: Destroyer [ 8 ] [ 1 ] , Cruiser [ 10 ] [ 6 ] , Carrier [ 3 ] , Fighter [ 10 ] [ 9 ] Details
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Sacrimantius passed ( when a combat round starts or ends ).
+Sacrimantius woke up ( when a combat round starts or ends ).
+Sacrimantius destroyed 1 of Amynta's fighter(s) in ( ARNOR / LOR ).
+Amynta assigned 1 hit from Sacrimantius in ( ARNOR / LOR ).
+Amynta skipped using SUSTAIN DAMAGE.
+Amynta woke up.
+Sacrimantius rolled 2 dice to hit on 6-10: [ 9 , 5 ] Hits: 1
+Sacrimantius used AMBUSH on Amynta with 2 cruiser dice.
+Sacrimantius and Amynta started space combat round 1 on ( ARNOR / LOR ).
+Amynta destroyed 1 of Sacrimantius's destroyer(s) in ( ARNOR / LOR ).
+Sacrimantius assigned 1 hit from Amynta in ( ARNOR / LOR ).
+Amynta destroyed 1 of Sacrimantius's damaged dreadnought(s) in ( ARNOR / LOR ).
+Thamsi passed ( action card played ).
+Thamsi woke up ( action card played ).
+Webbly passed ( action card played ).
+Webbly woke up ( action card played ).
+Amynta played DIRECT HIT.
+Amynta woke up ( after SUSTAIN DAMAGE was used ).
+Sacrimantius damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Sacrimantius used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Amynta rolled 2 dice for 2 hits against Sacrimantius in Space Cannon Offense: PDS [ 10, 9 ] DetailsEffects:PLASMA SCORING, GRAVITON LASER SYSTEM
+Amynta exhausted GRAVITON LASER SYSTEM.
+Sacrimantius added 2 fighter(s) to ( ARNOR / LOR ).
+Sacrimantius added 2 infantry to ( ARNOR / LOR ).
+Sacrimantius added 2 cruiser(s) to ( ARNOR / LOR ).
+Sacrimantius added 1 dreadnought(s) to ( ARNOR / LOR ).
+Sacrimantius added 2 destroyer(s) to ( ARNOR / LOR ).
+Sacrimantius added 1 carrier(s) to ( ARNOR / LOR ).
+Sacrimantius removed 2 infantry from TEQU'RAN.
+Sacrimantius removed 2 fighter(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 2 cruiser(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 1 dreadnought(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 2 destroyer(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 1 carrier(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius added 1 destroyer(s) to ( ARNOR / LOR ).
+Sacrimantius removed 1 destroyer(s) from ( QUANN / beta wormhole ).
+Sacrimantius used a tactical movement to move 11 unit(s) to ( ARNOR / LOR ).
+Sacrimantius placed a tactic command token in ( ARNOR / LOR ).
+Sacrimantius activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 11 | Round 7 | Amynta attacks Sacrimantius at ( ARNOR / LOR ) | SCO, ambush, AFB, 2 space combat rounds, bombardment ===
+Amynta finished a tactical action in ( ARNOR / LOR ).
+Amynta gained control of LOR.
+Sacrimantius lost control of LOR.
+Amynta gained control of ARNOR.
+Sacrimantius lost control of ARNOR.
+Amynta added 1 infantry to LOR.
+Amynta removed 1 infantry from ( ARNOR / LOR ).
+Amynta added 1 infantry to ARNOR.
+Amynta removed 1 infantry from ( ARNOR / LOR ).
+Amynta committed ground force(s): 1 infantry to ARNOR (Sacrimantius) ,1 infantry to LOR (Sacrimantius)
+Amynta destroyed 1 of Sacrimantius's infantry on LOR.
+Amynta rolled 1 die for 1 hit on LOR (Sacrimantius) using BOMBARDMENT: Dreadnought [ 7 ] Details
+Amynta destroyed 1 of Sacrimantius's infantry on ARNOR.
+Amynta rolled 4 dice for 3 hits on ARNOR (Sacrimantius) using BOMBARDMENT: Flagship [ 10, 10, 8, 1 ] DetailsEffects:PLASMA SCORING
+Sacrimantius passed ( when invasion step starts ).
+Sacrimantius woke up ( when invasion step starts ).
+Sacrimantius gained 1 trade good(s).
+Sacrimantius used SALVAGE OPERATIONS for 1 trade good.
+Amynta is the only faction in the ( ARNOR / LOR ) space area.
+Amynta won space combat against Sacrimantius.
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Sacrimantius could not retreat from space combat.
+Amynta destroyed 2 of Sacrimantius's cruiser(s) in ( ARNOR / LOR ).
+Sacrimantius assigned 3 hits from Amynta in ( ARNOR / LOR ).
+Amynta damaged 1 flagship in ( ARNOR / LOR ).
+Amynta used SUSTAIN DAMAGE to cancel 1 hit from Sacrimantius.
+Sacrimantius rolled 2 dice for 1 hit: Cruiser [ 10 ] [ 2 ] Details
+Amynta rolled 4 dice for 3 hits: Flagship [ 9, 8 ] , Dreadnought [ 8 ] , Fighter [ 5 ] Details
+Sacrimantius announced a retreat from space combat with Amynta.
+Amynta passed ( when a combat round starts or ends ).
+Amynta and Sacrimantius started space combat round 2.
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Amynta destroyed 1 of Sacrimantius's destroyer(s) in ( ARNOR / LOR ).
+Sacrimantius assigned 1 hit from Amynta in ( ARNOR / LOR ).
+Sacrimantius destroyed 1 of Amynta's fighter(s) in ( ARNOR / LOR ).
+Amynta assigned 1 hit from Sacrimantius in ( ARNOR / LOR ).
+Amynta skipped using SUSTAIN DAMAGE.
+Sacrimantius rolled 3 dice for 1 hit: Cruiser [ 1 ] [ 8 ] , Destroyer [ 4 ] Details
+Amynta rolled 5 dice for 1 hit: Flagship [ 3, 1 ] , Dreadnought [ 2 ] , Fighter [ 3 ] [ 9 ] Details
+Sacrimantius rolled 2 dice for 0 hits against Amynta in ANTI-FIGHTER BARRAGE: Destroyer [ 8, 4 ]
+Amynta passed ( when a combat round starts or ends ).
+Amynta damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Amynta used NON-EUCLIDEAN SHIELDING and SUSTAIN DAMAGE to cancel 2 hits from Sacrimantius.
+Amynta woke up.
+Sacrimantius rolled 2 dice to hit on 6-10: [ 8 , 6 ] Hits: 2
+Sacrimantius used AMBUSH on Amynta with 2 cruiser dice.
+Sacrimantius woke up ( when a combat round starts or ends ).
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Amynta and Sacrimantius started space combat round 1 on ( ARNOR / LOR ).
+Amynta destroyed 1 of Sacrimantius's carrier(s) in ( ARNOR / LOR ).
+Amynta destroyed 1 of Sacrimantius's fighter(s) in ( ARNOR / LOR ).
+Sacrimantius assigned 2 hits from Amynta in ( ARNOR / LOR ).
+Amynta rolled 2 dice for 2 hits against Sacrimantius in Space Cannon Offense: PDS [ 8, 6 ] DetailsEffects:PLASMA SCORING
+Amynta added 2 fighter(s) to ( ARNOR / LOR ).
+Amynta added 2 infantry to ( ARNOR / LOR ).
+Amynta added 1 flagship to ( ARNOR / LOR ).
+Amynta added 1 dreadnought(s) to ( ARNOR / LOR ).
+Amynta removed 1 infantry from STARPOINT.
+Amynta removed 1 infantry from NEW ALBION.
+Amynta removed 2 fighter(s) from ( ARINAM / MEER ).
+Amynta removed 1 flagship from ( ARINAM / MEER ).
+Amynta removed 1 dreadnought(s) from ( ARINAM / MEER ).
+Amynta used a tactical movement to move 6 unit(s) to ( ARNOR / LOR ).
+Amynta placed a tactic command token in ( ARNOR / LOR ).
+Amynta activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 12 | Round 7 | Webbly attacks Thamsi at ( ABYZ / FRIA ) | SCO, AFB, 10 space combat rounds ===
+Webbly finished a tactical action in ( ABYZ / FRIA ).
+Webbly gained 1 trade good(s).
+Webbly used SCAVENGE on FRIA for 1 trade good.
+Webbly gained control of FRIA.
+Thamsi lost control of FRIA.
+Webbly gained 1 trade good(s).
+Webbly used SCAVENGE on ABYZ for 1 trade good.
+Webbly gained control of ABYZ.
+Thamsi lost control of ABYZ.
+Thamsi removed 1 space dock(s) from ABYZ.Unit(s) were destroyed due to loss of planet control.
+Webbly added 1 infantry to FRIA.
+Webbly removed 1 infantry from ( ABYZ / FRIA ).
+Webbly added 1 infantry to ABYZ.
+Webbly removed 1 infantry from ( ABYZ / FRIA ).
+Webbly committed ground force(s): 1 infantry to ABYZ (Thamsi) ,1 infantry to FRIA (Thamsi)
+Webbly is the only faction in the ( ABYZ / FRIA ) space area.
+Webbly won space combat against Thamsi.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( ABYZ / FRIA ).
+Thamsi assigned 1 hit from Webbly in ( ABYZ / FRIA ).
+Thamsi rolled 1 die for 0 hits: Fighter [ 1 ] DetailsEffects:FRAGILE
+Webbly rolled 1 die for 1 hit: Carrier [ 10 ] Details
+Webbly and Thamsi started space combat round 10.
+Thamsi rolled 1 die for 0 hits: Fighter [ 5 ] DetailsEffects:FRAGILE
+Webbly rolled 1 die for 0 hits: Carrier [ 2 ] Details
+Webbly and Thamsi started space combat round 9.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( ABYZ / FRIA ).
+Thamsi assigned 1 hit from Webbly in ( ABYZ / FRIA ).
+Thamsi rolled 2 dice for 0 hits: Fighter [ 1 ] [ 7 ] DetailsEffects:FRAGILE
+Webbly rolled 1 die for 1 hit: Carrier [ 9 ] Details
+Webbly and Thamsi started space combat round 8.
+Thamsi destroyed 1 of Webbly's cruiser(s) in ( ABYZ / FRIA ).
+Webbly assigned 1 hit from Thamsi in ( ABYZ / FRIA ).
+Thamsi rolled 2 dice for 1 hit: Fighter [ 7 ] [ 9 ] DetailsEffects:FRAGILE
+Webbly rolled 2 dice for 0 hits: Cruiser [ 3 ] , Carrier [ 1 ] Details
+Webbly and Thamsi started space combat round 7.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( ABYZ / FRIA ).
+Thamsi assigned 1 hit from Webbly in ( ABYZ / FRIA ).
+Thamsi rolled 3 dice for 0 hits: Fighter [ 0 ] [ 2 ] [ 2 ] DetailsEffects:FRAGILE
+Webbly rolled 2 dice for 1 hit: Cruiser [ 9 ] , Carrier [ 2 ] Details
+Webbly and Thamsi started space combat round 6.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( ABYZ / FRIA ).
+Thamsi assigned 1 hit from Webbly in ( ABYZ / FRIA ).
+Thamsi destroyed 1 of Webbly's cruiser(s) in ( ABYZ / FRIA ).
+Webbly assigned 1 hit from Thamsi in ( ABYZ / FRIA ).
+Thamsi rolled 4 dice for 1 hit: Fighter [ 4 ] [ 0 ] [ 2 ] [ 9 ] DetailsEffects:FRAGILE
+Webbly rolled 3 dice for 1 hit: Cruiser [ 9 ] [ 2 ] , Carrier [ 3 ] Details
+Webbly and Thamsi started space combat round 5.
+Webbly destroyed 1 of Thamsi's fighter(s) in ( ABYZ / FRIA ).
+Thamsi assigned 1 hit from Webbly in ( ABYZ / FRIA ).
+Thamsi rolled 5 dice for 0 hits: Fighter [ 6 ] [ 7 ] [ 7 ] [ 7 ] [ 6 ] DetailsEffects:FRAGILE
+Webbly rolled 3 dice for 1 hit: Cruiser [ 2 ] [ 6 ] , Carrier [ 10 ] Details
+Webbly and Thamsi started space combat round 4.
+Thamsi rolled 5 dice for 0 hits: Fighter [ 2 ] [ 7 ] [ 2 ] [ 6 ] [ 1 ] DetailsEffects:FRAGILE
+Webbly rolled 3 dice for 0 hits: Cruiser [ 5 ] [ 1 ] , Carrier [ 1 ] Details
+Webbly and Thamsi started space combat round 3.
+Thamsi destroyed 1 of Webbly's destroyer(s) in ( ABYZ / FRIA ).
+Webbly assigned 1 hit from Thamsi in ( ABYZ / FRIA ).
+Thamsi rolled 5 dice for 1 hit: Fighter [ 3 ] [ 5 ] [ 9 ] [ 3 ] [ 2 ] DetailsEffects:FRAGILE
+Webbly rolled 4 dice for 0 hits: Cruiser [ 6 ] [ 2 ] , Destroyer [ 2 ] , Carrier [ 6 ] Details
+Webbly and Thamsi started space combat round 2.
+Thamsi destroyed 1 of Webbly's fighter(s) in ( ABYZ / FRIA ).
+Webbly assigned 1 hit from Thamsi in ( ABYZ / FRIA ).
+Thamsi rolled 5 dice for 1 hit: Fighter [ 7 ] [ 2 ] [ 9 ] [ 3 ] [ 0 ] DetailsEffects:FRAGILE
+Webbly rolled 5 dice for 0 hits: Cruiser [ 2 ] [ 2 ] , Destroyer [ 2 ] , Carrier [ 6 ] , Fighter [ 5 ] Details
+Webbly rolled 2 dice for 0 hits against Thamsi in ANTI-FIGHTER BARRAGE: Destroyer [ 2, 8 ]
+Webbly and Thamsi started space combat round 1 on ( ABYZ / FRIA ).
+Thamsi destroyed 1 of Webbly's fighter(s) in ( ABYZ / FRIA ).
+Webbly assigned 1 hit from Thamsi in ( ABYZ / FRIA ).
+Thamsi rolled 2 dice for 1 hit against Webbly in Space Cannon Offense: PDS [ 1, 5 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly added 2 fighter(s) to ( ABYZ / FRIA ).
+Webbly added 2 infantry to ( ABYZ / FRIA ).
+Webbly added 2 cruiser(s) to ( ABYZ / FRIA ).
+Webbly added 1 destroyer(s) to ( ABYZ / FRIA ).
+Webbly added 1 carrier(s) to ( ABYZ / FRIA ).
+Webbly removed 2 infantry from WELLON.
+Webbly removed 2 fighter(s) from ( WELLON ).
+Webbly removed 2 cruiser(s) from ( WELLON ).
+Webbly removed 1 destroyer(s) from ( WELLON ).
+Webbly removed 1 carrier(s) from ( WELLON ).
+Webbly used a tactical movement to move 8 unit(s) to ( ABYZ / FRIA ).
+Webbly passed ( after a system was activated ).
+Webbly played IN THE SILENCE OF SPACE on ( WELLON ).
+Webbly woke up ( after a system was activated ).
+Sacrimantius gained 1 trade good(s).
+Thamsi lost 1 trade good(s).
+Sacrimantius used PILLAGE on Thamsi to take 1 trade good.
+Sacrimantius woke up ( PILLAGE ).
+Thamsi gained 4 trade good(s).
+Thamsi used E-RES SIPHONS.
+Webbly played FLANK SPEED.
+Webbly placed a tactic command token in ( ABYZ / FRIA ).
+Webbly activated ( ABYZ / FRIA ) to start a tactical action.
+
+=== Combat 13 | Round 7 | Amynta attacks Sacrimantius at ( ARINAM / MEER ) via WARFARE | SCO, assault cannon, Courageous to the End, ambush, AFB, Munitions Reserves reroll, 1 space combat round ===
+Amynta finished a tactical action in ( ARINAM / MEER ).
+Amynta added 1 infantry to MEER.
+Amynta removed 1 infantry from ( ARINAM / MEER ).
+Amynta committed ground force(s): 1 infantry to MEER (Amynta)
+Amynta is the only faction in the ( ARINAM / MEER ) space area.
+Sacrimantius removed 1 infantry from ( ARINAM / MEER ).
+Sacrimantius must remove unit(s) due to exceeding transport capacity.
+Sacrimantius gained 1 trade good(s).
+Sacrimantius used SALVAGE OPERATIONS for 1 trade good.
+Amynta won space combat against Sacrimantius.
+Sacrimantius could not retreat from space combat.
+Amynta gained 1 victory point due to DESTROY THEIR GREATEST SHIP.
+Amynta scored secret objective DESTROY THEIR GREATEST SHIP.
+Amynta woke up ( when unit(s) are destroyed ).
+Amynta destroyed Sacrimantius's flagship in ( ARINAM / MEER ).
+Amynta destroyed 3 of Sacrimantius's cruiser(s) in ( ARINAM / MEER ).
+Amynta destroyed 1 of Sacrimantius's damaged dreadnought(s) in ( ARINAM / MEER ).
+Amynta destroyed 1 of Sacrimantius's destroyer(s) in ( ARINAM / MEER ).
+Sacrimantius assigned 7 hits from Amynta in ( ARINAM / MEER ).
+Amynta passed ( after SUSTAIN DAMAGE was used ).
+Amynta woke up ( after SUSTAIN DAMAGE was used ).
+Sacrimantius damaged 1 flagship in ( ARINAM / MEER ).
+Sacrimantius used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Amynta passed ( after SUSTAIN DAMAGE was used ).
+Amynta woke up ( after SUSTAIN DAMAGE was used ).
+Sacrimantius damaged 1 dreadnought(s) in ( ARINAM / MEER ).
+Sacrimantius used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Amynta played SHIELDS HOLDING to cancel 2 hits.
+Sacrimantius rolled 7 dice for 2 hits: Cruiser [ 2 ] [ 3 ] [ 9 ] , Dreadnought [ 1 ] , Destroyer [ 10 ] , Flagship [ 6, 6 ] Details
+Amynta rerolled 10 dice for 9 total hits: Flagship [ 5, 6 ] , War Sun [ 7, 9, 4 ] [ 1, 4, 10 ] , Dreadnought [ 5 ] [ 1 ] , Destroyer [ 3 ] [ 5 ] , Fighter [ 7 ] [ 8 ] [ 2 ] [ 10 ] [ 5 ] [ 7 ] Details
+Amynta used Reroll (MUNITIONS RESERVES).
+Amynta woke up ( after a combat roll ).
+Amynta rolled 18 dice for 8 hits: Flagship [ 5, 6 ] , War Sun [ 7, 9, 4 ] [ 1, 4, 10 ] , Dreadnought [ 5 ] [ 2 ] , Destroyer [ 1 ] [ 5 ] , Fighter [ 6 ] [ 4 ] [ 4 ] [ 1 ] [ 7 ] [ 3 ] Details
+Sacrimantius announced a retreat from space combat with Amynta.
+Sacrimantius rolled 2 dice for 0 hits against Amynta in ANTI-FIGHTER BARRAGE: Destroyer [ 6, 8 ]
+Amynta destroyed 3 of Sacrimantius's fighter(s) in ( ARINAM / MEER ).
+Amynta rolled 6 dice for 4 hits against Sacrimantius in ANTI-FIGHTER BARRAGE: Destroyer [ 10, 10, 9 ] [ 4, 7, 2 ]
+Amynta spent 2 trade good(s).
+Amynta used MUNITIONS RESERVES.
+Sacrimantius destroyed 1 of Amynta's fighter(s) in ( ARINAM / MEER ).
+Amynta assigned 1 hit from Sacrimantius in ( ARINAM / MEER ).
+Amynta passed ( before hits are assigned ).
+Amynta woke up ( before hits are assigned ).
+Sacrimantius rolled 2 dice to hit on 6-10: [ 8 , 5 ] Hits: 1
+Sacrimantius used AMBUSH on Amynta with 2 cruiser dice.
+Sacrimantius woke up ( when a combat round starts or ends ).
+Sacrimantius destroyed 2 of Amynta's fighter(s) in ( ARINAM / MEER ).
+Amynta chose unit(s) to be destroyed at ( ARINAM / MEER ): 2 fighter(s)
+Amynta woke up.
+Sacrimantius rolled 2 dice to hit on 5-10: [ 7 , 10 ] Hits: 2
+Sacrimantius played COURAGEOUS TO THE END.
+Amynta destroyed 1 of Sacrimantius's damaged dreadnought(s) in ( ARINAM / MEER ).
+Sacrimantius chose 1 dreadnought to be destroyed by ASSAULT CANNON at ( ARINAM / MEER ).
+Sacrimantius woke up.
+Amynta used ASSAULT CANNON.
+Amynta and Sacrimantius started space combat round 1 on ( ARINAM / MEER ).
+Amynta passed ( after SUSTAIN DAMAGE was used ).
+Amynta woke up ( after SUSTAIN DAMAGE was used ).
+Sacrimantius damaged 1 dreadnought(s) in ( ARINAM / MEER ).
+Sacrimantius used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Sacrimantius played MANEUVERING JETS to cancel 1 hit.
+Sacrimantius woke up ( before hits are assigned ).
+Amynta rolled 2 dice for 2 hits against Sacrimantius in Space Cannon Offense: PDS [ 10, 8 ] DetailsEffects:PLASMA SCORING
+Amynta added 9 fighter(s) to ( ARINAM / MEER ).
+Amynta added 1 infantry to ( ARINAM / MEER ).
+Amynta added 1 flagship to ( ARINAM / MEER ).
+Amynta added 2 war sun(s) to ( ARINAM / MEER ).
+Amynta added 2 dreadnought(s) to ( ARINAM / MEER ).
+Amynta added 2 destroyer(s) to ( ARINAM / MEER ).
+Amynta removed 1 infantry from NEW ALBION.
+Amynta removed 9 fighter(s) from ( NEW ALBION / STARPOINT ).
+Amynta removed 1 flagship from ( NEW ALBION / STARPOINT ).
+Amynta removed 2 war sun(s) from ( NEW ALBION / STARPOINT ).
+Amynta removed 2 dreadnought(s) from ( NEW ALBION / STARPOINT ).
+Amynta removed 2 destroyer(s) from ( NEW ALBION / STARPOINT ).
+Amynta used a tactical movement to move 17 unit(s) to ( ARINAM / MEER ).
+Amynta activated ( ARINAM / MEER ) to start a tactical action.
+Amynta used WARFARE to redistribute command tokens ( 2 tactic, 6 fleet, 1 strategy ) and activate a system.
+
+=== Combat 14 | Round 7 | Thamsi invades Webbly at ( MECATOL REX ) | SCO (Amynta + Webbly), planetary shield blocks bombardment, space cannon defense, 1 ground combat round ===
+Thamsi finished a tactical action in ( MECATOL REX ).
+Thamsi gained control of MECATOL REX.
+Webbly lost control of MECATOL REX.
+Webbly removed 1 PDS(s) from MECATOL REX.Unit(s) were destroyed due to loss of planet control.
+Thamsi won ground combat against Webbly.
+Thamsi destroyed 1 of Webbly's infantry on MECATOL REX.
+Webbly rolled 1 die for 0 hits: Infantry [ 1 ] Details
+Thamsi rolled 3 dice for 1 hit: Infantry [ 8 ] [ 6 ] [ 5 ] DetailsEffects:FRAGILE
+Thamsi and Webbly started ground combat round 1 on MECATOL REX.
+Webbly destroyed 1 of Thamsi's infantry on MECATOL REX.
+Webbly rolled 1 die for 1 hit on MECATOL REX (Thamsi) in Space Cannon Defense: PDS [ 5 ] DetailsEffects:ANTIMASS DEFLECTORS
+Thamsi added 4 infantry to MECATOL REX.
+Thamsi removed 4 infantry from ( MECATOL REX ).
+Thamsi committed ground force(s): 4 infantry to MECATOL REX (Webbly)
+Thamsi skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 1 die for 1 hit against Thamsi in Space Cannon Offense: PDS [ 5 ] DetailsEffects:ANTIMASS DEFLECTORS
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Amynta rolled 3 dice for 2 hits against Thamsi in Space Cannon Offense: PDS [ 5, 2 ] [ 9 ] DetailsEffects:PLASMA SCORING, GRAVITON LASER SYSTEM , ANTIMASS DEFLECTORS
+Amynta exhausted GRAVITON LASER SYSTEM.
+Thamsi added 4 infantry to ( MECATOL REX ).
+Thamsi added 1 carrier(s) to ( MECATOL REX ).
+Thamsi removed 4 infantry from ABYZ.
+Thamsi removed 1 carrier(s) from ( ABYZ / FRIA ).
+Thamsi used a tactical movement to move 5 unit(s) to ( MECATOL REX ).
+Thamsi exhausted SPACIAL CONDUIT CYLINDER.
+Thamsi used SPACIAL CONDUIT CYLINDER.
+Thamsi placed a tactic command token in ( MECATOL REX ).
+Thamsi activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 15 | Round 6 | Webbly moves into own system ( WELLON ) | space cannon offense (Thamsi) only ===
+Webbly finished a tactical action in ( WELLON ).
+Webbly added 2 fighter(s) to ( WELLON ).
+Webbly added 1 dreadnought(s) to ( WELLON ).
+Webbly added 4 infantry to WELLON.
+Webbly spent 6 resource(s) ( RAGH, LIRTA IV, LISIS II, XXEHAN ) to produce: 4 infantry, 1 dreadnought, 2 fighter
+Webbly added 2 infantry to WELLON.
+Webbly removed 2 infantry from ( WELLON ).
+Webbly committed ground force(s): 2 infantry to WELLON (Webbly)
+Webbly damaged 1 dreadnought(s) in ( WELLON ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Thamsi rolled 2 dice for 1 hit against Webbly in Space Cannon Offense: PDS [ 8, 2 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly added 4 fighter(s) to ( WELLON ).
+Webbly added 2 infantry to ( WELLON ).
+Webbly added 1 cruiser(s) to ( WELLON ).
+Webbly added 1 dreadnought(s) to ( WELLON ).
+Webbly added 1 destroyer(s) to ( WELLON ).
+Webbly added 1 space dock(s) to ( WELLON ).
+Webbly removed 2 infantry from ( DAL BOOTHA / XXEHAN ).
+Webbly removed 4 fighter(s) from ( DAL BOOTHA / XXEHAN ).
+Webbly removed 1 cruiser(s) from ( DAL BOOTHA / XXEHAN ).
+Webbly removed 1 dreadnought(s) from ( DAL BOOTHA / XXEHAN ).
+Webbly removed 1 destroyer(s) from ( DAL BOOTHA / XXEHAN ).
+Webbly removed 1 space dock(s) from ( DAL BOOTHA / XXEHAN ).
+Webbly used a tactical movement to move 10 unit(s) to ( WELLON ).
+Webbly placed a tactic command token in ( WELLON ).
+Webbly activated ( WELLON ) to start a tactical action.
+
+=== Combat 16 | Round 6 | Thamsi attacks Webbly at ( MECATOL REX ) via WARFARE | SCO both sides, assault cannon, AFB, 2 space combat rounds, space cannon defense, 1 ground combat round ===
+Thamsi finished a tactical action in ( MECATOL REX ).
+Webbly won ground combat against Thamsi.
+Thamsi destroyed 1 of Webbly's infantry on MECATOL REX.
+Webbly destroyed 1 of Thamsi's infantry on MECATOL REX.
+Webbly rolled 2 dice for 1 hit: Infantry [ 4 ] [ 8 ] Details
+Thamsi rolled 1 die for 1 hit: Infantry [ 8 ] DetailsEffects:FRAGILE
+Thamsi and Webbly started ground combat round 1 on MECATOL REX.
+Webbly rolled 2 dice for 0 hits on MECATOL REX (Thamsi) in Space Cannon Defense: PDS [ 1 ] [ 4 ] DetailsEffects:ANTIMASS DEFLECTORS
+Thamsi added 1 infantry to MECATOL REX.
+Thamsi removed 1 infantry from ( MECATOL REX ).
+Thamsi committed ground force(s): 1 infantry to MECATOL REX (Webbly)
+Thamsi skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Thamsi is the only faction in the ( MECATOL REX ) space area.
+Thamsi won space combat against Webbly.
+Webbly removed 4 infantry from ( MECATOL REX ).Unit(s) were removed due to capacity.
+Webbly removed 1 space dock(s) from ( MECATOL REX ).Unit(s) were destroyed due to being blockaded.
+Thamsi destroyed Webbly's flagship in ( MECATOL REX ).
+Thamsi destroyed 2 of Webbly's damaged dreadnought(s) in ( MECATOL REX ).
+Thamsi destroyed 1 of Webbly's destroyer(s) in ( MECATOL REX ).
+Thamsi destroyed 2 of Webbly's fighter(s) in ( MECATOL REX ).
+Webbly assigned 6 hits from Thamsi in ( MECATOL REX ).
+Thamsi repaired 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used DURANIUM ARMOR to repair 1 dreadnought.
+Thamsi damaged 1 flagship in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 7 dice for 3 hits: Dreadnought [ 3 ] [ 4 ] , Destroyer [ 4 ] , Fighter [ 10 ] [ 8 ] , Flagship [ 8, 5 ] Details
+Thamsi rolled 20 dice for 6 hits: Flagship [ 7, 8 ] , Dreadnought [ 3 ] [ 0 ] [ 0 ] [ 4 ] [ 1 ] , Destroyer [ 8 ] , Carrier [ 5 ] , Fighter [ 4 ] [ 6 ] [ 6 ] [ 0 ] [ 9 ] [ 0 ] [ 3 ] [ 1 ] [ 1 ] [ 4 ] [ 6 ] DetailsEffects:J.N.S. HYLARIM , FRAGILE
+Thamsi and Webbly started space combat round 2.
+Thamsi destroyed 1 of Webbly's fighter(s) in ( MECATOL REX ).
+Webbly assigned 1 hit from Thamsi in ( MECATOL REX ).
+Webbly damaged 1 flagship in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly played SHIELDS HOLDING to cancel 2 hits.
+Webbly woke up ( before hits are assigned ).
+Thamsi repaired 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used DURANIUM ARMOR to repair 1 dreadnought.
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 8 dice for 3 hits: Dreadnought [ 6 ] [ 9 ] , Destroyer [ 4 ] , Fighter [ 3 ] [ 2 ] [ 2 ] , Flagship [ 4, 7 ] Details
+Thamsi rolled 20 dice for 5 hits: Flagship [ 0, 9 ] , Dreadnought [ 3 ] [ 4 ] [ 3 ] [ 4 ] [ 8 ] , Destroyer [ 2 ] , Carrier [ 3 ] , Fighter [ 4 ] [ 0 ] [ 7 ] [ 9 ] [ 1 ] [ 1 ] [ 5 ] [ 3 ] [ 3 ] [ 3 ] [ 6 ] DetailsEffects:J.N.S. HYLARIM , FRAGILE
+Thamsi played SHIELDS HOLDING to cancel 2 hits.
+Thamsi woke up ( before hits are assigned ).
+Webbly rolled 6 dice for 2 hits against Thamsi in ANTI-FIGHTER BARRAGE: Flagship [ 3, 8, 5, 7 ] , Destroyer [ 7, 8 ]
+Thamsi destroyed 2 of Webbly's fighter(s) in ( MECATOL REX ).
+Webbly passed ( before hits are assigned ).
+Webbly woke up ( before hits are assigned ).
+Thamsi rolled 3 dice for 2 hits against Webbly in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 7, 9 ]
+Thamsi destroyed 1 of Webbly's carrier(s) in ( MECATOL REX ).
+Webbly chose 1 carrier to be destroyed by ASSAULT CANNON at ( MECATOL REX ).
+Webbly woke up.
+Thamsi used ASSAULT CANNON.
+Thamsi and Webbly started space combat round 1 on ( MECATOL REX ).
+Thamsi damaged 1 dreadnought(s) in ( MECATOL REX ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 2 dice for 1 hit against Thamsi in Space Cannon Offense: PDS [ 2 ] [ 7 ] DetailsEffects:ANTIMASS DEFLECTORS
+Amynta skipped firing on Thamsi in Space Cannon Offense.
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Thamsi rolled 4 dice for 1 hit against Webbly in Space Cannon Offense: PDS [ 3, 1 ] [ 5 ] [ 4 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Thamsi removed 2 carrier(s) from ( MECATOL REX ).
+Thamsi must remove unit(s) due to exceeding fleet limit.
+Thamsi added 11 fighter(s) to ( MECATOL REX ).
+Thamsi added 1 infantry to ( MECATOL REX ).
+Thamsi added 1 carrier(s) to ( MECATOL REX ).
+Thamsi removed 1 infantry from BEREG.
+Thamsi removed 1 carrier(s) from ( BEREG / LIRTA IV ).
+Thamsi added 1 carrier(s) to ( MECATOL REX ).
+Thamsi removed 4 fighter(s) from ( ABYZ / FRIA ).
+Thamsi removed 1 carrier(s) from ( ABYZ / FRIA ).
+Thamsi added 1 flagship to ( MECATOL REX ).
+Thamsi added 5 dreadnought(s) to ( MECATOL REX ).
+Thamsi added 1 destroyer(s) to ( MECATOL REX ).
+Thamsi added 1 carrier(s) to ( MECATOL REX ).
+Thamsi removed 7 fighter(s) from ( MEHAR XULL ).
+Thamsi removed 1 flagship from ( MEHAR XULL ).
+Thamsi removed 5 dreadnought(s) from ( MEHAR XULL ).
+Thamsi removed 1 destroyer(s) from ( MEHAR XULL ).
+Thamsi removed 1 carrier(s) from ( MEHAR XULL ).
+Thamsi used a tactical movement to move 22 unit(s) to ( MECATOL REX ).
+Thamsi activated ( MECATOL REX ) to start a tactical action.
+Thamsi used WARFARE to redistribute command tokens ( 0 tactic, 8 fleet, 0 strategy ) and activate a system.
+
+=== Combat 17 | Round 6 | Sacrimantius attacks Amynta at ( ARNOR / LOR ) | space cannon offense (Amynta) only ===
+Sacrimantius finished a tactical action in ( ARNOR / LOR ).
+Sacrimantius gained control of LOR.
+Amynta lost control of LOR.
+Sacrimantius gained control of ARNOR.
+Amynta lost control of ARNOR.
+Sacrimantius added 1 infantry to LOR.
+Sacrimantius removed 1 infantry from ( ARNOR / LOR ).
+Sacrimantius added 1 infantry to ARNOR.
+Sacrimantius removed 1 infantry from ( ARNOR / LOR ).
+Sacrimantius committed ground force(s): 1 infantry to ARNOR (Amynta) ,1 infantry to LOR (Amynta)
+Amynta destroyed 1 of Sacrimantius's fighter(s) in ( ARNOR / LOR ).
+Sacrimantius assigned 1 hit from Amynta in ( ARNOR / LOR ).
+Sacrimantius passed ( before hits are assigned ).
+Sacrimantius woke up ( before hits are assigned ).
+Amynta rolled 2 dice for 1 hit against Sacrimantius in Space Cannon Offense: PDS [ 3, 7 ] DetailsEffects:PLASMA SCORING
+Sacrimantius removed 2 fighter(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius must remove unit(s) due to exceeding transport capacity.
+Sacrimantius added 2 fighter(s) to ( ARNOR / LOR ).
+Sacrimantius added 2 infantry to ( ARNOR / LOR ).
+Sacrimantius added 2 cruiser(s) to ( ARNOR / LOR ).
+Sacrimantius added 1 destroyer(s) to ( ARNOR / LOR ).
+Sacrimantius added 1 carrier(s) to ( ARNOR / LOR ).
+Sacrimantius removed 1 infantry from TORKAN.
+Sacrimantius removed 1 infantry from TEQU'RAN.
+Sacrimantius removed 2 fighter(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 2 cruiser(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 1 destroyer(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 1 carrier(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius used a tactical movement to move 8 unit(s) to ( ARNOR / LOR ).
+Sacrimantius placed a tactic command token in ( ARNOR / LOR ).
+Sacrimantius activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 18 | Round 5 | Webbly in ( MECATOL REX ) | space cannon offense (Thamsi + Amynta) only ===
+Webbly finished a tactical action in ( MECATOL REX ).
+Webbly added 4 infantry to ( MECATOL REX ).
+Webbly spent 1 resource(s) ( 1 trade good ) to produce: 4 infantry
+Amynta passed ( after SUSTAIN DAMAGE was used ).
+Amynta woke up ( after SUSTAIN DAMAGE was used ).
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Webbly played MANEUVERING JETS to cancel 1 hit.
+Webbly woke up ( before hits are assigned ).
+Amynta rolled 3 dice for 2 hits against Webbly in Space Cannon Offense: PDS [ 6, 7 ] [ 3 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly damaged 1 dreadnought(s) in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly damaged 1 flagship in ( MECATOL REX ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Thamsi.
+Webbly played MANEUVERING JETS to cancel 1 hit.
+Webbly woke up ( before hits are assigned ).
+Thamsi rolled 3 dice for 3 hits against Webbly in Space Cannon Offense: PDS [ 8, 5 ] [ 8 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly skipped tactical movement.
+Webbly placed a tactic command token in ( MECATOL REX ).
+Webbly activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 19 | Round 5 | Thamsi invades Amynta at ( MEHAR XULL ) via WARFARE | SCO, space cannon defense, Magen Defense Grid, 4 ground combat rounds ===
+Thamsi finished a tactical action in ( MEHAR XULL ).
+Amynta won ground combat against Thamsi.
+Amynta destroyed 1 of Thamsi's infantry on MEHAR XULL.
+Amynta rolled 2 dice for 1 hit: Infantry [ 1 ] [ 9 ] Details
+Thamsi rolled 1 die for 0 hits: Infantry [ 5 ] DetailsEffects:FRAGILE
+Thamsi and Amynta started ground combat round 4.
+Thamsi destroyed 1 of Amynta's infantry on MEHAR XULL.
+Amynta rolled 3 dice for 0 hits: Infantry [ 6 ] [ 2 ] [ 3 ] Details
+Thamsi rolled 1 die for 1 hit: Infantry [ 8 ] DetailsEffects:FRAGILE
+Thamsi and Amynta started ground combat round 3.
+Amynta destroyed 1 of Thamsi's infantry on MEHAR XULL.
+Amynta rolled 3 dice for 1 hit: Infantry [ 5 ] [ 8 ] [ 3 ] Details
+Thamsi rolled 2 dice for 0 hits: Infantry [ 2 ] [ 6 ] DetailsEffects:FRAGILE
+Thamsi and Amynta started ground combat round 2.
+Amynta rolled 3 dice for 0 hits: Infantry [ 3 ] [ 3 ] [ 5 ] Details
+Thamsi rolled 2 dice for 0 hits: Infantry [ 0 ] [ 5 ] DetailsEffects:FRAGILE
+Amynta destroyed 1 of Thamsi's infantry on MEHAR XULL.
+Amynta used MAGEN DEFENSE GRID to produce 1 hit against 1 infantry on MEHAR XULL.
+Thamsi and Amynta started ground combat round 1 on MEHAR XULL.
+Amynta destroyed 1 of Thamsi's infantry on MEHAR XULL.
+Amynta rolled 2 dice for 1 hit on MEHAR XULL (Thamsi) in Space Cannon Defense: PDS [ 2, 5 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Thamsi added 4 infantry to MEHAR XULL.
+Thamsi removed 4 infantry from ( MEHAR XULL ).
+Thamsi committed ground force(s): 4 infantry to MEHAR XULL (Amynta)
+Thamsi skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Thamsi damaged 1 dreadnought(s) in ( MEHAR XULL ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Amynta rolled 3 dice for 1 hit against Thamsi in Space Cannon Offense: PDS [ 4, 4 ] [ 7 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Thamsi removed 1 carrier(s) from ( MEHAR XULL ).
+Thamsi must remove unit(s) due to exceeding fleet limit.
+Thamsi added 4 infantry to ( MEHAR XULL ).
+Thamsi added 1 carrier(s) to ( MEHAR XULL ).
+Thamsi removed 3 infantry from ( alpha wormhole 1, 2 ).
+Thamsi removed 1 carrier(s) from ( alpha wormhole 1, 2 ).
+Thamsi added 1 flagship to ( MEHAR XULL ).
+Thamsi added 1 destroyer(s) to ( MEHAR XULL ).
+Thamsi removed 1 infantry from VEFUT II.
+Thamsi removed 1 flagship from ( VEFUT II ).
+Thamsi removed 1 destroyer(s) from ( VEFUT II ).
+Thamsi used a tactical movement to move 7 unit(s) to ( MEHAR XULL ).
+Thamsi exhausted SPACIAL CONDUIT CYLINDER.
+Thamsi used SPACIAL CONDUIT CYLINDER.
+Amynta added 1 infantry to MEHAR XULL.
+Amynta used MAGEN DEFENSE GRID to place 1 infantry.
+Thamsi activated ( MEHAR XULL ) to start a tactical action.
+Thamsi used WARFARE to redistribute command tokens ( 1 tactic, 8 fleet, 0 strategy ) and activate a system.
+
+=== Combat 20 | Round 5 | Thamsi invades Amynta at ( MEHAR XULL ) | SCO, space cannon defense, Magen Defense Grid, 1 ground combat round ===
+Thamsi finished a tactical action in ( MEHAR XULL ).
+Thamsi lost 1 victory point due to SHARD OF THE THRONE.
+Amynta gained 1 victory point due to SHARD OF THE THRONE.
+Thamsi gave agenda(s) to Amynta: SHARD OF THE THRONE
+Amynta used SHARD OF THE THRONE.
+Amynta won ground combat against Thamsi.
+Amynta destroyed 1 of Thamsi's infantry on MEHAR XULL.
+Amynta used MAGEN DEFENSE GRID to produce 1 hit against 1 infantry on MEHAR XULL.
+Thamsi and Amynta started ground combat round 1 on MEHAR XULL.
+Amynta destroyed 1 of Thamsi's infantry on MEHAR XULL.
+Amynta rolled 2 dice for 1 hit on MEHAR XULL (Thamsi) in Space Cannon Defense: PDS [ 9, 2 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Thamsi added 2 infantry to MEHAR XULL.
+Thamsi removed 2 infantry from ( MEHAR XULL ).
+Thamsi committed ground force(s): 2 infantry to MEHAR XULL (Amynta)
+Thamsi skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Thamsi damaged 1 dreadnought(s) in ( MEHAR XULL ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Thamsi played MANEUVERING JETS to cancel 1 hit.
+Thamsi woke up ( before hits are assigned ).
+Amynta rolled 3 dice for 2 hits against Thamsi in Space Cannon Offense: PDS [ 4, 9 ] [ 9 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Thamsi added 2 fighter(s) to ( MEHAR XULL ).
+Thamsi added 2 infantry to ( MEHAR XULL ).
+Thamsi added 1 dreadnought(s) to ( MEHAR XULL ).
+Thamsi removed 1 dreadnought(s) from ( NAR / JOL ).
+Thamsi added 2 fighter(s) to ( MEHAR XULL ).
+Thamsi removed 2 fighter(s) from ( VEFUT II ).
+Thamsi added 1 carrier(s) to ( MEHAR XULL ).
+Thamsi removed 1 carrier(s) from ( alpha wormhole 1, 2 ).
+Thamsi added 1 fighter(s) to ( MEHAR XULL ).
+Thamsi removed 1 fighter(s) from ( MELLON / ZOHBAT ).
+Thamsi added 2 fighter(s) to ( MEHAR XULL ).
+Thamsi removed 2 fighter(s) from ( BEREG / LIRTA IV ).
+Thamsi added 2 dreadnought(s) to ( MEHAR XULL ).
+Thamsi removed 2 infantry from GRAL.
+Thamsi removed 2 dreadnought(s) from ( CENTAURI / GRAL ).
+Thamsi added 2 dreadnought(s) to ( MEHAR XULL ).
+Thamsi removed 2 fighter(s) from ( ABYZ / FRIA ).
+Thamsi removed 2 dreadnought(s) from ( ABYZ / FRIA ).
+Thamsi used a tactical movement to move 15 unit(s) to ( MEHAR XULL ).
+Amynta added 1 infantry to MEHAR XULL.
+Amynta used MAGEN DEFENSE GRID to place 1 infantry.
+Thamsi placed a tactic command token in ( MEHAR XULL ).
+Thamsi activated ( MEHAR XULL ) to start a tactical action.
+
+=== Combat 21 | Round 5 | Sacrimantius attacks Amynta at ( ARINAM / MEER ) | Sabotage, ambush, Morale Boost (cancelled), Fighter Prototype, AFB, Munitions Reserves reroll, 2 space combat rounds, bombardment, Parley ===
+Sacrimantius finished a tactical action in ( ARINAM / MEER ).
+Sacrimantius added 1 infantry to ( ARINAM / MEER ).
+Sacrimantius removed 1 infantry from MEER.
+Amynta played PARLEY on MEER.
+Amynta woke up ( after a player committed ground forces ).
+Sacrimantius added 1 infantry to MEER.
+Sacrimantius removed 1 infantry from ( ARINAM / MEER ).
+Sacrimantius committed ground force(s): 1 infantry to MEER (Amynta)
+Sacrimantius destroyed 1 of Amynta's infantry on MEER.
+Sacrimantius rolled 3 dice for 3 hits on MEER (Amynta) using BOMBARDMENT: Dreadnought [ 7, 6 ] [ 10 ] DetailsEffects:PLASMA SCORING
+Sacrimantius added 1 dreadnought(s) to ( ARINAM / MEER ).
+Sacrimantius used SALVAGE OPERATIONS to spend 4 resource(s) in ( ARINAM / MEER ) and produce: 1 dreadnought. Spent: MOLL PRIMUS .
+Sacrimantius gained 1 trade good(s).
+Sacrimantius used SALVAGE OPERATIONS for 1 trade good.
+Sacrimantius gained 1 victory point due to UNVEIL FLAGSHIP.
+Sacrimantius scored secret objective UNVEIL FLAGSHIP.
+Sacrimantius woke up ( when combat ends ).
+Sacrimantius is the only faction in the ( ARINAM / MEER ) space area.
+Sacrimantius won space combat against Amynta.
+Sacrimantius destroyed 1 of Amynta's dreadnought(s) in ( ARINAM / MEER ).
+Amynta assigned 5 hits from Sacrimantius in ( ARINAM / MEER ).
+Amynta rolled 1 die for 0 hits: Dreadnought [ 3 ] Details
+Sacrimantius rolled 10 dice for 5 hits: Cruiser [ 10 ] [ 3 ] [ 7 ] , Dreadnought [ 10 ] , Destroyer [ 6 ] , Flagship [ 10, 9 ] , Fighter [ 8 ] [ 3 ] [ 1 ] Details
+Sacrimantius and Amynta started space combat round 2.
+Sacrimantius destroyed 1 of Amynta's dreadnought(s) in ( ARINAM / MEER ).
+Sacrimantius destroyed 2 of Amynta's destroyer(s) in ( ARINAM / MEER ).
+Sacrimantius destroyed 1 of Amynta's carrier(s) in ( ARINAM / MEER ).
+Amynta assigned 4 hits from Sacrimantius in ( ARINAM / MEER ).
+Amynta destroyed 1 of Sacrimantius's carrier(s) in ( ARINAM / MEER ).
+Amynta destroyed 1 of Sacrimantius's fighter(s) in ( ARINAM / MEER ).
+Sacrimantius assigned 2 hits from Amynta in ( ARINAM / MEER ).
+Sacrimantius skipped using SUSTAIN DAMAGE.
+Amynta passed ( after SUSTAIN DAMAGE was used ).
+Amynta woke up ( after SUSTAIN DAMAGE was used ).
+Sacrimantius damaged 1 dreadnought(s) in ( ARINAM / MEER ).
+Sacrimantius used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Amynta rerolled 2 dice for 3 total hits: Dreadnought [ 8 ] [ 6 ] , Destroyer [ 2 ] [ 10 ] , Carrier [ 7 ] Details
+Amynta used Reroll (MUNITIONS RESERVES).
+Amynta woke up ( after a combat roll ).
+Amynta rolled 5 dice for 3 hits: Dreadnought [ 8 ] [ 6 ] , Destroyer [ 5 ] [ 10 ] , Carrier [ 2 ] Details
+Sacrimantius rolled 12 dice for 4 hits: Cruiser [ 1 ] [ 6 ] [ 9 ] , Dreadnought [ 10 ] , Destroyer [ 5 ] , Carrier [ 4 ] , Flagship [ 5, 9 ] , Fighter [ 11 ] [ 7 ] [ 7 ] [ 6 ] DetailsEffects:FIGHTER PROTOTYPE
+Amynta destroyed 2 of Sacrimantius's fighter(s) in ( ARINAM / MEER ).
+Amynta rolled 6 dice for 2 hits against Sacrimantius in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 7, 2 ] [ 10, 1, 5 ]
+Sacrimantius played FIGHTER PROTOTYPE.
+Sacrimantius woke up ( when a combat round starts or ends ).
+Sacrimantius's MORALE BOOST action card was canceled.
+Amynta played SABOTAGE.
+Amynta woke up ( action card played ).
+Sacrimantius played MORALE BOOST.
+Sacrimantius woke up ( when a combat round starts or ends ).
+Amynta spent 2 trade good(s).
+Amynta used MUNITIONS RESERVES.
+Sacrimantius destroyed 1 of Amynta's fighter(s) in ( ARINAM / MEER ).
+Amynta assigned 1 hit from Sacrimantius in ( ARINAM / MEER ).
+Amynta woke up.
+Sacrimantius rolled 2 dice to hit on 7-10: [ 10 , 5 ] Hits: 1
+Sacrimantius used AMBUSH on Amynta with 2 cruiser dice.
+Sacrimantius and Amynta started space combat round 1 on ( ARINAM / MEER ).
+Amynta's EXPERIMENTAL BATTLESTATION action card was canceled.
+Sacrimantius played SABOTAGE.
+Sacrimantius woke up ( action card played ).
+Amynta played EXPERIMENTAL BATTLESTATION.
+Amynta woke up ( after unit(s) were moved ).
+Sacrimantius added 6 fighter(s) to ( ARINAM / MEER ).
+Sacrimantius added 1 infantry to ( ARINAM / MEER ).
+Sacrimantius added 1 flagship to ( ARINAM / MEER ).
+Sacrimantius added 2 cruiser(s) to ( ARINAM / MEER ).
+Sacrimantius removed 3 fighter(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 1 flagship from ( TEQU'RAN / TORKAN ).
+Sacrimantius removed 2 cruiser(s) from ( TEQU'RAN / TORKAN ).
+Sacrimantius added 1 cruiser(s) to ( ARINAM / MEER ).
+Sacrimantius added 1 dreadnought(s) to ( ARINAM / MEER ).
+Sacrimantius added 1 destroyer(s) to ( ARINAM / MEER ).
+Sacrimantius added 1 carrier(s) to ( ARINAM / MEER ).
+Sacrimantius removed 1 infantry from SAUDOR.
+Sacrimantius removed 3 fighter(s) from ( SAUDOR ).
+Sacrimantius removed 1 cruiser(s) from ( SAUDOR ).
+Sacrimantius removed 1 dreadnought(s) from ( SAUDOR ).
+Sacrimantius removed 1 destroyer(s) from ( SAUDOR ).
+Sacrimantius removed 1 carrier(s) from ( SAUDOR ).
+Sacrimantius used a tactical movement to move 14 unit(s) to ( ARINAM / MEER ).
+Sacrimantius placed a tactic command token in ( ARINAM / MEER ).
+Sacrimantius activated ( ARINAM / MEER ) to start a tactical action.
+
+=== Combat 22 | Round 4 | Amynta invades Sacrimantius + Webbly at ( ARINAM / MEER ) | bombardment only ===
+Amynta finished a tactical action in ( ARINAM / MEER ).
+Amynta gained control of MEER.
+Webbly lost control of MEER.
+Amynta gained control of ARINAM.
+Sacrimantius lost control of ARINAM.
+Amynta added 1 infantry to MEER.
+Amynta removed 1 infantry from ( ARINAM / MEER ).
+Amynta added 1 infantry to ARINAM.
+Amynta removed 1 infantry from ( ARINAM / MEER ).
+Amynta committed ground force(s): 1 infantry to ARINAM (Sacrimantius) ,1 infantry to MEER (Webbly)
+Amynta destroyed 1 of Sacrimantius's infantry on ARINAM.
+Amynta rolled 1 die for 1 hit on ARINAM (Sacrimantius) using BOMBARDMENT: Dreadnought [ 10 ] Details
+Amynta gained 1 victory point due to MAKE AN EXAMPLE OF THEIR WORLD.
+Amynta scored secret objective MAKE AN EXAMPLE OF THEIR WORLD.
+Amynta destroyed 1 of Webbly's infantry on MEER.
+Amynta rolled 2 dice for 2 hits on MEER (Webbly) using BOMBARDMENT: Dreadnought [ 5, 10 ] DetailsEffects:PLASMA SCORING
+Amynta added 1 fighter(s) to ( ARINAM / MEER ).
+Amynta added 2 infantry to ( ARINAM / MEER ).
+Amynta added 2 dreadnought(s) to ( ARINAM / MEER ).
+Amynta added 2 destroyer(s) to ( ARINAM / MEER ).
+Amynta added 1 carrier(s) to ( ARINAM / MEER ).
+Amynta removed 1 infantry from LOR.
+Amynta removed 1 infantry from ARNOR.
+Amynta removed 1 fighter(s) from ( ARNOR / LOR ).
+Amynta removed 2 dreadnought(s) from ( ARNOR / LOR ).
+Amynta removed 2 destroyer(s) from ( ARNOR / LOR ).
+Amynta removed 1 carrier(s) from ( ARNOR / LOR ).
+Amynta used a tactical movement to move 8 unit(s) to ( ARINAM / MEER ).
+Amynta placed a tactic command token in ( ARINAM / MEER ).
+Amynta activated ( ARINAM / MEER ) to start a tactical action.
+
+=== Combat 23 | Round 4 | Thamsi attacks Webbly at ( CENTAURI / GRAL ) via WARFARE | SCO, 5 space combat rounds, bombardment, 1 ground combat round ===
+Thamsi finished a tactical action in ( CENTAURI / GRAL ).
+Thamsi gained control of GRAL.
+Webbly lost control of GRAL.
+Thamsi won ground combat against Webbly.
+Thamsi destroyed 1 of Webbly's infantry on GRAL.
+Webbly rolled 1 die for 0 hits: Infantry [ 6 ] Details
+Thamsi rolled 2 dice for 1 hit: Infantry [ 3 ] [ 9 ] DetailsEffects:FRAGILE
+Thamsi and Webbly started ground combat round 1 on GRAL.
+Thamsi added 2 infantry to GRAL.
+Thamsi removed 2 infantry from ( CENTAURI / GRAL ).
+Thamsi committed ground force(s): 2 infantry to GRAL (Webbly)
+Thamsi destroyed 2 of Webbly's infantry on GRAL.
+Thamsi rolled 3 dice for 2 hits on GRAL (Webbly) using BOMBARDMENT: Dreadnought [ 5, 6 ] [ 2 ] DetailsEffects:PLASMA SCORING
+Thamsi removed 1 infantry from ( CENTAURI / GRAL ).
+Thamsi must remove unit(s) due to exceeding transport capacity.
+Thamsi is the only faction in the ( CENTAURI / GRAL ) space area.
+Thamsi won space combat against Webbly.
+Webbly removed 1 space dock(s) from ( CENTAURI / GRAL ).Unit(s) were destroyed due to being blockaded.
+Thamsi destroyed 1 of Webbly's cruiser(s) in ( CENTAURI / GRAL ).
+Webbly assigned 1 hit from Thamsi in ( CENTAURI / GRAL ).
+Webbly rolled 1 die for 0 hits: Cruiser [ 3 ] Details
+Thamsi rolled 2 dice for 1 hit: Dreadnought [ 6 ] [ 3 ] DetailsEffects:FRAGILE
+Thamsi passed ( when a combat round starts or ends ).
+Thamsi woke up ( when a combat round starts or ends ).
+Thamsi and Webbly started space combat round 5.
+Thamsi destroyed 1 of Webbly's cruiser(s) in ( CENTAURI / GRAL ).
+Webbly assigned 1 hit from Thamsi in ( CENTAURI / GRAL ).
+Webbly destroyed 1 of Thamsi's damaged dreadnought(s) in ( CENTAURI / GRAL ).
+Thamsi assigned 1 hit from Webbly in ( CENTAURI / GRAL ).
+Webbly rolled 2 dice for 1 hit: Cruiser [ 6 ] [ 8 ] Details
+Thamsi rolled 3 dice for 1 hit: Dreadnought [ 4 ] [ 9 ] [ 0 ] DetailsEffects:FRAGILE
+Thamsi passed ( when a combat round starts or ends ).
+Thamsi woke up ( when a combat round starts or ends ).
+Thamsi and Webbly started space combat round 4.
+Thamsi destroyed 1 of Webbly's cruiser(s) in ( CENTAURI / GRAL ).
+Thamsi destroyed 1 of Webbly's destroyer(s) in ( CENTAURI / GRAL ).
+Webbly assigned 2 hits from Thamsi in ( CENTAURI / GRAL ).
+Thamsi damaged 1 dreadnought(s) in ( CENTAURI / GRAL ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 4 dice for 1 hit: Cruiser [ 2 ] [ 4 ] [ 7 ] , Destroyer [ 4 ] Details
+Thamsi rolled 3 dice for 2 hits: Dreadnought [ 6 ] [ 0 ] [ 9 ] DetailsEffects:FRAGILE
+Thamsi passed ( when a combat round starts or ends ).
+Thamsi woke up ( when a combat round starts or ends ).
+Thamsi and Webbly started space combat round 3.
+Thamsi destroyed 2 of Webbly's fighter(s) in ( CENTAURI / GRAL ).
+Webbly assigned 2 hits from Thamsi in ( CENTAURI / GRAL ).
+Webbly rolled 6 dice for 0 hits: Cruiser [ 4 ] [ 1 ] [ 2 ] , Destroyer [ 1 ] , Fighter [ 6 ] [ 3 ] Details
+Thamsi rolled 3 dice for 2 hits: Dreadnought [ 8 ] [ 0 ] [ 6 ] DetailsEffects:FRAGILE
+Thamsi passed ( when a combat round starts or ends ).
+Thamsi woke up ( when a combat round starts or ends ).
+Thamsi and Webbly started space combat round 2.
+Thamsi destroyed 2 of Webbly's fighter(s) in ( CENTAURI / GRAL ).
+Webbly assigned 2 hits from Thamsi in ( CENTAURI / GRAL ).
+Thamsi damaged 1 dreadnought(s) in ( CENTAURI / GRAL ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Thamsi damaged 1 dreadnought(s) in ( CENTAURI / GRAL ).
+Thamsi used SUSTAIN DAMAGE to cancel 1 hit from Webbly.
+Webbly rolled 8 dice for 2 hits: Cruiser [ 1 ] [ 3 ] [ 9 ] , Destroyer [ 7 ] , Fighter [ 5 ] [ 2 ] [ 10 ] [ 8 ] Details
+Thamsi rolled 3 dice for 2 hits: Dreadnought [ 9 ] [ 2 ] [ 7 ] DetailsEffects:FRAGILE
+Thamsi passed ( when a combat round starts or ends ).
+Thamsi woke up ( when a combat round starts or ends ).
+Thamsi and Webbly started space combat round 1 on ( CENTAURI / GRAL ).
+Thamsi destroyed 1 of Webbly's fighter(s) in ( CENTAURI / GRAL ).
+Webbly assigned 1 hit from Thamsi in ( CENTAURI / GRAL ).
+Thamsi rolled 2 dice for 1 hit against Webbly in Space Cannon Offense: PDS [ 6, 4 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Thamsi added 3 infantry to ( CENTAURI / GRAL ).
+Thamsi added 1 dreadnought(s) to ( CENTAURI / GRAL ).
+Thamsi removed 1 infantry from VEFUT II.
+Thamsi removed 1 dreadnought(s) from ( VEFUT II ).
+Thamsi added 2 dreadnought(s) to ( CENTAURI / GRAL ).
+Thamsi removed 1 infantry from FRIA.
+Thamsi removed 1 infantry from ABYZ.
+Thamsi removed 2 dreadnought(s) from ( ABYZ / FRIA ).
+Thamsi used a tactical movement to move 6 unit(s) to ( CENTAURI / GRAL ).
+Thamsi exhausted SPACIAL CONDUIT CYLINDER.
+Thamsi used SPACIAL CONDUIT CYLINDER.
+Thamsi activated ( CENTAURI / GRAL ) to start a tactical action.
+Thamsi used WARFARE to redistribute command tokens ( 0 tactic, 3 fleet, 0 strategy ) and activate a system.
+
+=== Combat 24 | Round 4 | Webbly invades Thamsi at ( CENTAURI / GRAL ) | SCO, planetary shield blocks bombardment, space cannon defense ===
+Webbly finished a tactical action in ( CENTAURI / GRAL ).
+Webbly added 2 infantry to GRAL.
+Webbly added 4 fighter(s) to ( CENTAURI / GRAL ).
+Webbly spent 2 resource(s) ( LIRTA IV ) to produce: 4 fighter, 2 infantry
+Webbly gained 1 trade good(s).
+Webbly used SCAVENGE on GRAL for 1 trade good.
+Webbly gained control of GRAL.
+Thamsi lost control of GRAL.
+Thamsi destroyed 2 of Webbly's infantry on CENTAURI.
+Thamsi rolled 2 dice for 2 hits on CENTAURI (Webbly) in Space Cannon Defense: PDS [ 7, 8 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly added 2 infantry to CENTAURI.
+Webbly removed 2 infantry from ( CENTAURI / GRAL ).
+Webbly added 1 infantry to GRAL.
+Webbly removed 1 infantry from ( CENTAURI / GRAL ).
+Webbly committed ground force(s): 1 infantry to GRAL (Thamsi) ,2 infantry to CENTAURI (Thamsi)
+Webbly skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Thamsi destroyed 1 of Webbly's fighter(s) in ( CENTAURI / GRAL ).
+Webbly assigned 1 hit from Thamsi in ( CENTAURI / GRAL ).
+Thamsi rolled 2 dice for 1 hit against Webbly in Space Cannon Offense: PDS [ 2, 6 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Webbly added 2 fighter(s) to ( CENTAURI / GRAL ).
+Webbly added 3 infantry to ( CENTAURI / GRAL ).
+Webbly added 3 cruiser(s) to ( CENTAURI / GRAL ).
+Webbly added 1 destroyer(s) to ( CENTAURI / GRAL ).
+Webbly added 1 space dock(s) to ( CENTAURI / GRAL ).
+Webbly removed 3 infantry from ( MEHAR XULL ).
+Webbly removed 2 fighter(s) from ( MEHAR XULL ).
+Webbly removed 3 cruiser(s) from ( MEHAR XULL ).
+Webbly removed 1 destroyer(s) from ( MEHAR XULL ).
+Webbly removed 1 space dock(s) from ( MEHAR XULL ).
+Webbly used a tactical movement to move 10 unit(s) to ( CENTAURI / GRAL ).
+Webbly placed a tactic command token in ( CENTAURI / GRAL ).
+Webbly activated ( CENTAURI / GRAL ) to start a tactical action.
+
+=== Combat 25 | Round 4 | Thamsi invades Webbly at ( BEREG / LIRTA IV ) | Morale Boost, 1 ground combat round (draw) ===
+Thamsi finished a tactical action in ( BEREG / LIRTA IV ).
+Thamsi gained control of BEREG.
+Webbly lost control of BEREG.
+Ground combat ended in a draw between Thamsi and Webbly.
+Thamsi destroyed 1 of Webbly's infantry on LIRTA IV.
+Webbly destroyed 1 of Thamsi's infantry on LIRTA IV.
+Webbly rolled 1 die for 1 hit: Infantry [ 10 ] Details
+Thamsi rolled 1 die for 1 hit: Infantry [ 10 ] DetailsEffects:FRAGILE, MORALE BOOST
+Amynta passed ( action card played ).
+Amynta woke up ( action card played ).
+Thamsi played MORALE BOOST.
+Thamsi and Webbly started ground combat round 1 on LIRTA IV.
+Thamsi added 1 infantry to LIRTA IV.
+Thamsi removed 1 infantry from ( BEREG / LIRTA IV ).
+Thamsi added 1 infantry to BEREG.
+Thamsi removed 1 infantry from ( BEREG / LIRTA IV ).
+Thamsi committed ground force(s): 1 infantry to BEREG (Webbly) ,1 infantry to LIRTA IV (Webbly)
+Thamsi added 2 infantry to ( BEREG / LIRTA IV ).
+Thamsi added 2 fighter(s) to ( BEREG / LIRTA IV ).
+Thamsi removed 2 fighter(s) from ( ABYZ / FRIA ).
+Thamsi added 1 carrier(s) to ( BEREG / LIRTA IV ).
+Thamsi removed 1 infantry from GRAL.
+Thamsi removed 1 infantry from CENTAURI.
+Thamsi removed 1 carrier(s) from ( CENTAURI / GRAL ).
+Thamsi used a tactical movement to move 5 unit(s) to ( BEREG / LIRTA IV ).
+Thamsi placed a tactic command token in ( BEREG / LIRTA IV ).
+Thamsi activated ( BEREG / LIRTA IV ) to start a tactical action.
+
+=== Combat 26 | Round 3 | Webbly attacks Amynta at ( MEHAR XULL ) | AFB, 2 space combat rounds, 1 ground combat round ===
+Webbly finished a tactical action in ( MEHAR XULL ).
+Webbly removed 1 infantry from ( MEHAR XULL ).
+Webbly must remove unit(s) due to exceeding transport capacity.
+Webbly added 4 infantry to ( MEHAR XULL ).
+Webbly spent 1 resource(s) ( 1 trade good ) to produce: 4 infantry
+Amynta won ground combat against Webbly.
+Amynta destroyed 1 of Webbly's infantry on MEHAR XULL.
+Amynta rolled 1 die for 1 hit: Infantry [ 8 ] Details
+Webbly rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Webbly and Amynta started ground combat round 1 on MEHAR XULL.
+Webbly added 1 infantry to MEHAR XULL.
+Webbly removed 1 infantry from ( MEHAR XULL ).
+Webbly committed ground force(s): 1 infantry to MEHAR XULL (Amynta)
+Webbly is the only faction in the ( MEHAR XULL ) space area.
+Webbly won space combat against Amynta.
+Webbly destroyed 1 of Amynta's destroyer(s) in ( MEHAR XULL ).
+Webbly destroyed 1 of Amynta's carrier(s) in ( MEHAR XULL ).
+Amynta assigned 3 hits from Webbly in ( MEHAR XULL ).
+Amynta rolled 2 dice for 0 hits: Carrier [ 5 ] , Destroyer [ 6 ] Details
+Webbly rolled 6 dice for 3 hits: Cruiser [ 7 ] [ 6 ] [ 9 ] , Destroyer [ 1 ] , Fighter [ 9 ] [ 1 ] Details
+Amynta passed ( when a combat round starts or ends ).
+Webbly and Amynta started space combat round 2.
+Webbly destroyed 1 of Amynta's fighter(s) in ( MEHAR XULL ).
+Amynta assigned 1 hit from Webbly in ( MEHAR XULL ).
+Amynta destroyed 1 of Webbly's fighter(s) in ( MEHAR XULL ).
+Webbly assigned 1 hit from Amynta in ( MEHAR XULL ).
+Amynta rolled 3 dice for 1 hit: Carrier [ 6 ] , Destroyer [ 9 ] , Fighter [ 5 ] Details
+Webbly rolled 7 dice for 1 hit: Cruiser [ 9 ] [ 6 ] [ 1 ] , Destroyer [ 2 ] , Fighter [ 7 ] [ 8 ] [ 8 ] Details
+Amynta destroyed 1 of Webbly's fighter(s) in ( MEHAR XULL ).
+Amynta rolled 3 dice for 1 hit against Webbly in ANTI-FIGHTER BARRAGE: Destroyer [ 1, 1, 7 ]
+Webbly destroyed 1 of Amynta's fighter(s) in ( MEHAR XULL ).
+Webbly rolled 2 dice for 1 hit against Amynta in ANTI-FIGHTER BARRAGE: Destroyer [ 3, 9 ]
+Amynta passed ( when a combat round starts or ends ).
+Amynta woke up ( when a combat round starts or ends ).
+Webbly and Amynta started space combat round 1 on ( MEHAR XULL ).
+Webbly added 4 fighter(s) to ( MEHAR XULL ).
+Webbly added 1 infantry to ( MEHAR XULL ).
+Webbly added 1 cruiser(s) to ( MEHAR XULL ).
+Webbly added 1 destroyer(s) to ( MEHAR XULL ).
+Webbly removed 1 cruiser(s) from ( BEREG / LIRTA IV ).
+Webbly removed 1 destroyer(s) from ( BEREG / LIRTA IV ).
+Webbly added 2 cruiser(s) to ( MEHAR XULL ).
+Webbly added 1 space dock(s) to ( MEHAR XULL ).
+Webbly removed 1 infantry from MECATOL REX.
+Webbly removed 4 fighter(s) from ( MECATOL REX ).
+Webbly removed 2 cruiser(s) from ( MECATOL REX ).
+Webbly removed 1 space dock(s) from ( MECATOL REX ).
+Webbly used a tactical movement to move 10 unit(s) to ( MEHAR XULL ).
+Webbly placed a tactic command token in ( MEHAR XULL ).
+Webbly activated ( MEHAR XULL ) to start a tactical action.
+
+=== Combat 27 | Round 3 | Amynta attacks Webbly at ( ARNOR / LOR ) | AFB, 1 space combat round, retreat attempt, bombardment, 2 ground combats ===
+Amynta finished a tactical action in ( ARNOR / LOR ).
+Amynta gained control of ARNOR.
+Webbly lost control of ARNOR.
+Amynta gained control of LOR.
+Webbly lost control of LOR.
+Amynta won ground combat against Webbly.
+Amynta destroyed 1 of Webbly's infantry on ARNOR.
+Webbly rolled 1 die for 0 hits: Infantry [ 7 ] Details
+Amynta rolled 1 die for 1 hit: Infantry [ 10 ] Details
+Amynta and Webbly started ground combat round 4.
+Webbly rolled 1 die for 0 hits: Infantry [ 6 ] Details
+Amynta rolled 1 die for 0 hits: Infantry [ 7 ] Details
+Amynta and Webbly started ground combat round 3.
+Webbly rolled 1 die for 0 hits: Infantry [ 4 ] Details
+Amynta rolled 1 die for 0 hits: Infantry [ 3 ] Details
+Amynta and Webbly started ground combat round 2.
+Webbly rolled 1 die for 0 hits: Infantry [ 3 ] Details
+Amynta rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Amynta and Webbly started ground combat round 1 on ARNOR.
+Amynta won ground combat against Webbly.
+Amynta destroyed 1 of Webbly's infantry on LOR.
+Webbly rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Amynta rolled 1 die for 1 hit: Infantry [ 9 ] Details
+Amynta and Webbly started ground combat round 1 on LOR.
+Amynta added 1 infantry to ARNOR.
+Amynta removed 1 infantry from ( ARNOR / LOR ).
+Amynta added 1 infantry to LOR.
+Amynta removed 1 infantry from ( ARNOR / LOR ).
+Amynta committed ground force(s): 1 infantry to LOR (Webbly) ,1 infantry to ARNOR (Webbly)
+Amynta rolled 1 die for 0 hits on ARNOR (Webbly) using BOMBARDMENT: Dreadnought [ 2 ] Details
+Amynta rolled 2 dice for 0 hits on LOR (Webbly) using BOMBARDMENT: Dreadnought [ 4, 2 ] DetailsEffects:PLASMA SCORING
+Amynta is the only faction in the ( ARNOR / LOR ) space area.
+Amynta won space combat against Webbly.
+Webbly could not retreat from space combat.
+Webbly removed 1 space dock(s) from ( ARNOR / LOR ).Unit(s) were destroyed due to being blockaded.
+Amynta destroyed 1 of Webbly's damaged dreadnought(s) in ( ARNOR / LOR ).
+Webbly assigned 2 hits from Amynta in ( ARNOR / LOR ).
+Amynta passed ( after SUSTAIN DAMAGE was used ).
+Amynta woke up ( after SUSTAIN DAMAGE was used ).
+Webbly damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Webbly used SUSTAIN DAMAGE to cancel 1 hit from Amynta.
+Webbly rolled 1 die for 0 hits: Dreadnought [ 2 ] Details
+Amynta rolled 6 dice for 3 hits: Dreadnought [ 3 ] [ 5 ] , Destroyer [ 8 ] [ 10 ] , Carrier [ 4 ] , Fighter [ 1 ] Details
+Webbly announced a retreat from space combat with Amynta.
+Amynta destroyed 4 of Webbly's fighter(s) in ( ARNOR / LOR ).
+Amynta rolled 6 dice for 4 hits against Webbly in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 1, 8 ] [ 8, 7, 6 ]
+Amynta passed ( when a combat round starts or ends ).
+Amynta and Webbly started space combat round 1 on ( ARNOR / LOR ).
+Amynta added 1 fighter(s) to ( ARNOR / LOR ).
+Amynta added 2 infantry to ( ARNOR / LOR ).
+Amynta added 1 destroyer(s) to ( ARNOR / LOR ).
+Amynta added 1 carrier(s) to ( ARNOR / LOR ).
+Amynta removed 1 infantry from STARPOINT.
+Amynta removed 1 infantry from NEW ALBION.
+Amynta removed 1 fighter(s) from ( NEW ALBION / STARPOINT ).
+Amynta removed 1 destroyer(s) from ( NEW ALBION / STARPOINT ).
+Amynta removed 1 carrier(s) from ( NEW ALBION / STARPOINT ).
+Amynta added 1 dreadnought(s) to ( ARNOR / LOR ).
+Amynta added 1 destroyer(s) to ( ARNOR / LOR ).
+Amynta removed 1 dreadnought(s) from ( ARC PRIME / WREN TERRA ).
+Amynta removed 1 destroyer(s) from ( ARC PRIME / WREN TERRA ).
+Amynta added 1 dreadnought(s) to ( ARNOR / LOR ).
+Amynta removed 1 dreadnought(s) from ( QUANN / beta wormhole ).
+Amynta used a tactical movement to move 8 unit(s) to ( ARNOR / LOR ).
+Amynta placed a tactic command token in ( ARNOR / LOR ).
+Amynta activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 28 | Round 3 | Sacrimantius attacks Webbly at ( SAUDOR ) | ambush, AFB, 1 space combat round, bombardment ===
+Sacrimantius finished a tactical action in ( SAUDOR ).
+Sacrimantius gained control of SAUDOR.
+Webbly lost control of SAUDOR.
+Sacrimantius returned promissory note(s) to Webbly: RAGH'S CALL
+Webbly added 1 infantry to MEER.
+Webbly removed 1 infantry from SAUDOR.
+Sacrimantius played RAGH'S CALL to move Webbly's ground forces from SAUDOR to MEER.
+Sacrimantius added 1 infantry to SAUDOR.
+Sacrimantius removed 1 infantry from ( SAUDOR ).
+Sacrimantius committed ground force(s): 1 infantry to SAUDOR (Webbly)
+Sacrimantius destroyed 1 of Webbly's infantry on SAUDOR.
+Sacrimantius rolled 2 dice for 1 hit on SAUDOR (Webbly) using BOMBARDMENT: Dreadnought [ 10, 4 ] DetailsEffects:PLASMA SCORING
+Sacrimantius passed ( SALVAGE OPERATIONS ).
+Sacrimantius woke up ( SALVAGE OPERATIONS ).
+Sacrimantius gained 1 trade good(s).
+Sacrimantius used SALVAGE OPERATIONS for 1 trade good.
+Sacrimantius is the only faction in the ( SAUDOR ) space area.
+Sacrimantius won space combat against Webbly.
+Webbly could not retreat from space combat.
+Sacrimantius destroyed 1 of Webbly's carrier(s) in ( SAUDOR ).
+Webbly assigned 1 hit from Sacrimantius in ( SAUDOR ).
+Webbly rolled 1 die for 0 hits: Carrier [ 7 ] Details
+Sacrimantius rolled 3 dice for 1 hit: Cruiser [ 5 ] , Dreadnought [ 7 ] , Destroyer [ 5 ] Details
+Webbly announced a retreat from space combat with Sacrimantius.
+Sacrimantius destroyed 2 of Webbly's fighter(s) in ( SAUDOR ).
+Sacrimantius rolled 2 dice for 2 hits against Webbly in ANTI-FIGHTER BARRAGE: Destroyer [ 10, 10 ]
+Sacrimantius passed ( when a combat round starts or ends ).
+Sacrimantius rolled 1 die to hit on 9-10: [ 6 ] Hits: 0
+Sacrimantius rolled 1 die to hit on 7-10: [ 2 ] Hits: 0
+Sacrimantius used AMBUSH on Webbly with 1 cruiser die and 1 destroyer die.
+Sacrimantius and Webbly started space combat round 1 on ( SAUDOR ).
+Sacrimantius added 1 infantry to ( SAUDOR ).
+Sacrimantius added 1 cruiser(s) to ( SAUDOR ).
+Sacrimantius added 1 dreadnought(s) to ( SAUDOR ).
+Sacrimantius added 1 destroyer(s) to ( SAUDOR ).
+Sacrimantius removed 1 infantry from MOLL PRIMUS.
+Sacrimantius removed 1 cruiser(s) from ( MOLL PRIMUS ).
+Sacrimantius removed 1 dreadnought(s) from ( MOLL PRIMUS ).
+Sacrimantius removed 1 destroyer(s) from ( MOLL PRIMUS ).
+Sacrimantius used a tactical movement to move 4 unit(s) to ( SAUDOR ).
+Sacrimantius placed a tactic command token in ( SAUDOR ).
+Sacrimantius activated ( SAUDOR ) to start a tactical action.
+
+=== Combat 29 | Round 2 | Webbly attacks Sacrimantius at ( ARINAM / MEER ) | Morale Boost, ambush, AFB, 5 space combat rounds, 3 ground combat rounds ===
+Webbly finished a tactical action in ( ARINAM / MEER ).
+Webbly added 1 dreadnought(s) to ( ARINAM / MEER ).
+Webbly added 4 fighter(s) to ( ARINAM / MEER ).
+Webbly spent 5 resource(s) ( 1 trade good, BEREG, LISIS II ) to produce: 4 fighter, 1 dreadnought
+Webbly gained 1 trade good(s).
+Webbly used SCAVENGE on MEER for 1 trade good.
+Webbly gained control of MEER.
+Sacrimantius lost control of MEER.
+Webbly won ground combat against Sacrimantius.
+Webbly destroyed 1 of Sacrimantius's infantry on MEER.
+Sacrimantius rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Webbly rolled 2 dice for 2 hits: Infantry [ 8 ] [ 10 ] Details
+Webbly and Sacrimantius started ground combat round 3.
+Sacrimantius rolled 1 die for 0 hits: Infantry [ 5 ] Details
+Webbly rolled 2 dice for 0 hits: Infantry [ 6 ] [ 2 ] Details
+Webbly and Sacrimantius started ground combat round 2.
+Sacrimantius rolled 1 die for 0 hits: Infantry [ 6 ] Details
+Webbly rolled 2 dice for 0 hits: Infantry [ 7 ] [ 4 ] Details
+Webbly and Sacrimantius started ground combat round 1 on MEER.
+Webbly added 2 infantry to MEER.
+Webbly removed 2 infantry from ( ARINAM / MEER ).
+Webbly committed ground force(s): 2 infantry to MEER (Sacrimantius)
+Webbly is the only faction in the ( ARINAM / MEER ) space area.
+Webbly won space combat against Sacrimantius.
+Webbly destroyed 2 of Sacrimantius's cruiser(s) in ( ARINAM / MEER ).
+Sacrimantius assigned 2 hits from Webbly in ( ARINAM / MEER ).
+Sacrimantius destroyed 1 of Webbly's fighter(s) in ( ARINAM / MEER ).
+Webbly assigned 1 hit from Sacrimantius in ( ARINAM / MEER ).
+Sacrimantius rolled 2 dice for 1 hit: Cruiser [ 10 ] [ 4 ] Details
+Webbly rolled 4 dice for 2 hits: Destroyer [ 9 ] , Carrier [ 9 ] , Fighter [ 7 ] [ 8 ] Details
+Webbly and Sacrimantius started space combat round 5.
+Sacrimantius destroyed 1 of Webbly's fighter(s) in ( ARINAM / MEER ).
+Webbly assigned 1 hit from Sacrimantius in ( ARINAM / MEER ).
+Sacrimantius rolled 2 dice for 1 hit: Cruiser [ 6 ] [ 10 ] Details
+Webbly rolled 5 dice for 0 hits: Destroyer [ 5 ] , Carrier [ 6 ] , Fighter [ 8 ] [ 6 ] [ 5 ] Details
+Webbly and Sacrimantius started space combat round 4.
+Webbly destroyed 1 of Sacrimantius's carrier(s) in ( ARINAM / MEER ).
+Sacrimantius assigned 1 hit from Webbly in ( ARINAM / MEER ).
+Sacrimantius destroyed 2 of Webbly's fighter(s) in ( ARINAM / MEER ).
+Webbly assigned 2 hits from Sacrimantius in ( ARINAM / MEER ).
+Sacrimantius rolled 3 dice for 2 hits: Cruiser [ 1 ] [ 10 ] , Carrier [ 10 ] Details
+Webbly rolled 7 dice for 1 hit: Destroyer [ 7 ] , Carrier [ 7 ] , Fighter [ 8 ] [ 8 ] [ 8 ] [ 9 ] [ 8 ] Details
+Webbly and Sacrimantius started space combat round 3.
+Sacrimantius destroyed 1 of Webbly's fighter(s) in ( ARINAM / MEER ).
+Webbly assigned 1 hit from Sacrimantius in ( ARINAM / MEER ).
+Sacrimantius rolled 3 dice for 1 hit: Cruiser [ 7 ] [ 2 ] , Carrier [ 3 ] Details
+Webbly rolled 8 dice for 0 hits: Destroyer [ 1 ] , Carrier [ 5 ] , Fighter [ 4 ] [ 7 ] [ 4 ] [ 3 ] [ 4 ] [ 5 ] Details
+Webbly and Sacrimantius started space combat round 2.
+Webbly destroyed 1 of Sacrimantius's fighter(s) in ( ARINAM / MEER ).
+Sacrimantius assigned 1 hit from Webbly in ( ARINAM / MEER ).
+Webbly played SHIELDS HOLDING to cancel 1 hit.
+Sacrimantius rolled 4 dice for 1 hit: Cruiser [ 9 ] [ 6 ] , Carrier [ 1 ] , Fighter [ 6 ] Details
+Webbly rolled 8 dice for 1 hit: Destroyer [ 2 ] , Carrier [ 4 ] , Fighter [ 11 ] [ 6 ] [ 8 ] [ 8 ] [ 2 ] [ 2 ] DetailsEffects:MORALE BOOST
+Webbly destroyed 1 of Sacrimantius's fighter(s) in ( ARINAM / MEER ).
+Webbly rolled 2 dice for 1 hit against Sacrimantius in ANTI-FIGHTER BARRAGE: Destroyer [ 10, 3 ]
+Sacrimantius rolled 2 dice to hit on 7-10: [ 3 , 6 ] Hits: 0
+Sacrimantius used AMBUSH on Webbly with 2 cruiser dice.
+Sacrimantius woke up ( when a combat round starts or ends ).
+Webbly played MORALE BOOST.
+Webbly and Sacrimantius started space combat round 1 on ( ARINAM / MEER ).
+Webbly added 6 fighter(s) to ( ARINAM / MEER ).
+Webbly added 2 infantry to ( ARINAM / MEER ).
+Webbly added 1 destroyer(s) to ( ARINAM / MEER ).
+Webbly added 1 carrier(s) to ( ARINAM / MEER ).
+Webbly added 1 space dock(s) to ( ARINAM / MEER ).
+Webbly removed 1 infantry from SAKULAG.
+Webbly removed 1 infantry from LAZAR.
+Webbly removed 6 fighter(s) from ( LAZAR / SAKULAG ).
+Webbly removed 1 destroyer(s) from ( LAZAR / SAKULAG ).
+Webbly removed 1 carrier(s) from ( LAZAR / SAKULAG ).
+Webbly removed 1 space dock(s) from ( LAZAR / SAKULAG ).
+Webbly used a tactical movement to move 11 unit(s) to ( ARINAM / MEER ).
+Webbly placed a tactic command token in ( ARINAM / MEER ).
+Webbly activated ( ARINAM / MEER ) to start a tactical action.

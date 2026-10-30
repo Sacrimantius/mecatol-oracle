@@ -424,7 +424,7 @@ interface SideTemplate {
   role: Role;
   faction: Faction;
   techs: Set<TechId>;
-  units: { stats: UnitStats; onPlanet: boolean }[];
+  units: { stats: UnitStats; onPlanet: boolean; damaged: boolean }[];
 }
 
 function buildTemplate(role: Role, input: SideInput): SideTemplate {
@@ -436,7 +436,8 @@ function buildTemplate(role: Role, input: SideInput): SideTemplate {
     const stats = getUnitStats(faction, type, input.upgrades[type] ?? false);
     // The defender's ground forces and structures start on the planet; the attacker's are carried in space.
     const onPlanet = role === 'defender' && !isShipType(type);
-    for (let i = 0; i < count; i++) units.push({ stats, onPlanet });
+    const damaged = stats.sustainDamage ? Math.min(count, Math.floor(input.damaged?.[type] ?? 0)) : 0;
+    for (let i = 0; i < count; i++) units.push({ stats, onPlanet, damaged: i < damaged });
   }
   return { role, faction, techs: new Set(input.techs), units };
 }
@@ -447,7 +448,7 @@ function instantiate(t: SideTemplate): Side {
     faction: t.faction,
     techs: t.techs,
     yinTriggered: false,
-    units: t.units.map((u) => ({ ...u, dead: false, damaged: false, sustainedThisRound: false })),
+    units: t.units.map((u) => ({ ...u, dead: false, sustainedThisRound: false })),
   };
 }
 
