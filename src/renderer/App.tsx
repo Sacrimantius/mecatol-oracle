@@ -8,6 +8,7 @@ import {
   type SimulationResult,
   type UnitType,
 } from '../engine/types';
+import { actionCardsFor } from '../engine/data/actionCards';
 import type { ImportedCombat, SideFlags } from '../import/bga';
 import { ImportDialog } from './ImportDialog';
 import { clearEdited, countWarnings, dismissFlag, emptyFlags, type FlagKey } from './importFlags';
@@ -17,7 +18,7 @@ import SimWorker from './sim.worker?worker&inline';
 
 const ITERATION_OPTIONS = [1000, 5000, 10000, 25000, 50000];
 
-const emptySide: SideInput = { factionId: '', counts: {}, damaged: {}, upgrades: {}, techs: [] };
+const emptySide: SideInput = { factionId: '', counts: {}, damaged: {}, upgrades: {}, techs: [], actionCards: [] };
 
 interface ImportState {
   title: string;
@@ -76,9 +77,18 @@ export function App() {
   };
 
   const swap = () => {
+    // Bunker, Disable and the like only work for one side.
+    const keepCards = (side: SideInput, role: Role) => {
+      const allowed = new Set(actionCardsFor(role).map((c) => c.id));
+      return side.actionCards?.filter((c) => allowed.has(c));
+    };
     // The attacker has no planet in the system, so a space dock can't come with it.
-    setAttacker({ ...defender, counts: { ...defender.counts, spacedock: 0 } });
-    setDefender(attacker);
+    setAttacker({
+      ...defender,
+      counts: { ...defender.counts, spacedock: 0 },
+      actionCards: keepCards(defender, 'attacker'),
+    });
+    setDefender({ ...attacker, actionCards: keepCards(attacker, 'defender') });
     setImported((imp) => imp && { ...imp, flags: { attacker: imp.flags.defender, defender: imp.flags.attacker } });
   };
 

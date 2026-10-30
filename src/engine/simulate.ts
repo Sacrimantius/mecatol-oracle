@@ -1,8 +1,10 @@
+import { getActionCard } from './data/actionCards';
 import { getFaction, getUnitStats } from './data/factions';
 import { createRng, d10, type Rng } from './rng';
 import {
   ALL_UNIT_TYPES,
   SHIP_TYPES,
+  type ActionCardId,
   type Faction,
   type Role,
   type Roll,
@@ -31,6 +33,12 @@ interface Side {
   techs: Set<TechId>;
   units: Unit[];
   yinTriggered: boolean;
+  /** Action cards still in hand. */
+  cards: Set<ActionCardId>;
+  /** Disable was played on this side's planet: its PDS neither fire nor shield. */
+  pdsDisabled: boolean;
+  /** Bunker was played: -4 to Bombardment against this side for the rest of the invasion. */
+  bunkered: boolean;
 }
 
 interface Hits {
@@ -97,6 +105,9 @@ function combatModifier(side: Side): number {
   return mod;
 }
 
+/** Plays an action card if the side still holds it. */
+const play = (side: Side, card: ActionCardId) => side.cards.delete(card);
+
 // ---------------------------------------------------------------------------
 // Dice
 
@@ -117,6 +128,19 @@ function rollDice(rng: Rng, roll: Roll, modifier: number, dice = roll.dice): Rol
   return { hits, highRolls };
 }
 
+const hitChance = (roll: Roll, modifier: number) => Math.min(1, Math.max(0, (11 - roll.hitOn + modifier) / 10));
+
+/**
+ * Roll an ability (Space Cannon, Bombardment, Anti-Fighter Barrage) against `target`.
+ * The target answers a better-than-average roll with Scramble Frequency, forcing a full reroll.
+ */
+function rollAgainst(rng: Rng, rolls: Roll[], modifier: number, target: Side): number {
+  const roll = () => rolls.reduce((sum, r) => sum + rollDice(rng, r, modifier).hits, 0);
+  const hits = roll();
+  const expected = rolls.reduce((sum, r) => sum + r.dice * hitChance(r, modifier), 0);
+  return hits > expected && play(target, 'scrambleFrequency') ? roll() : hits;
+}
+
 /**
  * Roll an ability (Space Cannon, Bombardment) for a group of units.
  * With Plasma Scoring, the unit with the best value rolls one extra die.
@@ -127,18 +151,22 @@ function rollAbility(
   getRoll: (s: UnitStats) => Roll | undefined,
   modifier: number,
   plasmaScoring: boolean,
+  target: Side,
 ): number {
-  let hits = 0;
+  const rolls: Roll[] = [];
   let best: Roll | undefined;
   for (const unit of units) {
     const roll = getRoll(unit.stats);
     if (!roll) continue;
-    hits += rollDice(rng, roll, modifier).hits;
+    rolls.push(roll);
     if (!best || roll.hitOn < best.hitOn) best = roll;
   }
-  if (plasmaScoring && best) hits += rollDice(rng, best, modifier, 1).hits;
-  return hits;
+  if (plasmaScoring && best) rolls.push({ ...best, dice: 1 });
+  return rollAgainst(rng, rolls, modifier, target);
 }
+
+/** Maneuvering Jets cancels 1 Space Cannon hit. */
+const jets = (target: Side, hits: number) => (hits > 0 && play(target, 'maneuveringJets') ? hits - 1 : hits);
 
 // ---------------------------------------------------------------------------
 // Hit assignment
@@ -200,6 +228,8 @@ function assignHits(
       sustainer.damaged = true;
       sustainer.sustainedThisRound = true;
       remaining -= cancelPerSustain;
+      // Direct Hit: the hit is still cancelled, but the ship is destroyed.
+      if (isShipType(sustainer.stats.type) && play(opponent, 'directHit')) sustainer.dead = true;
     } else {
       pickVictim(pool).dead = true;
       remaining--;
@@ -230,16 +260,37 @@ function checkYinFlagship(a: Side, b: Side): void {
 function spaceCannonOffense(rng: Rng, shooter: Side, target: Side): void {
   const targets = shipsInSpace(target);
   if (targets.length === 0) return;
-  const shooters = alive(shooter).filter((u) => u.stats.spaceCannon);
+  const shooters = alive(shooter).filter((u) => u.stats.spaceCannon && !(shooter.pdsDisabled && u.onPlanet));
   const modifier = target.techs.has('antimassDeflectors') ? -1 : 0;
-  const hits = rollAbility(rng, shooters, (s) => s.spaceCannon, modifier, shooter.techs.has('plasmaScoring'));
+  let hits = rollAbility(rng, shooters, (s) => s.spaceCannon, modifier, shooter.techs.has('plasmaScoring'), target);
+  if (shooter.role === 'defender' && play(shooter, 'experimentalBattlestation')) {
+    hits += rollAgainst(rng, [{ hitOn: 5, dice: 3 }], modifier, target);
+  }
+  hits = jets(target, hits);
   const restriction = shooter.techs.has('gravitonLaserSystem') ? 'nonFighter' : undefined;
   assignHits(target, shooter, targets, hits, restriction);
 }
 
-function combatHits(rng: Rng, side: Side, combatants: Unit[], opponent: Side, inSpace: boolean): Hits {
+/** One round's action-card effects on a side's combat roll. */
+interface RollBonus {
+  all: number;
+  fighters: number;
+  /** Fire Team: reroll every miss. */
+  rerollMisses: boolean;
+}
+
+const NO_BONUS: RollBonus = { all: 0, fighters: 0, rerollMisses: false };
+
+function combatHits(
+  rng: Rng,
+  side: Side,
+  combatants: Unit[],
+  opponent: Side,
+  inSpace: boolean,
+  bonus: RollBonus = NO_BONUS,
+): Hits {
   const hits: Hits = { normal: 0, nonFighter: 0 };
-  const baseMod = combatModifier(side);
+  const baseMod = combatModifier(side) + bonus.all;
   const sardakkFlagship = inSpace && combatants.some((u) => u.stats.special === 'sardakkFlagship');
   const l1z1xFlagship = inSpace && combatants.some((u) => u.stats.special === 'l1z1xFlagship');
 
@@ -248,8 +299,14 @@ function combatHits(rng: Rng, side: Side, combatants: Unit[], opponent: Side, in
     if (!roll) continue;
     let mod = baseMod;
     if (sardakkFlagship && isShipType(unit.stats.type) && unit.stats.special !== 'sardakkFlagship') mod += 1;
+    if (unit.stats.type === 'fighter') mod += bonus.fighters;
     const dice = unit.stats.special === 'winnuFlagship' ? nonFighterShips(opponent).length : roll.dice;
     const result = rollDice(rng, roll, mod, dice);
+    if (bonus.rerollMisses && result.hits < dice) {
+      const rerolled = rollDice(rng, roll, mod, dice - result.hits);
+      result.hits += rerolled.hits;
+      result.highRolls += rerolled.highRolls;
+    }
     let produced = result.hits;
     if (unit.stats.special === 'jolnarFlagship') produced += 2 * result.highRolls;
 
@@ -288,13 +345,15 @@ function startOfSpaceCombat(rng: Rng, att: Side, def: Side, wormhole: boolean): 
 }
 
 function antiFighterBarrage(rng: Rng, att: Side, def: Side): void {
-  const volley = (side: Side) =>
-    shipsInSpace(side).reduce(
-      (sum, u) => sum + (u.stats.antiFighterBarrage ? rollDice(rng, u.stats.antiFighterBarrage, 0).hits : 0),
+  const volley = (side: Side, target: Side) =>
+    rollAgainst(
+      rng,
+      shipsInSpace(side).flatMap((u) => (u.stats.antiFighterBarrage ? [u.stats.antiFighterBarrage] : [])),
       0,
+      target,
     );
-  const attHits = volley(att);
-  const defHits = volley(def);
+  const attHits = volley(att, def);
+  const defHits = volley(def, att);
   assignHits(def, att, shipsInSpace(def), attHits, 'fightersOnly');
   assignHits(att, def, shipsInSpace(att), defHits, 'fightersOnly');
 }
@@ -305,6 +364,41 @@ function duraniumRepair(side: Side): void {
   if (candidates.length === 0) return;
   candidates.sort((a, b) => DESTROY_ORDER[b.stats.type] - DESTROY_ORDER[a.stats.type]);
   candidates[0].damaged = false;
+}
+
+/** Shields Holding cancels 2 hits, saved for a round that would cost more than one Sustain Damage. */
+function shieldsHolding(side: Side, units: Unit[], hits: Hits, canSustain: boolean): void {
+  const total = hits.normal + hits.nonFighter;
+  const canAbsorb = canSustain && !!pickSustainer(units.filter((u) => !u.dead));
+  if (total === 0 || (total === 1 && canAbsorb) || !play(side, 'shieldsHolding')) return;
+  let cancel = 2;
+  const fromNonFighter = Math.min(cancel, hits.nonFighter);
+  hits.nonFighter -= fromNonFighter;
+  cancel -= fromNonFighter;
+  hits.normal -= Math.min(cancel, hits.normal);
+}
+
+/** Courageous to the End: after a non-fighter ship dies, 2 dice at its combat value each destroy an enemy ship. */
+function courageousToTheEnd(rng: Rng, side: Side, opponent: Side, shipsBefore: Unit[]): void {
+  const lost = shipsBefore.filter((u) => u.dead && u.stats.combat);
+  if (lost.length === 0 || !play(side, 'courageousToTheEnd')) return;
+  const best = lost.reduce((a, b) => (b.stats.combat!.hitOn < a.stats.combat!.hitOn ? b : a));
+  const hits = rollDice(rng, best.stats.combat!, 0, 2).hits;
+  for (let i = 0; i < hits; i++) {
+    const ships = shipsInSpace(opponent);
+    if (ships.length === 0) break;
+    pickVictim(ships).dead = true;
+  }
+}
+
+/** Emergency Repairs: repair everything once damage has piled up. */
+function emergencyRepairs(side: Side): void {
+  const units = alive(side).filter((u) => u.stats.sustainDamage);
+  const damaged = units.filter((u) => u.damaged);
+  const fresh = units.length - damaged.length;
+  if (damaged.length >= 2 || (damaged.length === 1 && fresh === 0)) {
+    if (play(side, 'emergencyRepairs')) for (const u of damaged) u.damaged = false;
+  }
 }
 
 function resolveSpaceCombat(rng: Rng, att: Side, def: Side, wormhole: boolean): { outcome: SpaceOutcome; rounds: number } {
@@ -333,17 +427,32 @@ function resolveSpaceCombat(rng: Rng, att: Side, def: Side, wormhole: boolean): 
 
     const attUnits = combatants(att);
     const defUnits = combatants(def);
-    const attHits = combatHits(rng, att, attUnits, def, true);
-    const defHits = combatHits(rng, def, defUnits, att, true);
+    const bonus = (side: Side, units: Unit[]): RollBonus => ({
+      all: rounds === 1 && play(side, 'moraleBoost') ? 1 : 0,
+      fighters: rounds === 1 && units.some((u) => u.stats.type === 'fighter') && play(side, 'fighterPrototype') ? 2 : 0,
+      rerollMisses: false,
+    });
+    const attHits = combatHits(rng, att, attUnits, def, true, bonus(att, attUnits));
+    const defHits = combatHits(rng, def, defUnits, att, true, bonus(def, defUnits));
     // Hits are assigned simultaneously: decide Sustain Damage eligibility before either side loses units.
     const defCanSustain = canSustainAgainst(att);
     const attCanSustain = canSustainAgainst(def);
+    shieldsHolding(def, defUnits, attHits, defCanSustain);
+    shieldsHolding(att, attUnits, defHits, attCanSustain);
+    const shipsBefore = { attacker: nonFighterShips(att), defender: nonFighterShips(def) };
     applyHits(def, att, defUnits, attHits, defCanSustain);
     applyHits(att, def, attUnits, defHits, attCanSustain);
+    checkYinFlagship(att, def);
+    courageousToTheEnd(rng, att, def, shipsBefore.attacker);
+    courageousToTheEnd(rng, def, att, shipsBefore.defender);
     checkYinFlagship(att, def);
 
     duraniumRepair(att);
     duraniumRepair(def);
+    if (combatants(att).length > 0 && combatants(def).length > 0) {
+      emergencyRepairs(att);
+      emergencyRepairs(def);
+    }
     for (const u of [...att.units, ...def.units]) u.sustainedThisRound = false;
   }
 
@@ -354,7 +463,7 @@ function resolveSpaceCombat(rng: Rng, att: Side, def: Side, wormhole: boolean): 
 }
 
 function planetaryShieldUp(att: Side, def: Side): boolean {
-  const shield = alive(def).some((u) => u.onPlanet && u.stats.planetaryShield);
+  const shield = !def.pdsDisabled && alive(def).some((u) => u.onPlanet && u.stats.planetaryShield);
   const stripped = shipsInSpace(att).some((u) => u.stats.removesPlanetaryShield);
   return shield && !stripped;
 }
@@ -363,7 +472,9 @@ function bombard(rng: Rng, att: Side, def: Side): void {
   if (planetaryShieldUp(att, def)) return;
   const targets = groundForcesOnPlanet(def);
   if (targets.length === 0) return;
-  const hits = rollAbility(rng, shipsInSpace(att), (s) => s.bombardment, 0, att.techs.has('plasmaScoring'));
+  if (!def.bunkered && play(def, 'bunker')) def.bunkered = true;
+  const modifier = def.bunkered ? -4 : 0;
+  const hits = rollAbility(rng, shipsInSpace(att), (s) => s.bombardment, modifier, att.techs.has('plasmaScoring'), def);
   assignHits(def, att, targets, hits);
 }
 
@@ -379,11 +490,11 @@ function resolveInvasion(rng: Rng, att: Side, def: Side): { outcome: InvasionOut
   for (const u of invaders) u.onPlanet = true;
 
   // Space Cannon Defense against the landing forces.
-  if (!att.techs.has('l4Disruptors')) {
+  if (!att.techs.has('l4Disruptors') && !def.pdsDisabled) {
     const pds = alive(def).filter((u) => u.onPlanet && u.stats.spaceCannon);
     const modifier = att.techs.has('antimassDeflectors') ? -1 : 0;
-    const hits = rollAbility(rng, pds, (s) => s.spaceCannon, modifier, def.techs.has('plasmaScoring'));
-    assignHits(att, def, groundForcesOnPlanet(att), hits);
+    const hits = rollAbility(rng, pds, (s) => s.spaceCannon, modifier, def.techs.has('plasmaScoring'), att);
+    assignHits(att, def, groundForcesOnPlanet(att), jets(att, hits));
   }
 
   let rounds = 0;
@@ -395,8 +506,13 @@ function resolveInvasion(rng: Rng, att: Side, def: Side): { outcome: InvasionOut
       rounds++;
       const attUnits = groundForcesOnPlanet(att);
       const defUnits = groundForcesOnPlanet(def);
-      const attHits = combatHits(rng, att, attUnits, def, false).normal;
-      const defHits = combatHits(rng, def, defUnits, att, false).normal;
+      const bonus = (side: Side): RollBonus => ({
+        all: rounds === 1 && play(side, 'moraleBoost') ? 1 : 0,
+        fighters: 0,
+        rerollMisses: rounds === 1 && play(side, 'fireTeam'),
+      });
+      const attHits = combatHits(rng, att, attUnits, def, false, bonus(att)).normal;
+      const defHits = combatHits(rng, def, defUnits, att, false, bonus(def)).normal;
       const attTotal = attHits + (att.techs.has('valkyrieParticleWeave') && defHits > 0 ? 1 : 0);
       const defTotal = defHits + (def.techs.has('valkyrieParticleWeave') && attHits > 0 ? 1 : 0);
       assignHits(def, att, defUnits, attTotal);
@@ -424,6 +540,7 @@ interface SideTemplate {
   role: Role;
   faction: Faction;
   techs: Set<TechId>;
+  cards: ActionCardId[];
   units: { stats: UnitStats; onPlanet: boolean; damaged: boolean }[];
 }
 
@@ -439,7 +556,12 @@ function buildTemplate(role: Role, input: SideInput): SideTemplate {
     const damaged = stats.sustainDamage ? Math.min(count, Math.floor(input.damaged?.[type] ?? 0)) : 0;
     for (let i = 0; i < count; i++) units.push({ stats, onPlanet, damaged: i < damaged });
   }
-  return { role, faction, techs: new Set(input.techs), units };
+  // Cards for the other role (Bunker on the attacker, say) can't be played.
+  const cards = (input.actionCards ?? []).filter((id) => {
+    const card = getActionCard(id);
+    return !card.role || card.role === role;
+  });
+  return { role, faction, techs: new Set(input.techs), cards, units };
 }
 
 function instantiate(t: SideTemplate): Side {
@@ -448,6 +570,9 @@ function instantiate(t: SideTemplate): Side {
     faction: t.faction,
     techs: t.techs,
     yinTriggered: false,
+    cards: new Set(t.cards),
+    pdsDisabled: false,
+    bunkered: false,
     units: t.units.map((u) => ({ ...u, dead: false, sustainedThisRound: false })),
   };
 }
@@ -459,6 +584,8 @@ function countSurvivors(side: Side): UnitCounts {
 }
 
 function fight(rng: Rng, att: Side, def: Side, invade: boolean, wormhole: boolean): BattleOutcome {
+  if (alive(def).some((u) => u.onPlanet && u.stats.type === 'pds') && play(att, 'disable')) def.pdsDisabled = true;
+
   // Space Cannon Offense: the active player fires first.
   spaceCannonOffense(rng, att, def);
   spaceCannonOffense(rng, def, att);

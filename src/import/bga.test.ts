@@ -174,6 +174,20 @@ describe('parseBgaLog on single combats', () => {
     expect(c.defender.counts).toMatchObject({ flagship: 1, dreadnought: 2, carrier: 1, destroyer: 2 });
   });
 
+  it('loads the action cards each side played, leaving out cancelled ones', () => {
+    const one = only(block(1));
+    expect(one.defender.actionCards).toEqual(['shieldsHolding']);
+    expect(one.attacker.actionCards).toEqual([]); // Webbly's Shields Holding was cancelled by Sabotage.
+    expect(one.notes.map((n) => n.message)).toContain('Cancelled by Sabotage, so left out: SHIELDS HOLDING (Webbly).');
+    expect(one.notes.map((n) => n.message)).toContain("Action cards played that aren't simulated: SABOTAGE (Thamsi).");
+
+    expect(only(block(9)).defender.actionCards).toEqual(['bunker']);
+    const thirteen = only(block(13));
+    expect(thirteen.attacker.actionCards).toEqual(['shieldsHolding']);
+    expect(thirteen.defender.actionCards).toEqual(expect.arrayContaining(['maneuveringJets', 'courageousToTheEnd']));
+    expect(only(block(21)).attacker.actionCards).toEqual(['fighterPrototype']); // Morale Boost was cancelled.
+  });
+
   it('marks unit upgrades the dice cannot settle', () => {
     const c = only(block(29));
     expect(c.flags.defender.upgrades.fighter?.[0].level).toBe('warn');

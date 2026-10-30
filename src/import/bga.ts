@@ -1,8 +1,10 @@
+import { actionCardsFor } from '../engine/data/actionCards';
 import { FACTIONS, getFaction, getUnitDefinition } from '../engine/data/factions';
 import { TECHS, techsForFaction } from '../engine/data/techs';
 import {
   ALL_UNIT_TYPES,
   SHIP_TYPES,
+  type ActionCardId,
   type Faction,
   type Role,
   type Roll,
@@ -30,6 +32,7 @@ export interface SideFlags {
   units: Partial<Record<UnitType, ImportFlag[]>>;
   upgrades: Partial<Record<UnitType, ImportFlag[]>>;
   techs: Partial<Record<TechId, ImportFlag[]>>;
+  actionCards: Partial<Record<ActionCardId, ImportFlag[]>>;
 }
 
 export interface ImportedCombat {
@@ -578,6 +581,8 @@ interface Analysis {
   thresholds: Record<Role, ThresholdObservation[]>;
   techsSeen: Record<Role, Map<TechId, string>>;
   techsRuledOut: Record<Role, Map<TechId, string>>;
+  /** Simulated action cards each side played (and that weren't cancelled), with the log line. */
+  actionCards: Record<Role, Map<ActionCardId, string>>;
   notes: ImportFlag[];
   spaceCombat: boolean;
 }
@@ -677,7 +682,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
   const steps = new Set<string>();
   const ambushQueue: UnitType[] = [];
   const thirdParty = new Map<string, string[]>();
-  const cardsPlayed: string[] = [];
+  const cardsPlayed: { player: string; name: string; line: string; at: number; canceled: boolean }[] = [];
   const unsimulated = new Set<string>();
 
   /** At this moment `role` has at least `present` units of `type`; plus those already gone, at the start. */
@@ -872,8 +877,15 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
     }
 
     m = text.match(RE.played);
-    if (m && !preCombat) {
-      cardsPlayed.push(`${m[2]} (${m[1]})`);
+    if (m) {
+      cardsPlayed.push({ player: m[1], name: m[2], line: text, at: i, canceled: false });
+      continue;
+    }
+
+    m = text.match(/^(.+?)'s (.+?) action card was canceled\.$/);
+    if (m) {
+      const card = [...cardsPlayed].reverse().find((c) => c.player === m![1] && c.name === m![2]);
+      if (card) card.canceled = true;
       continue;
     }
 
@@ -1058,7 +1070,24 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
   }
   const otherOwners = [...new Set(commits.filter((c) => c.player === attacker && c.owner !== attacker && c.owner !== defender).map((c) => c.owner))];
   if (otherOwners.length) notes.push({ level: 'warn', message: `Planets owned by ${otherOwners.join(', ')} were also invaded; not simulated.` });
-  if (cardsPlayed.length) notes.push({ level: 'info', message: `Action cards played (not simulated): ${cardsPlayed.join(', ')}.` });
+  // Cards the simulator plays are loaded into the side; the rest are listed.
+  const actionCards = forRoles(() => new Map<ActionCardId, string>());
+  const unsimulatedCards: string[] = [];
+  const canceledCards: string[] = [];
+  for (const played of cardsPlayed) {
+    const role = roleOf(played.player);
+    const card = role && actionCardsFor(role).find((c) => c.name.toUpperCase() === played.name);
+    const label = `${played.name} (${played.player})`;
+    if (played.canceled) canceledCards.push(label);
+    else if (role && card) actionCards[role].set(card.id, played.line);
+    else if (played.at >= combatStart) unsimulatedCards.push(label);
+  }
+  if (unsimulatedCards.length) {
+    notes.push({ level: 'info', message: `Action cards played that aren't simulated: ${unsimulatedCards.join(', ')}.` });
+  }
+  if (canceledCards.length) {
+    notes.push({ level: 'info', message: `Cancelled by Sabotage, so left out: ${canceledCards.join(', ')}.` });
+  }
   if (unsimulated.size) notes.push({ level: 'info', message: `Effects in the log the simulator doesn't model: ${[...unsimulated].join(', ')}.` });
   if (!defender) notes.push({ level: 'warn', message: 'No defending player found in the log.' });
 
@@ -1083,6 +1112,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
     thresholds,
     techsSeen,
     techsRuledOut,
+    actionCards,
     notes: dedupe(notes),
     spaceCombat: spaceRounds > 0,
   };
@@ -1192,7 +1222,7 @@ export function parseBgaLog(text: string): BgaImport {
   });
 
   const combats = analyses.map((a, k) => {
-    const flags = forRoles<SideFlags>(() => ({ faction: [], units: {}, upgrades: {}, techs: {} }));
+    const flags = forRoles<SideFlags>(() => ({ faction: [], units: {}, upgrades: {}, techs: {}, actionCards: {} }));
     const sides = forRolesFrom<SideInput>((role) => {
       const player = a.players[role];
       let factionId = factionOf(player);
@@ -1216,6 +1246,10 @@ export function parseBgaLog(text: string): BgaImport {
       const side = sides[role];
       const player = a.players[role];
       side.techs = [];
+      side.actionCards = [...a.actionCards[role].keys()];
+      for (const [card, line] of a.actionCards[role]) {
+        flags[role].actionCards[card] = [{ level: 'info', message: `Played in this combat: "${shorten(line)}"` }];
+      }
       for (const [type, list] of Object.entries(a.unitFlags[role]) as [UnitType, ImportFlag[]][]) flags[role].units[type] = list;
       const faction = side.factionId ? getFaction(side.factionId) : UNKNOWN_FACTION;
       const local = localUpgrades[k][role];
