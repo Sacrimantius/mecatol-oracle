@@ -102,6 +102,8 @@ export interface SideInput {
    * Defender: ships in the system plus ground forces and structures on the planet.
    */
   counts: UnitCounts;
+  /** Units of each type that start the combat already damaged (Sustain Damage used). */
+  damaged?: UnitCounts;
   upgrades: Partial<Record<UnitType, boolean>>;
   techs: TechId[];
 }

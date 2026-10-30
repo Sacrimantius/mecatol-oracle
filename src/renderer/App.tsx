@@ -4,16 +4,27 @@ import {
   SHIP_TYPES,
   type SideInput,
   type SimulationInput,
+  type Role,
   type SimulationResult,
   type UnitType,
 } from '../engine/types';
+import type { ImportedCombat, SideFlags } from '../import/bga';
+import { ImportDialog } from './ImportDialog';
+import { clearEdited, countWarnings, dismissFlag, emptyFlags, type FlagKey } from './importFlags';
 import { Results } from './Results';
 import { SidePanel } from './SidePanel';
 import SimWorker from './sim.worker?worker&inline';
 
 const ITERATION_OPTIONS = [1000, 5000, 10000, 25000, 50000];
 
-const emptySide: SideInput = { factionId: '', counts: {}, upgrades: {}, techs: [] };
+const emptySide: SideInput = { factionId: '', counts: {}, damaged: {}, upgrades: {}, techs: [] };
+
+interface ImportState {
+  title: string;
+  summary: string;
+  notes: ImportedCombat['notes'];
+  flags: Record<Role, SideFlags>;
+}
 
 const total = (side: SideInput, types: readonly UnitType[]) =>
   types.reduce((sum, t) => sum + (side.counts[t] ?? 0), 0);
@@ -35,6 +46,8 @@ export function App() {
   const [running, setRunning] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [last, setLast] = useState<{ input: SimulationInput; result: SimulationResult } | null>(null);
+  const [importing, setImporting] = useState(false);
+  const [imported, setImported] = useState<ImportState | null>(null);
   const workerRef = useRef<Worker | null>(null);
 
   useEffect(() => () => workerRef.current?.terminate(), []);
@@ -66,7 +79,36 @@ export function App() {
     // The attacker has no planet in the system, so a space dock can't come with it.
     setAttacker({ ...defender, counts: { ...defender.counts, spacedock: 0 } });
     setDefender(attacker);
+    setImported((imp) => imp && { ...imp, flags: { attacker: imp.flags.defender, defender: imp.flags.attacker } });
   };
+
+  /** Updates a side, dropping import flags on whatever the user changed. */
+  const editSide = (role: Role, next: SideInput) => {
+    const prev = role === 'attacker' ? attacker : defender;
+    (role === 'attacker' ? setAttacker : setDefender)(next);
+    setImported((imp) => imp && { ...imp, flags: { ...imp.flags, [role]: clearEdited(imp.flags[role], prev, next) } });
+  };
+
+  const loadImport = (combat: ImportedCombat) => {
+    setAttacker(combat.attacker);
+    setDefender(combat.defender);
+    setInvade(combat.invade);
+    setWormhole(combat.wormhole);
+    setImported({ title: combat.title, summary: combat.summary, notes: combat.notes, flags: combat.flags });
+    setLast(null);
+    setImporting(false);
+  };
+
+  const dismiss = (role: Role, key: FlagKey) =>
+    setImported((imp) => imp && { ...imp, flags: { ...imp.flags, [role]: dismissFlag(imp.flags[role], key) } });
+  const dismissNote = (message: string) =>
+    setImported((imp) => imp && { ...imp, notes: imp.notes.filter((n) => n.message !== message) });
+
+  const toCheck = imported
+    ? countWarnings(imported.flags.attacker) +
+      countWarnings(imported.flags.defender) +
+      imported.notes.filter((n) => n.level === 'warn').length
+    : 0;
 
   return (
     <div className="app">
@@ -97,6 +139,9 @@ export function App() {
               ))}
             </select>
           </label>
+          <button className="secondary" onClick={() => setImporting(true)}>
+            Import BGA log
+          </button>
           <button className="secondary" onClick={swap}>
             ⇄ Swap
           </button>
@@ -106,8 +151,51 @@ export function App() {
         </div>
       </header>
 
+      {imported && toCheck > 0 && (
+        <section className="import-banner">
+          <div className="import-banner-head">
+            <span>
+              <strong>Imported:</strong> {imported.title}
+              {imported.summary && <span className="import-steps"> · {imported.summary}</span>}
+            </span>
+            <span className="combat-warnings warn">
+              {toCheck} item{toCheck === 1 ? '' : 's'} to check, marked ! (click one once checked)
+            </span>
+            <button className="secondary small" onClick={() => setImported(null)}>
+              Clear all marks
+            </button>
+          </div>
+          {imported.notes.length > 0 && (
+            <ul className="flag-list">
+              {imported.notes.map((n) => (
+                <li key={n.message} className={`banner-note ${n.level}`}>
+                  {n.level === 'warn' && (
+                    <button
+                      className="inline-badge warn"
+                      onClick={() => dismissNote(n.message)}
+                      title="Mark as checked"
+                      aria-label="Mark as checked"
+                    >
+                      !
+                    </button>
+                  )}
+                  {n.message}
+                </li>
+              ))}
+            </ul>
+          )}
+        </section>
+      )}
+
       <main className="layout">
-        <SidePanel role="attacker" value={attacker} otherFactionId={defender.factionId} onChange={setAttacker} />
+        <SidePanel
+          role="attacker"
+          value={attacker}
+          otherFactionId={defender.factionId}
+          flags={imported?.flags.attacker ?? emptyFlags()}
+          onDismissFlag={(key) => dismiss('attacker', key)}
+          onChange={(v) => editSide('attacker', v)}
+        />
         <div className="center">
           {error && <div className="error">{error}</div>}
           {last ? (
@@ -118,8 +206,17 @@ export function App() {
             </div>
           )}
         </div>
-        <SidePanel role="defender" value={defender} otherFactionId={attacker.factionId} onChange={setDefender} />
+        <SidePanel
+          role="defender"
+          value={defender}
+          otherFactionId={attacker.factionId}
+          flags={imported?.flags.defender ?? emptyFlags()}
+          onDismissFlag={(key) => dismiss('defender', key)}
+          onChange={(v) => editSide('defender', v)}
+        />
       </main>
+
+      {importing && <ImportDialog onLoad={loadImport} onClose={() => setImporting(false)} />}
     </div>
   );
 }

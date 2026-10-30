@@ -1,0 +1,1603 @@
+BGA Twilight Imperium - combat logs extracted from one full game log
+Players: Player 1, Player 3, Player 2, Player 4
+Format: raw BGA log text, NEWEST LINE FIRST (BGA's native order). Each block runs from the
+end of a tactical action (top) back to its activation (bottom), so it includes the fleet movement
+that set up the combat. The "=== ... ===" header lines were added by hand and are NOT part of the
+BGA output. Blocks are in the same order as in the log (newest combat first).
+
+=== Combat 1 | Round 9 | Player 3 attacks Player 1 at ( NAR / JOL ) | space cannon offense + 3 space combat rounds (game-ending) ===
+Player 1 won space combat against Player 3.
+Player 1 repaired 1 dreadnought(s) in ( NAR / JOL ).
+Player 1 used DURANIUM ARMOR to repair 1 dreadnought.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( NAR / JOL ).
+Player 1 assigned 1 hit from Player 3 in ( NAR / JOL ).
+Player 1 destroyed 1 of Player 3's damaged dreadnought(s) in ( NAR / JOL ).
+Player 3 assigned 2 hits from Player 1 in ( NAR / JOL ).
+Player 1 rolled 9 dice for 2 hits: Destroyer [ 5 ] [ 0 ] [ 1 ] [ 8 ] , Dreadnought [ 8 ] , Fighter [ 2 ] [ 1 ] [ 6 ] [ 4 ] DetailsEffects:FRAGILE
+Player 3 rolled 1 die for 1 hit: Dreadnought [ 9 ] Details
+Player 3 and Player 1 started space combat round 3.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( NAR / JOL ).
+Player 1 assigned 1 hit from Player 3 in ( NAR / JOL ).
+Player 1 damaged 1 dreadnought(s) in ( NAR / JOL ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 1 destroyed 2 of Player 3's cruiser(s) in ( NAR / JOL ).
+Player 3 assigned 2 hits from Player 1 in ( NAR / JOL ).
+Player 1 rolled 10 dice for 2 hits: Destroyer [ 8 ] [ 0 ] [ 7 ] [ 9 ] , Dreadnought [ 2 ] , Fighter [ 1 ] [ 6 ] [ 3 ] [ 5 ] [ 4 ] DetailsEffects:FRAGILE
+Player 3 rolled 3 dice for 2 hits: Cruiser [ 1 ] [ 9 ] , Dreadnought [ 9 ] Details
+Player 3 and Player 1 started space combat round 2.
+Player 1 repaired 1 dreadnought(s) in ( NAR / JOL ).
+Player 1 used DURANIUM ARMOR to repair 1 dreadnought.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( NAR / JOL ).
+Player 1 assigned 1 hit from Player 3 in ( NAR / JOL ).
+Player 1 played SHIELDS HOLDING to cancel 2 hits.
+Player 1 woke up ( before hits are assigned ).
+Player 1 destroyed 3 of Player 3's cruiser(s) in ( NAR / JOL ).
+Player 1 destroyed 1 of Player 3's carrier(s) in ( NAR / JOL ).
+Player 3 assigned 4 hits from Player 1 in ( NAR / JOL ).
+Player 3's SHIELDS HOLDING action card was canceled.
+Player 1 played SABOTAGE.
+Player 1 woke up ( action card played ).
+Player 3 played SHIELDS HOLDING to cancel 2 hits.
+Player 1 rolled 11 dice for 4 hits: Destroyer [ 6 ] [ 3 ] [ 9 ] [ 8 ] , Dreadnought [ 1 ] , Fighter [ 8 ] [ 7 ] [ 9 ] [ 5 ] [ 5 ] [ 7 ] DetailsEffects:FRAGILE
+Player 3 rolled 7 dice for 3 hits: Cruiser [ 6 ] [ 6 ] [ 5 ] [ 10 ] [ 7 ] , Dreadnought [ 7 ] , Carrier [ 7 ] Details
+Player 1 destroyed 2 of Player 3's fighter(s) in ( NAR / JOL ).
+Player 3 passed ( before hits are assigned ).
+Player 3 woke up ( before hits are assigned ).
+Player 1 rolled 12 dice for 9 hits against Player 3 in ANTI-FIGHTER BARRAGE: Destroyer [ 6, 8, 10 ] [ 5, 3, 7 ] [ 3, 6, 10 ] [ 7, 10, 10 ]
+Player 1 destroyed 1 of Player 3's cruiser(s) in ( NAR / JOL ).
+Player 3 chose 1 cruiser to be destroyed by ASSAULT CANNON at ( NAR / JOL ).
+Player 3 woke up.
+Player 1 used ASSAULT CANNON.
+Player 1 woke up ( when a combat round starts or ends ).
+Player 3 and Player 1 started space combat round 1 on ( NAR / JOL ).
+Player 3 damaged 1 dreadnought(s) in ( NAR / JOL ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 1 rolled 2 dice for 1 hit against Player 3 in Space Cannon Offense: PDS [ 4, 6 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 destroyed 1 of Player 1's carrier(s) in ( NAR / JOL ).
+Player 1 assigned 1 hit from Player 3 in ( NAR / JOL ).
+Player 1 damaged 1 dreadnought(s) in ( NAR / JOL ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 2 dice for 2 hits against Player 1 in Space Cannon Offense: PDS [ 6 ] [ 8 ] DetailsEffects:ANTIMASS DEFLECTORS
+Player 3 removed 3 fighter(s) from ( ABYZ / FRIA ).
+Player 3 must remove unit(s) due to exceeding transport capacity.
+Player 3 added 2 fighter(s) to ( NAR / JOL ).
+Player 3 added 3 infantry to ( NAR / JOL ).
+Player 3 added 6 cruiser(s) to ( NAR / JOL ).
+Player 3 added 1 dreadnought(s) to ( NAR / JOL ).
+Player 3 added 1 carrier(s) to ( NAR / JOL ).
+Player 3 removed 3 infantry from ABYZ.
+Player 3 removed 2 fighter(s) from ( ABYZ / FRIA ).
+Player 3 removed 6 cruiser(s) from ( ABYZ / FRIA ).
+Player 3 removed 1 dreadnought(s) from ( ABYZ / FRIA ).
+Player 3 removed 1 carrier(s) from ( ABYZ / FRIA ).
+Player 3 used a tactical movement to move 13 unit(s) to ( NAR / JOL ).
+Player 4 gained 1 trade good(s).
+Player 1 lost 1 trade good(s).
+Player 4 used PILLAGE on Player 1 to take 1 trade good.
+Player 4 woke up ( PILLAGE ).
+Player 1 gained 4 trade good(s).
+Player 1 used E-RES SIPHONS.
+Player 1 added 1 infantry to JOL.
+Player 1 added 1 infantry to NAR.
+Player 1 used MAGEN DEFENSE GRID to place 2 infantry.
+Player 3 placed a tactic command token in ( NAR / JOL ).
+Player 3 activated ( NAR / JOL ) to start a tactical action.
+
+=== Combat 2 | Round 9 | Player 2 attacks Player 1 at ( LISIS II / RAGH ) | 1 space combat round ===
+Player 2 finished a tactical action in ( LISIS II / RAGH ).
+Player 2 gained control of RAGH.
+Player 1 lost control of RAGH.
+Player 2 gained control of LISIS II.
+Player 1 lost control of LISIS II.
+Player 2 added 1 infantry to RAGH.
+Player 2 removed 1 infantry from ( LISIS II / RAGH ).
+Player 2 added 1 infantry to LISIS II.
+Player 2 removed 1 infantry from ( LISIS II / RAGH ).
+Player 2 committed ground force(s): 1 infantry to LISIS II (Player 1) ,1 infantry to RAGH (Player 1)
+Player 2 is the only faction in the ( LISIS II / RAGH ) space area.
+Player 2 won space combat against Player 1.
+Player 2 destroyed 1 of Player 1's destroyer(s) in ( LISIS II / RAGH ).
+Player 1 assigned 4 hits from Player 2 in ( LISIS II / RAGH ).
+Player 1 passed ( before hits are assigned ).
+Player 1 woke up ( before hits are assigned ).
+Player 1 rolled 1 die for 0 hits: Destroyer [ 4 ] DetailsEffects:FRAGILE
+Player 2 rolled 4 dice for 4 hits: War Sun [ 4, 5, 3 ] , Destroyer [ 9 ] Details
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 2 and Player 1 started space combat round 1 on ( LISIS II / RAGH ).
+Player 2 added 2 infantry to ( LISIS II / RAGH ).
+Player 2 added 1 war sun(s) to ( LISIS II / RAGH ).
+Player 2 added 1 destroyer(s) to ( LISIS II / RAGH ).
+Player 2 removed 1 infantry from SAKULAG.
+Player 2 removed 1 infantry from LAZAR.
+Player 2 removed 1 war sun(s) from ( LAZAR / SAKULAG ).
+Player 2 removed 1 destroyer(s) from ( LAZAR / SAKULAG ).
+Player 2 used a tactical movement to move 4 unit(s) to ( LISIS II / RAGH ).
+Player 4 gained 1 trade good(s).
+Player 1 lost 1 trade good(s).
+Player 4 used PILLAGE on Player 1 to take 1 trade good.
+Player 4 woke up ( PILLAGE ).
+Player 1 gained 4 trade good(s).
+Player 1 used E-RES SIPHONS.
+Player 2 placed a tactic command token in ( LISIS II / RAGH ).
+Player 2 activated ( LISIS II / RAGH ) to start a tactical action.
+
+=== Combat 3 | Round 9 | Player 1 attacks Player 3 at ( MECATOL REX ) | space cannon offense (Player 2) + 3 space combat rounds ===
+Player 1 finished a tactical action in ( MECATOL REX ).
+Player 1 removed 2 infantry from ( MECATOL REX ).
+Player 1 must remove unit(s) due to exceeding transport capacity.
+Player 3 won space combat against Player 1.
+Player 1 destroyed 1 of Player 3's cruiser(s) in ( MECATOL REX ).
+Player 3 assigned 1 hit from Player 1 in ( MECATOL REX ).
+Player 3 destroyed 1 of Player 1's damaged dreadnought(s) in ( MECATOL REX ).
+Player 1 assigned 3 hits from Player 3 in ( MECATOL REX ).
+Player 3 rolled 7 dice for 3 hits: Flagship [ 1, 2 ] , Cruiser [ 7 ] , Dreadnought [ 2 ] [ 7 ] [ 1 ] [ 10 ] Details
+Player 1 rolled 1 die for 1 hit: Dreadnought [ 7 ] DetailsEffects:FRAGILE
+Player 1 and Player 3 started space combat round 3.
+Player 1 destroyed 1 of Player 3's fighter(s) in ( MECATOL REX ).
+Player 3 assigned 1 hit from Player 1 in ( MECATOL REX ).
+Player 3 destroyed 2 of Player 1's destroyer(s) in ( MECATOL REX ).
+Player 3 destroyed 1 of Player 1's fighter(s) in ( MECATOL REX ).
+Player 1 assigned 3 hits from Player 3 in ( MECATOL REX ).
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 8 dice for 4 hits: Flagship [ 7, 4 ] , Cruiser [ 4 ] , Dreadnought [ 7 ] [ 3 ] [ 9 ] [ 2 ] , Fighter [ 9 ] Details
+Player 1 rolled 4 dice for 1 hit: Destroyer [ 1 ] [ 4 ] , Fighter [ 3 ] , Dreadnought [ 9 ] DetailsEffects:FRAGILE
+Player 1 and Player 3 started space combat round 2.
+Player 3 damaged 1 flagship in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 1 repaired 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used DURANIUM ARMOR to repair 1 dreadnought.
+Player 3 destroyed 1 of Player 1's carrier(s) in ( MECATOL REX ).
+Player 3 destroyed 3 of Player 1's fighter(s) in ( MECATOL REX ).
+Player 1 assigned 4 hits from Player 3 in ( MECATOL REX ).
+Player 3 rolled 8 dice for 4 hits: Flagship [ 7, 3 ] , Cruiser [ 9 ] , Dreadnought [ 3 ] [ 10 ] [ 2 ] [ 10 ] , Fighter [ 5 ] Details
+Player 1 rolled 8 dice for 5 hits: Destroyer [ 7 ] [ 8 ] , Fighter [ 9 ] [ 10 ] [ 7 ] [ 1 ] , Dreadnought [ 10 ] , Carrier [ 9 ] DetailsEffects:FRAGILE, MORALE BOOST
+Player 3 destroyed 2 of Player 1's fighter(s) in ( MECATOL REX ).
+Player 3 rolled 4 dice for 2 hits against Player 1 in ANTI-FIGHTER BARRAGE: Flagship [ 9, 6, 3, 4 ]
+Player 1 destroyed 3 of Player 3's fighter(s) in ( MECATOL REX ).
+Player 1 rolled 6 dice for 3 hits against Player 3 in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 7, 5 ] [ 1, 10, 7 ]
+Player 1 destroyed 1 of Player 3's destroyer(s) in ( MECATOL REX ).
+Player 3 chose 1 destroyer to be destroyed by ASSAULT CANNON at ( MECATOL REX ).
+Player 3 woke up.
+Player 1 used ASSAULT CANNON.
+Player 1 played MORALE BOOST.
+Player 1 and Player 3 started space combat round 1 on ( MECATOL REX ).
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 2 rolled 3 dice for 1 hit against Player 1 in Space Cannon Offense: PDS [ 1, 4 ] [ 7 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 1 added 4 fighter(s) to ( MECATOL REX ).
+Player 1 added 2 infantry to ( MECATOL REX ).
+Player 1 added 1 carrier(s) to ( MECATOL REX ).
+Player 1 removed 1 infantry from RAGH.
+Player 1 removed 1 infantry from LISIS II.
+Player 1 removed 4 fighter(s) from ( LISIS II / RAGH ).
+Player 1 removed 1 carrier(s) from ( LISIS II / RAGH ).
+Player 1 added 1 dreadnought(s) to ( MECATOL REX ).
+Player 1 removed 1 dreadnought(s) from ( QUCEN'N / RARRON ).
+Player 1 added 2 destroyer(s) to ( MECATOL REX ).
+Player 1 added 2 fighter(s) to ( MECATOL REX ).
+Player 1 removed 2 destroyer(s) from ( MELLON / ZOHBAT ).
+Player 1 removed 2 fighter(s) from ( MELLON / ZOHBAT ).
+Player 1 used a tactical movement to move 12 unit(s) to ( MECATOL REX ).
+Player 1 placed a tactic command token in ( MECATOL REX ).
+Player 1 activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 4 | Round 9 | Player 3 moves into ( MECATOL REX ) held by Player 1 | space cannon offense only (Player 2, 0 hits), no space combat ===
+Player 3 finished a tactical action in ( MECATOL REX ).
+Player 3 added 2 infantry to MECATOL REX.
+Player 3 spent 0 resource(s) to produce: 2 infantry
+Player 3 gained 1 trade good(s).
+Player 3 used SCAVENGE on MECATOL REX for 1 trade good.
+Player 3 gained control of MECATOL REX.
+Player 1 lost control of MECATOL REX.
+Player 1 removed 1 space dock(s) from MECATOL REX.Unit(s) were destroyed due to loss of planet control.
+Player 3 added 2 infantry to MECATOL REX.
+Player 3 removed 2 infantry from ( MECATOL REX ).
+Player 3 committed ground force(s): 2 infantry to MECATOL REX (Player 1)
+Player 2 rolled 3 dice for 0 hits against Player 3 in Space Cannon Offense: PDS [ 2, 4 ] [ 0 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 added 4 fighter(s) to ( MECATOL REX ).
+Player 3 added 2 infantry to ( MECATOL REX ).
+Player 3 added 1 flagship to ( MECATOL REX ).
+Player 3 added 1 cruiser(s) to ( MECATOL REX ).
+Player 3 added 4 dreadnought(s) to ( MECATOL REX ).
+Player 3 added 1 destroyer(s) to ( MECATOL REX ).
+Player 3 added 1 space dock(s) to ( MECATOL REX ).
+Player 3 removed 2 infantry from SAUDOR.
+Player 3 removed 4 fighter(s) from ( SAUDOR ).
+Player 3 removed 1 flagship from ( SAUDOR ).
+Player 3 removed 1 cruiser(s) from ( SAUDOR ).
+Player 3 removed 4 dreadnought(s) from ( SAUDOR ).
+Player 3 removed 1 destroyer(s) from ( SAUDOR ).
+Player 3 removed 1 space dock(s) from ( SAUDOR ).
+Player 3 used a tactical movement to move 14 unit(s) to ( MECATOL REX ).
+Player 3 placed a tactic command token in ( MECATOL REX ).
+Player 3 activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 5 | Round 8 | Player 1 invades Player 4 at ( QUCEN'N / RARRON ) | bombardment only ===
+Player 1 finished a tactical action in ( QUCEN'N / RARRON ).
+Player 1 gained control of RARRON.
+Player 4 lost control of RARRON.
+Player 1 added 1 infantry to RARRON.
+Player 1 removed 1 infantry from ( QUCEN'N / RARRON ).
+Player 1 committed ground force(s): 1 infantry to RARRON (Player 4)
+Player 1 destroyed 1 of Player 4's infantry on QUCEN'N.
+Player 1 rolled 2 dice for 4 hits on QUCEN'N (Player 4) using BOMBARDMENT: Dreadnought [ 6, 9 ] DetailsEffects:PLASMA SCORING, X-89 BACTERIAL WEAPON
+Player 1 added 1 infantry to ( QUCEN'N / RARRON ).
+Player 1 added 1 dreadnought(s) to ( QUCEN'N / RARRON ).
+Player 1 removed 1 infantry from MECATOL REX.
+Player 1 removed 1 dreadnought(s) from ( MECATOL REX ).
+Player 1 used a tactical movement to move 2 unit(s) to ( QUCEN'N / RARRON ).
+Player 1 placed a tactic command token in ( QUCEN'N / RARRON ).
+Player 1 activated ( QUCEN'N / RARRON ) to start a tactical action.
+
+=== Combat 6 | Round 8 | Player 2 invades Player 3 at ( WELLON ) | space cannon offense (Player 1) only ===
+Player 2 finished a tactical action in ( WELLON ).
+Player 2 gained control of WELLON.
+Player 3 lost control of WELLON.
+Player 2 added 1 infantry to WELLON.
+Player 2 removed 1 infantry from ( WELLON ).
+Player 2 committed ground force(s): 1 infantry to WELLON (Player 3)
+Player 2 damaged 1 dreadnought(s) in ( WELLON ).
+Player 2 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 1 rolled 2 dice for 1 hit against Player 2 in Space Cannon Offense: PDS [ 5, 2 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 2 added 1 infantry to ( WELLON ).
+Player 2 added 1 dreadnought(s) to ( WELLON ).
+Player 2 removed 1 infantry from STARPOINT.
+Player 2 removed 1 dreadnought(s) from ( NEW ALBION / STARPOINT ).
+Player 2 used a tactical movement to move 2 unit(s) to ( WELLON ).
+Player 2 placed a tactic command token in ( WELLON ).
+Player 2 activated ( WELLON ) to start a tactical action.
+
+=== Combat 7 | Round 8 | Player 2 invades Player 4 at ( TEQU'RAN / TORKAN ) | bombardment only (0 hits) ===
+Player 2 finished a tactical action in ( TEQU'RAN / TORKAN ).
+Player 2 gained control of TORKAN.
+Player 4 lost control of TORKAN.
+Player 2 added 1 infantry to TORKAN.
+Player 2 removed 1 infantry from ( TEQU'RAN / TORKAN ).
+Player 2 committed ground force(s): 1 infantry to TORKAN (Player 4)
+Player 2 rolled 2 dice for 0 hits on TEQU'RAN (Player 4) using BOMBARDMENT: Dreadnought [ 1, 4 ] DetailsEffects:PLASMA SCORING
+Player 2 added 1 infantry to ( TEQU'RAN / TORKAN ).
+Player 2 added 1 dreadnought(s) to ( TEQU'RAN / TORKAN ).
+Player 2 removed 1 infantry from ARC PRIME.
+Player 2 removed 1 dreadnought(s) from ( ARC PRIME / WREN TERRA ).
+Player 2 used a tactical movement to move 2 unit(s) to ( TEQU'RAN / TORKAN ).
+Player 4 added 1 infantry to TEQU'RAN.
+Player 4 used MAGEN DEFENSE GRID to place 1 infantry.
+Player 2 placed a tactic command token in ( TEQU'RAN / TORKAN ).
+Player 2 activated ( TEQU'RAN / TORKAN ) to start a tactical action.
+
+=== Combat 8 | Round 8 | Player 3 attacks Player 4 at ( SAUDOR ) | ambush, AFB, 2 space combat rounds, retreat, bombardment ===
+Player 3 finished a tactical action in ( SAUDOR ).
+Player 3 added 4 fighter(s) to ( SAUDOR ).
+Player 3 spent 1 resource(s) ( 1 trade good ) to produce: 4 fighter
+Player 3 gained 1 trade good(s).
+Player 3 used SCAVENGE on SAUDOR for 1 trade good.
+Player 3 gained control of SAUDOR.
+Player 4 lost control of SAUDOR.
+Player 4 removed 1 space dock(s) from SAUDOR.Unit(s) were destroyed due to loss of planet control.
+Player 3 added 2 infantry to SAUDOR.
+Player 3 removed 2 infantry from ( SAUDOR ).
+Player 3 committed ground force(s): 2 infantry to SAUDOR (Player 4)
+Player 3 destroyed 4 of Player 4's infantry on SAUDOR.
+Player 3 rolled 4 dice for 4 hits on SAUDOR (Player 4) using BOMBARDMENT: Dreadnought [ 7 ] [ 10 ] [ 5 ] [ 9 ] Details
+Player 4 gained 1 trade good(s).
+Player 4 used SALVAGE OPERATIONS for 1 trade good.
+Player 4 lost 1 victory point due to SHARD OF THE THRONE.
+Player 3 gained 1 victory point due to SHARD OF THE THRONE.
+Private: Player 4 gave agenda(s) to Player 3: SHARD OF THE THRONE
+Player 3 used SHARD OF THE THRONE.
+Player 3 woke up ( when combat ends ).
+Player 3 is the only faction in the ( SAUDOR ) space area.
+Player 3 won space combat against Player 4.
+Player 4 placed a reinforcements command token in ( CORNEEQ / RESCULON ).
+Player 4 added 1 flagship to ( CORNEEQ / RESCULON ).
+Player 4 added 1 damaged dreadnought(s) to ( CORNEEQ / RESCULON ).
+Player 4 added 1 carrier(s) to ( CORNEEQ / RESCULON ).
+Player 4 removed 1 flagship from ( SAUDOR ).
+Player 4 removed 1 damaged dreadnought(s) from ( SAUDOR ).
+Player 4 removed 1 carrier(s) from ( SAUDOR ).
+Player 4 retreated from space combat with Player 3, moving 3 unit(s) to ( CORNEEQ / RESCULON ).
+Player 3 destroyed 1 of Player 4's damaged dreadnought(s) in ( SAUDOR ).
+Player 3 destroyed 2 of Player 4's destroyer(s) in ( SAUDOR ).
+Player 3 destroyed 3 of Player 4's fighter(s) in ( SAUDOR ).
+Player 4 assigned 6 hits from Player 3 in ( SAUDOR ).
+Player 4 skipped using SUSTAIN DAMAGE.
+Player 4 destroyed 3 of Player 3's fighter(s) in ( SAUDOR ).
+Player 3 assigned 3 hits from Player 4 in ( SAUDOR ).
+Player 4 rolled 10 dice for 3 hits: Fighter [ 10 ] [ 4 ] [ 8 ] , Dreadnought [ 8 ] [ 1 ] , Carrier [ 8 ] , Destroyer [ 8 ] [ 5 ] , Flagship [ 5, 7 ] Details
+Player 3 rolled 11 dice for 6 hits: Flagship [ 2, 1 ] , Cruiser [ 3 ] , Dreadnought [ 10 ] [ 9 ] [ 7 ] [ 9 ] , Destroyer [ 2 ] , Fighter [ 9 ] [ 10 ] [ 1 ] Details
+Player 4 announced a retreat from space combat with Player 3.
+Player 3 and Player 4 started space combat round 2.
+Player 4 could not retreat from space combat.
+Player 3 destroyed 2 of Player 4's fighter(s) in ( SAUDOR ).
+Player 4 assigned 2 hits from Player 3 in ( SAUDOR ).
+Player 4 skipped using SUSTAIN DAMAGE.
+Player 4 damaged 1 dreadnought(s) in ( SAUDOR ).
+Player 4 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 4 damaged 1 dreadnought(s) in ( SAUDOR ).
+Player 4 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 4 destroyed 3 of Player 3's fighter(s) in ( SAUDOR ).
+Player 3 assigned 3 hits from Player 4 in ( SAUDOR ).
+Player 4 rolled 12 dice for 3 hits: Fighter [ 9 ] [ 4 ] [ 8 ] [ 4 ] [ 2 ] , Dreadnought [ 2 ] [ 6 ] , Carrier [ 1 ] , Destroyer [ 3 ] [ 3 ] , Flagship [ 5, 7 ] Details
+Player 3 rolled 14 dice for 4 hits: Flagship [ 1, 5 ] , Cruiser [ 4 ] , Dreadnought [ 8 ] [ 10 ] [ 2 ] [ 1 ] , Destroyer [ 1 ] , Fighter [ 7 ] [ 4 ] [ 6 ] [ 9 ] [ 6 ] [ 7 ] Details
+Player 1 passed ( action card played ).
+Player 1 woke up ( action card played ).
+Player 3 played INTERCEPT on ( SAUDOR ).
+Player 3 woke up ( after a player announced a retreat ).
+Player 4 announced a retreat from space combat with Player 3.
+Player 4 destroyed 1 of Player 3's fighter(s) in ( SAUDOR ).
+Player 4 rolled 4 dice for 1 hit against Player 3 in ANTI-FIGHTER BARRAGE: Destroyer [ 8, 10 ] [ 5, 6 ]
+Player 3 destroyed 2 of Player 4's fighter(s) in ( SAUDOR ).
+Player 3 rolled 6 dice for 2 hits against Player 4 in ANTI-FIGHTER BARRAGE: Flagship [ 9, 3, 8, 3 ] , Destroyer [ 5, 3 ]
+Player 4's SKILLED RETREAT action card was canceled.
+Player 3 played SABOTAGE.
+Player 3 woke up ( action card played ).
+Player 4 played SKILLED RETREAT.
+Player 4 woke up ( when a combat round starts or ends ).
+Player 4 destroyed 1 of Player 3's fighter(s) in ( SAUDOR ).
+Player 3 assigned 1 hit from Player 4 in ( SAUDOR ).
+Player 3 woke up.
+Player 4 rolled 2 dice to hit on 9-10: [ 9 , 1 ] Hits: 1
+Player 4 used AMBUSH on Player 3 with 2 destroyer dice.
+Player 4 woke up ( when a combat round starts or ends ).
+Player 3 and Player 4 started space combat round 1 on ( SAUDOR ).
+Player 3 added 8 fighter(s) to ( SAUDOR ).
+Player 3 added 2 infantry to ( SAUDOR ).
+Player 3 added 1 flagship to ( SAUDOR ).
+Player 3 added 1 cruiser(s) to ( SAUDOR ).
+Player 3 added 4 dreadnought(s) to ( SAUDOR ).
+Player 3 added 1 destroyer(s) to ( SAUDOR ).
+Player 3 added 1 space dock(s) to ( SAUDOR ).
+Player 3 removed 1 infantry from SAKULAG.
+Player 3 removed 1 infantry from LAZAR.
+Player 3 removed 8 fighter(s) from ( LAZAR / SAKULAG ).
+Player 3 removed 1 flagship from ( LAZAR / SAKULAG ).
+Player 3 removed 1 cruiser(s) from ( LAZAR / SAKULAG ).
+Player 3 removed 4 dreadnought(s) from ( LAZAR / SAKULAG ).
+Player 3 removed 1 destroyer(s) from ( LAZAR / SAKULAG ).
+Player 3 removed 1 space dock(s) from ( LAZAR / SAKULAG ).
+Player 3 used a tactical movement to move 18 unit(s) to ( SAUDOR ).
+Player 4 added 1 infantry to SAUDOR.
+Player 4 used MAGEN DEFENSE GRID to place 1 infantry.
+Player 3 returned promissory note(s) to Player 4: PROMISE OF PROTECTION
+Player 3 placed a tactic command token in ( SAUDOR ).
+Player 3 activated ( SAUDOR ) to start a tactical action.
+
+=== Combat 9 | Round 8 | Player 2 attacks Player 4 at ( MOLL PRIMUS ) | SCO, assault cannon, ambush, AFB, space combat, bombardment, space cannon defense, ground combat ===
+Player 2 finished a tactical action in ( MOLL PRIMUS ).
+Player 2 lost 1 victory point due to SHARD OF THE THRONE.
+Player 4 gained 1 victory point due to SHARD OF THE THRONE.
+Private: Player 2 gave agenda(s) to Player 4: SHARD OF THE THRONE
+Player 4 used SHARD OF THE THRONE.
+Player 4 woke up ( when combat ends ).
+Player 4 won ground combat against Player 2.
+Player 2 destroyed 1 of Player 4's infantry on MOLL PRIMUS.
+Player 4 destroyed 1 of Player 2's infantry on MOLL PRIMUS.
+Player 4 rolled 3 dice for 1 hit: Infantry [ 1 ] [ 10 ] [ 4 ] Details
+Player 2 passed ( after a combat roll ).
+Player 2 woke up ( after a combat roll ).
+Player 2 rolled 1 die for 1 hit: Infantry [ 9 ] Details
+Player 4 destroyed 1 of Player 2's infantry on MOLL PRIMUS.
+Player 4 used MAGEN DEFENSE GRID to produce 1 hit against 1 infantry on MOLL PRIMUS.
+Player 2 and Player 4 started ground combat round 1 on MOLL PRIMUS.
+Player 4 rolled 2 dice for 0 hits on MOLL PRIMUS (Player 2) in Space Cannon Defense: PDS [ 1, 0 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 2 added 2 infantry to MOLL PRIMUS.
+Player 2 removed 2 infantry from ( MOLL PRIMUS ).
+Player 2 committed ground force(s): 2 infantry to MOLL PRIMUS (Player 4)
+Player 2 destroyed 4 of Player 4's infantry on MOLL PRIMUS.
+Player 2 rolled 8 dice for 4 hits on MOLL PRIMUS (Player 4) using BOMBARDMENT: War Sun [ 5, 5, 1, -2 ] [ 0, 4, 6 ] , Dreadnought [ 1 ] DetailsEffects:PLASMA SCORING , BUNKER
+Player 1 passed ( action card played ).
+Player 1 woke up ( action card played ).
+Player 3 passed ( action card played ).
+Player 3 woke up ( action card played ).
+Player 4 played BUNKER on ( MOLL PRIMUS ).
+Player 4 woke up ( when invasion step starts ).
+Player 4 gained 1 trade good(s).
+Player 4 used SALVAGE OPERATIONS for 1 trade good.
+Player 4 lost 1 victory point due to SHARD OF THE THRONE.
+Player 2 gained 1 victory point due to SHARD OF THE THRONE.
+Private: Player 4 gave agenda(s) to Player 2: SHARD OF THE THRONE
+Player 2 used SHARD OF THE THRONE.
+Player 2 woke up ( when combat ends ).
+Player 2 is the only faction in the ( MOLL PRIMUS ) space area.
+Player 2 won space combat against Player 4.
+Player 2 destroyed 1 of Player 4's cruiser(s) in ( MOLL PRIMUS ).
+Player 2 destroyed 1 of Player 4's fighter(s) in ( MOLL PRIMUS ).
+Player 4 assigned 5 hits from Player 2 in ( MOLL PRIMUS ).
+Player 4 destroyed 1 of Player 2's fighter(s) in ( MOLL PRIMUS ).
+Player 2 assigned 1 hit from Player 4 in ( MOLL PRIMUS ).
+Player 2 skipped using SUSTAIN DAMAGE.
+Player 4 rolled 2 dice for 1 hit: Fighter [ 1 ] , Cruiser [ 7 ] Details
+Player 2 rolled 12 dice for 5 hits: War Sun [ 3, 6, 10 ] [ 8, 2, 6 ] , Dreadnought [ 2 ] , Destroyer [ 5 ] [ 7 ] , Fighter [ 7 ] [ 5 ] [ 4 ] Details
+Player 2 destroyed 5 of Player 4's fighter(s) in ( MOLL PRIMUS ).
+Player 2 rolled 6 dice for 5 hits against Player 4 in ANTI-FIGHTER BARRAGE: Destroyer [ 8, 8, 6 ] [ 4, 8, 10 ]
+Player 4 passed ( when a combat round starts or ends ).
+Player 4 woke up ( when a combat round starts or ends ).
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 4 rolled 1 die to hit on 6-10: [ 4 ] Hits: 0
+Player 4 used AMBUSH on Player 2 with 1 cruiser die.
+Player 2 destroyed 1 of Player 4's carrier(s) in ( MOLL PRIMUS ).
+Player 4 chose 1 carrier to be destroyed by ASSAULT CANNON at ( MOLL PRIMUS ).
+Player 4 woke up.
+Player 2 used ASSAULT CANNON.
+Player 2 and Player 4 started space combat round 1 on ( MOLL PRIMUS ).
+Player 4 destroyed 1 of Player 2's fighter(s) in ( MOLL PRIMUS ).
+Player 2 assigned 1 hit from Player 4 in ( MOLL PRIMUS ).
+Player 2 skipped using SUSTAIN DAMAGE.
+Player 4 rolled 2 dice for 1 hit against Player 2 in Space Cannon Offense: PDS [ 5, 6 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 2 added 4 fighter(s) to ( MOLL PRIMUS ).
+Player 2 added 2 infantry to ( MOLL PRIMUS ).
+Player 2 added 2 war sun(s) to ( MOLL PRIMUS ).
+Player 2 added 1 dreadnought(s) to ( MOLL PRIMUS ).
+Player 2 added 2 destroyer(s) to ( MOLL PRIMUS ).
+Player 2 removed 1 infantry from MEER.
+Player 2 removed 1 infantry from ARINAM.
+Player 2 removed 4 fighter(s) from ( ARINAM / MEER ).
+Player 2 removed 2 war sun(s) from ( ARINAM / MEER ).
+Player 2 removed 1 dreadnought(s) from ( ARINAM / MEER ).
+Player 2 removed 2 destroyer(s) from ( ARINAM / MEER ).
+Player 2 used a tactical movement to move 11 unit(s) to ( MOLL PRIMUS ).
+Player 4 added 2 infantry to MOLL PRIMUS.
+Player 4 used MAGEN DEFENSE GRID to place 2 infantry.
+Player 2 placed a tactic command token in ( MOLL PRIMUS ).
+Player 2 activated ( MOLL PRIMUS ) to start a tactical action.
+
+=== Combat 10 | Round 8 | Player 4 attacks Player 2 at ( ARNOR / LOR ) | SCO (Graviton), Direct Hit, ambush, 2 space combat rounds, bombardment, 2 ground combat rounds ===
+Player 4 finished a tactical action in ( ARNOR / LOR ).
+Ground combat ended in a draw between Player 4 and Player 2.
+Player 4 destroyed 1 of Player 2's infantry on ARNOR.
+Player 2 destroyed 1 of Player 4's infantry on ARNOR.
+Player 2 passed ( after a combat roll ).
+Player 2 rolled 1 die for 1 hit: Infantry [ 10 ] Details
+Player 4 rolled 1 die for 1 hit: Infantry [ 9 ] Details
+Player 4 and Player 2 started ground combat round 2.
+Player 2 destroyed 1 of Player 4's infantry on ARNOR.
+Player 2 passed ( after a combat roll ).
+Player 2 woke up ( after a combat roll ).
+Player 2 rolled 1 die for 1 hit: Infantry [ 8 ] Details
+Player 4 rolled 2 dice for 0 hits: Infantry [ 5 ] [ 4 ] Details
+Player 4 and Player 2 started ground combat round 1 on ARNOR.
+Player 4 added 2 infantry to ARNOR.
+Player 4 removed 2 infantry from ( ARNOR / LOR ).
+Player 4 committed ground force(s): 2 infantry to ARNOR (Player 2)
+Player 4 rolled 2 dice for 0 hits on ARNOR (Player 2) using BOMBARDMENT: Dreadnought [ 2, 2 ] DetailsEffects:PLASMA SCORING
+Player 4 added 1 dreadnought(s) to ( ARNOR / LOR ).
+Player 4 used SALVAGE OPERATIONS to spend 4 resource(s) in ( ARNOR / LOR ) and produce: 1 dreadnought. Spent: MOLL PRIMUS .
+Player 4 gained 1 trade good(s).
+Player 4 used SALVAGE OPERATIONS for 1 trade good.
+Player 2 lost 1 victory point due to SHARD OF THE THRONE.
+Player 4 gained 1 victory point due to SHARD OF THE THRONE.
+Private: Player 2 gave agenda(s) to Player 4: SHARD OF THE THRONE
+Player 4 used SHARD OF THE THRONE.
+Player 4 woke up ( when combat ends ).
+Player 4 is the only faction in the ( ARNOR / LOR ) space area.
+Player 4 won space combat against Player 2.
+Player 2 could not retreat from space combat.
+Player 4 destroyed 1 of Player 2's damaged dreadnought(s) in ( ARNOR / LOR ).
+Player 2 assigned 2 hits from Player 4 in ( ARNOR / LOR ).
+Player 2 destroyed 1 of Player 4's destroyer(s) in ( ARNOR / LOR ).
+Player 4 assigned 1 hit from Player 2 in ( ARNOR / LOR ).
+Player 2 rolled 1 die for 1 hit: Dreadnought [ 8 ] Details
+Player 4 rolled 5 dice for 2 hits: Destroyer [ 8 ] [ 10 ] , Cruiser [ 7 ] [ 2 ] , Carrier [ 2 ] Details
+Player 2 announced a retreat from space combat with Player 4.
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 4 passed ( when a combat round starts or ends ).
+Player 4 woke up ( when a combat round starts or ends ).
+Player 4 and Player 2 started space combat round 2.
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 4 destroyed Player 2's flagship in ( ARNOR / LOR ).
+Player 1 passed ( action card played ).
+Player 1 woke up ( action card played ).
+Player 3 passed ( action card played ).
+Player 3 woke up ( action card played ).
+Player 4 played DIRECT HIT.
+Player 4 woke up ( after SUSTAIN DAMAGE was used ).
+Player 2 damaged 1 flagship in ( ARNOR / LOR ).
+Player 2 used NON-EUCLIDEAN SHIELDING and SUSTAIN DAMAGE to cancel 2 hits from Player 4.
+Player 2 damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Player 2 used NON-EUCLIDEAN SHIELDING and SUSTAIN DAMAGE to cancel 2 hits from Player 4.
+Player 2 destroyed 2 of Player 4's fighter(s) in ( ARNOR / LOR ).
+Player 4 assigned 2 hits from Player 2 in ( ARNOR / LOR ).
+Player 2 rolled 3 dice for 2 hits: Flagship [ 9, 1 ] , Dreadnought [ 7 ] Details
+Player 4 rolled 7 dice for 4 hits: Destroyer [ 8 ] [ 1 ] , Cruiser [ 10 ] [ 6 ] , Carrier [ 3 ] , Fighter [ 10 ] [ 9 ] Details
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 4 passed ( when a combat round starts or ends ).
+Player 4 woke up ( when a combat round starts or ends ).
+Player 4 destroyed 1 of Player 2's fighter(s) in ( ARNOR / LOR ).
+Player 2 assigned 1 hit from Player 4 in ( ARNOR / LOR ).
+Player 2 skipped using SUSTAIN DAMAGE.
+Player 2 woke up.
+Player 4 rolled 2 dice to hit on 6-10: [ 9 , 5 ] Hits: 1
+Player 4 used AMBUSH on Player 2 with 2 cruiser dice.
+Player 4 and Player 2 started space combat round 1 on ( ARNOR / LOR ).
+Player 2 destroyed 1 of Player 4's destroyer(s) in ( ARNOR / LOR ).
+Player 4 assigned 1 hit from Player 2 in ( ARNOR / LOR ).
+Player 2 destroyed 1 of Player 4's damaged dreadnought(s) in ( ARNOR / LOR ).
+Player 1 passed ( action card played ).
+Player 1 woke up ( action card played ).
+Player 3 passed ( action card played ).
+Player 3 woke up ( action card played ).
+Player 2 played DIRECT HIT.
+Player 2 woke up ( after SUSTAIN DAMAGE was used ).
+Player 4 damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Player 4 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 2 rolled 2 dice for 2 hits against Player 4 in Space Cannon Offense: PDS [ 10, 9 ] DetailsEffects:PLASMA SCORING, GRAVITON LASER SYSTEM
+Player 2 exhausted GRAVITON LASER SYSTEM.
+Player 4 added 2 fighter(s) to ( ARNOR / LOR ).
+Player 4 added 2 infantry to ( ARNOR / LOR ).
+Player 4 added 2 cruiser(s) to ( ARNOR / LOR ).
+Player 4 added 1 dreadnought(s) to ( ARNOR / LOR ).
+Player 4 added 2 destroyer(s) to ( ARNOR / LOR ).
+Player 4 added 1 carrier(s) to ( ARNOR / LOR ).
+Player 4 removed 2 infantry from TEQU'RAN.
+Player 4 removed 2 fighter(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 2 cruiser(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 1 dreadnought(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 2 destroyer(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 1 carrier(s) from ( TEQU'RAN / TORKAN ).
+Player 4 added 1 destroyer(s) to ( ARNOR / LOR ).
+Player 4 removed 1 destroyer(s) from ( QUANN / beta wormhole ).
+Player 4 used a tactical movement to move 11 unit(s) to ( ARNOR / LOR ).
+Player 4 placed a tactic command token in ( ARNOR / LOR ).
+Player 4 activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 11 | Round 7 | Player 2 attacks Player 4 at ( ARNOR / LOR ) | SCO, ambush, AFB, 2 space combat rounds, bombardment ===
+Player 2 finished a tactical action in ( ARNOR / LOR ).
+Player 2 gained control of LOR.
+Player 4 lost control of LOR.
+Player 2 gained control of ARNOR.
+Player 4 lost control of ARNOR.
+Player 2 added 1 infantry to LOR.
+Player 2 removed 1 infantry from ( ARNOR / LOR ).
+Player 2 added 1 infantry to ARNOR.
+Player 2 removed 1 infantry from ( ARNOR / LOR ).
+Player 2 committed ground force(s): 1 infantry to ARNOR (Player 4) ,1 infantry to LOR (Player 4)
+Player 2 destroyed 1 of Player 4's infantry on LOR.
+Player 2 rolled 1 die for 1 hit on LOR (Player 4) using BOMBARDMENT: Dreadnought [ 7 ] Details
+Player 2 destroyed 1 of Player 4's infantry on ARNOR.
+Player 2 rolled 4 dice for 3 hits on ARNOR (Player 4) using BOMBARDMENT: Flagship [ 10, 10, 8, 1 ] DetailsEffects:PLASMA SCORING
+Player 4 passed ( when invasion step starts ).
+Player 4 woke up ( when invasion step starts ).
+Player 4 gained 1 trade good(s).
+Player 4 used SALVAGE OPERATIONS for 1 trade good.
+Player 2 is the only faction in the ( ARNOR / LOR ) space area.
+Player 2 won space combat against Player 4.
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 4 could not retreat from space combat.
+Player 2 destroyed 2 of Player 4's cruiser(s) in ( ARNOR / LOR ).
+Player 4 assigned 3 hits from Player 2 in ( ARNOR / LOR ).
+Player 2 damaged 1 flagship in ( ARNOR / LOR ).
+Player 2 used SUSTAIN DAMAGE to cancel 1 hit from Player 4.
+Player 4 rolled 2 dice for 1 hit: Cruiser [ 10 ] [ 2 ] Details
+Player 2 rolled 4 dice for 3 hits: Flagship [ 9, 8 ] , Dreadnought [ 8 ] , Fighter [ 5 ] Details
+Player 4 announced a retreat from space combat with Player 2.
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 and Player 4 started space combat round 2.
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 2 destroyed 1 of Player 4's destroyer(s) in ( ARNOR / LOR ).
+Player 4 assigned 1 hit from Player 2 in ( ARNOR / LOR ).
+Player 4 destroyed 1 of Player 2's fighter(s) in ( ARNOR / LOR ).
+Player 2 assigned 1 hit from Player 4 in ( ARNOR / LOR ).
+Player 2 skipped using SUSTAIN DAMAGE.
+Player 4 rolled 3 dice for 1 hit: Cruiser [ 1 ] [ 8 ] , Destroyer [ 4 ] Details
+Player 2 rolled 5 dice for 1 hit: Flagship [ 3, 1 ] , Dreadnought [ 2 ] , Fighter [ 3 ] [ 9 ] Details
+Player 4 rolled 2 dice for 0 hits against Player 2 in ANTI-FIGHTER BARRAGE: Destroyer [ 8, 4 ]
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Player 2 used NON-EUCLIDEAN SHIELDING and SUSTAIN DAMAGE to cancel 2 hits from Player 4.
+Player 2 woke up.
+Player 4 rolled 2 dice to hit on 6-10: [ 8 , 6 ] Hits: 2
+Player 4 used AMBUSH on Player 2 with 2 cruiser dice.
+Player 4 woke up ( when a combat round starts or ends ).
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 2 and Player 4 started space combat round 1 on ( ARNOR / LOR ).
+Player 2 destroyed 1 of Player 4's carrier(s) in ( ARNOR / LOR ).
+Player 2 destroyed 1 of Player 4's fighter(s) in ( ARNOR / LOR ).
+Player 4 assigned 2 hits from Player 2 in ( ARNOR / LOR ).
+Player 2 rolled 2 dice for 2 hits against Player 4 in Space Cannon Offense: PDS [ 8, 6 ] DetailsEffects:PLASMA SCORING
+Player 2 added 2 fighter(s) to ( ARNOR / LOR ).
+Player 2 added 2 infantry to ( ARNOR / LOR ).
+Player 2 added 1 flagship to ( ARNOR / LOR ).
+Player 2 added 1 dreadnought(s) to ( ARNOR / LOR ).
+Player 2 removed 1 infantry from STARPOINT.
+Player 2 removed 1 infantry from NEW ALBION.
+Player 2 removed 2 fighter(s) from ( ARINAM / MEER ).
+Player 2 removed 1 flagship from ( ARINAM / MEER ).
+Player 2 removed 1 dreadnought(s) from ( ARINAM / MEER ).
+Player 2 used a tactical movement to move 6 unit(s) to ( ARNOR / LOR ).
+Player 2 placed a tactic command token in ( ARNOR / LOR ).
+Player 2 activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 12 | Round 7 | Player 3 attacks Player 1 at ( ABYZ / FRIA ) | SCO, AFB, 10 space combat rounds ===
+Player 3 finished a tactical action in ( ABYZ / FRIA ).
+Player 3 gained 1 trade good(s).
+Player 3 used SCAVENGE on FRIA for 1 trade good.
+Player 3 gained control of FRIA.
+Player 1 lost control of FRIA.
+Player 3 gained 1 trade good(s).
+Player 3 used SCAVENGE on ABYZ for 1 trade good.
+Player 3 gained control of ABYZ.
+Player 1 lost control of ABYZ.
+Player 1 removed 1 space dock(s) from ABYZ.Unit(s) were destroyed due to loss of planet control.
+Player 3 added 1 infantry to FRIA.
+Player 3 removed 1 infantry from ( ABYZ / FRIA ).
+Player 3 added 1 infantry to ABYZ.
+Player 3 removed 1 infantry from ( ABYZ / FRIA ).
+Player 3 committed ground force(s): 1 infantry to ABYZ (Player 1) ,1 infantry to FRIA (Player 1)
+Player 3 is the only faction in the ( ABYZ / FRIA ) space area.
+Player 3 won space combat against Player 1.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( ABYZ / FRIA ).
+Player 1 assigned 1 hit from Player 3 in ( ABYZ / FRIA ).
+Player 1 rolled 1 die for 0 hits: Fighter [ 1 ] DetailsEffects:FRAGILE
+Player 3 rolled 1 die for 1 hit: Carrier [ 10 ] Details
+Player 3 and Player 1 started space combat round 10.
+Player 1 rolled 1 die for 0 hits: Fighter [ 5 ] DetailsEffects:FRAGILE
+Player 3 rolled 1 die for 0 hits: Carrier [ 2 ] Details
+Player 3 and Player 1 started space combat round 9.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( ABYZ / FRIA ).
+Player 1 assigned 1 hit from Player 3 in ( ABYZ / FRIA ).
+Player 1 rolled 2 dice for 0 hits: Fighter [ 1 ] [ 7 ] DetailsEffects:FRAGILE
+Player 3 rolled 1 die for 1 hit: Carrier [ 9 ] Details
+Player 3 and Player 1 started space combat round 8.
+Player 1 destroyed 1 of Player 3's cruiser(s) in ( ABYZ / FRIA ).
+Player 3 assigned 1 hit from Player 1 in ( ABYZ / FRIA ).
+Player 1 rolled 2 dice for 1 hit: Fighter [ 7 ] [ 9 ] DetailsEffects:FRAGILE
+Player 3 rolled 2 dice for 0 hits: Cruiser [ 3 ] , Carrier [ 1 ] Details
+Player 3 and Player 1 started space combat round 7.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( ABYZ / FRIA ).
+Player 1 assigned 1 hit from Player 3 in ( ABYZ / FRIA ).
+Player 1 rolled 3 dice for 0 hits: Fighter [ 0 ] [ 2 ] [ 2 ] DetailsEffects:FRAGILE
+Player 3 rolled 2 dice for 1 hit: Cruiser [ 9 ] , Carrier [ 2 ] Details
+Player 3 and Player 1 started space combat round 6.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( ABYZ / FRIA ).
+Player 1 assigned 1 hit from Player 3 in ( ABYZ / FRIA ).
+Player 1 destroyed 1 of Player 3's cruiser(s) in ( ABYZ / FRIA ).
+Player 3 assigned 1 hit from Player 1 in ( ABYZ / FRIA ).
+Player 1 rolled 4 dice for 1 hit: Fighter [ 4 ] [ 0 ] [ 2 ] [ 9 ] DetailsEffects:FRAGILE
+Player 3 rolled 3 dice for 1 hit: Cruiser [ 9 ] [ 2 ] , Carrier [ 3 ] Details
+Player 3 and Player 1 started space combat round 5.
+Player 3 destroyed 1 of Player 1's fighter(s) in ( ABYZ / FRIA ).
+Player 1 assigned 1 hit from Player 3 in ( ABYZ / FRIA ).
+Player 1 rolled 5 dice for 0 hits: Fighter [ 6 ] [ 7 ] [ 7 ] [ 7 ] [ 6 ] DetailsEffects:FRAGILE
+Player 3 rolled 3 dice for 1 hit: Cruiser [ 2 ] [ 6 ] , Carrier [ 10 ] Details
+Player 3 and Player 1 started space combat round 4.
+Player 1 rolled 5 dice for 0 hits: Fighter [ 2 ] [ 7 ] [ 2 ] [ 6 ] [ 1 ] DetailsEffects:FRAGILE
+Player 3 rolled 3 dice for 0 hits: Cruiser [ 5 ] [ 1 ] , Carrier [ 1 ] Details
+Player 3 and Player 1 started space combat round 3.
+Player 1 destroyed 1 of Player 3's destroyer(s) in ( ABYZ / FRIA ).
+Player 3 assigned 1 hit from Player 1 in ( ABYZ / FRIA ).
+Player 1 rolled 5 dice for 1 hit: Fighter [ 3 ] [ 5 ] [ 9 ] [ 3 ] [ 2 ] DetailsEffects:FRAGILE
+Player 3 rolled 4 dice for 0 hits: Cruiser [ 6 ] [ 2 ] , Destroyer [ 2 ] , Carrier [ 6 ] Details
+Player 3 and Player 1 started space combat round 2.
+Player 1 destroyed 1 of Player 3's fighter(s) in ( ABYZ / FRIA ).
+Player 3 assigned 1 hit from Player 1 in ( ABYZ / FRIA ).
+Player 1 rolled 5 dice for 1 hit: Fighter [ 7 ] [ 2 ] [ 9 ] [ 3 ] [ 0 ] DetailsEffects:FRAGILE
+Player 3 rolled 5 dice for 0 hits: Cruiser [ 2 ] [ 2 ] , Destroyer [ 2 ] , Carrier [ 6 ] , Fighter [ 5 ] Details
+Player 3 rolled 2 dice for 0 hits against Player 1 in ANTI-FIGHTER BARRAGE: Destroyer [ 2, 8 ]
+Player 3 and Player 1 started space combat round 1 on ( ABYZ / FRIA ).
+Player 1 destroyed 1 of Player 3's fighter(s) in ( ABYZ / FRIA ).
+Player 3 assigned 1 hit from Player 1 in ( ABYZ / FRIA ).
+Player 1 rolled 2 dice for 1 hit against Player 3 in Space Cannon Offense: PDS [ 1, 5 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 added 2 fighter(s) to ( ABYZ / FRIA ).
+Player 3 added 2 infantry to ( ABYZ / FRIA ).
+Player 3 added 2 cruiser(s) to ( ABYZ / FRIA ).
+Player 3 added 1 destroyer(s) to ( ABYZ / FRIA ).
+Player 3 added 1 carrier(s) to ( ABYZ / FRIA ).
+Player 3 removed 2 infantry from WELLON.
+Player 3 removed 2 fighter(s) from ( WELLON ).
+Player 3 removed 2 cruiser(s) from ( WELLON ).
+Player 3 removed 1 destroyer(s) from ( WELLON ).
+Player 3 removed 1 carrier(s) from ( WELLON ).
+Player 3 used a tactical movement to move 8 unit(s) to ( ABYZ / FRIA ).
+Player 3 passed ( after a system was activated ).
+Player 3 played IN THE SILENCE OF SPACE on ( WELLON ).
+Player 3 woke up ( after a system was activated ).
+Player 4 gained 1 trade good(s).
+Player 1 lost 1 trade good(s).
+Player 4 used PILLAGE on Player 1 to take 1 trade good.
+Player 4 woke up ( PILLAGE ).
+Player 1 gained 4 trade good(s).
+Player 1 used E-RES SIPHONS.
+Player 3 played FLANK SPEED.
+Player 3 placed a tactic command token in ( ABYZ / FRIA ).
+Player 3 activated ( ABYZ / FRIA ) to start a tactical action.
+
+=== Combat 13 | Round 7 | Player 2 attacks Player 4 at ( ARINAM / MEER ) via WARFARE | SCO, assault cannon, Courageous to the End, ambush, AFB, Munitions Reserves reroll, 1 space combat round ===
+Player 2 finished a tactical action in ( ARINAM / MEER ).
+Player 2 added 1 infantry to MEER.
+Player 2 removed 1 infantry from ( ARINAM / MEER ).
+Player 2 committed ground force(s): 1 infantry to MEER (Player 2)
+Player 2 is the only faction in the ( ARINAM / MEER ) space area.
+Player 4 removed 1 infantry from ( ARINAM / MEER ).
+Player 4 must remove unit(s) due to exceeding transport capacity.
+Player 4 gained 1 trade good(s).
+Player 4 used SALVAGE OPERATIONS for 1 trade good.
+Player 2 won space combat against Player 4.
+Player 4 could not retreat from space combat.
+Player 2 gained 1 victory point due to DESTROY THEIR GREATEST SHIP.
+Player 2 scored secret objective DESTROY THEIR GREATEST SHIP.
+Player 2 woke up ( when unit(s) are destroyed ).
+Player 2 destroyed Player 4's flagship in ( ARINAM / MEER ).
+Player 2 destroyed 3 of Player 4's cruiser(s) in ( ARINAM / MEER ).
+Player 2 destroyed 1 of Player 4's damaged dreadnought(s) in ( ARINAM / MEER ).
+Player 2 destroyed 1 of Player 4's destroyer(s) in ( ARINAM / MEER ).
+Player 4 assigned 7 hits from Player 2 in ( ARINAM / MEER ).
+Player 2 passed ( after SUSTAIN DAMAGE was used ).
+Player 2 woke up ( after SUSTAIN DAMAGE was used ).
+Player 4 damaged 1 flagship in ( ARINAM / MEER ).
+Player 4 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 2 passed ( after SUSTAIN DAMAGE was used ).
+Player 2 woke up ( after SUSTAIN DAMAGE was used ).
+Player 4 damaged 1 dreadnought(s) in ( ARINAM / MEER ).
+Player 4 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 2 played SHIELDS HOLDING to cancel 2 hits.
+Player 4 rolled 7 dice for 2 hits: Cruiser [ 2 ] [ 3 ] [ 9 ] , Dreadnought [ 1 ] , Destroyer [ 10 ] , Flagship [ 6, 6 ] Details
+Player 2 rerolled 10 dice for 9 total hits: Flagship [ 5, 6 ] , War Sun [ 7, 9, 4 ] [ 1, 4, 10 ] , Dreadnought [ 5 ] [ 1 ] , Destroyer [ 3 ] [ 5 ] , Fighter [ 7 ] [ 8 ] [ 2 ] [ 10 ] [ 5 ] [ 7 ] Details
+Player 2 used Reroll (MUNITIONS RESERVES).
+Player 2 woke up ( after a combat roll ).
+Player 2 rolled 18 dice for 8 hits: Flagship [ 5, 6 ] , War Sun [ 7, 9, 4 ] [ 1, 4, 10 ] , Dreadnought [ 5 ] [ 2 ] , Destroyer [ 1 ] [ 5 ] , Fighter [ 6 ] [ 4 ] [ 4 ] [ 1 ] [ 7 ] [ 3 ] Details
+Player 4 announced a retreat from space combat with Player 2.
+Player 4 rolled 2 dice for 0 hits against Player 2 in ANTI-FIGHTER BARRAGE: Destroyer [ 6, 8 ]
+Player 2 destroyed 3 of Player 4's fighter(s) in ( ARINAM / MEER ).
+Player 2 rolled 6 dice for 4 hits against Player 4 in ANTI-FIGHTER BARRAGE: Destroyer [ 10, 10, 9 ] [ 4, 7, 2 ]
+Player 2 spent 2 trade good(s).
+Player 2 used MUNITIONS RESERVES.
+Player 4 destroyed 1 of Player 2's fighter(s) in ( ARINAM / MEER ).
+Player 2 assigned 1 hit from Player 4 in ( ARINAM / MEER ).
+Player 2 passed ( before hits are assigned ).
+Player 2 woke up ( before hits are assigned ).
+Player 4 rolled 2 dice to hit on 6-10: [ 8 , 5 ] Hits: 1
+Player 4 used AMBUSH on Player 2 with 2 cruiser dice.
+Player 4 woke up ( when a combat round starts or ends ).
+Player 4 destroyed 2 of Player 2's fighter(s) in ( ARINAM / MEER ).
+Player 2 chose unit(s) to be destroyed at ( ARINAM / MEER ): 2 fighter(s)
+Player 2 woke up.
+Player 4 rolled 2 dice to hit on 5-10: [ 7 , 10 ] Hits: 2
+Player 4 played COURAGEOUS TO THE END.
+Player 2 destroyed 1 of Player 4's damaged dreadnought(s) in ( ARINAM / MEER ).
+Player 4 chose 1 dreadnought to be destroyed by ASSAULT CANNON at ( ARINAM / MEER ).
+Player 4 woke up.
+Player 2 used ASSAULT CANNON.
+Player 2 and Player 4 started space combat round 1 on ( ARINAM / MEER ).
+Player 2 passed ( after SUSTAIN DAMAGE was used ).
+Player 2 woke up ( after SUSTAIN DAMAGE was used ).
+Player 4 damaged 1 dreadnought(s) in ( ARINAM / MEER ).
+Player 4 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 4 played MANEUVERING JETS to cancel 1 hit.
+Player 4 woke up ( before hits are assigned ).
+Player 2 rolled 2 dice for 2 hits against Player 4 in Space Cannon Offense: PDS [ 10, 8 ] DetailsEffects:PLASMA SCORING
+Player 2 added 9 fighter(s) to ( ARINAM / MEER ).
+Player 2 added 1 infantry to ( ARINAM / MEER ).
+Player 2 added 1 flagship to ( ARINAM / MEER ).
+Player 2 added 2 war sun(s) to ( ARINAM / MEER ).
+Player 2 added 2 dreadnought(s) to ( ARINAM / MEER ).
+Player 2 added 2 destroyer(s) to ( ARINAM / MEER ).
+Player 2 removed 1 infantry from NEW ALBION.
+Player 2 removed 9 fighter(s) from ( NEW ALBION / STARPOINT ).
+Player 2 removed 1 flagship from ( NEW ALBION / STARPOINT ).
+Player 2 removed 2 war sun(s) from ( NEW ALBION / STARPOINT ).
+Player 2 removed 2 dreadnought(s) from ( NEW ALBION / STARPOINT ).
+Player 2 removed 2 destroyer(s) from ( NEW ALBION / STARPOINT ).
+Player 2 used a tactical movement to move 17 unit(s) to ( ARINAM / MEER ).
+Player 2 activated ( ARINAM / MEER ) to start a tactical action.
+Player 2 used WARFARE to redistribute command tokens ( 2 tactic, 6 fleet, 1 strategy ) and activate a system.
+
+=== Combat 14 | Round 7 | Player 1 invades Player 3 at ( MECATOL REX ) | SCO (Player 2 + Player 3), planetary shield blocks bombardment, space cannon defense, 1 ground combat round ===
+Player 1 finished a tactical action in ( MECATOL REX ).
+Player 1 gained control of MECATOL REX.
+Player 3 lost control of MECATOL REX.
+Player 3 removed 1 PDS(s) from MECATOL REX.Unit(s) were destroyed due to loss of planet control.
+Player 1 won ground combat against Player 3.
+Player 1 destroyed 1 of Player 3's infantry on MECATOL REX.
+Player 3 rolled 1 die for 0 hits: Infantry [ 1 ] Details
+Player 1 rolled 3 dice for 1 hit: Infantry [ 8 ] [ 6 ] [ 5 ] DetailsEffects:FRAGILE
+Player 1 and Player 3 started ground combat round 1 on MECATOL REX.
+Player 3 destroyed 1 of Player 1's infantry on MECATOL REX.
+Player 3 rolled 1 die for 1 hit on MECATOL REX (Player 1) in Space Cannon Defense: PDS [ 5 ] DetailsEffects:ANTIMASS DEFLECTORS
+Player 1 added 4 infantry to MECATOL REX.
+Player 1 removed 4 infantry from ( MECATOL REX ).
+Player 1 committed ground force(s): 4 infantry to MECATOL REX (Player 3)
+Player 1 skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 1 die for 1 hit against Player 1 in Space Cannon Offense: PDS [ 5 ] DetailsEffects:ANTIMASS DEFLECTORS
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 2 rolled 3 dice for 2 hits against Player 1 in Space Cannon Offense: PDS [ 5, 2 ] [ 9 ] DetailsEffects:PLASMA SCORING, GRAVITON LASER SYSTEM , ANTIMASS DEFLECTORS
+Player 2 exhausted GRAVITON LASER SYSTEM.
+Player 1 added 4 infantry to ( MECATOL REX ).
+Player 1 added 1 carrier(s) to ( MECATOL REX ).
+Player 1 removed 4 infantry from ABYZ.
+Player 1 removed 1 carrier(s) from ( ABYZ / FRIA ).
+Player 1 used a tactical movement to move 5 unit(s) to ( MECATOL REX ).
+Player 1 exhausted SPACIAL CONDUIT CYLINDER.
+Player 1 used SPACIAL CONDUIT CYLINDER.
+Player 1 placed a tactic command token in ( MECATOL REX ).
+Player 1 activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 15 | Round 6 | Player 3 moves into own system ( WELLON ) | space cannon offense (Player 1) only ===
+Player 3 finished a tactical action in ( WELLON ).
+Player 3 added 2 fighter(s) to ( WELLON ).
+Player 3 added 1 dreadnought(s) to ( WELLON ).
+Player 3 added 4 infantry to WELLON.
+Player 3 spent 6 resource(s) ( RAGH, LIRTA IV, LISIS II, XXEHAN ) to produce: 4 infantry, 1 dreadnought, 2 fighter
+Player 3 added 2 infantry to WELLON.
+Player 3 removed 2 infantry from ( WELLON ).
+Player 3 committed ground force(s): 2 infantry to WELLON (Player 3)
+Player 3 damaged 1 dreadnought(s) in ( WELLON ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 1 rolled 2 dice for 1 hit against Player 3 in Space Cannon Offense: PDS [ 8, 2 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 added 4 fighter(s) to ( WELLON ).
+Player 3 added 2 infantry to ( WELLON ).
+Player 3 added 1 cruiser(s) to ( WELLON ).
+Player 3 added 1 dreadnought(s) to ( WELLON ).
+Player 3 added 1 destroyer(s) to ( WELLON ).
+Player 3 added 1 space dock(s) to ( WELLON ).
+Player 3 removed 2 infantry from ( DAL BOOTHA / XXEHAN ).
+Player 3 removed 4 fighter(s) from ( DAL BOOTHA / XXEHAN ).
+Player 3 removed 1 cruiser(s) from ( DAL BOOTHA / XXEHAN ).
+Player 3 removed 1 dreadnought(s) from ( DAL BOOTHA / XXEHAN ).
+Player 3 removed 1 destroyer(s) from ( DAL BOOTHA / XXEHAN ).
+Player 3 removed 1 space dock(s) from ( DAL BOOTHA / XXEHAN ).
+Player 3 used a tactical movement to move 10 unit(s) to ( WELLON ).
+Player 3 placed a tactic command token in ( WELLON ).
+Player 3 activated ( WELLON ) to start a tactical action.
+
+=== Combat 16 | Round 6 | Player 1 attacks Player 3 at ( MECATOL REX ) via WARFARE | SCO both sides, assault cannon, AFB, 2 space combat rounds, space cannon defense, 1 ground combat round ===
+Player 1 finished a tactical action in ( MECATOL REX ).
+Player 3 won ground combat against Player 1.
+Player 1 destroyed 1 of Player 3's infantry on MECATOL REX.
+Player 3 destroyed 1 of Player 1's infantry on MECATOL REX.
+Player 3 rolled 2 dice for 1 hit: Infantry [ 4 ] [ 8 ] Details
+Player 1 rolled 1 die for 1 hit: Infantry [ 8 ] DetailsEffects:FRAGILE
+Player 1 and Player 3 started ground combat round 1 on MECATOL REX.
+Player 3 rolled 2 dice for 0 hits on MECATOL REX (Player 1) in Space Cannon Defense: PDS [ 1 ] [ 4 ] DetailsEffects:ANTIMASS DEFLECTORS
+Player 1 added 1 infantry to MECATOL REX.
+Player 1 removed 1 infantry from ( MECATOL REX ).
+Player 1 committed ground force(s): 1 infantry to MECATOL REX (Player 3)
+Player 1 skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Player 1 is the only faction in the ( MECATOL REX ) space area.
+Player 1 won space combat against Player 3.
+Player 3 removed 4 infantry from ( MECATOL REX ).Unit(s) were removed due to capacity.
+Player 3 removed 1 space dock(s) from ( MECATOL REX ).Unit(s) were destroyed due to being blockaded.
+Player 1 destroyed Player 3's flagship in ( MECATOL REX ).
+Player 1 destroyed 2 of Player 3's damaged dreadnought(s) in ( MECATOL REX ).
+Player 1 destroyed 1 of Player 3's destroyer(s) in ( MECATOL REX ).
+Player 1 destroyed 2 of Player 3's fighter(s) in ( MECATOL REX ).
+Player 3 assigned 6 hits from Player 1 in ( MECATOL REX ).
+Player 1 repaired 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used DURANIUM ARMOR to repair 1 dreadnought.
+Player 1 damaged 1 flagship in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 7 dice for 3 hits: Dreadnought [ 3 ] [ 4 ] , Destroyer [ 4 ] , Fighter [ 10 ] [ 8 ] , Flagship [ 8, 5 ] Details
+Player 1 rolled 20 dice for 6 hits: Flagship [ 7, 8 ] , Dreadnought [ 3 ] [ 0 ] [ 0 ] [ 4 ] [ 1 ] , Destroyer [ 8 ] , Carrier [ 5 ] , Fighter [ 4 ] [ 6 ] [ 6 ] [ 0 ] [ 9 ] [ 0 ] [ 3 ] [ 1 ] [ 1 ] [ 4 ] [ 6 ] DetailsEffects:J.N.S. HYLARIM , FRAGILE
+Player 1 and Player 3 started space combat round 2.
+Player 1 destroyed 1 of Player 3's fighter(s) in ( MECATOL REX ).
+Player 3 assigned 1 hit from Player 1 in ( MECATOL REX ).
+Player 3 damaged 1 flagship in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 played SHIELDS HOLDING to cancel 2 hits.
+Player 3 woke up ( before hits are assigned ).
+Player 1 repaired 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used DURANIUM ARMOR to repair 1 dreadnought.
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 8 dice for 3 hits: Dreadnought [ 6 ] [ 9 ] , Destroyer [ 4 ] , Fighter [ 3 ] [ 2 ] [ 2 ] , Flagship [ 4, 7 ] Details
+Player 1 rolled 20 dice for 5 hits: Flagship [ 0, 9 ] , Dreadnought [ 3 ] [ 4 ] [ 3 ] [ 4 ] [ 8 ] , Destroyer [ 2 ] , Carrier [ 3 ] , Fighter [ 4 ] [ 0 ] [ 7 ] [ 9 ] [ 1 ] [ 1 ] [ 5 ] [ 3 ] [ 3 ] [ 3 ] [ 6 ] DetailsEffects:J.N.S. HYLARIM , FRAGILE
+Player 1 played SHIELDS HOLDING to cancel 2 hits.
+Player 1 woke up ( before hits are assigned ).
+Player 3 rolled 6 dice for 2 hits against Player 1 in ANTI-FIGHTER BARRAGE: Flagship [ 3, 8, 5, 7 ] , Destroyer [ 7, 8 ]
+Player 1 destroyed 2 of Player 3's fighter(s) in ( MECATOL REX ).
+Player 3 passed ( before hits are assigned ).
+Player 3 woke up ( before hits are assigned ).
+Player 1 rolled 3 dice for 2 hits against Player 3 in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 7, 9 ]
+Player 1 destroyed 1 of Player 3's carrier(s) in ( MECATOL REX ).
+Player 3 chose 1 carrier to be destroyed by ASSAULT CANNON at ( MECATOL REX ).
+Player 3 woke up.
+Player 1 used ASSAULT CANNON.
+Player 1 and Player 3 started space combat round 1 on ( MECATOL REX ).
+Player 1 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 2 dice for 1 hit against Player 1 in Space Cannon Offense: PDS [ 2 ] [ 7 ] DetailsEffects:ANTIMASS DEFLECTORS
+Player 2 skipped firing on Player 1 in Space Cannon Offense.
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 1 rolled 4 dice for 1 hit against Player 3 in Space Cannon Offense: PDS [ 3, 1 ] [ 5 ] [ 4 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 1 removed 2 carrier(s) from ( MECATOL REX ).
+Player 1 must remove unit(s) due to exceeding fleet limit.
+Player 1 added 11 fighter(s) to ( MECATOL REX ).
+Player 1 added 1 infantry to ( MECATOL REX ).
+Player 1 added 1 carrier(s) to ( MECATOL REX ).
+Player 1 removed 1 infantry from BEREG.
+Player 1 removed 1 carrier(s) from ( BEREG / LIRTA IV ).
+Player 1 added 1 carrier(s) to ( MECATOL REX ).
+Player 1 removed 4 fighter(s) from ( ABYZ / FRIA ).
+Player 1 removed 1 carrier(s) from ( ABYZ / FRIA ).
+Player 1 added 1 flagship to ( MECATOL REX ).
+Player 1 added 5 dreadnought(s) to ( MECATOL REX ).
+Player 1 added 1 destroyer(s) to ( MECATOL REX ).
+Player 1 added 1 carrier(s) to ( MECATOL REX ).
+Player 1 removed 7 fighter(s) from ( MEHAR XULL ).
+Player 1 removed 1 flagship from ( MEHAR XULL ).
+Player 1 removed 5 dreadnought(s) from ( MEHAR XULL ).
+Player 1 removed 1 destroyer(s) from ( MEHAR XULL ).
+Player 1 removed 1 carrier(s) from ( MEHAR XULL ).
+Player 1 used a tactical movement to move 22 unit(s) to ( MECATOL REX ).
+Player 1 activated ( MECATOL REX ) to start a tactical action.
+Player 1 used WARFARE to redistribute command tokens ( 0 tactic, 8 fleet, 0 strategy ) and activate a system.
+
+=== Combat 17 | Round 6 | Player 4 attacks Player 2 at ( ARNOR / LOR ) | space cannon offense (Player 2) only ===
+Player 4 finished a tactical action in ( ARNOR / LOR ).
+Player 4 gained control of LOR.
+Player 2 lost control of LOR.
+Player 4 gained control of ARNOR.
+Player 2 lost control of ARNOR.
+Player 4 added 1 infantry to LOR.
+Player 4 removed 1 infantry from ( ARNOR / LOR ).
+Player 4 added 1 infantry to ARNOR.
+Player 4 removed 1 infantry from ( ARNOR / LOR ).
+Player 4 committed ground force(s): 1 infantry to ARNOR (Player 2) ,1 infantry to LOR (Player 2)
+Player 2 destroyed 1 of Player 4's fighter(s) in ( ARNOR / LOR ).
+Player 4 assigned 1 hit from Player 2 in ( ARNOR / LOR ).
+Player 4 passed ( before hits are assigned ).
+Player 4 woke up ( before hits are assigned ).
+Player 2 rolled 2 dice for 1 hit against Player 4 in Space Cannon Offense: PDS [ 3, 7 ] DetailsEffects:PLASMA SCORING
+Player 4 removed 2 fighter(s) from ( TEQU'RAN / TORKAN ).
+Player 4 must remove unit(s) due to exceeding transport capacity.
+Player 4 added 2 fighter(s) to ( ARNOR / LOR ).
+Player 4 added 2 infantry to ( ARNOR / LOR ).
+Player 4 added 2 cruiser(s) to ( ARNOR / LOR ).
+Player 4 added 1 destroyer(s) to ( ARNOR / LOR ).
+Player 4 added 1 carrier(s) to ( ARNOR / LOR ).
+Player 4 removed 1 infantry from TORKAN.
+Player 4 removed 1 infantry from TEQU'RAN.
+Player 4 removed 2 fighter(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 2 cruiser(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 1 destroyer(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 1 carrier(s) from ( TEQU'RAN / TORKAN ).
+Player 4 used a tactical movement to move 8 unit(s) to ( ARNOR / LOR ).
+Player 4 placed a tactic command token in ( ARNOR / LOR ).
+Player 4 activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 18 | Round 5 | Player 3 in ( MECATOL REX ) | space cannon offense (Player 1 + Player 2) only ===
+Player 3 finished a tactical action in ( MECATOL REX ).
+Player 3 added 4 infantry to ( MECATOL REX ).
+Player 3 spent 1 resource(s) ( 1 trade good ) to produce: 4 infantry
+Player 2 passed ( after SUSTAIN DAMAGE was used ).
+Player 2 woke up ( after SUSTAIN DAMAGE was used ).
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 3 played MANEUVERING JETS to cancel 1 hit.
+Player 3 woke up ( before hits are assigned ).
+Player 2 rolled 3 dice for 2 hits against Player 3 in Space Cannon Offense: PDS [ 6, 7 ] [ 3 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 damaged 1 dreadnought(s) in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 damaged 1 flagship in ( MECATOL REX ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 1.
+Player 3 played MANEUVERING JETS to cancel 1 hit.
+Player 3 woke up ( before hits are assigned ).
+Player 1 rolled 3 dice for 3 hits against Player 3 in Space Cannon Offense: PDS [ 8, 5 ] [ 8 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 skipped tactical movement.
+Player 3 placed a tactic command token in ( MECATOL REX ).
+Player 3 activated ( MECATOL REX ) to start a tactical action.
+
+=== Combat 19 | Round 5 | Player 1 invades Player 2 at ( MEHAR XULL ) via WARFARE | SCO, space cannon defense, Magen Defense Grid, 4 ground combat rounds ===
+Player 1 finished a tactical action in ( MEHAR XULL ).
+Player 2 won ground combat against Player 1.
+Player 2 destroyed 1 of Player 1's infantry on MEHAR XULL.
+Player 2 rolled 2 dice for 1 hit: Infantry [ 1 ] [ 9 ] Details
+Player 1 rolled 1 die for 0 hits: Infantry [ 5 ] DetailsEffects:FRAGILE
+Player 1 and Player 2 started ground combat round 4.
+Player 1 destroyed 1 of Player 2's infantry on MEHAR XULL.
+Player 2 rolled 3 dice for 0 hits: Infantry [ 6 ] [ 2 ] [ 3 ] Details
+Player 1 rolled 1 die for 1 hit: Infantry [ 8 ] DetailsEffects:FRAGILE
+Player 1 and Player 2 started ground combat round 3.
+Player 2 destroyed 1 of Player 1's infantry on MEHAR XULL.
+Player 2 rolled 3 dice for 1 hit: Infantry [ 5 ] [ 8 ] [ 3 ] Details
+Player 1 rolled 2 dice for 0 hits: Infantry [ 2 ] [ 6 ] DetailsEffects:FRAGILE
+Player 1 and Player 2 started ground combat round 2.
+Player 2 rolled 3 dice for 0 hits: Infantry [ 3 ] [ 3 ] [ 5 ] Details
+Player 1 rolled 2 dice for 0 hits: Infantry [ 0 ] [ 5 ] DetailsEffects:FRAGILE
+Player 2 destroyed 1 of Player 1's infantry on MEHAR XULL.
+Player 2 used MAGEN DEFENSE GRID to produce 1 hit against 1 infantry on MEHAR XULL.
+Player 1 and Player 2 started ground combat round 1 on MEHAR XULL.
+Player 2 destroyed 1 of Player 1's infantry on MEHAR XULL.
+Player 2 rolled 2 dice for 1 hit on MEHAR XULL (Player 1) in Space Cannon Defense: PDS [ 2, 5 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 1 added 4 infantry to MEHAR XULL.
+Player 1 removed 4 infantry from ( MEHAR XULL ).
+Player 1 committed ground force(s): 4 infantry to MEHAR XULL (Player 2)
+Player 1 skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Player 1 damaged 1 dreadnought(s) in ( MEHAR XULL ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 2 rolled 3 dice for 1 hit against Player 1 in Space Cannon Offense: PDS [ 4, 4 ] [ 7 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 1 removed 1 carrier(s) from ( MEHAR XULL ).
+Player 1 must remove unit(s) due to exceeding fleet limit.
+Player 1 added 4 infantry to ( MEHAR XULL ).
+Player 1 added 1 carrier(s) to ( MEHAR XULL ).
+Player 1 removed 3 infantry from ( alpha wormhole 1, 2 ).
+Player 1 removed 1 carrier(s) from ( alpha wormhole 1, 2 ).
+Player 1 added 1 flagship to ( MEHAR XULL ).
+Player 1 added 1 destroyer(s) to ( MEHAR XULL ).
+Player 1 removed 1 infantry from VEFUT II.
+Player 1 removed 1 flagship from ( VEFUT II ).
+Player 1 removed 1 destroyer(s) from ( VEFUT II ).
+Player 1 used a tactical movement to move 7 unit(s) to ( MEHAR XULL ).
+Player 1 exhausted SPACIAL CONDUIT CYLINDER.
+Player 1 used SPACIAL CONDUIT CYLINDER.
+Player 2 added 1 infantry to MEHAR XULL.
+Player 2 used MAGEN DEFENSE GRID to place 1 infantry.
+Player 1 activated ( MEHAR XULL ) to start a tactical action.
+Player 1 used WARFARE to redistribute command tokens ( 1 tactic, 8 fleet, 0 strategy ) and activate a system.
+
+=== Combat 20 | Round 5 | Player 1 invades Player 2 at ( MEHAR XULL ) | SCO, space cannon defense, Magen Defense Grid, 1 ground combat round ===
+Player 1 finished a tactical action in ( MEHAR XULL ).
+Player 1 lost 1 victory point due to SHARD OF THE THRONE.
+Player 2 gained 1 victory point due to SHARD OF THE THRONE.
+Player 1 gave agenda(s) to Player 2: SHARD OF THE THRONE
+Player 2 used SHARD OF THE THRONE.
+Player 2 won ground combat against Player 1.
+Player 2 destroyed 1 of Player 1's infantry on MEHAR XULL.
+Player 2 used MAGEN DEFENSE GRID to produce 1 hit against 1 infantry on MEHAR XULL.
+Player 1 and Player 2 started ground combat round 1 on MEHAR XULL.
+Player 2 destroyed 1 of Player 1's infantry on MEHAR XULL.
+Player 2 rolled 2 dice for 1 hit on MEHAR XULL (Player 1) in Space Cannon Defense: PDS [ 9, 2 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 1 added 2 infantry to MEHAR XULL.
+Player 1 removed 2 infantry from ( MEHAR XULL ).
+Player 1 committed ground force(s): 2 infantry to MEHAR XULL (Player 2)
+Player 1 skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Player 1 damaged 1 dreadnought(s) in ( MEHAR XULL ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 1 played MANEUVERING JETS to cancel 1 hit.
+Player 1 woke up ( before hits are assigned ).
+Player 2 rolled 3 dice for 2 hits against Player 1 in Space Cannon Offense: PDS [ 4, 9 ] [ 9 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 1 added 2 fighter(s) to ( MEHAR XULL ).
+Player 1 added 2 infantry to ( MEHAR XULL ).
+Player 1 added 1 dreadnought(s) to ( MEHAR XULL ).
+Player 1 removed 1 dreadnought(s) from ( NAR / JOL ).
+Player 1 added 2 fighter(s) to ( MEHAR XULL ).
+Player 1 removed 2 fighter(s) from ( VEFUT II ).
+Player 1 added 1 carrier(s) to ( MEHAR XULL ).
+Player 1 removed 1 carrier(s) from ( alpha wormhole 1, 2 ).
+Player 1 added 1 fighter(s) to ( MEHAR XULL ).
+Player 1 removed 1 fighter(s) from ( MELLON / ZOHBAT ).
+Player 1 added 2 fighter(s) to ( MEHAR XULL ).
+Player 1 removed 2 fighter(s) from ( BEREG / LIRTA IV ).
+Player 1 added 2 dreadnought(s) to ( MEHAR XULL ).
+Player 1 removed 2 infantry from GRAL.
+Player 1 removed 2 dreadnought(s) from ( CENTAURI / GRAL ).
+Player 1 added 2 dreadnought(s) to ( MEHAR XULL ).
+Player 1 removed 2 fighter(s) from ( ABYZ / FRIA ).
+Player 1 removed 2 dreadnought(s) from ( ABYZ / FRIA ).
+Player 1 used a tactical movement to move 15 unit(s) to ( MEHAR XULL ).
+Player 2 added 1 infantry to MEHAR XULL.
+Player 2 used MAGEN DEFENSE GRID to place 1 infantry.
+Player 1 placed a tactic command token in ( MEHAR XULL ).
+Player 1 activated ( MEHAR XULL ) to start a tactical action.
+
+=== Combat 21 | Round 5 | Player 4 attacks Player 2 at ( ARINAM / MEER ) | Sabotage, ambush, Morale Boost (cancelled), Fighter Prototype, AFB, Munitions Reserves reroll, 2 space combat rounds, bombardment, Parley ===
+Player 4 finished a tactical action in ( ARINAM / MEER ).
+Player 4 added 1 infantry to ( ARINAM / MEER ).
+Player 4 removed 1 infantry from MEER.
+Player 2 played PARLEY on MEER.
+Player 2 woke up ( after a player committed ground forces ).
+Player 4 added 1 infantry to MEER.
+Player 4 removed 1 infantry from ( ARINAM / MEER ).
+Player 4 committed ground force(s): 1 infantry to MEER (Player 2)
+Player 4 destroyed 1 of Player 2's infantry on MEER.
+Player 4 rolled 3 dice for 3 hits on MEER (Player 2) using BOMBARDMENT: Dreadnought [ 7, 6 ] [ 10 ] DetailsEffects:PLASMA SCORING
+Player 4 added 1 dreadnought(s) to ( ARINAM / MEER ).
+Player 4 used SALVAGE OPERATIONS to spend 4 resource(s) in ( ARINAM / MEER ) and produce: 1 dreadnought. Spent: MOLL PRIMUS .
+Player 4 gained 1 trade good(s).
+Player 4 used SALVAGE OPERATIONS for 1 trade good.
+Player 4 gained 1 victory point due to UNVEIL FLAGSHIP.
+Player 4 scored secret objective UNVEIL FLAGSHIP.
+Player 4 woke up ( when combat ends ).
+Player 4 is the only faction in the ( ARINAM / MEER ) space area.
+Player 4 won space combat against Player 2.
+Player 4 destroyed 1 of Player 2's dreadnought(s) in ( ARINAM / MEER ).
+Player 2 assigned 5 hits from Player 4 in ( ARINAM / MEER ).
+Player 2 rolled 1 die for 0 hits: Dreadnought [ 3 ] Details
+Player 4 rolled 10 dice for 5 hits: Cruiser [ 10 ] [ 3 ] [ 7 ] , Dreadnought [ 10 ] , Destroyer [ 6 ] , Flagship [ 10, 9 ] , Fighter [ 8 ] [ 3 ] [ 1 ] Details
+Player 4 and Player 2 started space combat round 2.
+Player 4 destroyed 1 of Player 2's dreadnought(s) in ( ARINAM / MEER ).
+Player 4 destroyed 2 of Player 2's destroyer(s) in ( ARINAM / MEER ).
+Player 4 destroyed 1 of Player 2's carrier(s) in ( ARINAM / MEER ).
+Player 2 assigned 4 hits from Player 4 in ( ARINAM / MEER ).
+Player 2 destroyed 1 of Player 4's carrier(s) in ( ARINAM / MEER ).
+Player 2 destroyed 1 of Player 4's fighter(s) in ( ARINAM / MEER ).
+Player 4 assigned 2 hits from Player 2 in ( ARINAM / MEER ).
+Player 4 skipped using SUSTAIN DAMAGE.
+Player 2 passed ( after SUSTAIN DAMAGE was used ).
+Player 2 woke up ( after SUSTAIN DAMAGE was used ).
+Player 4 damaged 1 dreadnought(s) in ( ARINAM / MEER ).
+Player 4 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 2 rerolled 2 dice for 3 total hits: Dreadnought [ 8 ] [ 6 ] , Destroyer [ 2 ] [ 10 ] , Carrier [ 7 ] Details
+Player 2 used Reroll (MUNITIONS RESERVES).
+Player 2 woke up ( after a combat roll ).
+Player 2 rolled 5 dice for 3 hits: Dreadnought [ 8 ] [ 6 ] , Destroyer [ 5 ] [ 10 ] , Carrier [ 2 ] Details
+Player 4 rolled 12 dice for 4 hits: Cruiser [ 1 ] [ 6 ] [ 9 ] , Dreadnought [ 10 ] , Destroyer [ 5 ] , Carrier [ 4 ] , Flagship [ 5, 9 ] , Fighter [ 11 ] [ 7 ] [ 7 ] [ 6 ] DetailsEffects:FIGHTER PROTOTYPE
+Player 2 destroyed 2 of Player 4's fighter(s) in ( ARINAM / MEER ).
+Player 2 rolled 6 dice for 2 hits against Player 4 in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 7, 2 ] [ 10, 1, 5 ]
+Player 4 played FIGHTER PROTOTYPE.
+Player 4 woke up ( when a combat round starts or ends ).
+Player 4's MORALE BOOST action card was canceled.
+Player 2 played SABOTAGE.
+Player 2 woke up ( action card played ).
+Player 4 played MORALE BOOST.
+Player 4 woke up ( when a combat round starts or ends ).
+Player 2 spent 2 trade good(s).
+Player 2 used MUNITIONS RESERVES.
+Player 4 destroyed 1 of Player 2's fighter(s) in ( ARINAM / MEER ).
+Player 2 assigned 1 hit from Player 4 in ( ARINAM / MEER ).
+Player 2 woke up.
+Player 4 rolled 2 dice to hit on 7-10: [ 10 , 5 ] Hits: 1
+Player 4 used AMBUSH on Player 2 with 2 cruiser dice.
+Player 4 and Player 2 started space combat round 1 on ( ARINAM / MEER ).
+Player 2's EXPERIMENTAL BATTLESTATION action card was canceled.
+Player 4 played SABOTAGE.
+Player 4 woke up ( action card played ).
+Player 2 played EXPERIMENTAL BATTLESTATION.
+Player 2 woke up ( after unit(s) were moved ).
+Player 4 added 6 fighter(s) to ( ARINAM / MEER ).
+Player 4 added 1 infantry to ( ARINAM / MEER ).
+Player 4 added 1 flagship to ( ARINAM / MEER ).
+Player 4 added 2 cruiser(s) to ( ARINAM / MEER ).
+Player 4 removed 3 fighter(s) from ( TEQU'RAN / TORKAN ).
+Player 4 removed 1 flagship from ( TEQU'RAN / TORKAN ).
+Player 4 removed 2 cruiser(s) from ( TEQU'RAN / TORKAN ).
+Player 4 added 1 cruiser(s) to ( ARINAM / MEER ).
+Player 4 added 1 dreadnought(s) to ( ARINAM / MEER ).
+Player 4 added 1 destroyer(s) to ( ARINAM / MEER ).
+Player 4 added 1 carrier(s) to ( ARINAM / MEER ).
+Player 4 removed 1 infantry from SAUDOR.
+Player 4 removed 3 fighter(s) from ( SAUDOR ).
+Player 4 removed 1 cruiser(s) from ( SAUDOR ).
+Player 4 removed 1 dreadnought(s) from ( SAUDOR ).
+Player 4 removed 1 destroyer(s) from ( SAUDOR ).
+Player 4 removed 1 carrier(s) from ( SAUDOR ).
+Player 4 used a tactical movement to move 14 unit(s) to ( ARINAM / MEER ).
+Player 4 placed a tactic command token in ( ARINAM / MEER ).
+Player 4 activated ( ARINAM / MEER ) to start a tactical action.
+
+=== Combat 22 | Round 4 | Player 2 invades Player 4 + Player 3 at ( ARINAM / MEER ) | bombardment only ===
+Player 2 finished a tactical action in ( ARINAM / MEER ).
+Player 2 gained control of MEER.
+Player 3 lost control of MEER.
+Player 2 gained control of ARINAM.
+Player 4 lost control of ARINAM.
+Player 2 added 1 infantry to MEER.
+Player 2 removed 1 infantry from ( ARINAM / MEER ).
+Player 2 added 1 infantry to ARINAM.
+Player 2 removed 1 infantry from ( ARINAM / MEER ).
+Player 2 committed ground force(s): 1 infantry to ARINAM (Player 4) ,1 infantry to MEER (Player 3)
+Player 2 destroyed 1 of Player 4's infantry on ARINAM.
+Player 2 rolled 1 die for 1 hit on ARINAM (Player 4) using BOMBARDMENT: Dreadnought [ 10 ] Details
+Player 2 gained 1 victory point due to MAKE AN EXAMPLE OF THEIR WORLD.
+Player 2 scored secret objective MAKE AN EXAMPLE OF THEIR WORLD.
+Player 2 destroyed 1 of Player 3's infantry on MEER.
+Player 2 rolled 2 dice for 2 hits on MEER (Player 3) using BOMBARDMENT: Dreadnought [ 5, 10 ] DetailsEffects:PLASMA SCORING
+Player 2 added 1 fighter(s) to ( ARINAM / MEER ).
+Player 2 added 2 infantry to ( ARINAM / MEER ).
+Player 2 added 2 dreadnought(s) to ( ARINAM / MEER ).
+Player 2 added 2 destroyer(s) to ( ARINAM / MEER ).
+Player 2 added 1 carrier(s) to ( ARINAM / MEER ).
+Player 2 removed 1 infantry from LOR.
+Player 2 removed 1 infantry from ARNOR.
+Player 2 removed 1 fighter(s) from ( ARNOR / LOR ).
+Player 2 removed 2 dreadnought(s) from ( ARNOR / LOR ).
+Player 2 removed 2 destroyer(s) from ( ARNOR / LOR ).
+Player 2 removed 1 carrier(s) from ( ARNOR / LOR ).
+Player 2 used a tactical movement to move 8 unit(s) to ( ARINAM / MEER ).
+Player 2 placed a tactic command token in ( ARINAM / MEER ).
+Player 2 activated ( ARINAM / MEER ) to start a tactical action.
+
+=== Combat 23 | Round 4 | Player 1 attacks Player 3 at ( CENTAURI / GRAL ) via WARFARE | SCO, 5 space combat rounds, bombardment, 1 ground combat round ===
+Player 1 finished a tactical action in ( CENTAURI / GRAL ).
+Player 1 gained control of GRAL.
+Player 3 lost control of GRAL.
+Player 1 won ground combat against Player 3.
+Player 1 destroyed 1 of Player 3's infantry on GRAL.
+Player 3 rolled 1 die for 0 hits: Infantry [ 6 ] Details
+Player 1 rolled 2 dice for 1 hit: Infantry [ 3 ] [ 9 ] DetailsEffects:FRAGILE
+Player 1 and Player 3 started ground combat round 1 on GRAL.
+Player 1 added 2 infantry to GRAL.
+Player 1 removed 2 infantry from ( CENTAURI / GRAL ).
+Player 1 committed ground force(s): 2 infantry to GRAL (Player 3)
+Player 1 destroyed 2 of Player 3's infantry on GRAL.
+Player 1 rolled 3 dice for 2 hits on GRAL (Player 3) using BOMBARDMENT: Dreadnought [ 5, 6 ] [ 2 ] DetailsEffects:PLASMA SCORING
+Player 1 removed 1 infantry from ( CENTAURI / GRAL ).
+Player 1 must remove unit(s) due to exceeding transport capacity.
+Player 1 is the only faction in the ( CENTAURI / GRAL ) space area.
+Player 1 won space combat against Player 3.
+Player 3 removed 1 space dock(s) from ( CENTAURI / GRAL ).Unit(s) were destroyed due to being blockaded.
+Player 1 destroyed 1 of Player 3's cruiser(s) in ( CENTAURI / GRAL ).
+Player 3 assigned 1 hit from Player 1 in ( CENTAURI / GRAL ).
+Player 3 rolled 1 die for 0 hits: Cruiser [ 3 ] Details
+Player 1 rolled 2 dice for 1 hit: Dreadnought [ 6 ] [ 3 ] DetailsEffects:FRAGILE
+Player 1 passed ( when a combat round starts or ends ).
+Player 1 woke up ( when a combat round starts or ends ).
+Player 1 and Player 3 started space combat round 5.
+Player 1 destroyed 1 of Player 3's cruiser(s) in ( CENTAURI / GRAL ).
+Player 3 assigned 1 hit from Player 1 in ( CENTAURI / GRAL ).
+Player 3 destroyed 1 of Player 1's damaged dreadnought(s) in ( CENTAURI / GRAL ).
+Player 1 assigned 1 hit from Player 3 in ( CENTAURI / GRAL ).
+Player 3 rolled 2 dice for 1 hit: Cruiser [ 6 ] [ 8 ] Details
+Player 1 rolled 3 dice for 1 hit: Dreadnought [ 4 ] [ 9 ] [ 0 ] DetailsEffects:FRAGILE
+Player 1 passed ( when a combat round starts or ends ).
+Player 1 woke up ( when a combat round starts or ends ).
+Player 1 and Player 3 started space combat round 4.
+Player 1 destroyed 1 of Player 3's cruiser(s) in ( CENTAURI / GRAL ).
+Player 1 destroyed 1 of Player 3's destroyer(s) in ( CENTAURI / GRAL ).
+Player 3 assigned 2 hits from Player 1 in ( CENTAURI / GRAL ).
+Player 1 damaged 1 dreadnought(s) in ( CENTAURI / GRAL ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 4 dice for 1 hit: Cruiser [ 2 ] [ 4 ] [ 7 ] , Destroyer [ 4 ] Details
+Player 1 rolled 3 dice for 2 hits: Dreadnought [ 6 ] [ 0 ] [ 9 ] DetailsEffects:FRAGILE
+Player 1 passed ( when a combat round starts or ends ).
+Player 1 woke up ( when a combat round starts or ends ).
+Player 1 and Player 3 started space combat round 3.
+Player 1 destroyed 2 of Player 3's fighter(s) in ( CENTAURI / GRAL ).
+Player 3 assigned 2 hits from Player 1 in ( CENTAURI / GRAL ).
+Player 3 rolled 6 dice for 0 hits: Cruiser [ 4 ] [ 1 ] [ 2 ] , Destroyer [ 1 ] , Fighter [ 6 ] [ 3 ] Details
+Player 1 rolled 3 dice for 2 hits: Dreadnought [ 8 ] [ 0 ] [ 6 ] DetailsEffects:FRAGILE
+Player 1 passed ( when a combat round starts or ends ).
+Player 1 woke up ( when a combat round starts or ends ).
+Player 1 and Player 3 started space combat round 2.
+Player 1 destroyed 2 of Player 3's fighter(s) in ( CENTAURI / GRAL ).
+Player 3 assigned 2 hits from Player 1 in ( CENTAURI / GRAL ).
+Player 1 damaged 1 dreadnought(s) in ( CENTAURI / GRAL ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 1 damaged 1 dreadnought(s) in ( CENTAURI / GRAL ).
+Player 1 used SUSTAIN DAMAGE to cancel 1 hit from Player 3.
+Player 3 rolled 8 dice for 2 hits: Cruiser [ 1 ] [ 3 ] [ 9 ] , Destroyer [ 7 ] , Fighter [ 5 ] [ 2 ] [ 10 ] [ 8 ] Details
+Player 1 rolled 3 dice for 2 hits: Dreadnought [ 9 ] [ 2 ] [ 7 ] DetailsEffects:FRAGILE
+Player 1 passed ( when a combat round starts or ends ).
+Player 1 woke up ( when a combat round starts or ends ).
+Player 1 and Player 3 started space combat round 1 on ( CENTAURI / GRAL ).
+Player 1 destroyed 1 of Player 3's fighter(s) in ( CENTAURI / GRAL ).
+Player 3 assigned 1 hit from Player 1 in ( CENTAURI / GRAL ).
+Player 1 rolled 2 dice for 1 hit against Player 3 in Space Cannon Offense: PDS [ 6, 4 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 1 added 3 infantry to ( CENTAURI / GRAL ).
+Player 1 added 1 dreadnought(s) to ( CENTAURI / GRAL ).
+Player 1 removed 1 infantry from VEFUT II.
+Player 1 removed 1 dreadnought(s) from ( VEFUT II ).
+Player 1 added 2 dreadnought(s) to ( CENTAURI / GRAL ).
+Player 1 removed 1 infantry from FRIA.
+Player 1 removed 1 infantry from ABYZ.
+Player 1 removed 2 dreadnought(s) from ( ABYZ / FRIA ).
+Player 1 used a tactical movement to move 6 unit(s) to ( CENTAURI / GRAL ).
+Player 1 exhausted SPACIAL CONDUIT CYLINDER.
+Player 1 used SPACIAL CONDUIT CYLINDER.
+Player 1 activated ( CENTAURI / GRAL ) to start a tactical action.
+Player 1 used WARFARE to redistribute command tokens ( 0 tactic, 3 fleet, 0 strategy ) and activate a system.
+
+=== Combat 24 | Round 4 | Player 3 invades Player 1 at ( CENTAURI / GRAL ) | SCO, planetary shield blocks bombardment, space cannon defense ===
+Player 3 finished a tactical action in ( CENTAURI / GRAL ).
+Player 3 added 2 infantry to GRAL.
+Player 3 added 4 fighter(s) to ( CENTAURI / GRAL ).
+Player 3 spent 2 resource(s) ( LIRTA IV ) to produce: 4 fighter, 2 infantry
+Player 3 gained 1 trade good(s).
+Player 3 used SCAVENGE on GRAL for 1 trade good.
+Player 3 gained control of GRAL.
+Player 1 lost control of GRAL.
+Player 1 destroyed 2 of Player 3's infantry on CENTAURI.
+Player 1 rolled 2 dice for 2 hits on CENTAURI (Player 3) in Space Cannon Defense: PDS [ 7, 8 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 added 2 infantry to CENTAURI.
+Player 3 removed 2 infantry from ( CENTAURI / GRAL ).
+Player 3 added 1 infantry to GRAL.
+Player 3 removed 1 infantry from ( CENTAURI / GRAL ).
+Player 3 committed ground force(s): 1 infantry to GRAL (Player 1) ,2 infantry to CENTAURI (Player 1)
+Player 3 skipped using BOMBARDMENT due to PLANETARY SHIELD.
+Player 1 destroyed 1 of Player 3's fighter(s) in ( CENTAURI / GRAL ).
+Player 3 assigned 1 hit from Player 1 in ( CENTAURI / GRAL ).
+Player 1 rolled 2 dice for 1 hit against Player 3 in Space Cannon Offense: PDS [ 2, 6 ] DetailsEffects:PLASMA SCORING , ANTIMASS DEFLECTORS
+Player 3 added 2 fighter(s) to ( CENTAURI / GRAL ).
+Player 3 added 3 infantry to ( CENTAURI / GRAL ).
+Player 3 added 3 cruiser(s) to ( CENTAURI / GRAL ).
+Player 3 added 1 destroyer(s) to ( CENTAURI / GRAL ).
+Player 3 added 1 space dock(s) to ( CENTAURI / GRAL ).
+Player 3 removed 3 infantry from ( MEHAR XULL ).
+Player 3 removed 2 fighter(s) from ( MEHAR XULL ).
+Player 3 removed 3 cruiser(s) from ( MEHAR XULL ).
+Player 3 removed 1 destroyer(s) from ( MEHAR XULL ).
+Player 3 removed 1 space dock(s) from ( MEHAR XULL ).
+Player 3 used a tactical movement to move 10 unit(s) to ( CENTAURI / GRAL ).
+Player 3 placed a tactic command token in ( CENTAURI / GRAL ).
+Player 3 activated ( CENTAURI / GRAL ) to start a tactical action.
+
+=== Combat 25 | Round 4 | Player 1 invades Player 3 at ( BEREG / LIRTA IV ) | Morale Boost, 1 ground combat round (draw) ===
+Player 1 finished a tactical action in ( BEREG / LIRTA IV ).
+Player 1 gained control of BEREG.
+Player 3 lost control of BEREG.
+Ground combat ended in a draw between Player 1 and Player 3.
+Player 1 destroyed 1 of Player 3's infantry on LIRTA IV.
+Player 3 destroyed 1 of Player 1's infantry on LIRTA IV.
+Player 3 rolled 1 die for 1 hit: Infantry [ 10 ] Details
+Player 1 rolled 1 die for 1 hit: Infantry [ 10 ] DetailsEffects:FRAGILE, MORALE BOOST
+Player 2 passed ( action card played ).
+Player 2 woke up ( action card played ).
+Player 1 played MORALE BOOST.
+Player 1 and Player 3 started ground combat round 1 on LIRTA IV.
+Player 1 added 1 infantry to LIRTA IV.
+Player 1 removed 1 infantry from ( BEREG / LIRTA IV ).
+Player 1 added 1 infantry to BEREG.
+Player 1 removed 1 infantry from ( BEREG / LIRTA IV ).
+Player 1 committed ground force(s): 1 infantry to BEREG (Player 3) ,1 infantry to LIRTA IV (Player 3)
+Player 1 added 2 infantry to ( BEREG / LIRTA IV ).
+Player 1 added 2 fighter(s) to ( BEREG / LIRTA IV ).
+Player 1 removed 2 fighter(s) from ( ABYZ / FRIA ).
+Player 1 added 1 carrier(s) to ( BEREG / LIRTA IV ).
+Player 1 removed 1 infantry from GRAL.
+Player 1 removed 1 infantry from CENTAURI.
+Player 1 removed 1 carrier(s) from ( CENTAURI / GRAL ).
+Player 1 used a tactical movement to move 5 unit(s) to ( BEREG / LIRTA IV ).
+Player 1 placed a tactic command token in ( BEREG / LIRTA IV ).
+Player 1 activated ( BEREG / LIRTA IV ) to start a tactical action.
+
+=== Combat 26 | Round 3 | Player 3 attacks Player 2 at ( MEHAR XULL ) | AFB, 2 space combat rounds, 1 ground combat round ===
+Player 3 finished a tactical action in ( MEHAR XULL ).
+Player 3 removed 1 infantry from ( MEHAR XULL ).
+Player 3 must remove unit(s) due to exceeding transport capacity.
+Player 3 added 4 infantry to ( MEHAR XULL ).
+Player 3 spent 1 resource(s) ( 1 trade good ) to produce: 4 infantry
+Player 2 won ground combat against Player 3.
+Player 2 destroyed 1 of Player 3's infantry on MEHAR XULL.
+Player 2 rolled 1 die for 1 hit: Infantry [ 8 ] Details
+Player 3 rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Player 3 and Player 2 started ground combat round 1 on MEHAR XULL.
+Player 3 added 1 infantry to MEHAR XULL.
+Player 3 removed 1 infantry from ( MEHAR XULL ).
+Player 3 committed ground force(s): 1 infantry to MEHAR XULL (Player 2)
+Player 3 is the only faction in the ( MEHAR XULL ) space area.
+Player 3 won space combat against Player 2.
+Player 3 destroyed 1 of Player 2's destroyer(s) in ( MEHAR XULL ).
+Player 3 destroyed 1 of Player 2's carrier(s) in ( MEHAR XULL ).
+Player 2 assigned 3 hits from Player 3 in ( MEHAR XULL ).
+Player 2 rolled 2 dice for 0 hits: Carrier [ 5 ] , Destroyer [ 6 ] Details
+Player 3 rolled 6 dice for 3 hits: Cruiser [ 7 ] [ 6 ] [ 9 ] , Destroyer [ 1 ] , Fighter [ 9 ] [ 1 ] Details
+Player 2 passed ( when a combat round starts or ends ).
+Player 3 and Player 2 started space combat round 2.
+Player 3 destroyed 1 of Player 2's fighter(s) in ( MEHAR XULL ).
+Player 2 assigned 1 hit from Player 3 in ( MEHAR XULL ).
+Player 2 destroyed 1 of Player 3's fighter(s) in ( MEHAR XULL ).
+Player 3 assigned 1 hit from Player 2 in ( MEHAR XULL ).
+Player 2 rolled 3 dice for 1 hit: Carrier [ 6 ] , Destroyer [ 9 ] , Fighter [ 5 ] Details
+Player 3 rolled 7 dice for 1 hit: Cruiser [ 9 ] [ 6 ] [ 1 ] , Destroyer [ 2 ] , Fighter [ 7 ] [ 8 ] [ 8 ] Details
+Player 2 destroyed 1 of Player 3's fighter(s) in ( MEHAR XULL ).
+Player 2 rolled 3 dice for 1 hit against Player 3 in ANTI-FIGHTER BARRAGE: Destroyer [ 1, 1, 7 ]
+Player 3 destroyed 1 of Player 2's fighter(s) in ( MEHAR XULL ).
+Player 3 rolled 2 dice for 1 hit against Player 2 in ANTI-FIGHTER BARRAGE: Destroyer [ 3, 9 ]
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 woke up ( when a combat round starts or ends ).
+Player 3 and Player 2 started space combat round 1 on ( MEHAR XULL ).
+Player 3 added 4 fighter(s) to ( MEHAR XULL ).
+Player 3 added 1 infantry to ( MEHAR XULL ).
+Player 3 added 1 cruiser(s) to ( MEHAR XULL ).
+Player 3 added 1 destroyer(s) to ( MEHAR XULL ).
+Player 3 removed 1 cruiser(s) from ( BEREG / LIRTA IV ).
+Player 3 removed 1 destroyer(s) from ( BEREG / LIRTA IV ).
+Player 3 added 2 cruiser(s) to ( MEHAR XULL ).
+Player 3 added 1 space dock(s) to ( MEHAR XULL ).
+Player 3 removed 1 infantry from MECATOL REX.
+Player 3 removed 4 fighter(s) from ( MECATOL REX ).
+Player 3 removed 2 cruiser(s) from ( MECATOL REX ).
+Player 3 removed 1 space dock(s) from ( MECATOL REX ).
+Player 3 used a tactical movement to move 10 unit(s) to ( MEHAR XULL ).
+Player 3 placed a tactic command token in ( MEHAR XULL ).
+Player 3 activated ( MEHAR XULL ) to start a tactical action.
+
+=== Combat 27 | Round 3 | Player 2 attacks Player 3 at ( ARNOR / LOR ) | AFB, 1 space combat round, retreat attempt, bombardment, 2 ground combats ===
+Player 2 finished a tactical action in ( ARNOR / LOR ).
+Player 2 gained control of ARNOR.
+Player 3 lost control of ARNOR.
+Player 2 gained control of LOR.
+Player 3 lost control of LOR.
+Player 2 won ground combat against Player 3.
+Player 2 destroyed 1 of Player 3's infantry on ARNOR.
+Player 3 rolled 1 die for 0 hits: Infantry [ 7 ] Details
+Player 2 rolled 1 die for 1 hit: Infantry [ 10 ] Details
+Player 2 and Player 3 started ground combat round 4.
+Player 3 rolled 1 die for 0 hits: Infantry [ 6 ] Details
+Player 2 rolled 1 die for 0 hits: Infantry [ 7 ] Details
+Player 2 and Player 3 started ground combat round 3.
+Player 3 rolled 1 die for 0 hits: Infantry [ 4 ] Details
+Player 2 rolled 1 die for 0 hits: Infantry [ 3 ] Details
+Player 2 and Player 3 started ground combat round 2.
+Player 3 rolled 1 die for 0 hits: Infantry [ 3 ] Details
+Player 2 rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Player 2 and Player 3 started ground combat round 1 on ARNOR.
+Player 2 won ground combat against Player 3.
+Player 2 destroyed 1 of Player 3's infantry on LOR.
+Player 3 rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Player 2 rolled 1 die for 1 hit: Infantry [ 9 ] Details
+Player 2 and Player 3 started ground combat round 1 on LOR.
+Player 2 added 1 infantry to ARNOR.
+Player 2 removed 1 infantry from ( ARNOR / LOR ).
+Player 2 added 1 infantry to LOR.
+Player 2 removed 1 infantry from ( ARNOR / LOR ).
+Player 2 committed ground force(s): 1 infantry to LOR (Player 3) ,1 infantry to ARNOR (Player 3)
+Player 2 rolled 1 die for 0 hits on ARNOR (Player 3) using BOMBARDMENT: Dreadnought [ 2 ] Details
+Player 2 rolled 2 dice for 0 hits on LOR (Player 3) using BOMBARDMENT: Dreadnought [ 4, 2 ] DetailsEffects:PLASMA SCORING
+Player 2 is the only faction in the ( ARNOR / LOR ) space area.
+Player 2 won space combat against Player 3.
+Player 3 could not retreat from space combat.
+Player 3 removed 1 space dock(s) from ( ARNOR / LOR ).Unit(s) were destroyed due to being blockaded.
+Player 2 destroyed 1 of Player 3's damaged dreadnought(s) in ( ARNOR / LOR ).
+Player 3 assigned 2 hits from Player 2 in ( ARNOR / LOR ).
+Player 2 passed ( after SUSTAIN DAMAGE was used ).
+Player 2 woke up ( after SUSTAIN DAMAGE was used ).
+Player 3 damaged 1 dreadnought(s) in ( ARNOR / LOR ).
+Player 3 used SUSTAIN DAMAGE to cancel 1 hit from Player 2.
+Player 3 rolled 1 die for 0 hits: Dreadnought [ 2 ] Details
+Player 2 rolled 6 dice for 3 hits: Dreadnought [ 3 ] [ 5 ] , Destroyer [ 8 ] [ 10 ] , Carrier [ 4 ] , Fighter [ 1 ] Details
+Player 3 announced a retreat from space combat with Player 2.
+Player 2 destroyed 4 of Player 3's fighter(s) in ( ARNOR / LOR ).
+Player 2 rolled 6 dice for 4 hits against Player 3 in ANTI-FIGHTER BARRAGE: Destroyer [ 4, 1, 8 ] [ 8, 7, 6 ]
+Player 2 passed ( when a combat round starts or ends ).
+Player 2 and Player 3 started space combat round 1 on ( ARNOR / LOR ).
+Player 2 added 1 fighter(s) to ( ARNOR / LOR ).
+Player 2 added 2 infantry to ( ARNOR / LOR ).
+Player 2 added 1 destroyer(s) to ( ARNOR / LOR ).
+Player 2 added 1 carrier(s) to ( ARNOR / LOR ).
+Player 2 removed 1 infantry from STARPOINT.
+Player 2 removed 1 infantry from NEW ALBION.
+Player 2 removed 1 fighter(s) from ( NEW ALBION / STARPOINT ).
+Player 2 removed 1 destroyer(s) from ( NEW ALBION / STARPOINT ).
+Player 2 removed 1 carrier(s) from ( NEW ALBION / STARPOINT ).
+Player 2 added 1 dreadnought(s) to ( ARNOR / LOR ).
+Player 2 added 1 destroyer(s) to ( ARNOR / LOR ).
+Player 2 removed 1 dreadnought(s) from ( ARC PRIME / WREN TERRA ).
+Player 2 removed 1 destroyer(s) from ( ARC PRIME / WREN TERRA ).
+Player 2 added 1 dreadnought(s) to ( ARNOR / LOR ).
+Player 2 removed 1 dreadnought(s) from ( QUANN / beta wormhole ).
+Player 2 used a tactical movement to move 8 unit(s) to ( ARNOR / LOR ).
+Player 2 placed a tactic command token in ( ARNOR / LOR ).
+Player 2 activated ( ARNOR / LOR ) to start a tactical action.
+
+=== Combat 28 | Round 3 | Player 4 attacks Player 3 at ( SAUDOR ) | ambush, AFB, 1 space combat round, bombardment ===
+Player 4 finished a tactical action in ( SAUDOR ).
+Player 4 gained control of SAUDOR.
+Player 3 lost control of SAUDOR.
+Player 4 returned promissory note(s) to Player 3: RAGH'S CALL
+Player 3 added 1 infantry to MEER.
+Player 3 removed 1 infantry from SAUDOR.
+Player 4 played RAGH'S CALL to move Player 3's ground forces from SAUDOR to MEER.
+Player 4 added 1 infantry to SAUDOR.
+Player 4 removed 1 infantry from ( SAUDOR ).
+Player 4 committed ground force(s): 1 infantry to SAUDOR (Player 3)
+Player 4 destroyed 1 of Player 3's infantry on SAUDOR.
+Player 4 rolled 2 dice for 1 hit on SAUDOR (Player 3) using BOMBARDMENT: Dreadnought [ 10, 4 ] DetailsEffects:PLASMA SCORING
+Player 4 passed ( SALVAGE OPERATIONS ).
+Player 4 woke up ( SALVAGE OPERATIONS ).
+Player 4 gained 1 trade good(s).
+Player 4 used SALVAGE OPERATIONS for 1 trade good.
+Player 4 is the only faction in the ( SAUDOR ) space area.
+Player 4 won space combat against Player 3.
+Player 3 could not retreat from space combat.
+Player 4 destroyed 1 of Player 3's carrier(s) in ( SAUDOR ).
+Player 3 assigned 1 hit from Player 4 in ( SAUDOR ).
+Player 3 rolled 1 die for 0 hits: Carrier [ 7 ] Details
+Player 4 rolled 3 dice for 1 hit: Cruiser [ 5 ] , Dreadnought [ 7 ] , Destroyer [ 5 ] Details
+Player 3 announced a retreat from space combat with Player 4.
+Player 4 destroyed 2 of Player 3's fighter(s) in ( SAUDOR ).
+Player 4 rolled 2 dice for 2 hits against Player 3 in ANTI-FIGHTER BARRAGE: Destroyer [ 10, 10 ]
+Player 4 passed ( when a combat round starts or ends ).
+Player 4 rolled 1 die to hit on 9-10: [ 6 ] Hits: 0
+Player 4 rolled 1 die to hit on 7-10: [ 2 ] Hits: 0
+Player 4 used AMBUSH on Player 3 with 1 cruiser die and 1 destroyer die.
+Player 4 and Player 3 started space combat round 1 on ( SAUDOR ).
+Player 4 added 1 infantry to ( SAUDOR ).
+Player 4 added 1 cruiser(s) to ( SAUDOR ).
+Player 4 added 1 dreadnought(s) to ( SAUDOR ).
+Player 4 added 1 destroyer(s) to ( SAUDOR ).
+Player 4 removed 1 infantry from MOLL PRIMUS.
+Player 4 removed 1 cruiser(s) from ( MOLL PRIMUS ).
+Player 4 removed 1 dreadnought(s) from ( MOLL PRIMUS ).
+Player 4 removed 1 destroyer(s) from ( MOLL PRIMUS ).
+Player 4 used a tactical movement to move 4 unit(s) to ( SAUDOR ).
+Player 4 placed a tactic command token in ( SAUDOR ).
+Player 4 activated ( SAUDOR ) to start a tactical action.
+
+=== Combat 29 | Round 2 | Player 3 attacks Player 4 at ( ARINAM / MEER ) | Morale Boost, ambush, AFB, 5 space combat rounds, 3 ground combat rounds ===
+Player 3 finished a tactical action in ( ARINAM / MEER ).
+Player 3 added 1 dreadnought(s) to ( ARINAM / MEER ).
+Player 3 added 4 fighter(s) to ( ARINAM / MEER ).
+Player 3 spent 5 resource(s) ( 1 trade good, BEREG, LISIS II ) to produce: 4 fighter, 1 dreadnought
+Player 3 gained 1 trade good(s).
+Player 3 used SCAVENGE on MEER for 1 trade good.
+Player 3 gained control of MEER.
+Player 4 lost control of MEER.
+Player 3 won ground combat against Player 4.
+Player 3 destroyed 1 of Player 4's infantry on MEER.
+Player 4 rolled 1 die for 0 hits: Infantry [ 2 ] Details
+Player 3 rolled 2 dice for 2 hits: Infantry [ 8 ] [ 10 ] Details
+Player 3 and Player 4 started ground combat round 3.
+Player 4 rolled 1 die for 0 hits: Infantry [ 5 ] Details
+Player 3 rolled 2 dice for 0 hits: Infantry [ 6 ] [ 2 ] Details
+Player 3 and Player 4 started ground combat round 2.
+Player 4 rolled 1 die for 0 hits: Infantry [ 6 ] Details
+Player 3 rolled 2 dice for 0 hits: Infantry [ 7 ] [ 4 ] Details
+Player 3 and Player 4 started ground combat round 1 on MEER.
+Player 3 added 2 infantry to MEER.
+Player 3 removed 2 infantry from ( ARINAM / MEER ).
+Player 3 committed ground force(s): 2 infantry to MEER (Player 4)
+Player 3 is the only faction in the ( ARINAM / MEER ) space area.
+Player 3 won space combat against Player 4.
+Player 3 destroyed 2 of Player 4's cruiser(s) in ( ARINAM / MEER ).
+Player 4 assigned 2 hits from Player 3 in ( ARINAM / MEER ).
+Player 4 destroyed 1 of Player 3's fighter(s) in ( ARINAM / MEER ).
+Player 3 assigned 1 hit from Player 4 in ( ARINAM / MEER ).
+Player 4 rolled 2 dice for 1 hit: Cruiser [ 10 ] [ 4 ] Details
+Player 3 rolled 4 dice for 2 hits: Destroyer [ 9 ] , Carrier [ 9 ] , Fighter [ 7 ] [ 8 ] Details
+Player 3 and Player 4 started space combat round 5.
+Player 4 destroyed 1 of Player 3's fighter(s) in ( ARINAM / MEER ).
+Player 3 assigned 1 hit from Player 4 in ( ARINAM / MEER ).
+Player 4 rolled 2 dice for 1 hit: Cruiser [ 6 ] [ 10 ] Details
+Player 3 rolled 5 dice for 0 hits: Destroyer [ 5 ] , Carrier [ 6 ] , Fighter [ 8 ] [ 6 ] [ 5 ] Details
+Player 3 and Player 4 started space combat round 4.
+Player 3 destroyed 1 of Player 4's carrier(s) in ( ARINAM / MEER ).
+Player 4 assigned 1 hit from Player 3 in ( ARINAM / MEER ).
+Player 4 destroyed 2 of Player 3's fighter(s) in ( ARINAM / MEER ).
+Player 3 assigned 2 hits from Player 4 in ( ARINAM / MEER ).
+Player 4 rolled 3 dice for 2 hits: Cruiser [ 1 ] [ 10 ] , Carrier [ 10 ] Details
+Player 3 rolled 7 dice for 1 hit: Destroyer [ 7 ] , Carrier [ 7 ] , Fighter [ 8 ] [ 8 ] [ 8 ] [ 9 ] [ 8 ] Details
+Player 3 and Player 4 started space combat round 3.
+Player 4 destroyed 1 of Player 3's fighter(s) in ( ARINAM / MEER ).
+Player 3 assigned 1 hit from Player 4 in ( ARINAM / MEER ).
+Player 4 rolled 3 dice for 1 hit: Cruiser [ 7 ] [ 2 ] , Carrier [ 3 ] Details
+Player 3 rolled 8 dice for 0 hits: Destroyer [ 1 ] , Carrier [ 5 ] , Fighter [ 4 ] [ 7 ] [ 4 ] [ 3 ] [ 4 ] [ 5 ] Details
+Player 3 and Player 4 started space combat round 2.
+Player 3 destroyed 1 of Player 4's fighter(s) in ( ARINAM / MEER ).
+Player 4 assigned 1 hit from Player 3 in ( ARINAM / MEER ).
+Player 3 played SHIELDS HOLDING to cancel 1 hit.
+Player 4 rolled 4 dice for 1 hit: Cruiser [ 9 ] [ 6 ] , Carrier [ 1 ] , Fighter [ 6 ] Details
+Player 3 rolled 8 dice for 1 hit: Destroyer [ 2 ] , Carrier [ 4 ] , Fighter [ 11 ] [ 6 ] [ 8 ] [ 8 ] [ 2 ] [ 2 ] DetailsEffects:MORALE BOOST
+Player 3 destroyed 1 of Player 4's fighter(s) in ( ARINAM / MEER ).
+Player 3 rolled 2 dice for 1 hit against Player 4 in ANTI-FIGHTER BARRAGE: Destroyer [ 10, 3 ]
+Player 4 rolled 2 dice to hit on 7-10: [ 3 , 6 ] Hits: 0
+Player 4 used AMBUSH on Player 3 with 2 cruiser dice.
+Player 4 woke up ( when a combat round starts or ends ).
+Player 3 played MORALE BOOST.
+Player 3 and Player 4 started space combat round 1 on ( ARINAM / MEER ).
+Player 3 added 6 fighter(s) to ( ARINAM / MEER ).
+Player 3 added 2 infantry to ( ARINAM / MEER ).
+Player 3 added 1 destroyer(s) to ( ARINAM / MEER ).
+Player 3 added 1 carrier(s) to ( ARINAM / MEER ).
+Player 3 added 1 space dock(s) to ( ARINAM / MEER ).
+Player 3 removed 1 infantry from SAKULAG.
+Player 3 removed 1 infantry from LAZAR.
+Player 3 removed 6 fighter(s) from ( LAZAR / SAKULAG ).
+Player 3 removed 1 destroyer(s) from ( LAZAR / SAKULAG ).
+Player 3 removed 1 carrier(s) from ( LAZAR / SAKULAG ).
+Player 3 removed 1 space dock(s) from ( LAZAR / SAKULAG ).
+Player 3 used a tactical movement to move 11 unit(s) to ( ARINAM / MEER ).
+Player 3 placed a tactic command token in ( ARINAM / MEER ).
+Player 3 activated ( ARINAM / MEER ) to start a tactical action.

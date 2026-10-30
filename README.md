@@ -67,6 +67,18 @@ The Nekro Virus can select any faction tech, standing in for Valefar Assimilator
 * **Not modelled yet:** retreats, action cards, promissory notes, agents and other leaders, capacity limits, the Hacan flagship's trade-good bonus, the Exotrireme II self-destruct, Yin Devotion and Impulse Core, and X-89 Bacterial Weapon.
 * **Optional abilities** are always used when they help: Assault Cannon, Ambush, Plasma Scoring and Graviton.
 
+## Importing a combat from Board Game Arena
+
+**Import BGA log** takes text copied from a BGA game log, newest line first as BGA shows it (oldest first also works). Paste one combat, from the system activation to the end of the tactical action, or a longer stretch of log and pick the combat. The importer fills in:
+
+* **Players and sides:** the active player attacks. The planet fought over and whether to invade come from the ground-force and bombardment lines.
+* **Units:** the fleet moved in, plus the dice and losses in the log. Ships and ground forces that rolled are complete counts; everything else is "at least", and damaged ships that started the combat damaged are included.
+* **Faction:** worked out from faction abilities, techs and flagship dice anywhere in the paste.
+* **Upgrades:** the combinations of base and upgraded units that explain every roll's hit count, Anti-Fighter Barrage dice and Ambush to-hit values. Upgrades and techs seen in earlier combats in the same paste carry forward.
+* **Technologies:** shown in the log ("used DURANIUM ARMOR", "Effects: PLASMA SCORING"), or ruled out when they would have shown.
+
+Each imported value carries a mark: **i** explains where it came from, and an amber **!** means the log doesn't prove it. Changing a value by hand clears its mark. Third players' Space Cannon, action cards and other planets are listed in the banner but aren't simulated.
+
 ## Project layout
 
 ```
@@ -75,5 +87,7 @@ src/engine/types.ts        Shared types
 src/engine/data/           Unit, faction and tech data
 src/engine/simulate.ts     Combat engine
 src/engine/*.test.ts       Engine tests
+src/import/bga.ts          BGA log importer
+src/import/fixtures/       Real BGA combat logs used by the importer tests
 src/renderer/              React UI and the simulation worker
 ```
