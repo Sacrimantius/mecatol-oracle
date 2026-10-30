@@ -1,0 +1,513 @@
+:root {
+  --bg: #0a0e1a;
+  --panel: #121a2c;
+  --panel-raised: #18223a;
+  --border: #243150;
+  --text: #e6ebf5;
+  --muted: #8b97b3;
+  --attacker: #ef5a5a;
+  --attacker-soft: rgba(239, 90, 90, 0.14);
+  --defender: #4c9dff;
+  --defender-soft: rgba(76, 157, 255, 0.14);
+  --draw: #6c7591;
+  --gold: #e8b64c;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at top, #141d36 0%, var(--bg) 60%);
+  min-height: 100vh;
+}
+
+button,
+select,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Top bar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 14, 26, 0.85);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  font-size: 30px;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.brand h1 {
+  font-size: 18px;
+  letter-spacing: 0.04em;
+}
+
+.subtitle {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.toggle,
+.iterations {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+select {
+  background: var(--panel-raised);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+button {
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel-raised);
+  padding: 7px 14px;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+button.primary {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1a1305;
+  font-weight: 600;
+  min-width: 150px;
+}
+
+button.secondary:hover,
+button:not(:disabled):hover {
+  filter: brightness(1.15);
+}
+
+/* Layout */
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 380px 1fr 380px;
+  gap: 16px;
+  padding: 16px 20px;
+  min-height: 0;
+}
+
+.side-panel,
+.center {
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.side-panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  border-top: 3px solid var(--accent);
+}
+
+.side-panel.attacker {
+  --accent: var(--attacker);
+  --accent-soft: var(--attacker-soft);
+}
+
+.side-panel.defender {
+  --accent: var(--defender);
+  --accent-soft: var(--defender-soft);
+}
+
+.side-panel header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.side-panel h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+
+.side-panel header select {
+  font-size: 15px;
+  padding: 8px 10px;
+}
+
+.side-panel h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin: 16px 0 6px;
+}
+
+.ability-notes {
+  margin: 4px 0 0;
+  padding: 8px 10px 8px 24px;
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--panel-raised);
+  border-radius: 6px;
+}
+
+.unit-row {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: 6px;
+}
+
+.unit-row.active {
+  background: var(--accent-soft);
+}
+
+.unit-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.unit-stats {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.info-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  border-radius: 50%;
+  font-size: 10px;
+  font-style: italic;
+  background: var(--border);
+  color: var(--muted);
+  vertical-align: 1px;
+}
+
+button.upgrade {
+  width: 34px;
+  padding: 4px 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+button.upgrade.on {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: #1a1305;
+}
+
+.upgrade-placeholder {
+  width: 34px;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+}
+
+.stepper button {
+  width: 28px;
+  padding: 3px 0;
+}
+
+.stepper input {
+  width: 38px;
+  text-align: center;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  -moz-appearance: textfield;
+}
+
+.stepper input::-webkit-inner-spin-button,
+.stepper input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  padding: 5px 9px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  cursor: pointer;
+  color: var(--muted);
+}
+
+.tech input {
+  display: none;
+}
+
+.tech.on {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+.faction-tag {
+  font-size: 9px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gold);
+}
+
+/* Results */
+.center {
+  display: flex;
+  flex-direction: column;
+}
+
+.empty {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  text-align: center;
+  padding: 24px;
+}
+
+.error {
+  background: var(--attacker-soft);
+  border: 1px solid var(--attacker);
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.headline {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 12px;
+}
+
+.headline-side {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.headline-side .big {
+  font-size: 40px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+}
+
+.headline-side.attacker .big {
+  color: var(--attacker);
+}
+
+.headline-side.defender {
+  text-align: right;
+}
+
+.headline-side.defender .big {
+  color: var(--defender);
+}
+
+.headline-side.draw {
+  text-align: center;
+}
+
+.headline-side.draw .big {
+  font-size: 24px;
+  color: var(--draw);
+  margin-top: 12px;
+}
+
+.odds-bar {
+  display: flex;
+  height: 14px;
+  border-radius: 7px;
+  overflow: hidden;
+  gap: 2px;
+  background: var(--panel);
+}
+
+.seg.attacker {
+  background: var(--attacker);
+}
+
+.seg.draw {
+  background: var(--draw);
+}
+
+.seg.defender {
+  background: var(--defender);
+}
+
+.caption {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.stages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 12px;
+}
+
+.stage,
+.survivor-table {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+}
+
+.stage h3,
+.survivor-table h3 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat.attacker .stat-value {
+  color: var(--attacker);
+}
+
+.stat.defender .stat-value {
+  color: var(--defender);
+}
+
+.stat.draw .stat-value {
+  color: var(--draw);
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.survivors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.survivor-row {
+  display: grid;
+  grid-template-columns: 1fr 80px auto;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  padding: 3px 0;
+}
+
+.survivor-row .num {
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  min-width: 64px;
+  text-align: right;
+}
+
+.mini-bar {
+  height: 6px;
+  background: var(--panel-raised);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.survivor-table.attacker .mini-bar div {
+  height: 100%;
+  background: var(--attacker);
+}
+
+.survivor-table.defender .mini-bar div {
+  height: 100%;
+  background: var(--defender);
+}
