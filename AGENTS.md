@@ -16,6 +16,38 @@ the code safely.
 
 Before calling work done: tests pass, typecheck is clean, and UI changes have been looked at in the running app.
 
+## Workflow: branches, worktrees and this guide
+
+These rules apply to every agent and subagent working in this repo.
+
+- **All new work happens on its own branch in its own git worktree.** Never edit, build features or fix bugs
+  directly on `main` or in the main checkout. Before the first edit of a task, create the worktree next to the main
+  checkout, named after the branch:
+
+  ```
+  git worktree add -b feature/<short-name> ../mecatol-oracle-<short-name> main
+  ```
+
+  Use `feature/`, `fix/` or `docs/` prefixes. Branch from `main` unless the work builds on another unmerged branch;
+  then branch from that one and say so. Check `git worktree list` first and don't touch other agents' worktrees.
+- A fresh worktree has no `node_modules`: run `npm install` there before testing. `games/` is git-ignored, so it
+  isn't in the worktree either; tests that need a saved game skip until you copy one in (never commit it).
+- Uncommitted changes in the main checkout aren't in a new worktree. If a task builds on them, stop and ask the user
+  to commit them to a branch first rather than copying them across.
+- Merging, pushing and removing the worktree happen only when the user asks.
+
+### Keep this guide current as you go
+
+`AGENTS.md` (this file) is the project knowledgebase; `README.md` covers user-facing behaviour. Update them during
+the task, on the same branch, not just at the end:
+
+- when you learn something non-obvious about the code, the BGA log format or the environment;
+- when you add or move a file or module (update **Layout**);
+- when a feature or component is finished (add or update its section, and the README if users see it);
+- when a convention or command changes.
+
+Write facts the next agent needs, not a diary of what you did. Remove statements that stopped being true.
+
 ## Environment gotchas (Windows dev machine)
 
 - Node may not be on `PATH` in Git Bash: `export PATH="$PATH:/c/Program Files/nodejs"`.
