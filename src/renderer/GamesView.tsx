@@ -6,7 +6,7 @@ import type { ImportedCombat } from '../import/bga';
 import type { DiceLuck, GameRecord, PlayerRecord, UnitTally } from '../import/bgaGame';
 import { gameCombats, type GameCombat } from '../import/savedGame';
 import { ordinal } from './format';
-import { gameReader, type SavedGame } from './gameStore';
+import { gameReader, gameTitle, type SavedGame } from './gameStore';
 import { describeSide } from './ImportDialog';
 import { countWarnings } from './importFlags';
 
@@ -33,7 +33,7 @@ export function GamesView({ selectedId, onSelect, onLoadCombat }: Props) {
 
   useEffect(() => {
     gameReader
-      ?.listGames()
+      .listGames()
       .then((list) => {
         setGames(list);
         if (!selectedId && list[0]) onSelect(list[0].id);
@@ -44,7 +44,7 @@ export function GamesView({ selectedId, onSelect, onLoadCombat }: Props) {
   useEffect(() => {
     setGame(null);
     setError(null);
-    if (!gameReader || !selectedId) return;
+    if (!selectedId) return;
     let current = true;
     gameReader
       .loadGame(selectedId)
@@ -54,16 +54,6 @@ export function GamesView({ selectedId, onSelect, onLoadCombat }: Props) {
       current = false;
     };
   }, [selectedId]);
-
-  if (!gameReader) {
-    return (
-      <main className="games">
-        <div className="empty">
-          <p>Saved games open in the desktop app (npm run dev), or on the dev server.</p>
-        </div>
-      </main>
-    );
-  }
 
   return (
     <main className="games">
@@ -82,7 +72,7 @@ export function GamesView({ selectedId, onSelect, onLoadCombat }: Props) {
             onClick={() => onSelect(g.id)}
             aria-current={g.id === selectedId}
           >
-            <span className="game-item-title">Table {g.id}</span>
+            <span className="game-item-title">{gameTitle(g.id)}</span>
             <span className="muted">{dates(g)}</span>
             <span>
               {g.winner ? `${g.winner} won` : `Round ${g.rounds}`} · {g.players.length} players
@@ -111,13 +101,13 @@ function GameDetail({ game: { record, log }, onLoadCombat }: { game: SavedGame; 
   const load = (c: GameCombat) =>
     onLoadCombat({
       ...c.combat,
-      title: `${c.combat.title} (table ${record.id}, combat ${c.number}${c.round ? `, round ${c.round}` : ''})`,
+      title: `${c.combat.title} (${gameTitle(record.id)}, combat ${c.number}${c.round ? `, round ${c.round}` : ''})`,
     });
 
   return (
     <div className="game-body" style={{ '--players': players.length } as CSSProperties}>
       <header className="game-head">
-        <h2>Table {record.id}</h2>
+        <h2>{gameTitle(record.id)}</h2>
         <span className="muted">
           {dates(record)} · {record.winner ? `${record.winner} won in round ${record.rounds}` : `round ${record.rounds}`}{' '}
           · saved {record.savedAt.slice(0, 10)}

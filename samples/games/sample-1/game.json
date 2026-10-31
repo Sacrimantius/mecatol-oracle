@@ -1,0 +1,477 @@
+{
+  "version": 1,
+  "id": "sample-1",
+  "status": "finished",
+  "startDate": "2026-10-20",
+  "endDate": "2026-10-30",
+  "winner": "Player 1",
+  "rounds": 9,
+  "players": [
+    {
+      "name": "Player 1",
+      "factionId": "jolnar",
+      "score": 14,
+      "tradeGoods": {
+        "gained": 45,
+        "spent": 30,
+        "lost": 9
+      },
+      "units": {
+        "pds": {
+          "starting": 2,
+          "produced": 0,
+          "placed": 7,
+          "lost": 8,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "infantry": {
+          "starting": 2,
+          "produced": 10,
+          "placed": 7,
+          "lost": 12,
+          "producedCost": 5,
+          "lostCost": 6
+        },
+        "spacedock": {
+          "starting": 1,
+          "produced": 0,
+          "placed": 1,
+          "lost": 2,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "fighter": {
+          "starting": 1,
+          "produced": 27,
+          "placed": 0,
+          "lost": 25,
+          "producedCost": 13.5,
+          "lostCost": 12.5
+        },
+        "carrier": {
+          "starting": 2,
+          "produced": 4,
+          "placed": 0,
+          "lost": 6,
+          "producedCost": 12,
+          "lostCost": 18
+        },
+        "dreadnought": {
+          "starting": 1,
+          "produced": 6,
+          "placed": 0,
+          "lost": 6,
+          "producedCost": 24,
+          "lostCost": 24
+        },
+        "destroyer": {
+          "starting": 0,
+          "produced": 9,
+          "placed": 0,
+          "lost": 4,
+          "producedCost": 9,
+          "lostCost": 4
+        },
+        "flagship": {
+          "starting": 0,
+          "produced": 1,
+          "placed": 0,
+          "lost": 1,
+          "producedCost": 8,
+          "lostCost": 8
+        }
+      },
+      "unitTotals": {
+        "starting": 9,
+        "produced": 57,
+        "placed": 15,
+        "lost": 64,
+        "producedCost": 71.5,
+        "lostCost": 72.5
+      },
+      "dice": {
+        "space": {
+          "dice": 171,
+          "hits": 58,
+          "expectedHits": 56.5,
+          "hitPercentile": 60.4,
+          "averageFace": 5.67,
+          "facePercentile": 77.6
+        },
+        "invasion": {
+          "dice": 20,
+          "hits": 11,
+          "expectedHits": 6.7,
+          "hitPercentile": 98.2,
+          "averageFace": 6.6,
+          "facePercentile": 95.7
+        },
+        "total": {
+          "dice": 191,
+          "hits": 69,
+          "expectedHits": 63.2,
+          "hitPercentile": 82.6,
+          "averageFace": 5.76,
+          "facePercentile": 89.8
+        }
+      }
+    },
+    {
+      "name": "Player 2",
+      "factionId": "letnev",
+      "score": 12,
+      "tradeGoods": {
+        "gained": 17,
+        "spent": 8,
+        "lost": 5
+      },
+      "units": {
+        "infantry": {
+          "starting": 3,
+          "produced": 2,
+          "placed": 10,
+          "lost": 10,
+          "producedCost": 1,
+          "lostCost": 5
+        },
+        "spacedock": {
+          "starting": 1,
+          "produced": 0,
+          "placed": 1,
+          "lost": 0,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "fighter": {
+          "starting": 1,
+          "produced": 15,
+          "placed": 0,
+          "lost": 12,
+          "producedCost": 7.5,
+          "lostCost": 6
+        },
+        "destroyer": {
+          "starting": 1,
+          "produced": 6,
+          "placed": 1,
+          "lost": 3,
+          "producedCost": 6,
+          "lostCost": 3
+        },
+        "carrier": {
+          "starting": 1,
+          "produced": 1,
+          "placed": 0,
+          "lost": 2,
+          "producedCost": 3,
+          "lostCost": 6
+        },
+        "dreadnought": {
+          "starting": 1,
+          "produced": 5,
+          "placed": 0,
+          "lost": 3,
+          "producedCost": 20,
+          "lostCost": 12
+        },
+        "pds": {
+          "starting": 0,
+          "produced": 0,
+          "placed": 8,
+          "lost": 4,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "warsun": {
+          "starting": 0,
+          "produced": 2,
+          "placed": 0,
+          "lost": 0,
+          "producedCost": 24,
+          "lostCost": 0
+        },
+        "flagship": {
+          "starting": 0,
+          "produced": 1,
+          "placed": 0,
+          "lost": 1,
+          "producedCost": 8,
+          "lostCost": 8
+        }
+      },
+      "unitTotals": {
+        "starting": 8,
+        "produced": 32,
+        "placed": 20,
+        "lost": 35,
+        "producedCost": 69.5,
+        "lostCost": 40
+      },
+      "dice": {
+        "space": {
+          "dice": 140,
+          "hits": 74,
+          "expectedHits": 69.2,
+          "hitPercentile": 80.9,
+          "averageFace": 5.68,
+          "facePercentile": 76.9
+        },
+        "invasion": {
+          "dice": 45,
+          "hits": 21,
+          "expectedHits": 18.8,
+          "hitPercentile": 75.4,
+          "averageFace": 5.82,
+          "facePercentile": 77.3
+        },
+        "total": {
+          "dice": 185,
+          "hits": 95,
+          "expectedHits": 88,
+          "hitPercentile": 86.5,
+          "averageFace": 5.71,
+          "facePercentile": 84.4
+        }
+      }
+    },
+    {
+      "name": "Player 3",
+      "factionId": "saar",
+      "score": 5,
+      "tradeGoods": {
+        "gained": 71,
+        "spent": 54,
+        "lost": 17
+      },
+      "units": {
+        "infantry": {
+          "starting": 4,
+          "produced": 22,
+          "placed": 0,
+          "lost": 14,
+          "producedCost": 11,
+          "lostCost": 7
+        },
+        "spacedock": {
+          "starting": 1,
+          "produced": 0,
+          "placed": 5,
+          "lost": 6,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "fighter": {
+          "starting": 2,
+          "produced": 48,
+          "placed": 0,
+          "lost": 50,
+          "producedCost": 24,
+          "lostCost": 25
+        },
+        "cruiser": {
+          "starting": 1,
+          "produced": 10,
+          "placed": 1,
+          "lost": 12,
+          "producedCost": 20,
+          "lostCost": 24
+        },
+        "carrier": {
+          "starting": 2,
+          "produced": 1,
+          "placed": 0,
+          "lost": 3,
+          "producedCost": 3,
+          "lostCost": 9
+        },
+        "destroyer": {
+          "starting": 0,
+          "produced": 4,
+          "placed": 0,
+          "lost": 4,
+          "producedCost": 4,
+          "lostCost": 4
+        },
+        "dreadnought": {
+          "starting": 0,
+          "produced": 8,
+          "placed": 0,
+          "lost": 4,
+          "producedCost": 32,
+          "lostCost": 16
+        },
+        "pds": {
+          "starting": 0,
+          "produced": 0,
+          "placed": 4,
+          "lost": 4,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "flagship": {
+          "starting": 0,
+          "produced": 2,
+          "placed": 0,
+          "lost": 1,
+          "producedCost": 16,
+          "lostCost": 8
+        }
+      },
+      "unitTotals": {
+        "starting": 10,
+        "produced": 95,
+        "placed": 10,
+        "lost": 98,
+        "producedCost": 110,
+        "lostCost": 93
+      },
+      "dice": {
+        "space": {
+          "dice": 194,
+          "hits": 62,
+          "expectedHits": 69.9,
+          "hitPercentile": 10.5,
+          "averageFace": 5.39,
+          "facePercentile": 29.1
+        },
+        "invasion": {
+          "dice": 24,
+          "hits": 9,
+          "expectedHits": 9,
+          "hitPercentile": 50.6,
+          "averageFace": 5.58,
+          "facePercentile": 55.6
+        },
+        "total": {
+          "dice": 218,
+          "hits": 71,
+          "expectedHits": 78.9,
+          "hitPercentile": 12,
+          "averageFace": 5.41,
+          "facePercentile": 31.9
+        }
+      }
+    },
+    {
+      "name": "Player 4",
+      "factionId": "mentak",
+      "score": 12,
+      "tradeGoods": {
+        "gained": 67,
+        "spent": 37,
+        "lost": 16
+      },
+      "units": {
+        "spacedock": {
+          "starting": 1,
+          "produced": 0,
+          "placed": 3,
+          "lost": 1,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "pds": {
+          "starting": 1,
+          "produced": 0,
+          "placed": 1,
+          "lost": 1,
+          "producedCost": 0,
+          "lostCost": 0
+        },
+        "infantry": {
+          "starting": 4,
+          "produced": 6,
+          "placed": 20,
+          "lost": 18,
+          "producedCost": 3,
+          "lostCost": 9
+        },
+        "fighter": {
+          "starting": 3,
+          "produced": 28,
+          "placed": 2,
+          "lost": 27,
+          "producedCost": 14,
+          "lostCost": 13.5
+        },
+        "cruiser": {
+          "starting": 2,
+          "produced": 11,
+          "placed": 0,
+          "lost": 8,
+          "producedCost": 22,
+          "lostCost": 16
+        },
+        "carrier": {
+          "starting": 1,
+          "produced": 5,
+          "placed": 0,
+          "lost": 4,
+          "producedCost": 15,
+          "lostCost": 12
+        },
+        "destroyer": {
+          "starting": 0,
+          "produced": 8,
+          "placed": 2,
+          "lost": 6,
+          "producedCost": 8,
+          "lostCost": 6
+        },
+        "dreadnought": {
+          "starting": 0,
+          "produced": 8,
+          "placed": 1,
+          "lost": 4,
+          "producedCost": 32,
+          "lostCost": 16
+        },
+        "flagship": {
+          "starting": 0,
+          "produced": 2,
+          "placed": 1,
+          "lost": 1,
+          "producedCost": 16,
+          "lostCost": 8
+        }
+      },
+      "unitTotals": {
+        "starting": 12,
+        "produced": 68,
+        "placed": 30,
+        "lost": 70,
+        "producedCost": 110,
+        "lostCost": 80.5
+      },
+      "dice": {
+        "space": {
+          "dice": 116,
+          "hits": 45,
+          "expectedHits": 40.5,
+          "hitPercentile": 82,
+          "averageFace": 6.01,
+          "facePercentile": 97.2
+        },
+        "invasion": {
+          "dice": 18,
+          "hits": 6,
+          "expectedHits": 7.7,
+          "hitPercentile": 20.7,
+          "averageFace": 5,
+          "facePercentile": 23.2
+        },
+        "total": {
+          "dice": 134,
+          "hits": 51,
+          "expectedHits": 48.2,
+          "hitPercentile": 70.2,
+          "averageFace": 5.87,
+          "facePercentile": 93.4
+        }
+      }
+    }
+  ],
+  "notes": [],
+  "savedAt": "2026-10-31T12:42:30.736Z"
+}

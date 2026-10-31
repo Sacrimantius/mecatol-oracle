@@ -80,6 +80,7 @@ src/import/bgaGame.ts        Whole-game statistics (score, trade goods, units, d
 src/import/savedGame.ts      gameCombats(log): a saved game's combats, oldest first, with round and log lines
 src/import/fixtures/         Real BGA logs (one 4-player game, 29 combats) used as test fixtures
 games/                       Saved games, git-ignored except games/README.md (the record format)
+samples/games/               Anonymized example games, committed and bundled into the app (samples/README.md)
 src/renderer/                React UI: App (Simulator/Games tabs, state, import banner), SidePanel, ImportDialog,
                              Results, ActualResult (real outcome vs simulation; stats in actualStats.ts),
                              SaveGameDialog, GamesView (Games tab), gameStore (reading/saving games),
@@ -160,6 +161,8 @@ test names refer to the fixture headers (combat 1 is the newest).
 - **Never commit anything under games/** except its README: logs contain other players' names and private lines.
   Tests that need a full log use `import.meta.glob` on games/ and skip when it's absent (BGA table sample-1 is the
   one used now).
+- `samples/games/` is the exception: anonymized copies that are committed and bundled. See `samples/README.md` for
+  what anonymizing has to cover; names are matched without word boundaries because BGA runs sentences together.
 - Players and factions come from the setup lines ("X placed units on ( NAR / JOL )" → home planets). Without setup
   lines the combat importer's faction guess is used.
 - Score = sum of "gained/lost N victory point(s) due to". Games aren't always to 10 (sample-1 was to 14).
@@ -179,8 +182,11 @@ test names refer to the fixture headers (combat 1 is the newest).
 
 ### Games tab (`GamesView`, `savedGame.ts`, `gameStore.ts`)
 
-- `gameReader` uses Electron IPC, or in a plain browser tab the dev server's `/api/games`. That route only exists in
-  `vite` serve mode, so saved games never end up in `dist/`. Both check the id against `^[\w-]+$`.
+- `gameReader` lists local saved games (Electron IPC, or in a plain browser tab the dev server's `/api/games`), then
+  the examples in `samples/games/`. The `/api/games` route only exists in `vite` serve mode, so saved games never end
+  up in `dist/`; both check the id against `^[\w-]+$`. Examples come in through `import.meta.glob` (game.json eager,
+  log.txt as a lazy `?raw` chunk), so they work on GitHub Pages and under Electron's `file://` alike. They show as
+  "Example game <id>" (`gameTitle`) rather than "Table <id>".
 - The combat log isn't stored in game.json: `gameCombats` re-parses the saved log with `parseBgaLog`, so importer
   fixes reach old saves. It drops tactical actions with an empty `summary` (no combat step), and takes each combat's
   round from the nearest older "Round N, … Phase" header.

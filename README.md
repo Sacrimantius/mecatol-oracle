@@ -130,7 +130,9 @@ The **Games** tab lists the saved games. Pick one to see the score and, for each
 log, grouped by round: click a combat for its log lines, or **Load** to put it in the simulator just as if it had been
 imported, Actual result box included. Tactical actions with no combat in them are left out.
 
-The Games tab reads saved games in the desktop app, and in a browser tab on the Vite dev server (`npx vite`).
+The Games tab reads saved games in the desktop app, and in a browser tab on the Vite dev server (`npx vite`). It
+also always lists the anonymized example games in `samples/games/`, which are bundled into the app, so the web
+version on GitHub Pages has a game to open.
 
 ## Project layout
 
@@ -144,6 +146,7 @@ src/import/bga.ts          BGA log importer
 src/import/bgaGame.ts      Whole-game statistics for saved games
 src/import/savedGame.ts    A saved game's combats, for the Games tab
 games/                     Saved games (git-ignored apart from its README)
+samples/games/             Anonymized example games, bundled into the app
 src/import/fixtures/       Real BGA combat logs used by the importer tests
 src/renderer/              React UI and the simulation worker
 ```
