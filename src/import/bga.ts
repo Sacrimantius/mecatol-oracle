@@ -1,6 +1,7 @@
 import { actionCardsFor } from '../engine/data/actionCards';
 import { FACTIONS, getFaction, getUnitDefinition } from '../engine/data/factions';
 import { TECHS, techsForFaction } from '../engine/data/techs';
+import type { InvasionOutcome, SpaceOutcome } from '../engine/simulate';
 import {
   ALL_UNIT_TYPES,
   SHIP_TYPES,
@@ -53,6 +54,22 @@ export interface ImportedCombat {
   notes: ImportFlag[];
   /** Where this combat's lines are in the pasted text, as character offsets (end exclusive). */
   source: { start: number; end: number };
+  /** What happened in the game, in the simulator's terms. */
+  actual: ActualResult;
+}
+
+export interface ActualResult {
+  /** Same rule as the simulator: with an invasion, the attacker wins only by capturing the planet. */
+  winner: Role | 'draw';
+  space: SpaceOutcome;
+  invasion: InvasionOutcome;
+  spaceRounds: number;
+  groundRounds: number;
+  /** Units destroyed, among those the simulator fights with (defender infantry only on the invaded planet). */
+  lost: Record<Role, UnitCounts>;
+  /** The imported units minus those destroyed. Units that retreated count as survivors. */
+  survivors: Record<Role, UnitCounts>;
+  retreated: Role | null;
 }
 
 export interface BgaImport {
@@ -585,6 +602,7 @@ interface Analysis {
   actionCards: Record<Role, Map<ActionCardId, string[]>>;
   notes: ImportFlag[];
   spaceCombat: boolean;
+  actual: ActualResult;
 }
 
 const ROLES: Role[] = ['attacker', 'defender'];
@@ -684,6 +702,9 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
   const thirdParty = new Map<string, string[]>();
   const cardsPlayed: { player: string; name: string; line: string; at: number; canceled: boolean }[] = [];
   const unsimulated = new Set<string>();
+  let spaceWinner: Role | 'draw' | null = null;
+  let groundWinner: Role | 'draw' | null = null;
+  let retreated: Role | null = null;
 
   /** At this moment `role` has at least `present` units of `type`; plus those already gone, at the start. */
   const observe = (role: Role, type: UnitType, present: number, reason: string) => {
@@ -699,16 +720,27 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
     damagedNow[role][type] = (damagedNow[role][type] ?? 0) - fromNow;
     if (n > fromNow) bump(damagedStart[role], type, n - fromNow);
   };
-  const lose = (role: Role, type: UnitType, n: number, damaged: boolean, onPlanet: string | null, reason: string) => {
+  const killed = forRoles<UnitCounts>(() => ({}));
+  const lose = (
+    role: Role,
+    type: UnitType,
+    n: number,
+    damaged: boolean,
+    onPlanet: string | null,
+    reason: string,
+    destroyed = false,
+  ) => {
     if (type === 'infantry' && role === 'defender') {
       if (onPlanet === null || onPlanet !== planet) return; // Not on the planet the simulator fights over.
       observe(role, type, n, reason);
       defenderInfantryGone += n;
+      if (destroyed) bump(killed[role], type, n);
       return;
     }
     observe(role, type, n, reason);
     bump(gone[role], type, n);
     if (damaged) loseDamaged(role, type, n);
+    if (destroyed && !(type === 'infantry' && onPlanet && onPlanet !== planet)) bump(killed[role], type, n);
   };
   const techSeen = (player: string, tech: TechId, line: string) => {
     const role = roleOf(player);
@@ -761,7 +793,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
         notes.push({ level: 'info', message: `${defender}'s infantry carried in space aren't simulated.` });
         continue;
       }
-      lose(role, type, Number(m[2]), !!m[3], onPlanetName, `${m[2]} removed later`);
+      lose(role, type, Number(m[2]), !!m[3], onPlanetName, `${m[2]} removed later`, /destroyed/.test(m[7]));
       continue;
     }
 
@@ -774,7 +806,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
         if (role === 'defender' && type === 'infantry' && !where) {
           notes.push({ level: 'info', message: `${defender}'s infantry carried in space aren't simulated.` });
         } else {
-          lose(role, type, Number(m[2]), !!m[4], where, `${m[2]} destroyed`);
+          lose(role, type, Number(m[2]), !!m[4], where, `${m[2]} destroyed`, true);
         }
       }
       continue;
@@ -784,7 +816,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
     if (m) {
       const role = roleOf(m[2]);
       const type = unitFromName(m[3]);
-      if (role && type) lose(role, type, 1, (damagedNow[role][type] ?? 0) > 0, null, `1 destroyed`);
+      if (role && type) lose(role, type, 1, (damagedNow[role][type] ?? 0) > 0, null, `1 destroyed`, true);
       continue;
     }
 
@@ -817,9 +849,20 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
       continue;
     }
 
-    m = text.match(/^(.+?) won ground combat against (.+?)\.$/);
-    if (m && roleOf(m[1]) === 'defender' && groundPlanet === planet) {
-      observe('defender', 'infantry', 1, 'won the ground combat');
+    m = text.match(/^(.+?) won (space|ground) combat against (.+?)\.$/);
+    if (m) {
+      const role = roleOf(m[1]);
+      if (m[2] === 'space') spaceWinner = role;
+      else if (groundPlanet === planet) {
+        groundWinner = role;
+        if (role === 'defender') observe('defender', 'infantry', 1, 'won the ground combat');
+      }
+      continue;
+    }
+    m = text.match(/^(Space|Ground) combat ended in a draw between /);
+    if (m) {
+      if (m[1] === 'Space') spaceWinner = 'draw';
+      else if (groundPlanet === planet) groundWinner = 'draw';
       continue;
     }
 
@@ -970,7 +1013,11 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
       if (m[2] === 'MUNITIONS RESERVES') unsimulated.add(`MUNITIONS RESERVES rerolls (${m[1]})`);
       continue;
     }
-    if (/retreated from space combat/.test(text)) steps.add('Retreat');
+    m = text.match(/^(.+?) retreated from space combat/);
+    if (m) {
+      steps.add('Retreat');
+      retreated = roleOf(m[1]);
+    }
   }
 
   // --- Counts
@@ -1098,6 +1145,59 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
     ...(groundRounds ? [plural(groundRounds, 'ground combat round')] : []),
   ];
 
+  // --- What happened
+  const survivors = forRoles<UnitCounts>(() => ({}));
+  for (const role of ROLES) {
+    for (const type of ALL_UNIT_TYPES) {
+      const start = counts[role][type] ?? 0;
+      const lost = Math.min(start, killed[role][type] ?? 0);
+      if (lost) killed[role][type] = lost;
+      else delete killed[role][type];
+      if (start - lost > 0) survivors[role][type] = start - lost;
+    }
+  }
+  const hasShips = (role: Role) => SHIP_TYPES.some((t) => (survivors[role][t] ?? 0) > 0);
+  // As in the simulator, ground forces carried by a fleet that no longer exists are lost. The log doesn't say so.
+  if (!hasShips('attacker') && survivors.attacker.infantry) {
+    bump(killed.attacker, 'infantry', survivors.attacker.infantry);
+    delete survivors.attacker.infantry;
+  }
+  let space: SpaceOutcome = 'noCombat';
+  if (spaceRounds > 0) {
+    if (spaceWinner) space = spaceWinner;
+    else if (retreated) space = retreated === 'attacker' ? 'defender' : 'attacker';
+    else if (hasShips('attacker') !== hasShips('defender')) space = hasShips('attacker') ? 'attacker' : 'defender';
+    else space = 'draw';
+  }
+  let invasion: InvasionOutcome = 'notAttempted';
+  if (invade) {
+    if (groundWinner === 'attacker' || captured) invasion = 'captured';
+    else if (groundWinner === 'defender') invasion = 'repelled';
+    else if (groundWinner === 'draw') invasion = 'draw';
+    else if (commits.some((c) => c.player === attacker && c.planet === planet)) invasion = 'repelled';
+  }
+  let winner: ActualResult['winner'];
+  if (invasion === 'captured') winner = 'attacker';
+  else if (invasion === 'repelled') winner = 'defender';
+  else if (invasion === 'draw') winner = 'draw';
+  else {
+    // As in the simulator: whoever holds space wins, and an invasion that never landed is a defender win.
+    const opponent = (role: Role): Role => (role === 'attacker' ? 'defender' : 'attacker');
+    const holds = (role: Role) => space === role || (space === 'noCombat' && hasShips(role) && !hasShips(opponent(role)));
+    winner = holds('attacker') ? 'attacker' : holds('defender') ? 'defender' : 'draw';
+    if (invade && winner === 'draw' && (survivors.defender.infantry ?? 0) > 0) winner = 'defender';
+  }
+  const actual: ActualResult = {
+    winner,
+    space,
+    invasion,
+    spaceRounds,
+    groundRounds,
+    lost: killed,
+    survivors,
+    retreated,
+  };
+
   return {
     segment: seg,
     players,
@@ -1115,6 +1215,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
     actionCards,
     notes: dedupe(notes),
     spaceCombat: spaceRounds > 0,
+    actual,
   };
 }
 
@@ -1344,6 +1445,7 @@ export function parseBgaLog(text: string): BgaImport {
       wormhole: /wormhole/i.test(a.system),
       flags,
       notes: a.notes,
+      actual: a.actual,
     } satisfies ImportedCombat;
   });
 

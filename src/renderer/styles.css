@@ -565,6 +565,227 @@ button.upgrade.on {
   background: var(--defender);
 }
 
+/* Actual result of an imported combat */
+.actual {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 14px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: 10px;
+}
+
+.actual-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.actual-head h2 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+}
+
+.actual-head .icon-button {
+  margin-left: auto;
+}
+
+.actual-verdict {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.verdict {
+  display: flex;
+  flex-direction: column;
+}
+
+.verdict .big {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.verdict.attacker .big {
+  color: var(--attacker);
+}
+
+.verdict.defender .big {
+  color: var(--defender);
+}
+
+.verdict.draw .big {
+  color: var(--draw);
+}
+
+.verdict-odds {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  text-align: right;
+}
+
+.likelihood,
+.luck-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid currentColor;
+}
+
+.likelihood.even,
+.stat-value.even,
+.luck-label.even {
+  color: var(--muted);
+}
+
+.likelihood.odd,
+.stat-value.odd {
+  color: var(--warn);
+}
+
+.likelihood.rare,
+.stat-value.rare,
+.luck-label.bad {
+  color: var(--attacker);
+}
+
+.luck-label.good {
+  color: #5ccf8a;
+}
+
+.actual-steps {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 13px;
+}
+
+.actual-steps li + li {
+  margin-top: 2px;
+}
+
+.actual-side h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.actual-value {
+  color: var(--text);
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 12px;
+}
+
+.survivor-row.actual-row {
+  grid-template-columns: 1fr 60px auto auto;
+}
+
+.survivor-row .num.avg {
+  min-width: 56px;
+  font-size: 11px;
+}
+
+.luck {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.luck-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.rank-bar {
+  display: flex;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  gap: 2px;
+  background: var(--panel-raised);
+}
+
+.rank-bar .seg.fewer {
+  background: #5ccf8a;
+}
+
+.rank-bar .seg.same {
+  background: var(--gold);
+}
+
+.rank-bar .seg.more {
+  background: var(--attacker);
+}
+
+.loss-histogram .bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  height: 48px;
+  border-bottom: 1px solid var(--border);
+}
+
+.loss-histogram .bar {
+  flex: 1;
+  min-width: 2px;
+  background: var(--draw);
+  opacity: 0.55;
+  border-radius: 2px 2px 0 0;
+}
+
+.loss-histogram .bar.actual {
+  background: var(--gold);
+  opacity: 1;
+  min-height: 3px;
+}
+
+.loss-histogram .axis {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.trade {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  font-size: 13px;
+}
+
+.actual-odds .stat-grid {
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  margin-bottom: 4px;
+}
+
+.actual-caveats {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+
 /* BGA import */
 .info-tip.warn {
   background: var(--warn);

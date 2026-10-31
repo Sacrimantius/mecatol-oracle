@@ -101,6 +101,17 @@ Sabotage, retreats, Parley and other cards that don't change the dice aren't sim
 
 Each imported value carries a mark: **i** explains where it came from, and an amber **!** means the log doesn't prove it. Changing a value by hand clears its mark. Third players' Space Cannon, action cards and other planets are listed in the banner but aren't simulated.
 
+### Actual result
+
+Below the odds, an **Actual result** box shows what happened in the game: who won, how the space combat and invasion went, and each side's losses by unit and in resources. Once the simulation has run, it places the real outcome among the simulated battles:
+
+* how often the simulator gave the same winner, labelled Expected, Plausible, Unlikely or Long shot;
+* for each side, the share of simulated battles with fewer, the same or more losses, a luck label and a histogram of resources lost with the real loss highlighted;
+* the resource trade (defender's losses minus attacker's) ranked the same way;
+* how often the simulation ended with exactly the same survivors, and, when it did at all, the share of endings no more likely than that one.
+
+Losses count units the log shows as destroyed, plus infantry carried by a fleet that was wiped out. Units that retreated or were moved away count as survivors. The box warns when the comparison is off: a retreat (not simulated), sides edited or swapped after importing, or an invasion turned on or off.
+
 ## Saving games
 
 **Import BGA log → Save game…** keeps a record of a whole game: paste the full, fully expanded log of a finished or
@@ -117,7 +128,7 @@ app. See [games/README.md](games/README.md) for the record format.
 The **Games** tab lists the saved games. Pick one to see the score and, for each player, their trade goods, dice luck
 (a meter for space, invasion and total, with the dice behind it) and units by type. Below that is the game's combat
 log, grouped by round: click a combat for its log lines, or **Load** to put it in the simulator just as if it had been
-imported. Tactical actions with no combat in them are left out.
+imported, Actual result box included. Tactical actions with no combat in them are left out.
 
 The Games tab reads saved games in the desktop app, and in a browser tab on the Vite dev server (`npx vite`).
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { runSimulation, simulateOnce } from './simulate';
+import { endStateKey, parseEndStateKey, resourcesLost, runSimulation, simulateOnce } from './simulate';
 import type { ScenarioOptions, SideInput, SimulationInput } from './types';
 
 const side = (factionId: string, counts: SideInput['counts'], extra: Partial<SideInput> = {}): SideInput => ({
@@ -47,6 +47,43 @@ describe('runSimulation', () => {
     const a = side('sol', { carrier: 2, fighter: 4 });
     const d = side('xxcha', { cruiser: 2, destroyer: 2 });
     expect(runSimulation(input(a, d)).overall).toEqual(runSimulation(input(a, d)).overall);
+  });
+
+  it('returns outcome distributions that agree with the averages', () => {
+    const a = side('sol', { carrier: 2, fighter: 4, infantry: 2 });
+    const d = side('xxcha', { cruiser: 2, destroyer: 2, infantry: 1 });
+    const result = runSimulation(input(a, d, { iterations: 5000, invade: true }));
+    const { distributions: dist } = result;
+    const sum = (h: number[]) => h.reduce((s, v) => s + v, 0);
+    const mean = (h: number[]) => h.reduce((s, v, k) => s + v * k, 0);
+    expect(sum(Object.values(dist.endStates))).toBeCloseTo(1);
+    expect(sum(dist.spaceRounds)).toBeCloseTo(1);
+    expect(sum(dist.lostValue.attacker)).toBeCloseTo(1);
+    expect(mean(dist.survivors.attacker.fighter!)).toBeCloseTo(result.averageSurvivors.attacker.fighter ?? 0);
+    expect(dist.survivors.defender.cruiser).toHaveLength(3);
+    // Lost value in half-resources: carriers 3, fighters and infantry 0.5.
+    const expectedLoss = 2 * 3 + 4 * 0.5 + 2 * 0.5 - (['carrier', 'fighter', 'infantry'] as const).reduce(
+      (s, t) => s + (result.averageSurvivors.attacker[t] ?? 0) * (t === 'carrier' ? 3 : 0.5),
+      0,
+    );
+    expect(mean(dist.lostValue.attacker) / 2).toBeCloseTo(expectedLoss);
+  });
+});
+
+describe('outcome helpers', () => {
+  it('prices the units a side lost', () => {
+    const fleet = side('sol', { dreadnought: 2, fighter: 3, pds: 1 });
+    expect(resourcesLost(fleet, { dreadnought: 1, fighter: 1, pds: 1 })).toBe(5);
+  });
+
+  it('keys end states by both sides, in unit order and ignoring zeros', () => {
+    expect(endStateKey({ attacker: { fighter: 1, dreadnought: 2 }, defender: { infantry: 0 } })).toBe('dreadnought:2,fighter:1|');
+  });
+
+  it('reads an end state key back', () => {
+    const survivors = { attacker: { dreadnought: 2, fighter: 1 }, defender: { infantry: 3, pds: 1 } };
+    expect(parseEndStateKey(endStateKey(survivors))).toEqual(survivors);
+    expect(parseEndStateKey('|')).toEqual({ attacker: {}, defender: {} });
   });
 
   it('lets a war sun beat two basic fighters almost always', () => {

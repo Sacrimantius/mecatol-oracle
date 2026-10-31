@@ -24,3 +24,6 @@ export const ordinal = (n: number) => {
   const suffix = r % 100 >= 11 && r % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][r % 10] ?? 'th';
   return `${r}${suffix}`;
 };
+
+/** Like `percent`, but a share too small to show as 0.1% reads "<0.1%" rather than "0.0%". */
+export const percentSmall = (share: number) => (share > 0 && share < 0.0005 ? '<0.1%' : percent(share));

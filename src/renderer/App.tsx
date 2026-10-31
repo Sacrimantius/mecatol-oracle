@@ -11,6 +11,7 @@ import {
 import { actionCardsFor } from '../engine/data/actionCards';
 import type { ImportedCombat, SideFlags } from '../import/bga';
 import { GamesView } from './GamesView';
+import { ActualResultBox, swapActual, type ActualCombat } from './ActualResult';
 import { ImportDialog } from './ImportDialog';
 import { SaveGameDialog } from './SaveGameDialog';
 import { clearEdited, countWarnings, dismissFlag, emptyFlags, type FlagKey } from './importFlags';
@@ -56,6 +57,7 @@ export function App() {
   const [imported, setImported] = useState<ImportState | null>(null);
   const [tab, setTab] = useState<Tab>('simulator');
   const [gameId, setGameId] = useState<string | null>(null);
+  const [actual, setActual] = useState<ActualCombat | null>(null);
   const workerRef = useRef<Worker | null>(null);
 
   useEffect(() => () => workerRef.current?.terminate(), []);
@@ -97,6 +99,7 @@ export function App() {
     });
     setDefender({ ...attacker, actionCards: keepCards(attacker, 'defender') });
     setImported((imp) => imp && { ...imp, flags: { attacker: imp.flags.defender, defender: imp.flags.attacker } });
+    setActual((a) => a && swapActual(a));
   };
 
   /** Updates a side, dropping import flags on whatever the user changed. */
@@ -112,6 +115,14 @@ export function App() {
     setInvade(combat.invade);
     setWormhole(combat.wormhole);
     setImported({ title: combat.title, summary: combat.summary, notes: combat.notes, flags: combat.flags });
+    setActual({
+      result: combat.actual,
+      players: combat.players,
+      sides: { attacker: combat.attacker, defender: combat.defender },
+      invade: combat.invade,
+      planet: combat.planet,
+      swapped: false,
+    });
     setLast(null);
     setImporting(false);
     setTab('simulator');
@@ -230,6 +241,7 @@ export function App() {
               <p>{blocked ?? 'Ready. Run the simulation to see each side’s odds.'}</p>
             </div>
           )}
+          {actual && <ActualResultBox combat={actual} sim={last} onClose={() => setActual(null)} />}
         </div>
         <SidePanel
           role="defender"

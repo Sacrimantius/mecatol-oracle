@@ -16,6 +16,38 @@ the code safely.
 
 Before calling work done: tests pass, typecheck is clean, and UI changes have been looked at in the running app.
 
+## Workflow: branches, worktrees and this guide
+
+These rules apply to every agent and subagent working in this repo.
+
+- **All new work happens on its own branch in its own git worktree.** Never edit, build features or fix bugs
+  directly on `main` or in the main checkout. Before the first edit of a task, create the worktree next to the main
+  checkout, named after the branch:
+
+  ```
+  git worktree add -b feature/<short-name> ../mecatol-oracle-<short-name> main
+  ```
+
+  Use `feature/`, `fix/` or `docs/` prefixes. Branch from `main` unless the work builds on another unmerged branch;
+  then branch from that one and say so. Check `git worktree list` first and don't touch other agents' worktrees.
+- A fresh worktree has no `node_modules`: run `npm install` there before testing. `games/` is git-ignored, so it
+  isn't in the worktree either; tests that need a saved game skip until you copy one in (never commit it).
+- Uncommitted changes in the main checkout aren't in a new worktree. If a task builds on them, stop and ask the user
+  to commit them to a branch first rather than copying them across.
+- Merging, pushing and removing the worktree happen only when the user asks.
+
+### Keep this guide current as you go
+
+`AGENTS.md` (this file) is the project knowledgebase; `README.md` covers user-facing behaviour. Update them during
+the task, on the same branch, not just at the end:
+
+- when you learn something non-obvious about the code, the BGA log format or the environment;
+- when you add or move a file or module (update **Layout**);
+- when a feature or component is finished (add or update its section, and the README if users see it);
+- when a convention or command changes.
+
+Write facts the next agent needs, not a diary of what you did. Remove statements that stopped being true.
+
 ## Environment gotchas (Windows dev machine)
 
 - Node may not be on `PATH` in Git Bash: `export PATH="$PATH:/c/Program Files/nodejs"`.
@@ -49,7 +81,8 @@ src/import/savedGame.ts      gameCombats(log): a saved game's combats, oldest fi
 src/import/fixtures/         Real BGA logs (one 4-player game, 29 combats) used as test fixtures
 games/                       Saved games, git-ignored except games/README.md (the record format)
 src/renderer/                React UI: App (Simulator/Games tabs, state, import banner), SidePanel, ImportDialog,
-                             Results, SaveGameDialog, GamesView (Games tab), gameStore (reading/saving games),
+                             Results, ActualResult (real outcome vs simulation; stats in actualStats.ts),
+                             SaveGameDialog, GamesView (Games tab), gameStore (reading/saving games),
                              InfoTip (hover/click popover), importFlags (import marks), sim.worker.ts
 electron/main.cts            Electron main process; `games:save`, `games:list`, `games:load` IPC handlers on games/
 electron/preload.cts         Exposes window.mecatol.saveGame/listGames/loadGame (contextIsolation, sandbox)
@@ -61,6 +94,8 @@ vite.config.ts               Dev server only: read-only /api/games, so the Games
 - `fight()` order: Disable → Space Cannon Offense (attacker first) → space combat (start-of-combat effects, AFB in
   round 1, rounds) → invasion if enabled and the attacker holds space (Bombardment, commit, Space Cannon Defense,
   ground combat).
+- `runSimulation` also returns `distributions`: per-unit survivor, resources-lost and round histograms, and the
+  share of each exact end state keyed by `endStateKey`. The Actual result box ranks the real outcome against these.
 - `buildTemplate` converts a `SideInput` once per run; `instantiate` makes fresh mutable `Side`s per battle.
 - Hit assignment is a fixed policy (`SUSTAIN_ORDER`, `DESTROY_ORDER`). Optional abilities are always used if they
   help. Each action card is played at a fixed moment, documented in its `usage` string. Keep `usage`, the README
@@ -107,6 +142,10 @@ How values are inferred:
   warning flag.
 - Faction: keyword scoring (abilities, faction techs and units) plus a flagship dice-profile check.
 - Upgrades and techs seen in earlier combats in the same paste carry forward.
+- `ImportedCombat.actual` is what happened, in the simulator's terms: winner (same rule as `fight()`), space and
+  invasion outcomes, rounds, retreat, and `lost`/`survivors` per side. Losses are "destroyed" lines (and removals
+  BGA says destroyed units), plus carried infantry when the attacker's fleet is gone, mirroring the engine. The
+  "won space/ground combat against" and "Ground combat ended in a draw" lines decide outcomes when present.
 - Flag levels: `info` explains a value's source; `warn` means the log doesn't prove it. The UI shows warns as amber
   "!". Clicking a mark clears it, editing a value clears its marks, and the banner counts the warns left.
 
