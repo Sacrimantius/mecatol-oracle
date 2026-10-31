@@ -1364,7 +1364,7 @@ button.game-item.on {
 
 .luck-row {
   display: grid;
-  grid-template-columns: 60px 1fr 40px;
+  grid-template-columns: 80px 1fr 40px;
   align-items: center;
   column-gap: 8px;
   font-size: 12px;
