@@ -112,6 +112,15 @@ the save form asks for them.
 Games are saved to `games/<table number>/` (`game.json` plus the log), which git ignores. Saving needs the desktop
 app. See [games/README.md](games/README.md) for the record format.
 
+## Browsing saved games
+
+The **Games** tab lists the saved games. Pick one to see the score and, for each player, their trade goods, dice luck
+(a meter for space, invasion and total, with the dice behind it) and units by type. Below that is the game's combat
+log, grouped by round: click a combat for its log lines, or **Load** to put it in the simulator just as if it had been
+imported. Tactical actions with no combat in them are left out.
+
+The Games tab reads saved games in the desktop app, and in a browser tab on the Vite dev server (`npx vite`).
+
 ## Project layout
 
 ```
@@ -122,6 +131,7 @@ src/engine/simulate.ts     Combat engine
 src/engine/*.test.ts       Engine tests
 src/import/bga.ts          BGA log importer
 src/import/bgaGame.ts      Whole-game statistics for saved games
+src/import/savedGame.ts    A saved game's combats, for the Games tab
 games/                     Saved games (git-ignored apart from its README)
 src/import/fixtures/       Real BGA combat logs used by the importer tests
 src/renderer/              React UI and the simulation worker

@@ -10,12 +10,15 @@ import {
 } from '../engine/types';
 import { actionCardsFor } from '../engine/data/actionCards';
 import type { ImportedCombat, SideFlags } from '../import/bga';
+import { GamesView } from './GamesView';
 import { ImportDialog } from './ImportDialog';
 import { SaveGameDialog } from './SaveGameDialog';
 import { clearEdited, countWarnings, dismissFlag, emptyFlags, type FlagKey } from './importFlags';
 import { Results } from './Results';
 import { SidePanel } from './SidePanel';
 import SimWorker from './sim.worker?worker&inline';
+
+type Tab = 'simulator' | 'games';
 
 const ITERATION_OPTIONS = [1000, 5000, 10000, 25000, 50000];
 
@@ -51,6 +54,8 @@ export function App() {
   const [importing, setImporting] = useState(false);
   const [savingLog, setSavingLog] = useState<string | null>(null);
   const [imported, setImported] = useState<ImportState | null>(null);
+  const [tab, setTab] = useState<Tab>('simulator');
+  const [gameId, setGameId] = useState<string | null>(null);
   const workerRef = useRef<Worker | null>(null);
 
   useEffect(() => () => workerRef.current?.terminate(), []);
@@ -109,6 +114,7 @@ export function App() {
     setImported({ title: combat.title, summary: combat.summary, notes: combat.notes, flags: combat.flags });
     setLast(null);
     setImporting(false);
+    setTab('simulator');
   };
 
   const dismiss = (role: Role, key: FlagKey) =>
@@ -132,7 +138,14 @@ export function App() {
             <span className="subtitle">Twilight Imperium combat odds</span>
           </div>
         </div>
-        <div className="controls">
+        <nav className="tabs" role="tablist">
+          {(['simulator', 'games'] as const).map((t) => (
+            <button key={t} role="tab" aria-selected={tab === t} className={`tab${tab === t ? ' on' : ''}`} onClick={() => setTab(t)}>
+              {t === 'simulator' ? 'Simulator' : 'Games'}
+            </button>
+          ))}
+        </nav>
+        <div className="controls" hidden={tab !== 'simulator'}>
           <label className="toggle">
             <input type="checkbox" checked={invade} onChange={(e) => setInvade(e.target.checked)} />
             Invade planet
@@ -164,7 +177,7 @@ export function App() {
       </header>
 
       {imported && toCheck > 0 && (
-        <section className="import-banner">
+        <section className="import-banner" hidden={tab !== 'simulator'}>
           <div className="import-banner-head">
             <span>
               <strong>Imported:</strong> {imported.title}
@@ -199,7 +212,7 @@ export function App() {
         </section>
       )}
 
-      <main className="layout">
+      <main className="layout" hidden={tab !== 'simulator'}>
         <SidePanel
           role="attacker"
           value={attacker}
@@ -227,6 +240,7 @@ export function App() {
           onChange={(v) => editSide('defender', v)}
         />
       </main>
+      {tab === 'games' && <GamesView selectedId={gameId} onSelect={setGameId} onLoadCombat={loadImport} />}
 
       {importing && (
         <ImportDialog
@@ -238,7 +252,17 @@ export function App() {
           onClose={() => setImporting(false)}
         />
       )}
-      {savingLog !== null && <SaveGameDialog log={savingLog} onClose={() => setSavingLog(null)} />}
+      {savingLog !== null && (
+        <SaveGameDialog
+          log={savingLog}
+          onClose={() => setSavingLog(null)}
+          onViewGame={(id) => {
+            setSavingLog(null);
+            setGameId(id);
+            setTab('games');
+          }}
+        />
+      )}
     </div>
   );
 }

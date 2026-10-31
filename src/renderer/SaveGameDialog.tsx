@@ -1,23 +1,15 @@
 import { useEffect, useMemo, useState } from 'react';
 import { FACTIONS, getFaction } from '../engine/data/factions';
-import { buildGameRecord, parseBgaGame, type DiceLuck, type GameRecord } from '../import/bgaGame';
-
-/** Exposed by electron/preload.cts. Missing in a plain browser (the Vite dev server on its own). */
-interface DesktopBridge {
-  saveGame(record: GameRecord, log: string, overwrite: boolean): Promise<{ status: 'saved' | 'exists'; dir: string }>;
-}
-const desktop = (window as unknown as { mecatol?: DesktopBridge }).mecatol;
+import { buildGameRecord, parseBgaGame, type DiceLuck } from '../import/bgaGame';
+import { ordinal } from './format';
+import { desktop } from './gameStore';
 
 interface Props {
   log: string;
   onClose: () => void;
+  /** Open a game just saved in the Games tab. */
+  onViewGame: (id: string) => void;
 }
-
-const ordinal = (n: number) => {
-  const r = Math.round(n);
-  const suffix = r % 100 >= 11 && r % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][r % 10] ?? 'th';
-  return `${r}${suffix}`;
-};
 
 function LuckCell({ luck }: { luck: DiceLuck }) {
   if (luck.hitPercentile === null) return <td className="muted">–</td>;
@@ -28,7 +20,7 @@ function LuckCell({ luck }: { luck: DiceLuck }) {
   );
 }
 
-export function SaveGameDialog({ log, onClose }: Props) {
+export function SaveGameDialog({ log, onClose, onViewGame }: Props) {
   const parsed = useMemo(() => parseBgaGame(log), [log]);
   const finished = parsed.winner !== null;
   const [id, setId] = useState('');
@@ -182,7 +174,11 @@ export function SaveGameDialog({ log, onClose }: Props) {
           <button className="secondary" onClick={onClose}>
             {status?.kind === 'saved' ? 'Close' : 'Cancel'}
           </button>
-          {status?.kind === 'exists' ? (
+          {status?.kind === 'saved' ? (
+            <button className="primary" onClick={() => onViewGame(id)}>
+              Open in Games
+            </button>
+          ) : status?.kind === 'exists' ? (
             <button className="primary" disabled={saving} onClick={() => save(true)}>
               Replace
             </button>

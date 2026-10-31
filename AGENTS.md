@@ -27,6 +27,10 @@ Before calling work done: tests pass, typecheck is clean, and UI changes have be
   files. Format by hand to match the code: single quotes, semicolons, 2-space indent, lines up to about 120 columns.
 - TS `lib` is ES2022: no `Array.prototype.findLast`/`toSorted` (use `[...a].reverse().find(...)`).
 - Test files are typechecked by `tsc` and can't use `node:fs`. Load fixtures with Vite's `?raw` import.
+- A fresh worktree checks the fixture logs out with CRLF, and the "points at each combat's lines" test in
+  `bga.test.ts` fails until you run `sed -i 's/\r$//' src/import/fixtures/*.txt` (git sees no change).
+- Port 5173 may be taken by another checkout's dev server. In a worktree run `npx vite --port 5174 --strictPort`.
+  `npm run dev` waits on 5173, so Electron only runs where that port is free.
 - Commit messages: imperative subject, a wrapped body explaining why. Commit and push only when the user asks.
 
 ## Layout
@@ -41,12 +45,15 @@ src/engine/rng.ts            mulberry32 seeded RNG; d10 = floor(rng*10)+1
 src/engine/simulate.ts       Combat engine (pure TS, no DOM). Runs in a Web Worker.
 src/import/bga.ts            Board Game Arena log importer
 src/import/bgaGame.ts        Whole-game statistics (score, trade goods, units, dice luck) for saved games
+src/import/savedGame.ts      gameCombats(log): a saved game's combats, oldest first, with round and log lines
 src/import/fixtures/         Real BGA logs (one 4-player game, 29 combats) used as test fixtures
 games/                       Saved games, git-ignored except games/README.md (the record format)
-src/renderer/                React UI: App (state, import banner), SidePanel, ImportDialog, Results,
+src/renderer/                React UI: App (Simulator/Games tabs, state, import banner), SidePanel, ImportDialog,
+                             Results, SaveGameDialog, GamesView (Games tab), gameStore (reading/saving games),
                              InfoTip (hover/click popover), importFlags (import marks), sim.worker.ts
-electron/main.cts            Electron main process; `games:save` IPC handler writes games/<id>/
-electron/preload.cts         Exposes window.mecatol.saveGame to the renderer (contextIsolation, sandbox)
+electron/main.cts            Electron main process; `games:save`, `games:list`, `games:load` IPC handlers on games/
+electron/preload.cts         Exposes window.mecatol.saveGame/listGames/loadGame (contextIsolation, sandbox)
+vite.config.ts               Dev server only: read-only /api/games, so the Games tab works in a browser tab
 ```
 
 ## Engine (`src/engine/simulate.ts`)
@@ -130,6 +137,16 @@ test names refer to the fixture headers (combat 1 is the newest).
   modifier. A roll whose computed hits differ from the logged hits goes in `notes`; a test requires none.
 - BGA sometimes runs two sentences together ("X lost 2 commodities.X lost 1 trade good(s)."); lines are split
   before player names.
+
+### Games tab (`GamesView`, `savedGame.ts`, `gameStore.ts`)
+
+- `gameReader` uses Electron IPC, or in a plain browser tab the dev server's `/api/games`. That route only exists in
+  `vite` serve mode, so saved games never end up in `dist/`. Both check the id against `^[\w-]+$`.
+- The combat log isn't stored in game.json: `gameCombats` re-parses the saved log with `parseBgaLog`, so importer
+  fixes reach old saves. It drops tactical actions with an empty `summary` (no combat step), and takes each combat's
+  round from the nearest older "Round N, … Phase" header.
+- **Load** goes through App's `loadImport`, the same path as the import dialog, with the table, combat number and
+  round added to the title.
 
 ## Not modelled yet
 

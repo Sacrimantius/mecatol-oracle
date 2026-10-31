@@ -17,3 +17,10 @@ export function describeStats(stats: UnitStats): string {
 }
 
 export const percent = (share: number) => `${(share * 100).toFixed(1)}%`;
+
+/** 1st, 2nd, 3rd, 11th… for a rounded number. */
+export const ordinal = (n: number) => {
+  const r = Math.round(n);
+  const suffix = r % 100 >= 11 && r % 100 <= 13 ? 'th' : ['th', 'st', 'nd', 'rd'][r % 10] ?? 'th';
+  return `${r}${suffix}`;
+};

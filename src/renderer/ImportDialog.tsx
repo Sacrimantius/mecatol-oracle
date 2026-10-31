@@ -24,7 +24,8 @@ const UNIT_SHORT: Record<string, string> = {
   spacedock: 'dock',
 };
 
-function describeSide(player: string, side: SideInput) {
+/** e.g. "Player 3 (Saar): 2 carrier, 4 fighter". */
+export function describeSide(player: string, side: SideInput) {
   const faction = side.factionId ? getFaction(side.factionId).name : 'faction unknown';
   const units = ALL_UNIT_TYPES.filter((t) => side.counts[t])
     .map((t) => `${side.counts[t]} ${UNIT_SHORT[t]}`)
