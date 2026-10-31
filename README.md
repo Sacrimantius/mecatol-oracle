@@ -90,7 +90,7 @@ Sabotage, retreats, Parley and other cards that don't change the dice aren't sim
 
 ## Importing a combat from Board Game Arena
 
-**Import BGA log** takes text copied from a BGA game log, newest line first as BGA shows it (oldest first also works). Paste one combat, from the system activation to the end of the tactical action, or a longer stretch of log and pick the combat. The importer fills in:
+**Import BGA log** takes text copied from a BGA game log, newest line first as BGA shows it (oldest first also works). **Expand the log fully on BGA before copying** (load the whole history), or hidden lines are missed. Paste one combat, from the system activation to the end of the tactical action, or a longer stretch of log and pick the combat. The importer fills in:
 
 * **Players and sides:** the active player attacks. The planet fought over and whether to invade come from the ground-force and bombardment lines.
 * **Units:** the fleet moved in, plus the dice and losses in the log. Ships and ground forces that rolled are complete counts; everything else is "at least", and damaged ships that started the combat damaged are included.
@@ -101,6 +101,17 @@ Sabotage, retreats, Parley and other cards that don't change the dice aren't sim
 
 Each imported value carries a mark: **i** explains where it came from, and an amber **!** means the log doesn't prove it. Changing a value by hand clears its mark. Third players' Space Cannon, action cards and other planets are listed in the banner but aren't simulated.
 
+## Saving games
+
+**Import BGA log → Save game…** keeps a record of a whole game: paste the full, fully expanded log of a finished or
+ongoing game. The record has players, factions, final score, start and end dates, trade goods gained, spent and lost,
+units by type (starting, produced, placed free, lost, with resource costs), and each player's dice luck as a
+percentile, split into space combat, invasion and total. The log doesn't show the BGA table number or start date, so
+the save form asks for them.
+
+Games are saved to `games/<table number>/` (`game.json` plus the log), which git ignores. Saving needs the desktop
+app. See [games/README.md](games/README.md) for the record format.
+
 ## Project layout
 
 ```
@@ -110,6 +121,8 @@ src/engine/data/           Unit, faction and tech data
 src/engine/simulate.ts     Combat engine
 src/engine/*.test.ts       Engine tests
 src/import/bga.ts          BGA log importer
+src/import/bgaGame.ts      Whole-game statistics for saved games
+games/                     Saved games (git-ignored apart from its README)
 src/import/fixtures/       Real BGA combat logs used by the importer tests
 src/renderer/              React UI and the simulation worker
 ```

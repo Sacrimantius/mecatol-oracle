@@ -40,10 +40,13 @@ src/engine/data/actionCards.ts  Combat action cards: text, simulated usage, deck
 src/engine/rng.ts            mulberry32 seeded RNG; d10 = floor(rng*10)+1
 src/engine/simulate.ts       Combat engine (pure TS, no DOM). Runs in a Web Worker.
 src/import/bga.ts            Board Game Arena log importer
+src/import/bgaGame.ts        Whole-game statistics (score, trade goods, units, dice luck) for saved games
 src/import/fixtures/         Real BGA logs (one 4-player game, 29 combats) used as test fixtures
+games/                       Saved games, git-ignored except games/README.md (the record format)
 src/renderer/                React UI: App (state, import banner), SidePanel, ImportDialog, Results,
                              InfoTip (hover/click popover), importFlags (import marks), sim.worker.ts
-electron/main.cts            Electron main process
+electron/main.cts            Electron main process; `games:save` IPC handler writes games/<id>/
+electron/preload.cts         Exposes window.mecatol.saveGame to the renderer (contextIsolation, sandbox)
 ```
 
 ## Engine (`src/engine/simulate.ts`)
@@ -102,6 +105,31 @@ How values are inferred:
 
 Importer tests (`bga.test.ts`) parse each fixture block on its own and the whole log together. Combat numbers in
 test names refer to the fixture headers (combat 1 is the newest).
+
+## Saved games (`src/import/bgaGame.ts`, `games/`)
+
+- `parseBgaGame(text)` reads a whole game log; `buildGameRecord` adds what the save form asks for (table number,
+  dates, unknown factions). `SaveGameDialog` shows it and saves through `window.mecatol.saveGame`, which only
+  exists in Electron.
+- **Never commit anything under games/** except its README: logs contain other players' names and private lines.
+  Tests that need a full log use `import.meta.glob` on games/ and skip when it's absent (BGA table sample-1 is the
+  one used now).
+- Players and factions come from the setup lines ("X placed units on ( NAR / JOL )" → home planets). Without setup
+  lines the combat importer's faction guess is used.
+- Score = sum of "gained/lost N victory point(s) due to". Games aren't always to 10 (sample-1 was to 14).
+- Trade goods: "gained N trade good(s)" is canonical for income (TRADE, transactions and Pillage also print one);
+  spent = "spent/reserved N trade good(s)" plus trade goods inside "spent N resource(s)/influence ( … )" and
+  "Spent: …" clauses; lost = "lost N trade good(s)".
+- Units: produced from "produce: …" clauses; placed from "to place N …", and "added" lines after placement cards
+  (War Effort, Ghost Ship, Rise of a Messiah, Upgrade); lost from "destroyed N of X's …", "Unit(s) were destroyed
+  due to …" removals, and removals right after "must remove unit(s) due to exceeding …". Starting units are the
+  Round 0 "added" lines. A test checks lost ≤ starting + produced + placed for every unit type.
+- Dice luck: each die's hit chance comes from the unit's to-hit value (faction, plus upgrades from "researched X II"
+  lines; note "researched PDS II and used: MEER") and the modifier in the roll's Effects tags (FRAGILE −1, MORALE
+  BOOST +1, FIGHTER PROTOTYPE +2 fighters, BUNKER −4, ANTIMASS DEFLECTORS −1). Shown dice already include the
+  modifier. A roll whose computed hits differ from the logged hits goes in `notes`; a test requires none.
+- BGA sometimes runs two sentences together ("X lost 2 commodities.X lost 1 trade good(s)."); lines are split
+  before player names.
 
 ## Not modelled yet
 

@@ -3,3 +3,7 @@ dist/
 dist-electron/
 release/
 *.log
+
+# Saved games and their logs stay local; only the folder guide is committed.
+games/*
+!games/README.md

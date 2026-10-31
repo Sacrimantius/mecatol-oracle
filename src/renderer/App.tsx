@@ -11,6 +11,7 @@ import {
 import { actionCardsFor } from '../engine/data/actionCards';
 import type { ImportedCombat, SideFlags } from '../import/bga';
 import { ImportDialog } from './ImportDialog';
+import { SaveGameDialog } from './SaveGameDialog';
 import { clearEdited, countWarnings, dismissFlag, emptyFlags, type FlagKey } from './importFlags';
 import { Results } from './Results';
 import { SidePanel } from './SidePanel';
@@ -48,6 +49,7 @@ export function App() {
   const [error, setError] = useState<string | null>(null);
   const [last, setLast] = useState<{ input: SimulationInput; result: SimulationResult } | null>(null);
   const [importing, setImporting] = useState(false);
+  const [savingLog, setSavingLog] = useState<string | null>(null);
   const [imported, setImported] = useState<ImportState | null>(null);
   const workerRef = useRef<Worker | null>(null);
 
@@ -226,7 +228,17 @@ export function App() {
         />
       </main>
 
-      {importing && <ImportDialog onLoad={loadImport} onClose={() => setImporting(false)} />}
+      {importing && (
+        <ImportDialog
+          onLoad={loadImport}
+          onSaveGame={(log) => {
+            setImporting(false);
+            setSavingLog(log);
+          }}
+          onClose={() => setImporting(false)}
+        />
+      )}
+      {savingLog !== null && <SaveGameDialog log={savingLog} onClose={() => setSavingLog(null)} />}
     </div>
   );
 }

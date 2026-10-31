@@ -159,15 +159,15 @@ const UNSIMULATED_EFFECTS = ['X-89 BACTERIAL WEAPON', 'MUNITIONS RESERVES', 'J.N
 // ---------------------------------------------------------------------------
 // Line parsing
 
-interface DiceGroup {
+export interface DiceGroup {
   name: string;
   unit: UnitType | null;
   dice: number[];
 }
 
-type RollKind = 'combat' | 'afb' | 'spaceCannonOffense' | 'spaceCannonDefense' | 'bombardment';
+export type RollKind = 'combat' | 'afb' | 'spaceCannonOffense' | 'spaceCannonDefense' | 'bombardment';
 
-interface RollLine {
+export interface RollLine {
   actor: string;
   kind: RollKind;
   reroll: boolean;
@@ -179,7 +179,7 @@ interface RollLine {
   effects: string[];
 }
 
-const RE = {
+export const RE = {
   activate: /^(.+?) activated \( (.+?) \) to start a tactical action/,
   finish: /^(.+?) finished a tactical action/,
   add: /^(.+?) added (\d+) (damaged )?(.+?) to (?:\( (.+?) \)|(.+?))\.$/,
@@ -201,7 +201,7 @@ const RE = {
   sustain: /^(.+?) used SUSTAIN DAMAGE/,
 };
 
-function parseRoll(m: RegExpMatchArray): RollLine {
+export function parseRoll(m: RegExpMatchArray): RollLine {
   const [, actor, verb, , hits, middle, rest] = m;
   let kind: RollKind = 'combat';
   let target: string | null = null;
@@ -235,7 +235,7 @@ function parseRoll(m: RegExpMatchArray): RollLine {
 }
 
 /** Removes BGA timestamps and odd whitespace. */
-function cleanLine(line: string): string {
+export function cleanLine(line: string): string {
   return line
     .replace(/[ \t]/g, ' ')
     .replace(/^\s*\[?\d{1,2}:\d{2}(?::\d{2})?\]?\s+/, '')
@@ -247,7 +247,7 @@ function cleanLine(line: string): string {
  * BGA shows the newest line first. Decide the order from things that always happen in sequence:
  * activation before movement and the end of the action, combat round N before round N+1.
  */
-function isNewestFirst(lines: string[]): boolean {
+export function isNewestFirst(lines: string[]): boolean {
   let votes = 0; // > 0 means oldest first
   const vote = (earlier: number, later: number) => (votes += later > earlier ? 1 : -1);
   lines.forEach((line, i) => {
@@ -437,7 +437,7 @@ interface ThresholdObservation {
   line: string;
 }
 
-const rollOf = (stats: UnitStats, kind: RollKind): Roll | undefined =>
+export const rollOf = (stats: UnitStats, kind: RollKind): Roll | undefined =>
   kind === 'combat'
     ? stats.combat
     : kind === 'afb'
@@ -525,7 +525,7 @@ function inferUpgrades(faction: Faction, dice: DiceObservation[], thresholds: Th
 /** Used when the log doesn't show a player's faction: generic units only, no flagship. */
 const UNKNOWN_FACTION: Faction = { id: '', name: 'an unknown faction', units: {}, abilities: [], abilityText: [] };
 
-function definition(faction: Faction, type: UnitType): UnitDefinition | undefined {
+export function definition(faction: Faction, type: UnitType): UnitDefinition | undefined {
   try {
     return getUnitDefinition(faction, type);
   } catch {

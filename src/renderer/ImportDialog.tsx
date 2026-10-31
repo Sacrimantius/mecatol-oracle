@@ -6,6 +6,8 @@ import { countWarnings } from './importFlags';
 
 interface Props {
   onLoad: (combat: ImportedCombat) => void;
+  /** Save the whole pasted log as a game record. */
+  onSaveGame: (log: string) => void;
   onClose: () => void;
 }
 
@@ -58,7 +60,7 @@ function scrollToOffset(textarea: HTMLTextAreaElement, offset: number) {
   mirror.remove();
 }
 
-export function ImportDialog({ onLoad, onClose }: Props) {
+export function ImportDialog({ onLoad, onSaveGame, onClose }: Props) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const [text, setText] = useState('');
   const [selected, setSelected] = useState(0);
@@ -97,6 +99,11 @@ export function ImportDialog({ onLoad, onClose }: Props) {
           Copy the game log from BGA, from the system activation to the end of the combat, and paste it below. A
           longer stretch of log works too: pick the combat afterwards. Anything the log doesn't prove is marked{' '}
           <span className="inline-badge warn">!</span> for you to check.
+        </p>
+        <p className="caption">
+          <b>Expand the BGA log fully before copying</b>: load the whole history so no lines are hidden, or the
+          dice, losses and scores in the hidden part are missed. To keep a record of the game, paste the whole log
+          and choose <b>Save game</b>.
         </p>
         <textarea
           ref={textareaRef}
@@ -146,6 +153,9 @@ export function ImportDialog({ onLoad, onClose }: Props) {
         <footer className="modal-footer">
           <button className="secondary" onClick={onClose}>
             Cancel
+          </button>
+          <button className="secondary" disabled={!text.trim()} onClick={() => onSaveGame(text)}>
+            Save game…
           </button>
           <button className="primary" disabled={!chosen} onClick={() => chosen && onLoad(chosen)}>
             Load into simulator
