@@ -6,6 +6,7 @@ import {
   SHIP_TYPES,
   type ActionCardId,
   type Faction,
+  type OutcomeDistributions,
   type Role,
   type Roll,
   type SideInput,
@@ -667,6 +668,18 @@ export function runSimulation(input: SimulationInput): SimulationResult {
   let groundRounds = 0;
   let spaceCombats = 0;
   let groundCombats = 0;
+  const dist = {
+    survivors: { attacker: {}, defender: {} } as Record<Role, Partial<Record<UnitType, number[]>>>,
+    lostValue: { attacker: [] as number[], defender: [] as number[] },
+    spaceRounds: [] as number[],
+    groundRounds: [] as number[],
+    endStates: new Map<string, number>(),
+  };
+  const costs = { attacker: unitCosts(input.attacker), defender: unitCosts(input.defender) };
+  const tally = (histogram: number[], k: number) => {
+    while (histogram.length <= k) histogram.push(0);
+    histogram[k]++;
+  };
 
   for (let i = 0; i < n; i++) {
     const result = fight(rng, instantiate(attTemplate), instantiate(defTemplate), input.options.invade, input.options.wormhole);
@@ -681,16 +694,35 @@ export function runSimulation(input: SimulationInput): SimulationResult {
       for (const [type, count] of Object.entries(result.survivors[role]) as [UnitType, number][]) {
         survivors[role][type] = (survivors[role][type] ?? 0) + count;
       }
+      for (const type of ALL_UNIT_TYPES) {
+        if (input[role].counts[type]) tally((dist.survivors[role][type] ??= []), result.survivors[role][type] ?? 0);
+      }
+      tally(dist.lostValue[role], Math.round(resourcesLost(input[role], result.survivors[role], costs[role]) * 2));
     }
+    tally(dist.spaceRounds, result.spaceRounds);
+    tally(dist.groundRounds, result.groundRounds);
+    const key = endStateKey(result.survivors);
+    dist.endStates.set(key, (dist.endStates.get(key) ?? 0) + 1);
   }
 
   const share = <T extends Record<string, number>>(o: T) =>
     Object.fromEntries(Object.entries(o).map(([k, v]) => [k, v / n])) as T;
+  const shares = (histogram: number[]) => histogram.map((v) => v / n);
   for (const role of ['attacker', 'defender'] as const) {
     for (const type of Object.keys(survivors[role]) as UnitType[]) {
       survivors[role][type] = (survivors[role][type] ?? 0) / n;
     }
   }
+  const distributions: OutcomeDistributions = {
+    survivors: {
+      attacker: Object.fromEntries(Object.entries(dist.survivors.attacker).map(([t, h]) => [t, shares(h)])),
+      defender: Object.fromEntries(Object.entries(dist.survivors.defender).map(([t, h]) => [t, shares(h)])),
+    },
+    lostValue: { attacker: shares(dist.lostValue.attacker), defender: shares(dist.lostValue.defender) },
+    spaceRounds: shares(dist.spaceRounds),
+    groundRounds: shares(dist.groundRounds),
+    endStates: Object.fromEntries([...dist.endStates].map(([k, v]) => [k, v / n])),
+  };
 
   return {
     iterations: n,
@@ -700,6 +732,38 @@ export function runSimulation(input: SimulationInput): SimulationResult {
     averageSpaceRounds: spaceCombats > 0 ? spaceRounds / spaceCombats : 0,
     averageGroundRounds: groundCombats > 0 ? groundRounds / groundCombats : 0,
     averageSurvivors: survivors,
+    distributions,
     durationMs: performance.now() - started,
   };
+}
+
+/** Resource cost of the units a side started with but doesn't have left. */
+export function resourcesLost(side: SideInput, survivors: UnitCounts, costs = unitCosts(side)): number {
+  let lost = 0;
+  for (const type of ALL_UNIT_TYPES) {
+    const gone = (side.counts[type] ?? 0) - (survivors[type] ?? 0);
+    if (gone > 0) lost += gone * (costs[type] ?? 0);
+  }
+  return lost;
+}
+
+function unitCosts(side: SideInput): Partial<Record<UnitType, number>> {
+  const faction = getFaction(side.factionId);
+  return Object.fromEntries(ALL_UNIT_TYPES.map((t) => [t, getUnitStats(faction, t, side.upgrades[t] ?? false).cost]));
+}
+
+/** Identifies a battle's end by the units left on both sides, e.g. "dreadnought:2,fighter:1|infantry:3". */
+export function endStateKey(survivors: Record<Role, UnitCounts>): string {
+  const side = (counts: UnitCounts) =>
+    ALL_UNIT_TYPES.filter((t) => (counts[t] ?? 0) > 0)
+      .map((t) => `${t}:${counts[t]}`)
+      .join(',');
+  return `${side(survivors.attacker)}|${side(survivors.defender)}`;
+}
+
+export function parseEndStateKey(key: string): Record<Role, UnitCounts> {
+  const side = (part: string): UnitCounts =>
+    Object.fromEntries(part ? part.split(',').map((p) => [p.split(':')[0], Number(p.split(':')[1])]) : []);
+  const [attacker, defender] = key.split('|');
+  return { attacker: side(attacker), defender: side(defender) };
 }

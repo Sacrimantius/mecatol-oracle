@@ -101,6 +101,17 @@ Sabotage, retreats, Parley and other cards that don't change the dice aren't sim
 
 Each imported value carries a mark: **i** explains where it came from, and an amber **!** means the log doesn't prove it. Changing a value by hand clears its mark. Third players' Space Cannon, action cards and other planets are listed in the banner but aren't simulated.
 
+### Actual result
+
+Below the odds, an **Actual result** box shows what happened in the game: who won, how the space combat and invasion went, and each side's losses by unit and in resources. Once the simulation has run, it places the real outcome among the simulated battles:
+
+* how often the simulator gave the same winner, labelled Expected, Plausible, Unlikely or Long shot;
+* for each side, the share of simulated battles with fewer, the same or more losses, a luck label and a histogram of resources lost with the real loss highlighted;
+* the resource trade (defender's losses minus attacker's) ranked the same way;
+* how often the simulation ended with exactly the same survivors, and, when it did at all, the share of endings no more likely than that one.
+
+Losses count units the log shows as destroyed, plus infantry carried by a fleet that was wiped out. Units that retreated or were moved away count as survivors. The box warns when the comparison is off: a retreat (not simulated), sides edited or swapped after importing, or an invasion turned on or off.
+
 ## Project layout
 
 ```

@@ -42,6 +42,7 @@ src/engine/simulate.ts       Combat engine (pure TS, no DOM). Runs in a Web Work
 src/import/bga.ts            Board Game Arena log importer
 src/import/fixtures/         Real BGA logs (one 4-player game, 29 combats) used as test fixtures
 src/renderer/                React UI: App (state, import banner), SidePanel, ImportDialog, Results,
+                             ActualResult (real outcome vs simulation; stats in actualStats.ts),
                              InfoTip (hover/click popover), importFlags (import marks), sim.worker.ts
 electron/main.cts            Electron main process
 ```
@@ -51,6 +52,8 @@ electron/main.cts            Electron main process
 - `fight()` order: Disable → Space Cannon Offense (attacker first) → space combat (start-of-combat effects, AFB in
   round 1, rounds) → invasion if enabled and the attacker holds space (Bombardment, commit, Space Cannon Defense,
   ground combat).
+- `runSimulation` also returns `distributions`: per-unit survivor, resources-lost and round histograms, and the
+  share of each exact end state keyed by `endStateKey`. The Actual result box ranks the real outcome against these.
 - `buildTemplate` converts a `SideInput` once per run; `instantiate` makes fresh mutable `Side`s per battle.
 - Hit assignment is a fixed policy (`SUSTAIN_ORDER`, `DESTROY_ORDER`). Optional abilities are always used if they
   help. Each action card is played at a fixed moment, documented in its `usage` string. Keep `usage`, the README
@@ -97,6 +100,10 @@ How values are inferred:
   warning flag.
 - Faction: keyword scoring (abilities, faction techs and units) plus a flagship dice-profile check.
 - Upgrades and techs seen in earlier combats in the same paste carry forward.
+- `ImportedCombat.actual` is what happened, in the simulator's terms: winner (same rule as `fight()`), space and
+  invasion outcomes, rounds, retreat, and `lost`/`survivors` per side. Losses are "destroyed" lines (and removals
+  BGA says destroyed units), plus carried infantry when the attacker's fleet is gone, mirroring the engine. The
+  "won space/ground combat against" and "Ground combat ended in a draw" lines decide outcomes when present.
 - Flag levels: `info` explains a value's source; `warn` means the log doesn't prove it. The UI shows warns as amber
   "!". Clicking a mark clears it, editing a value clears its marks, and the banner counts the warns left.
 

@@ -17,3 +17,6 @@ export function describeStats(stats: UnitStats): string {
 }
 
 export const percent = (share: number) => `${(share * 100).toFixed(1)}%`;
+
+/** Like `percent`, but a share too small to show as 0.1% reads "<0.1%" rather than "0.0%". */
+export const percentSmall = (share: number) => (share > 0 && share < 0.0005 ? '<0.1%' : percent(share));

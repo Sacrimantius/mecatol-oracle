@@ -231,3 +231,42 @@ describe('starting damage from the log', () => {
     expect(only(text).defender.damaged).toEqual({ dreadnought: 1 });
   });
 });
+
+describe('actual result', () => {
+  it('records the winner and losses of a space combat (combat 1)', () => {
+    const { actual } = only(block(1));
+    expect(actual.winner).toBe('defender');
+    expect(actual.space).toBe('defender');
+    expect(actual.spaceRounds).toBe(3);
+    // The 3 infantry Player 3 carried went down with the fleet, though the log never says so.
+    expect(actual.lost.attacker).toEqual({ carrier: 1, cruiser: 6, dreadnought: 1, fighter: 2, infantry: 3 });
+    expect(actual.survivors.attacker).toEqual({ pds: 2 });
+    expect(actual.lost.defender).toEqual({ carrier: 1, fighter: 3 });
+    expect(actual.survivors.defender).toMatchObject({ dreadnought: 1, destroyer: 4, fighter: 3 });
+  });
+
+  it('notes a retreat and counts the retreating ships as survivors (combat 8)', () => {
+    const { actual } = only(block(8));
+    expect(actual.retreated).toBe('defender');
+    expect(actual.space).toBe('attacker');
+    expect(actual.invasion).toBe('captured');
+    expect(actual.survivors.defender).toEqual({ flagship: 1, dreadnought: 1, carrier: 1 });
+    // The space dock went with the planet.
+    expect(actual.lost.defender.spacedock).toBe(1);
+  });
+
+  it('tells a repelled invasion from a ground draw (combats 19 and 25)', () => {
+    const repelled = only(block(19)).actual;
+    expect(repelled).toMatchObject({ winner: 'defender', space: 'noCombat', invasion: 'repelled', groundRounds: 4 });
+    expect(repelled.lost.attacker).toEqual({ infantry: 4 });
+    const draw = only(block(25)).actual;
+    expect(draw).toMatchObject({ winner: 'draw', invasion: 'draw' });
+    expect(draw.lost).toEqual({ attacker: { infantry: 1 }, defender: { infantry: 1 } });
+  });
+
+  it('counts a capture without ground combat (combat 4)', () => {
+    const { actual } = only(block(4));
+    expect(actual).toMatchObject({ winner: 'attacker', space: 'noCombat', invasion: 'captured' });
+    expect(actual.lost.attacker).toEqual({});
+  });
+});

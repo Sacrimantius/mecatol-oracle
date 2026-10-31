@@ -171,5 +171,18 @@ export interface SimulationResult {
   averageSpaceRounds: number;
   averageGroundRounds: number;
   averageSurvivors: Record<Role, UnitCounts>;
+  distributions: OutcomeDistributions;
   durationMs: number;
+}
+
+/** Share of battles giving each value. In the arrays, index k is the value k. */
+export interface OutcomeDistributions {
+  survivors: Record<Role, Partial<Record<UnitType, number[]>>>;
+  /** Index k: k half-resources of units lost (fighters and infantry cost 0.5). */
+  lostValue: Record<Role, number[]>;
+  /** Index 0 counts battles with no space combat; likewise for ground. */
+  spaceRounds: number[];
+  groundRounds: number[];
+  /** Share of battles ending with each exact set of survivors on both sides, keyed by `endStateKey`. */
+  endStates: Record<string, number>;
 }

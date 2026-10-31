@@ -39,7 +39,7 @@ function Stat({ label, value, tone, info }: StatProps) {
   );
 }
 
-const UNIT_LABELS: Record<UnitType, string> = {
+export const UNIT_LABELS: Record<UnitType, string> = {
   flagship: 'Flagship',
   warsun: 'War Sun',
   dreadnought: 'Dreadnought',
