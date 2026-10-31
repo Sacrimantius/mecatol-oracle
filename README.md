@@ -147,6 +147,6 @@ src/import/bgaGame.ts      Whole-game statistics for saved games
 src/import/savedGame.ts    A saved game's combats, for the Games tab
 games/                     Saved games (git-ignored apart from its README)
 samples/games/             Anonymized example games, bundled into the app
-src/import/fixtures/       Real BGA combat logs used by the importer tests
+src/import/fixtures/       Anonymized BGA combat logs used by the importer tests
 src/renderer/              React UI and the simulation worker
 ```

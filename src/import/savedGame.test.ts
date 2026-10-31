@@ -1,14 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import combatLogs from './fixtures/bga_combat_logs.txt?raw';
+import fullLog from '/samples/games/sample-1/log.txt?raw';
 import { gameCombats } from './savedGame';
 
-// See bgaGame.test.ts: the full log is only present where games/ holds it.
-const fullLogs = import.meta.glob(['/games/sample-1.txt', '/games/sample-1/log.txt'], {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>;
-const fullLog = Object.values(fullLogs)[0];
 
 describe('gameCombats', () => {
   it('lists the fixture combats oldest first, each with its own lines', () => {
@@ -26,7 +20,6 @@ describe('gameCombats', () => {
   });
 
   it('gives each combat of a full game its round, never going back', () => {
-    if (!fullLog) return;
     const combats = gameCombats(fullLog);
     expect(combats.length).toBeGreaterThan(0);
     const rounds = combats.map((c) => c.round);

@@ -1,18 +1,10 @@
 import { describe, expect, it } from 'vitest';
 import combatLogs from './fixtures/bga_combat_logs.txt?raw';
+import fullLog from '/samples/games/sample-1/log.txt?raw';
 import { parseBgaGame } from './bgaGame';
 
-// Full game logs live in games/, which git ignores, so these tests run only where this game's log is present:
-// as pasted (games/sample-1.txt) or saved from the app (games/sample-1/log.txt).
-const fullLogs = import.meta.glob(['/games/sample-1.txt', '/games/sample-1/log.txt'], {
-  query: '?raw',
-  import: 'default',
-  eager: true,
-}) as Record<string, string>;
-const fullLog = Object.values(fullLogs)[0];
-
-describe.runIf(fullLog)('parseBgaGame on a full game (BGA table sample-1)', () => {
-  const game = parseBgaGame(fullLog ?? '');
+describe('parseBgaGame on a full game (the anonymized example sample-1)', () => {
+  const game = parseBgaGame(fullLog);
   const player = (name: string) => game.players.find((p) => p.name === name)!;
 
   it('finds the players, their factions and the winner', () => {
@@ -80,7 +72,7 @@ describe.runIf(fullLog)('parseBgaGame on a full game (BGA table sample-1)', () =
 describe('parseBgaGame on a partial log', () => {
   it('finds players without setup lines and leaves the game unfinished', () => {
     const game = parseBgaGame(combatLogs);
-    expect(game.players.map((p) => p.name).sort()).toEqual(['Player 2', 'Player 4', 'Player 1', 'Player 3']);
+    expect(game.players.map((p) => p.name).sort()).toEqual(['Player 1', 'Player 2', 'Player 3', 'Player 4']);
     expect(game.winner).toBeNull();
   });
 

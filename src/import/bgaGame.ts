@@ -229,7 +229,7 @@ function findPlayers(lines: string[]): { name: string; factionId: string }[] {
   // No setup lines (the paste starts mid-game): anyone who rolls dice, gains trade goods or takes actions.
   const counts = new Map<string, number>();
   for (const line of lines) {
-    const m = line.match(/^(\S+) (?:rolled|gained \d+ trade good|activated|passed|finished a tactical action)/);
+    const m = line.match(/^(.+?) (?:rolled|gained \d+ trade good|activated|passed|finished a tactical action)/);
     if (m) counts.set(m[1], (counts.get(m[1]) ?? 0) + 1);
   }
   return [...counts].filter(([, n]) => n >= 3).map(([name]) => ({ name, factionId: '' }));

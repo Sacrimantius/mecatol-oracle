@@ -31,7 +31,7 @@ These rules apply to every agent and subagent working in this repo.
   Use `feature/`, `fix/` or `docs/` prefixes. Branch from `main` unless the work builds on another unmerged branch;
   then branch from that one and say so. Check `git worktree list` first and don't touch other agents' worktrees.
 - A fresh worktree has no `node_modules`: run `npm install` there before testing. `games/` is git-ignored, so it
-  isn't in the worktree either; tests that need a saved game skip until you copy one in (never commit it).
+  isn't in the worktree either (never commit it); tests use the anonymized `samples/` instead.
 - Uncommitted changes in the main checkout aren't in a new worktree. If a task builds on them, stop and ask the user
   to commit them to a branch first rather than copying them across.
 - Merging, pushing and removing the worktree happen only when the user asks.
@@ -78,7 +78,7 @@ src/engine/simulate.ts       Combat engine (pure TS, no DOM). Runs in a Web Work
 src/import/bga.ts            Board Game Arena log importer
 src/import/bgaGame.ts        Whole-game statistics (score, trade goods, units, dice luck) for saved games
 src/import/savedGame.ts      gameCombats(log): a saved game's combats, oldest first, with round and log lines
-src/import/fixtures/         Real BGA logs (one 4-player game, 29 combats) used as test fixtures
+src/import/fixtures/         Anonymized BGA logs (one 4-player game, 29 combats) used as test fixtures
 games/                       Saved games, git-ignored except games/README.md (the record format)
 samples/games/               Anonymized example games, committed and bundled into the app (samples/README.md)
 src/renderer/                React UI: App (Simulator/Games tabs, state, import banner), SidePanel, ImportDialog,
@@ -159,8 +159,7 @@ test names refer to the fixture headers (combat 1 is the newest).
   dates, unknown factions). `SaveGameDialog` shows it and saves through `window.mecatol.saveGame`, which only
   exists in Electron.
 - **Never commit anything under games/** except its README: logs contain other players' names and private lines.
-  Tests that need a full log use `import.meta.glob` on games/ and skip when it's absent (BGA table sample-1 is the
-  one used now).
+  Tests that need a full game log use the committed example `samples/games/sample-1/log.txt`.
 - `samples/games/` is the exception: anonymized copies that are committed and bundled. See `samples/README.md` for
   what anonymizing has to cover; names are matched without word boundaries because BGA runs sentences together.
 - Players and factions come from the setup lines ("X placed units on ( NAR / JOL )" → home planets). Without setup

@@ -66,7 +66,7 @@ describe('parseBgaLog on single combats', () => {
   it('reads every block on its own, attacker first', () => {
     for (const { header, text } of blocks) {
       const combat = only(text);
-      const attacker = header.split('|')[2].trim().split(' ')[0];
+      const attacker = header.split('|')[2].trim().match(/^Player \d/)![0];
       expect(combat.players.attacker, header).toBe(attacker);
       expect(combat.players.defender, header).not.toBe('');
       expect(combat.attacker.factionId === '' || combat.attacker.factionId === FACTIONS[attacker as keyof typeof FACTIONS]).toBe(true);
