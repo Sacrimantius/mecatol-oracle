@@ -188,6 +188,13 @@ describe('parseBgaLog on single combats', () => {
     expect(only(block(21)).attacker.actionCards).toEqual(['fighterPrototype']); // Morale Boost was cancelled.
   });
 
+  it('loads each copy of a card played more than once (combat 18)', () => {
+    const c = only(block(18));
+    const webbly = c.players.attacker === 'Webbly' ? 'attacker' : 'defender';
+    expect(c[webbly].actionCards).toEqual(['maneuveringJets', 'maneuveringJets']);
+    expect(c.flags[webbly].actionCards.maneuveringJets).toHaveLength(2);
+  });
+
   it('marks unit upgrades the dice cannot settle', () => {
     const c = only(block(29));
     expect(c.flags.defender.upgrades.fighter?.[0].level).toBe('warn');

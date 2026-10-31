@@ -33,8 +33,10 @@ interface Side {
   techs: Set<TechId>;
   units: Unit[];
   yinTriggered: boolean;
-  /** Action cards still in hand. */
-  cards: Set<ActionCardId>;
+  /** Copies of each action card still in hand. */
+  cards: Map<ActionCardId, number>;
+  /** Keep a Morale Boost for ground combat rather than spending it on a later space round. */
+  saveMoraleBoost: boolean;
   /** Disable was played on this side's planet: its PDS neither fire nor shield. */
   pdsDisabled: boolean;
   /** Bunker was played: -4 to Bombardment against this side for the rest of the invasion. */
@@ -105,8 +107,21 @@ function combatModifier(side: Side): number {
   return mod;
 }
 
-/** Plays an action card if the side still holds it. */
-const play = (side: Side, card: ActionCardId) => side.cards.delete(card);
+/** Plays a copy of an action card if the side still holds one. */
+function play(side: Side, card: ActionCardId): boolean {
+  const held = side.cards.get(card) ?? 0;
+  if (held === 0) return false;
+  side.cards.set(card, held - 1);
+  return true;
+}
+
+// Rules Reference 2.6: copies of a card can't be played in one timing window on the same units, so Morale Boost
+// is played at most once per side per round. Later space rounds get one only if a copy is left for ground combat.
+const moraleBoost = (side: Side, round: number, ground: boolean) =>
+  (round === 1 || ground || (side.cards.get('moraleBoost') ?? 0) > (side.saveMoraleBoost ? 1 : 0)) &&
+  play(side, 'moraleBoost')
+    ? 1
+    : 0;
 
 // ---------------------------------------------------------------------------
 // Dice
@@ -428,7 +443,7 @@ function resolveSpaceCombat(rng: Rng, att: Side, def: Side, wormhole: boolean): 
     const attUnits = combatants(att);
     const defUnits = combatants(def);
     const bonus = (side: Side, units: Unit[]): RollBonus => ({
-      all: rounds === 1 && play(side, 'moraleBoost') ? 1 : 0,
+      all: moraleBoost(side, rounds, false),
       fighters: rounds === 1 && units.some((u) => u.stats.type === 'fighter') && play(side, 'fighterPrototype') ? 2 : 0,
       rerollMisses: false,
     });
@@ -507,7 +522,7 @@ function resolveInvasion(rng: Rng, att: Side, def: Side): { outcome: InvasionOut
       const attUnits = groundForcesOnPlanet(att);
       const defUnits = groundForcesOnPlanet(def);
       const bonus = (side: Side): RollBonus => ({
-        all: rounds === 1 && play(side, 'moraleBoost') ? 1 : 0,
+        all: moraleBoost(side, rounds, true),
         fighters: 0,
         rerollMisses: rounds === 1 && play(side, 'fireTeam'),
       });
@@ -540,7 +555,7 @@ interface SideTemplate {
   role: Role;
   faction: Faction;
   techs: Set<TechId>;
-  cards: ActionCardId[];
+  cards: Map<ActionCardId, number>;
   units: { stats: UnitStats; onPlanet: boolean; damaged: boolean }[];
 }
 
@@ -556,11 +571,13 @@ function buildTemplate(role: Role, input: SideInput): SideTemplate {
     const damaged = stats.sustainDamage ? Math.min(count, Math.floor(input.damaged?.[type] ?? 0)) : 0;
     for (let i = 0; i < count; i++) units.push({ stats, onPlanet, damaged: i < damaged });
   }
-  // Cards for the other role (Bunker on the attacker, say) can't be played.
-  const cards = (input.actionCards ?? []).filter((id) => {
+  // Cards for the other role (Bunker on the attacker, say) can't be played, and no side holds more copies than the deck has.
+  const cards = new Map<ActionCardId, number>();
+  for (const id of input.actionCards ?? []) {
     const card = getActionCard(id);
-    return !card.role || card.role === role;
-  });
+    const held = cards.get(id) ?? 0;
+    if ((!card.role || card.role === role) && held < card.copies) cards.set(id, held + 1);
+  }
   return { role, faction, techs: new Set(input.techs), cards, units };
 }
 
@@ -570,7 +587,8 @@ function instantiate(t: SideTemplate): Side {
     faction: t.faction,
     techs: t.techs,
     yinTriggered: false,
-    cards: new Set(t.cards),
+    cards: new Map(t.cards),
+    saveMoraleBoost: false,
     pdsDisabled: false,
     bunkered: false,
     units: t.units.map((u) => ({ ...u, dead: false, sustainedThisRound: false })),
@@ -584,6 +602,8 @@ function countSurvivors(side: Side): UnitCounts {
 }
 
 function fight(rng: Rng, att: Side, def: Side, invade: boolean, wormhole: boolean): BattleOutcome {
+  att.saveMoraleBoost = invade && alive(att).some((u) => !u.onPlanet && u.stats.type === 'infantry');
+  def.saveMoraleBoost = invade && groundForcesOnPlanet(def).length > 0;
   if (alive(def).some((u) => u.onPlanet && u.stats.type === 'pds') && play(att, 'disable')) def.pdsDisabled = true;
 
   // Space Cannon Offense: the active player fires first.

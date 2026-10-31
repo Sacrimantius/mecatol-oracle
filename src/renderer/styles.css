@@ -636,6 +636,18 @@ button.small {
   margin-left: 8px;
 }
 
+.card-copies {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.card-copies button {
+  padding: 0 5px;
+  font-size: 11px;
+  line-height: 14px;
+}
+
 .damaged-control.on {
   color: var(--warn);
 }

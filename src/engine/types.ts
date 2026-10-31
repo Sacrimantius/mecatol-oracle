@@ -103,8 +103,10 @@ export interface ActionCard {
   name: string;
   /** The card's effect, paraphrased. */
   text: string;
-  /** When the simulator plays it: each card is played at most once per battle. */
+  /** When the simulator plays it. Each held copy is played at most once per battle. */
   usage: string;
+  /** Copies in the base-game action deck, and so the most a side can hold. */
+  copies: number;
   /** Only this side can use it (Bunker defends, Disable attacks). */
   role?: Role;
 }
@@ -131,7 +133,7 @@ export interface SideInput {
   damaged?: UnitCounts;
   upgrades: Partial<Record<UnitType, boolean>>;
   techs: TechId[];
-  /** Combat action cards in hand, each played at most once. */
+  /** Combat action cards in hand; a card listed twice is held twice. Each copy is played at most once. */
   actionCards?: ActionCardId[];
 }
 
