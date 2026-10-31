@@ -581,8 +581,8 @@ interface Analysis {
   thresholds: Record<Role, ThresholdObservation[]>;
   techsSeen: Record<Role, Map<TechId, string>>;
   techsRuledOut: Record<Role, Map<TechId, string>>;
-  /** Simulated action cards each side played (and that weren't cancelled), with the log line. */
-  actionCards: Record<Role, Map<ActionCardId, string>>;
+  /** Simulated action cards each side played (and that weren't cancelled), with the log line of each copy. */
+  actionCards: Record<Role, Map<ActionCardId, string[]>>;
   notes: ImportFlag[];
   spaceCombat: boolean;
 }
@@ -1071,7 +1071,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
   const otherOwners = [...new Set(commits.filter((c) => c.player === attacker && c.owner !== attacker && c.owner !== defender).map((c) => c.owner))];
   if (otherOwners.length) notes.push({ level: 'warn', message: `Planets owned by ${otherOwners.join(', ')} were also invaded; not simulated.` });
   // Cards the simulator plays are loaded into the side; the rest are listed.
-  const actionCards = forRoles(() => new Map<ActionCardId, string>());
+  const actionCards = forRoles(() => new Map<ActionCardId, string[]>());
   const unsimulatedCards: string[] = [];
   const canceledCards: string[] = [];
   for (const played of cardsPlayed) {
@@ -1079,7 +1079,7 @@ function analyze(lines: string[], rolls: (RollLine | null)[], seg: Segment): Ana
     const card = role && actionCardsFor(role).find((c) => c.name.toUpperCase() === played.name);
     const label = `${played.name} (${played.player})`;
     if (played.canceled) canceledCards.push(label);
-    else if (role && card) actionCards[role].set(card.id, played.line);
+    else if (role && card) actionCards[role].set(card.id, [...(actionCards[role].get(card.id) ?? []), played.line]);
     else if (played.at >= combatStart) unsimulatedCards.push(label);
   }
   if (unsimulatedCards.length) {
@@ -1246,9 +1246,9 @@ export function parseBgaLog(text: string): BgaImport {
       const side = sides[role];
       const player = a.players[role];
       side.techs = [];
-      side.actionCards = [...a.actionCards[role].keys()];
-      for (const [card, line] of a.actionCards[role]) {
-        flags[role].actionCards[card] = [{ level: 'info', message: `Played in this combat: "${shorten(line)}"` }];
+      side.actionCards = [...a.actionCards[role]].flatMap(([card, lines]) => lines.map(() => card));
+      for (const [card, lines] of a.actionCards[role]) {
+        flags[role].actionCards[card] = lines.map((line) => ({ level: 'info', message: `Played in this combat: "${shorten(line)}"` }));
       }
       for (const [type, list] of Object.entries(a.unitFlags[role]) as [UnitType, ImportFlag[]][]) flags[role].units[type] = list;
       const faction = side.factionId ? getFaction(side.factionId) : UNKNOWN_FACTION;

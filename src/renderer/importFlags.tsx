@@ -84,7 +84,7 @@ export function clearEdited(flags: SideFlags, prev: SideInput, next: SideInput):
   for (const tech of Object.keys(out.techs) as TechId[]) {
     if (prev.techs.includes(tech) !== next.techs.includes(tech)) delete out.techs[tech];
   }
-  const holds = (side: SideInput, card: ActionCardId) => !!side.actionCards?.includes(card);
+  const holds = (side: SideInput, card: ActionCardId) => side.actionCards?.filter((c) => c === card).length ?? 0;
   for (const card of Object.keys(out.actionCards) as ActionCardId[]) {
     if (holds(prev, card) !== holds(next, card)) delete out.actionCards[card];
   }

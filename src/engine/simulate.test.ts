@@ -254,3 +254,36 @@ describe('action cards', () => {
     expect(simulateOnce(input(team, d, { invade: true }), sequence(1, 10, 1)).invasion).toBe('captured');
   });
 });
+
+describe('several copies of an action card', () => {
+  it('Direct Hit: each copy destroys another ship that sustains', () => {
+    const dreads = side('hacan', { dreadnought: 2 });
+    const one = side('arborec', { cruiser: 2 }, cards(['directHit']));
+    expect(simulateOnce(input(one, dreads), alwaysTen).survivors.defender).toEqual({ dreadnought: 1 });
+    const two = side('arborec', { cruiser: 2 }, cards(['directHit', 'directHit']));
+    expect(simulateOnce(input(two, dreads), alwaysTen).survivors.defender).toEqual({});
+  });
+
+  it('Morale Boost: one copy per round while copies last', () => {
+    // The cruiser hits on 6 only when boosted; the carriers never hit.
+    const carriers = side('hacan', { carrier: 2 });
+    const one = side('arborec', { cruiser: 1 }, cards(['moraleBoost']));
+    expect(simulateOnce(input(one, carriers), always(6)).survivors.defender).toEqual({ carrier: 1 });
+    const two = side('arborec', { cruiser: 1 }, cards(['moraleBoost', 'moraleBoost']));
+    expect(simulateOnce(input(two, carriers), always(6)).survivors.defender).toEqual({});
+  });
+
+  it('Morale Boost: keeps a copy for ground combat when invading', () => {
+    const d = side('hacan', { carrier: 2, infantry: 1 });
+    const a = side('arborec', { cruiser: 1, infantry: 1 }, cards(['moraleBoost', 'moraleBoost']));
+    expect(simulateOnce(input(a, d), always(6)).survivors.defender.carrier).toBeUndefined();
+    expect(simulateOnce(input(a, d, { invade: true }), always(6)).survivors.defender.carrier).toBe(1);
+  });
+
+  it('caps copies at the number in the deck', () => {
+    // Direct Hit has 4 copies, so a fifth dreadnought survives its Sustain Damage.
+    const dreads = side('hacan', { dreadnought: 5 });
+    const five = side('arborec', { cruiser: 5 }, cards(Array(5).fill('directHit')));
+    expect(simulateOnce(input(five, dreads), alwaysTen).survivors.defender).toEqual({ dreadnought: 1 });
+  });
+});

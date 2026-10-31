@@ -5,6 +5,7 @@ import type { ActionCardId, Faction, Role, SideInput, TechId, UnitType } from '.
 import type { SideFlags } from '../import/bga';
 import { describeStats } from './format';
 import { FlagTip, type FlagKey } from './importFlags';
+import type { MouseEvent } from 'react';
 import { InfoTip } from './InfoTip';
 
 const SPACE_UNITS: UnitType[] = ['flagship', 'warsun', 'dreadnought', 'carrier', 'cruiser', 'destroyer', 'fighter'];
@@ -100,8 +101,9 @@ function FactionUnits({ role, faction, value, flags, onDismissFlag, onChange }: 
   const toggleUpgrade = (type: UnitType) =>
     onChange({ ...value, upgrades: { ...value.upgrades, [type]: !value.upgrades[type] } });
   const held = value.actionCards ?? [];
-  const toggleCard = (id: ActionCardId) =>
-    onChange({ ...value, actionCards: held.includes(id) ? held.filter((c) => c !== id) : [...held, id] });
+  const copiesHeld = (id: ActionCardId) => held.filter((c) => c === id).length;
+  const setCopies = (id: ActionCardId, n: number) =>
+    onChange({ ...value, actionCards: [...held.filter((c) => c !== id), ...Array<ActionCardId>(n).fill(id)] });
   const toggleTech = (id: TechId) =>
     onChange({
       ...value,
@@ -218,27 +220,47 @@ function FactionUnits({ role, faction, value, flags, onDismissFlag, onChange }: 
       <h3>
         Action cards
         <InfoTip>
-          Cards this side holds for the combat. Each is played at most once, at the moment described on the card.
+          Cards this side holds for the combat. Each copy is played at most once, at the moment described on the
+          card. Cards with more than one copy in the deck can be held several times over.
         </InfoTip>
       </h3>
       <div className="tech-list">
-        {actionCardsFor(role).map((card) => (
-          <label key={card.id} className={`tech${held.includes(card.id) ? ' on' : ''}`}>
-            <input type="checkbox" checked={held.includes(card.id)} onChange={() => toggleCard(card.id)} />
-            {card.name}
-            <InfoTip>
-              <strong>{card.name}</strong>
-              <p>{card.text}</p>
-              <p>
-                <b>Simulated:</b> {card.usage}
-              </p>
-            </InfoTip>
-            <FlagTip
-              flags={flags.actionCards[card.id]}
-              onDismiss={() => onDismissFlag({ kind: 'actionCards', card: card.id })}
-            />
-          </label>
-        ))}
+        {actionCardsFor(role).map((card) => {
+          const n = copiesHeld(card.id);
+          // Buttons inside the label mustn't toggle its checkbox.
+          const step = (e: MouseEvent, by: number) => {
+            e.preventDefault();
+            setCopies(card.id, n + by);
+          };
+          return (
+            <label key={card.id} className={`tech${n > 0 ? ' on' : ''}`}>
+              <input type="checkbox" checked={n > 0} onChange={() => setCopies(card.id, n > 0 ? 0 : 1)} />
+              {card.name}
+              {n > 0 && card.copies > 1 && (
+                <span className="card-copies">
+                  <button onClick={(e) => step(e, -1)} disabled={n === 1} aria-label="One fewer copy">
+                    −
+                  </button>
+                  ×{n}
+                  <button onClick={(e) => step(e, 1)} disabled={n >= card.copies} aria-label="One more copy">
+                    +
+                  </button>
+                </span>
+              )}
+              <InfoTip>
+                <strong>{card.name}</strong>
+                <p>{card.text}</p>
+                <p>
+                  <b>Simulated:</b> {card.usage}
+                </p>
+              </InfoTip>
+              <FlagTip
+                flags={flags.actionCards[card.id]}
+                onDismiss={() => onDismissFlag({ kind: 'actionCards', card: card.id })}
+              />
+            </label>
+          );
+        })}
       </div>
     </>
   );

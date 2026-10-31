@@ -63,17 +63,17 @@ The Nekro Virus can select any faction tech, standing in for Valefar Assimilator
 
 ### Action cards
 
-Each side can hold any of the base-game combat action cards, listed under its technologies. The simulator plays each card at most once, at a fixed moment:
+Each side can hold any of the base-game combat action cards, listed under its technologies. Direct Hit, Morale Boost, Shields Holding and Maneuvering Jets have 4 copies in the deck, so a side can hold up to 4 of each; the rest have 1. The simulator plays each copy at most once, at a fixed moment, and never plays two copies of a card on the same thing at once (Rules Reference 2.6):
 
 | Card | Played |
 |---|---|
-| Morale Boost | First combat round the side fights (space, or ground if there's no space combat) |
+| Morale Boost | One per round: the first round of space combat and of ground combat, then later rounds while copies last, keeping one for ground combat when invading |
 | Fighter Prototype | First space combat round, if the side has fighters |
-| Shields Holding | First space combat round dealing the side 2+ hits, or a hit it can't sustain |
-| Direct Hit | On the first enemy ship that uses Sustain Damage |
+| Shields Holding | Each space combat round dealing the side 2+ hits, or a hit it can't sustain, one per round |
+| Direct Hit | On each enemy ship that uses Sustain Damage |
 | Courageous to the End | After the side's first non-fighter ship is destroyed in a space combat round |
 | Emergency Repairs | End of the first space round leaving 2+ damaged units, or 1 with nothing else able to sustain |
-| Maneuvering Jets | First time Space Cannon hits the side |
+| Maneuvering Jets | Each Space Cannon roll that hits the side, one per roll |
 | Scramble Frequency | First enemy Bombardment, Space Cannon or Anti-Fighter Barrage roll that beats the average |
 | Experimental Battlestation (defender) | Adds Space Cannon 5 ×3 to Space Cannon Offense |
 | Disable (attacker) | The defender's PDS don't fire or shield |
@@ -96,7 +96,7 @@ Sabotage, retreats, Parley and other cards that don't change the dice aren't sim
 * **Units:** the fleet moved in, plus the dice and losses in the log. Ships and ground forces that rolled are complete counts; everything else is "at least", and damaged ships that started the combat damaged are included.
 * **Faction:** worked out from faction abilities, techs and flagship dice anywhere in the paste.
 * **Upgrades:** the combinations of base and upgraded units that explain every roll's hit count, Anti-Fighter Barrage dice and Ambush to-hit values. Upgrades and techs seen in earlier combats in the same paste carry forward.
-* **Action cards:** the simulated cards each player played, unless Sabotage cancelled them.
+* **Action cards:** the simulated cards each player played, one copy per play, unless Sabotage cancelled them.
 * **Technologies:** shown in the log ("used DURANIUM ARMOR", "Effects: PLASMA SCORING"), or ruled out when they would have shown.
 
 Each imported value carries a mark: **i** explains where it came from, and an amber **!** means the log doesn't prove it. Changing a value by hand clears its mark. Third players' Space Cannon, action cards and other planets are listed in the banner but aren't simulated.
