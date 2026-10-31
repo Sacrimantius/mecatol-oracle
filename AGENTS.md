@@ -189,6 +189,20 @@ test names refer to the fixture headers (combat 1 is the newest).
 - **Load** goes through App's `loadImport`, the same path as the import dialog, with the table, combat number and
   round added to the title.
 
+## Responsive layout (`styles.css`, end of file)
+
+The app is also served as a static site on GitHub Pages (`.github/workflows/pages.yml` deploys `dist/` on every push
+to `main`), so it has to work on phones. Desktop is a fixed-height window with three scrolling columns
+(`380px 1fr 380px`). Two breakpoints change that:
+
+- `max-width: 1100px`: the page scrolls as a whole (`.app` no longer `100vh`), results span a full-width row above
+  the two side panels (`.center` has `order: -1`), the Games tab stacks the list above the detail.
+- `max-width: 700px`: one column, results first, the Run button full width at the top of the controls, and the
+  fixed-width inner grids (survivor tables, stages, score rows, player cards) collapse.
+
+Check UI changes at 375px wide as well as desktop; nothing should make `document.documentElement.scrollWidth`
+exceed the viewport.
+
 ## Not modelled yet
 
 See README "Simplifications": retreats, non-dice action cards, promissory notes, leaders, capacity, Hacan flagship,

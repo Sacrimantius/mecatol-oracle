@@ -1524,3 +1524,103 @@ button.game-combat-toggle > :not(.combat-number) {
   font: 12px/1.45 Consolas, 'Cascadia Mono', monospace;
   white-space: pre-wrap;
 }
+
+/* Narrow windows and tablets: the page scrolls as a whole and the results span the top, above both sides. */
+@media (max-width: 1100px) {
+  .app {
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+  }
+
+  .layout {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .center {
+    grid-column: 1 / -1;
+    order: -1;
+  }
+
+  .side-panel,
+  .center,
+  .game-list,
+  .game-detail {
+    overflow-y: visible;
+  }
+
+  .games {
+    grid-template-columns: 1fr;
+  }
+
+  .game-list {
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+}
+
+/* Phones: one column, results first so they sit just under the Run button. */
+@media (max-width: 700px) {
+  .topbar {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .tabs {
+    margin-left: 0;
+  }
+
+  .controls {
+    width: 100%;
+    gap: 8px 12px;
+  }
+
+  .controls button.primary {
+    flex: 1 0 100%;
+    order: -1;
+    padding: 10px 14px;
+  }
+
+  .layout,
+  .games {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .center {
+    grid-column: auto;
+  }
+
+  .headline {
+    gap: 8px;
+  }
+
+  .survivors,
+  .stages {
+    grid-template-columns: 1fr;
+  }
+
+  .survivor-row {
+    grid-template-columns: 1fr 60px auto;
+  }
+
+  .score-row {
+    grid-template-columns: 100px 1fr 32px;
+  }
+
+  .player-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .game-combat-body {
+    padding-left: 0;
+  }
+
+  .modal-backdrop {
+    padding: 8px;
+  }
+}
