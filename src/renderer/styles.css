@@ -21,6 +21,26 @@
   box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: var(--border) padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #34456e;
+}
+
 body {
   margin: 0;
   background: radial-gradient(ellipse at top, #141d36 0%, var(--bg) 60%);
@@ -1225,10 +1245,16 @@ button.game-item.on {
 }
 
 .game-detail {
+  padding-right: 14px;
+}
+
+/* As wide as one row of player cards at most, so the score bars and combat log line up with the cards. */
+.game-body {
+  --card-max: 340px;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding-right: 4px;
+  max-width: calc(var(--players) * var(--card-max) + (var(--players) - 1) * 12px);
 }
 
 .game-head {
@@ -1294,7 +1320,7 @@ button.game-item.on {
 
 .player-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 12px;
 }
 

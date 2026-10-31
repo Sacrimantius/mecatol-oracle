@@ -184,6 +184,8 @@ test names refer to the fixture headers (combat 1 is the newest).
 - The combat log isn't stored in game.json: `gameCombats` re-parses the saved log with `parseBgaLog`, so importer
   fixes reach old saves. It drops tactical actions with an empty `summary` (no combat step), and takes each combat's
   round from the nearest older "Round N, … Phase" header.
+- The detail is capped at one row of player cards (`.game-body`, `--players` set from the player count), so
+  the score bars and combat log end where the cards do.
 - **Load** goes through App's `loadImport`, the same path as the import dialog, with the table, combat number and
   round added to the title.
 

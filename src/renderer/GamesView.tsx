@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type CSSProperties } from 'react';
 import { getFaction } from '../engine/data/factions';
 import { GENERIC_UNITS } from '../engine/data/units';
 import { ALL_UNIT_TYPES, type UnitType } from '../engine/types';
@@ -115,7 +115,7 @@ function GameDetail({ game: { record, log }, onLoadCombat }: { game: SavedGame; 
     });
 
   return (
-    <>
+    <div className="game-body" style={{ '--players': players.length } as CSSProperties}>
       <header className="game-head">
         <h2>Table {record.id}</h2>
         <span className="muted">
@@ -206,7 +206,7 @@ function GameDetail({ game: { record, log }, onLoadCombat }: { game: SavedGame; 
           })}
         </ol>
       </section>
-    </>
+    </div>
   );
 }
 
