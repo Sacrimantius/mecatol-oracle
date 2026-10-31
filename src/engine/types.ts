@@ -118,6 +118,10 @@ export interface Faction {
   units: Partial<Record<UnitType, UnitDefinition>>;
   abilities: FactionAbility[];
   abilityText: string[];
+  /** Combat techs the faction starts the game with. BGA logs never show them. */
+  startingTechs?: TechId[];
+  /** Combat techs the faction might have picked as its starting tech (Winnu chooses one). */
+  startingTechChoice?: TechId[];
 }
 
 export type UnitCounts = Partial<Record<UnitType, number>>;

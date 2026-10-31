@@ -216,6 +216,8 @@ export const RE = {
   played: /^(.+?) played ([A-Z][A-Z0-9 '’.\-]+?)(?: to | on |\.|$)/,
   keyword: /^(.+?) (?:used|exhausted) ([A-Z][A-Z0-9 '’.\-]*[A-Z])(?: to | on | and | for |\.|$)/,
   sustain: /^(.+?) used SUSTAIN DAMAGE/,
+  research: /^(.+?) researched (.+?)(?: and used:.*)?\.?$/,
+  setup: /^Round 0, /,
 };
 
 export function parseRoll(m: RegExpMatchArray): RollLine {
@@ -1321,6 +1323,19 @@ export function parseBgaLog(text: string): BgaImport {
     const tech = m && TECH_KEYWORDS[m[2]];
     if (m && tech) techEvidence.push({ player: m[1], tech, line: i, seen: true, message: line });
   });
+  // "X researched Y" lines. A paste that reaches back to the setup shows every tech and upgrade researched, so what
+  // a player hadn't researched (and didn't start with) they didn't have.
+  const wholeGame = lines.some((line) => RE.setup.test(line));
+  const research = lines.flatMap((line, i) => {
+    const m = line.match(RE.research);
+    return m ? [{ player: m[1], name: m[2].toUpperCase(), line: i, message: line }] : [];
+  });
+  // Research happens outside tactical actions, so only lines before the activation count for its combat.
+  const activation = (s: Segment) => {
+    for (let i = s.start; i < s.end; i++) if (RE.activate.test(lines[i])) return i;
+    return s.start;
+  };
+  const notResearched = "Not researched before this combat, and the log goes back to the game's setup.";
 
   const combats = analyses.map((a, k) => {
     const flags = forRoles<SideFlags>(() => ({ faction: [], units: {}, upgrades: {}, techs: {}, actionCards: {} }));
@@ -1354,6 +1369,7 @@ export function parseBgaLog(text: string): BgaImport {
       for (const [type, list] of Object.entries(a.unitFlags[role]) as [UnitType, ImportFlag[]][]) flags[role].units[type] = list;
       const faction = side.factionId ? getFaction(side.factionId) : UNKNOWN_FACTION;
       const local = localUpgrades[k][role];
+      const researched = research.filter((r) => r.player === player && r.line < activation(a.segment));
       if (local?.mismatch) {
         flags[role].faction.push({
           level: 'warn',
@@ -1368,6 +1384,7 @@ export function parseBgaLog(text: string): BgaImport {
         const here = local?.status[type];
         const earlierUp = upgradeEvidence.find((e) => e.player === player && e.type === type && e.status === 'upgraded' && e.line < a.segment.start);
         const laterBase = upgradeEvidence.find((e) => e.player === player && e.type === type && e.status === 'base' && e.line > a.segment.start);
+        const researchedUp = researched.find((r) => r.name === name.toUpperCase());
         const list = (flags[role].upgrades[type] ??= []);
         if (here) {
           side.upgrades[type] = here === 'upgraded';
@@ -1376,12 +1393,23 @@ export function parseBgaLog(text: string): BgaImport {
             level: 'info',
             message: `${here === 'upgraded' ? `Has ${name}` : `Not upgraded to ${name}`}: the dice only add up that way${evidence ? ` ("${shorten(evidence)}")` : ''}.`,
           });
+          if (here === 'base' && researchedUp) {
+            list.push({ level: 'warn', message: `But ${player} researched it before this combat ("${shorten(researchedUp.message)}").` });
+          } else if (here === 'upgraded' && !researchedUp && wholeGame) {
+            list.push({ level: 'warn', message: `But the log shows no research of ${name} before this combat.` });
+          }
+        } else if (researchedUp) {
+          side.upgrades[type] = true;
+          list.push({ level: 'info', message: `Researched before this combat: "${shorten(researchedUp.message)}"` });
         } else if (earlierUp) {
           side.upgrades[type] = true;
           list.push({ level: 'info', message: `${player} already had ${name} in an earlier combat in this log.` });
         } else if (laterBase) {
           side.upgrades[type] = false;
           list.push({ level: 'info', message: `${player} still didn't have ${name} in a later combat in this log.` });
+        } else if (wholeGame) {
+          side.upgrades[type] = false;
+          list.push({ level: 'info', message: notResearched });
         } else {
           side.upgrades[type] = false;
           list.push({ level: 'warn', message: `The log doesn't show whether ${player} has ${name}. Assumed not; check this.` });
@@ -1412,17 +1440,31 @@ export function parseBgaLog(text: string): BgaImport {
         const ruledOut =
           a.techsRuledOut[role].get(tech.id) ??
           techEvidence.find((e) => e.player === player && e.tech === tech.id && !e.seen && e.line >= a.segment.start)?.message;
+        const researchedTech = researched.find((r) => TECH_KEYWORDS[r.name] === tech.id);
+        const starting = faction.startingTechs?.includes(tech.id);
+        const maybeStarting = faction.startingTechChoice?.includes(tech.id);
+        // Nekro copies techs without researching them.
+        const unresearched = wholeGame && side.factionId && side.factionId !== 'nekro' && !maybeStarting;
         const list: ImportFlag[] = [];
         if (seenHere) {
           side.techs.push(tech.id);
           list.push({ level: 'info', message: `Seen in this combat: "${shorten(seenHere)}"` });
+        } else if (researchedTech) {
+          side.techs.push(tech.id);
+          list.push({ level: 'info', message: `Researched before this combat: "${shorten(researchedTech.message)}"` });
+        } else if (starting) {
+          side.techs.push(tech.id);
+          list.push({ level: 'info', message: `${faction.name} start the game with ${tech.name}.` });
         } else if (seenBefore) {
           side.techs.push(tech.id);
           list.push({ level: 'info', message: `Seen earlier in this log: "${shorten(seenBefore.message)}"` });
         } else if (ruledOut) {
           list.push({ level: 'info', message: `Not owned: it would have shown here ("${shorten(ruledOut)}").` });
+        } else if (unresearched && relevant[tech.id]) {
+          list.push({ level: 'info', message: notResearched });
         } else if (relevant[tech.id]) {
-          list.push({ level: 'warn', message: `The log doesn't show ${tech.name}; assumed not owned. Check whether ${player} has it.` });
+          const why = maybeStarting ? ` It may be ${faction.name}'s starting tech.` : '';
+          list.push({ level: 'warn', message: `The log doesn't show ${tech.name}; assumed not owned.${why} Check whether ${player} has it.` });
         }
         if (list.length) flags[role].techs[tech.id] = list;
       }

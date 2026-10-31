@@ -97,7 +97,8 @@ Sabotage, retreats, Parley and other cards that don't change the dice aren't sim
 * **Faction:** worked out from faction abilities, techs and flagship dice anywhere in the paste.
 * **Upgrades:** the combinations of base and upgraded units that explain every roll's hit count, Anti-Fighter Barrage dice and Ambush to-hit values. Upgrades and techs seen in earlier combats in the same paste carry forward.
 * **Action cards:** the simulated cards each player played, one copy per play, unless Sabotage cancelled them.
-* **Technologies:** shown in the log ("used DURANIUM ARMOR", "Effects: PLASMA SCORING"), or ruled out when they would have shown.
+* **Technologies:** shown in the log ("used DURANIUM ARMOR", "Effects: PLASMA SCORING"), researched earlier in the paste ("researched ASSAULT CANNON"), or the faction's starting techs (the log never lists those). Ruled out when they would have shown.
+* **Whole games:** when the paste goes back to the setup ("Round 0, Setup Phase"), every tech and upgrade a player researched is in it, so anything not researched before a combat (and not a starting tech) is taken as not owned. Combats loaded from the Games tab always get this.
 
 Each imported value carries a mark: **i** explains where it came from, and an amber **!** means the log doesn't prove it. Changing a value by hand clears its mark. Third players' Space Cannon, action cards and other planets are listed in the banner but aren't simulated.
 

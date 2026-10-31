@@ -25,6 +25,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechs: ['magenDefenseGrid'],
   },
   {
     id: 'letnev',
@@ -39,6 +40,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechs: ['antimassDeflectors', 'plasmaScoring'],
   },
   {
     id: 'saar',
@@ -54,6 +56,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechs: ['antimassDeflectors'],
   },
   {
     id: 'muaat',
@@ -67,6 +70,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechs: ['plasmaScoring'],
   },
   {
     id: 'hacan',
@@ -78,6 +82,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechs: ['antimassDeflectors'],
   },
   {
     id: 'sol',
@@ -101,6 +106,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechs: ['antimassDeflectors'],
   },
   {
     id: 'creuss',
@@ -140,6 +146,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: ['harrow'],
     abilityText: ['Harrow: after each round of ground combat, your ships use Bombardment again.'],
+    startingTechs: ['plasmaScoring'],
   },
   {
     id: 'mentak',
@@ -152,6 +159,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: ['ambush'],
     abilityText: ['Ambush: at the start of space combat, roll 1 die for each of up to 2 cruisers or destroyers.'],
+    startingTechs: ['plasmaScoring'],
   },
   {
     id: 'naalu',
@@ -223,6 +231,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: ['fragile'],
     abilityText: ['Fragile: -1 to all combat rolls.'],
+    startingTechs: ['antimassDeflectors', 'plasmaScoring'],
   },
   {
     id: 'winnu',
@@ -235,6 +244,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechChoice: ['antimassDeflectors', 'plasmaScoring'],
   },
   {
     id: 'xxcha',
@@ -246,6 +256,7 @@ export const FACTIONS: Faction[] = [
     },
     abilities: [],
     abilityText: [],
+    startingTechs: ['gravitonLaserSystem'],
   },
   {
     id: 'yin',

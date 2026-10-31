@@ -70,7 +70,7 @@ Write facts the next agent needs, not a diary of what you did. Remove statements
 ```
 src/engine/types.ts          Shared types (SideInput, UnitType, TechId, ActionCardId, ...)
 src/engine/data/units.ts     Generic units and upgrades
-src/engine/data/factions.ts  17 factions: abilities, faction units, flagships
+src/engine/data/factions.ts  17 factions: abilities, faction units, flagships, starting combat techs
 src/engine/data/techs.ts     Combat techs
 src/engine/data/actionCards.ts  Combat action cards: text, simulated usage, deck copies, role restriction
 src/engine/rng.ts            mulberry32 seeded RNG; d10 = floor(rng*10)+1
@@ -143,6 +143,12 @@ How values are inferred:
   warning flag.
 - Faction: keyword scoring (abilities, faction techs and units) plus a flagship dice-profile check.
 - Upgrades and techs seen in earlier combats in the same paste carry forward.
+- Research: "X researched Y" lines ("and used: PLANET" is a tech skip) before the combat's activation line give
+  techs and upgrades (matched to `upgraded.name`, so faction units like FLOATING FACTORY II work). Research never
+  happens inside a tactical action. A paste with a "Round 0, …" line is a whole game: no research line means not
+  owned (info flag), except Nekro (copies techs) and Winnu's `startingTechChoice`. Without the setup, a missing
+  research line proves nothing. Dice that disagree with the research get a warn.
+- Starting techs aren't in BGA logs; they come from `Faction.startingTechs` (combat techs only).
 - `ImportedCombat.actual` is what happened, in the simulator's terms: winner (same rule as `fight()`), space and
   invasion outcomes, rounds, retreat, and `lost`/`survivors` per side. Losses are "destroyed" lines (and removals
   BGA says destroyed units), plus carried infantry when the attacker's fleet is gone, mirroring the engine. The
@@ -187,7 +193,8 @@ test names refer to the fixture headers (combat 1 is the newest).
   log.txt as a lazy `?raw` chunk), so they work on GitHub Pages and under Electron's `file://` alike. They show as
   "Example game <id>" (`gameTitle`) rather than "Table <id>".
 - The combat log isn't stored in game.json: `gameCombats` re-parses the saved log with `parseBgaLog`, so importer
-  fixes reach old saves. It drops tactical actions with an empty `summary` (no combat step), and takes each combat's
+  fixes reach old saves and each combat sees the whole game's research history. A 9-round game parses in ~35 ms, so
+  there's no need to split or cache combats. It drops tactical actions with an empty `summary` (no combat step), and takes each combat's
   round from the nearest older "Round N, … Phase" header.
 - The detail is capped at one row of player cards (`.game-body`, `--players` set from the player count), so
   the score bars and combat log end where the cards do.
